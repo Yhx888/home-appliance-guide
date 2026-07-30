@@ -103,6 +103,64 @@ table{font-size:15px}
 /* 多维度对比表：品牌为列 */
 .dim-table th:first-child{min-width:90px;background:#e8eef8;font-weight:700}
 .dim-table td:first-child{font-weight:600;background:#f8fafc;white-space:nowrap}
+
+/* 前端改造新增：筛选面板样式 */
+.filter-panel{background:#fafbfc;border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin-bottom:14px}
+.filter-panel .filter-row{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.filter-panel .filter-row:last-child{margin-bottom:0}
+.filter-panel .filter-label{font-size:13px;font-weight:600;color:var(--text-light);min-width:64px;flex-shrink:0}
+.filter-panel .sort-mode-tabs{display:flex;gap:4px;background:#e8ecf2;border-radius:6px;padding:3px}
+.filter-panel .sort-tab{padding:5px 14px;font-size:13px;border:none;border-radius:4px;cursor:pointer;background:transparent;color:var(--text-light);font-weight:500;transition:all .2s}
+.filter-panel .sort-tab.active{background:#fff;color:var(--text);font-weight:600;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.filter-panel .sort-tab:hover{color:var(--text)}
+.filter-panel .sort-single-row select,.filter-panel .filter-select{padding:5px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:#fff;color:var(--text);outline:none;cursor:pointer}
+.filter-panel .sort-single-row select:focus,.filter-panel .filter-select:focus{border-color:var(--primary)}
+.filter-panel .weight-sliders{display:flex;flex-wrap:wrap;gap:8px;flex:1}
+.filter-panel .weight-slider-row{display:flex;align-items:center;gap:6px;min-width:140px}
+.filter-panel .weight-slider-row label{font-size:12px;color:var(--text-light);min-width:50px;white-space:nowrap}
+.filter-panel .weight-slider-row input[type="range"]{width:80px;height:4px;-webkit-appearance:none;appearance:none;background:var(--border);border-radius:2px;outline:none;cursor:pointer}
+.filter-panel .weight-slider-row input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:14px;height:14px;border-radius:50%;background:var(--primary);cursor:pointer;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.filter-panel .weight-slider-row input[type="range"]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:var(--primary);cursor:pointer;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.filter-panel .weight-value{font-size:12px;font-weight:600;color:var(--primary);min-width:24px;text-align:right}
+.filter-panel .brand-tags{display:flex;flex-wrap:wrap;gap:6px;flex:1}
+.filter-panel .brand-tag{padding:4px 12px;font-size:12px;border:1px solid var(--border);border-radius:14px;cursor:pointer;background:#fff;color:var(--text-light);transition:all .2s;user-select:none}
+.filter-panel .brand-tag:hover{border-color:var(--primary);color:var(--primary)}
+.filter-panel .brand-tag.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+.filter-panel .price-range-row{display:flex;align-items:center;gap:6px;flex:1}
+.filter-panel .price-input{width:100px;padding:5px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;outline:none}
+.filter-panel .price-input:focus{border-color:var(--primary)}
+.filter-panel .price-sep{color:var(--text-light);font-size:14px}
+.filter-panel .filter-actions{gap:10px}
+.filter-panel .btn-apply,.filter-panel .btn-reset{padding:6px 18px;border:none;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s}
+.filter-panel .btn-apply{background:var(--primary);color:#fff}
+.filter-panel .btn-apply:hover{background:var(--primary-light)}
+.filter-panel .btn-reset{background:#e8ecf2;color:var(--text-light)}
+.filter-panel .btn-reset:hover{background:#d1d5db;color:var(--text)}
+.filter-panel .filter-result-count{font-size:13px;color:var(--text-light);margin-left:auto}
+.filter-panel .filter-loading{text-align:center;padding:20px;color:var(--text-light);font-size:14px}
+.dim-table-dynamic{width:100%;border-collapse:collapse;font-size:14px;min-width:500px}
+.dim-table-dynamic th{background:#e8eef8;padding:10px 8px;text-align:left;font-weight:600;white-space:nowrap;border-bottom:2px solid var(--border);font-size:14px}
+.dim-table-dynamic th:first-child{min-width:80px}
+.dim-table-dynamic td{padding:8px;border-bottom:1px solid var(--border);vertical-align:middle;line-height:1.5;font-size:14px}
+.dim-table-dynamic td:first-child{font-weight:600;background:#f8fafc;white-space:nowrap}
+.dim-table-dynamic tr:hover td{background:#f1f5f9}
+.dim-table-dynamic .score-cell{font-weight:700;color:var(--primary)}
+.dim-table-dynamic .brand-header{font-size:13px}
+.dim-table-dynamic .brand-header .brand-name{font-weight:700;display:block}
+.dim-table-dynamic .brand-header .brand-model{font-size:11px;color:var(--text-light);display:block;margin-top:2px}
+.dim-table-dynamic .dim-val{font-size:13px}
+.dim-table-dynamic .dim-val.dim-bool-yes{color:var(--success)}
+.dim-table-dynamic .dim-val.dim-bool-no{color:var(--danger)}
+.dynamic-table-wrap.ready+.table-wrap{display:none}
+@media(max-width:640px){
+  .filter-panel .filter-row{flex-direction:column;align-items:stretch}
+  .filter-panel .filter-label{min-width:auto}
+  .filter-panel .weight-slider-row{min-width:100%}
+  .filter-panel .price-range-row{flex:1}
+  .filter-panel .price-input{flex:1;width:auto}
+  .filter-panel .sort-mode-tabs{flex:1}
+  .filter-panel .sort-tab{flex:1;text-align:center}
+}
 </style>
 </head>
 <body>
@@ -1367,6 +1425,8 @@ document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
 event.target.classList.add('active');
 const el=document.getElementById(id);
 if(el){el.scrollIntoView({behavior:'smooth',block:'start'})}
+// 前端改造新增：品类 tab 时初始化筛选面板
+if(id&&/^cat-\d+$/.test(id)){initCategoryView(id)}
 }
 // Collapsible card
 function toggleCard(header){
@@ -1394,6 +1454,640 @@ sections.forEach(s=>{
 const text=s.textContent.toLowerCase();
 if(text.includes(q)){s.classList.remove('hidden')}else{s.classList.add('hidden')}
 });
+}
+</script>
+
+<!-- 前端改造新增：筛选面板与 API 动态渲染 -->
+<script>
+// ============================================================
+// 全局状态
+// ============================================================
+const state = {
+  currentSlug: null,
+  categories: [],
+  currentDims: [],
+  products: [],
+  sortMode: 'weighted',
+  sortKey: '',
+  sortDir: 'desc',
+  weights: {},
+  selectedBrands: [],
+  priceMin: 0,
+  priceMax: 0,
+  cachedCategories: null
+};
+
+// ============================================================
+// API 客户端
+// ============================================================
+async function fetchCategories() {
+  try {
+    const res = await fetch('/api/categories');
+    if (!res.ok) throw new Error('API 不可用');
+    const data = await res.json();
+    state.cachedCategories = data;
+    return data;
+  } catch (e) {
+    console.warn('品类数据获取失败:', e.message);
+    return null;
+  }
+}
+
+async function fetchProducts(slug, params) {
+  const qp = new URLSearchParams();
+  if (params.brands && params.brands.length) qp.set('brands', params.brands.join(','));
+  if (params.priceMin > 0) qp.set('price_min', params.priceMin);
+  if (params.priceMax > 0) qp.set('price_max', params.priceMax);
+  if (params.sortKey) qp.set('sort_key', params.sortKey);
+  if (params.sortDir) qp.set('sort_dir', params.sortDir);
+  if (params.page) qp.set('page', params.page);
+  if (params.pageSize) qp.set('page_size', params.pageSize);
+  // 构建权重 JSON
+  const w = params.weights || {};
+  const hasWeights = Object.values(w).some(v => v !== undefined);
+  if (hasWeights) qp.set('weights', JSON.stringify(w));
+
+  try {
+    const res = await fetch('/api/categories/' + slug + '/products?' + qp.toString());
+    if (!res.ok) throw new Error('产品数据获取失败');
+    return await res.json();
+  } catch (e) {
+    console.warn('产品数据获取失败:', e.message);
+    return null;
+  }
+}
+
+// ============================================================
+// 品类视图初始化（被 switchTab 调用）
+// ============================================================
+async function initCategoryView(slug) {
+  state.currentSlug = slug;
+
+  // 获取品类维度定义
+  let cats = state.cachedCategories;
+  if (!cats) {
+    cats = await fetchCategories();
+    if (!cats) return;
+  }
+  const cat = cats.find(function(c) { return c.slug === slug; });
+  if (!cat || !cat.dimensions) return;
+
+  state.currentDims = cat.dimensions;
+
+  // 找到 dim-table 卡片
+  const section = document.getElementById(slug);
+  if (!section) return;
+  const cards = section.querySelectorAll('.card');
+  let dimCard = null;
+  for (let i = 0; i < cards.length; i++) {
+    if (cards[i].querySelector('.dim-table')) {
+      dimCard = cards[i];
+      break;
+    }
+  }
+  if (!dimCard) return;
+  const cardBody = dimCard.querySelector('.card-body');
+  if (!cardBody) return;
+
+  // 创建/获取 filter-panel
+  let panel = cardBody.querySelector('.filter-panel');
+  if (!panel) {
+    panel = createFilterPanel(slug, cat);
+    const tableWrap = cardBody.querySelector('.table-wrap');
+    if (tableWrap) {
+      cardBody.insertBefore(panel, tableWrap);
+    } else {
+      cardBody.appendChild(panel);
+    }
+  }
+
+  // 填充面板数据
+  populateFilterPanel(panel, cat);
+
+  // 触发首次加载
+  applyFilters(slug);
+}
+
+// ============================================================
+// 创建 filter-panel 元素
+// ============================================================
+function createFilterPanel(slug, cat) {
+  const panel = document.createElement('div');
+  panel.className = 'filter-panel';
+  panel.dataset.category = slug;
+
+  panel.innerHTML =
+    '<div class="filter-row">' +
+      '<label class="filter-label">排序模式</label>' +
+      '<div class="sort-mode-tabs">' +
+        '<button class="sort-tab active" data-mode="weighted">加权综合排序</button>' +
+        '<button class="sort-tab" data-mode="single">单维度排序</button>' +
+      '</div>' +
+    '</div>' +
+    '<div class="filter-row sort-single-row" style="display:none">' +
+      '<label class="filter-label">排序维度</label>' +
+      '<select class="filter-select dim-sort-select"></select>' +
+      '<select class="filter-select sort-dir-select">' +
+        '<option value="desc">从高到低</option>' +
+        '<option value="asc">从低到高</option>' +
+      '</select>' +
+    '</div>' +
+    '<div class="filter-row sort-weighted-row">' +
+      '<label class="filter-label">维度权重</label>' +
+      '<div class="weight-sliders"></div>' +
+    '</div>' +
+    '<div class="filter-row">' +
+      '<label class="filter-label">品牌</label>' +
+      '<div class="brand-tags"></div>' +
+    '</div>' +
+    '<div class="filter-row">' +
+      '<label class="filter-label">价格区间</label>' +
+      '<div class="price-range-row">' +
+        '<input type="number" class="price-input" placeholder="最低价" data-price="min">' +
+        '<span class="price-sep">—</span>' +
+        '<input type="number" class="price-input" placeholder="最高价" data-price="max">' +
+      '</div>' +
+    '</div>' +
+    '<div class="filter-row filter-actions">' +
+      '<button class="btn-apply">应用筛选</button>' +
+      '<button class="btn-reset">重置</button>' +
+      '<span class="filter-result-count"></span>' +
+    '</div>' +
+    '<div class="filter-loading" style="display:none">加载中...</div>';
+
+  // 事件绑定 - 排序模式切换
+  panel.querySelectorAll('.sort-tab').forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      panel.querySelectorAll('.sort-tab').forEach(function(t) { t.classList.remove('active'); });
+      this.classList.add('active');
+      state.sortMode = this.dataset.mode;
+      var wRow = panel.querySelector('.sort-weighted-row');
+      var sRow = panel.querySelector('.sort-single-row');
+      if (this.dataset.mode === 'weighted') {
+        wRow.style.display = '';
+        sRow.style.display = 'none';
+      } else {
+        wRow.style.display = 'none';
+        sRow.style.display = '';
+      }
+    });
+  });
+
+  // 事件绑定 - 应用筛选
+  panel.querySelector('.btn-apply').addEventListener('click', function() {
+    applyFilters(slug);
+  });
+
+  // 事件绑定 - 重置
+  panel.querySelector('.btn-reset').addEventListener('click', function() {
+    resetFilters(slug);
+  });
+
+  // 事件绑定 - 价格输入
+  panel.querySelectorAll('.price-input').forEach(function(inp) {
+    inp.addEventListener('change', function() {
+      var val = parseFloat(this.value);
+      if (this.dataset.price === 'min') {
+        state.priceMin = isNaN(val) ? 0 : val;
+      } else {
+        state.priceMax = isNaN(val) ? 0 : val;
+      }
+    });
+  });
+
+  // 事件绑定 - 排序维度/方向
+  var dirSelect = panel.querySelector('.sort-dir-select');
+  if (dirSelect) {
+    dirSelect.addEventListener('change', function() {
+      state.sortDir = this.value;
+    });
+  }
+
+  return panel;
+}
+
+// ============================================================
+// 填充 filter-panel 数据
+// ============================================================
+function populateFilterPanel(panel, cat) {
+  var dims = cat.dimensions;
+
+  // 填充维度选项下拉
+  var dimSelect = panel.querySelector('.dim-sort-select');
+  if (dimSelect) populateDimSortOptions(dimSelect, dims);
+
+  // 填充权重滑块
+  var wsContainer = panel.querySelector('.weight-sliders');
+  if (wsContainer) populateWeightSliders(wsContainer, dims);
+
+  // 从产品中收集品牌（首次加载后再次调用时更新产品品牌）
+  if (state.products.length > 0) {
+    populateBrandTags(panel, state.products, state.selectedBrands);
+  }
+}
+
+// ============================================================
+// 填充维度排序下拉选项
+// ============================================================
+function populateDimSortOptions(select, dims) {
+  select.innerHTML = '';
+  dims.forEach(function(d) {
+    var opt = document.createElement('option');
+    opt.value = d.dim_key;
+    // 跳过价格维度的排序选项（它们不是常规性能维度）
+    var isPrice = d.dim_key.indexOf('价格') !== -1 || d.dim_key === '价格_low' || d.dim_key === '价格_high';
+    if (isPrice) return;
+    opt.textContent = d.label + (d.unit ? ' (' + d.unit + ')' : '');
+    select.appendChild(opt);
+  });
+  // 默认选中第一个维度
+  if (select.options.length > 0) {
+    select.selectedIndex = 0;
+    state.sortKey = select.value;
+  }
+  select.addEventListener('change', function() {
+    state.sortKey = this.value;
+  });
+}
+
+// ============================================================
+// 填充权重滑块
+// ============================================================
+function populateWeightSliders(container, dims) {
+  container.innerHTML = '';
+  dims.forEach(function(d) {
+    // 跳过纯文本型维度
+    if (d.type === 'text') return;
+    var row = document.createElement('div');
+    row.className = 'weight-slider-row';
+
+    var label = document.createElement('label');
+    label.textContent = shortenDimLabel(d.label);
+    row.appendChild(label);
+
+    var slider = document.createElement('input');
+    slider.type = 'range';
+    slider.min = 0;
+    slider.max = 100;
+    slider.value = state.weights[d.dim_key] !== undefined ? state.weights[d.dim_key] : d.default_weight;
+    slider.dataset.dim = d.dim_key;
+    row.appendChild(slider);
+
+    var valSpan = document.createElement('span');
+    valSpan.className = 'weight-value';
+    valSpan.textContent = slider.value;
+    row.appendChild(valSpan);
+
+    slider.addEventListener('input', function() {
+      valSpan.textContent = this.value;
+      state.weights[d.dim_key] = parseInt(this.value, 10);
+    });
+
+    container.appendChild(row);
+  });
+}
+
+// 截断维度标签（太长的缩短）
+function shortenDimLabel(label) {
+  if (label.length > 5) return label.substring(0, 4) + '…';
+  return label;
+}
+
+// ============================================================
+// 填充品牌标签
+// ============================================================
+function populateBrandTags(panel, products, selected) {
+  var container = panel.querySelector('.brand-tags');
+  if (!container) return;
+  container.innerHTML = '';
+
+  // 从产品中提取唯一品牌
+  var brands = [];
+  var seen = {};
+  products.forEach(function(p) {
+    if (!seen[p.brand]) {
+      seen[p.brand] = true;
+      brands.push(p.brand);
+    }
+  });
+
+  brands.sort();
+  if (brands.length === 0) return;
+
+  // "全部" 标签
+  var allTag = document.createElement('span');
+  allTag.className = 'brand-tag' + (selected.length === 0 ? ' active' : '');
+  allTag.textContent = '全部';
+  allTag.dataset.brand = '__all__';
+  allTag.addEventListener('click', function() {
+    state.selectedBrands = [];
+    container.querySelectorAll('.brand-tag').forEach(function(t) { t.classList.remove('active'); });
+    this.classList.add('active');
+  });
+  container.appendChild(allTag);
+
+  brands.forEach(function(b) {
+    var tag = document.createElement('span');
+    tag.className = 'brand-tag' + (selected.indexOf(b) !== -1 ? ' active' : '');
+    tag.textContent = b;
+    tag.dataset.brand = b;
+    tag.addEventListener('click', function() {
+      var isActive = this.classList.contains('active');
+      // 清除"全部"选中
+      container.querySelectorAll('.brand-tag[data-brand="__all__"]').forEach(function(t) { t.classList.remove('active'); });
+      if (isActive) {
+        this.classList.remove('active');
+        state.selectedBrands = state.selectedBrands.filter(function(s) { return s !== b; });
+      } else {
+        this.classList.add('active');
+        state.selectedBrands.push(b);
+      }
+      // 如果没有选中任何品牌，恢复"全部"
+      if (state.selectedBrands.length === 0) {
+        container.querySelectorAll('.brand-tag[data-brand="__all__"]').forEach(function(t) { t.classList.add('active'); });
+      }
+    });
+    container.appendChild(tag);
+  });
+}
+
+// ============================================================
+// 应用筛选（核心：取数 + 渲染）
+// ============================================================
+async function applyFilters(slug) {
+  var section = document.getElementById(slug);
+  if (!section) return;
+  var panel = section.querySelector('.filter-panel');
+  if (!panel) return;
+
+  // 显示加载中
+  var loading = panel.querySelector('.filter-loading');
+  if (loading) loading.style.display = '';
+  var resultCount = panel.querySelector('.filter-result-count');
+  if (resultCount) resultCount.textContent = '';
+
+  // 收集当前状态
+  var params = {
+    brands: state.selectedBrands,
+    priceMin: state.priceMin,
+    priceMax: state.priceMax,
+    sortKey: state.sortMode === 'single' ? state.sortKey : '',
+    sortDir: state.sortDir,
+    weights: state.sortMode === 'weighted' ? state.weights : {},
+    page: 1,
+    pageSize: 100
+  };
+
+  // 排序：加权模式下，排序维度使用加权综合分
+  if (state.sortMode === 'single' && params.sortKey) {
+    // 单维度模式已有 sortKey
+  } else {
+    params.sortKey = '';
+  }
+
+  var data = await fetchProducts(slug, params);
+
+  if (loading) loading.style.display = 'none';
+
+  if (!data) {
+    // API 不可用，恢复静态表格
+    if (resultCount) resultCount.textContent = 'API 暂不可用，显示静态数据';
+    restoreStaticTable(section);
+    return;
+  }
+
+  state.products = data.products || [];
+
+  // 更新结果计数
+  if (resultCount) {
+    resultCount.textContent = '共 ' + data.total + ' 款产品';
+  }
+
+  // 更新品牌标签（从返回数据中提取品牌）
+  populateBrandTags(panel, state.products, state.selectedBrands);
+
+  // 渲染动态表格
+  renderDimTable(panel, state.products, state.currentDims);
+}
+
+// ============================================================
+// 重置筛选
+// ============================================================
+function resetFilters(slug) {
+  state.selectedBrands = [];
+  state.priceMin = 0;
+  state.priceMax = 0;
+  state.sortMode = 'weighted';
+  state.sortKey = '';
+  state.sortDir = 'desc';
+  state.weights = {};
+
+  var section = document.getElementById(slug);
+  if (!section) return;
+  var panel = section.querySelector('.filter-panel');
+  if (!panel) return;
+
+  // 重置 UI
+  panel.querySelectorAll('.sort-tab').forEach(function(t) {
+    t.classList.remove('active');
+    if (t.dataset.mode === 'weighted') t.classList.add('active');
+  });
+  panel.querySelector('.sort-weighted-row').style.display = '';
+  panel.querySelector('.sort-single-row').style.display = 'none';
+
+  panel.querySelectorAll('.brand-tag').forEach(function(t) { t.classList.remove('active'); });
+  var allTag = panel.querySelector('.brand-tag[data-brand="__all__"]');
+  if (allTag) allTag.classList.add('active');
+
+  panel.querySelectorAll('.price-input').forEach(function(inp) { inp.value = ''; });
+
+  panel.querySelector('.sort-dir-select').value = 'desc';
+
+  // 重置滑块到默认权重
+  var wsContainer = panel.querySelector('.weight-sliders');
+  if (wsContainer) {
+    wsContainer.querySelectorAll('input[type="range"]').forEach(function(slider) {
+      var dimKey = slider.dataset.dim;
+      if (dimKey) {
+        var dimDef = state.currentDims.find(function(d) { return d.dim_key === dimKey; });
+        var defaultW = dimDef ? dimDef.default_weight : 50;
+        slider.value = defaultW;
+        var vs = slider.parentElement.querySelector('.weight-value');
+        if (vs) vs.textContent = defaultW;
+      }
+    });
+  }
+
+  applyFilters(slug);
+}
+
+// ============================================================
+// 恢复静态表格（API 不可用时）
+// ============================================================
+function restoreStaticTable(section) {
+  var dynamicWrap = section.querySelector('.dynamic-table-wrap');
+  if (dynamicWrap) dynamicWrap.remove();
+  // 显示所有原有的 table-wrap
+  section.querySelectorAll('.card-body > .table-wrap').forEach(function(w) {
+    w.style.display = '';
+    w.classList.remove('hidden');
+  });
+}
+
+// ============================================================
+// 动态渲染维度对比表
+// ============================================================
+function renderDimTable(panel, products, dims) {
+  var section = panel.closest('.section');
+  if (!section) return;
+
+  var cardBody = panel.parentElement;
+  if (!cardBody) return;
+
+  // 移除旧的动态表格
+  var oldDynamic = cardBody.querySelector('.dynamic-table-wrap');
+  if (oldDynamic) oldDynamic.remove();
+
+  if (!products || products.length === 0) {
+    // 无产品，恢复静态表格
+    cardBody.querySelectorAll(':scope > .table-wrap').forEach(function(w) {
+      w.style.display = '';
+      w.classList.remove('hidden');
+    });
+    return;
+  }
+
+  // 隐藏静态表格
+  cardBody.querySelectorAll(':scope > .table-wrap').forEach(function(w) {
+    w.style.display = 'none';
+  });
+
+  // 过滤维度：跳过价格和 text 类型（价格单独显示在表头，text 太长不适合表格）
+  var displayDims = [];
+  var usedKeys = {};
+  dims.forEach(function(d) {
+    if (d.type === 'text') return;
+    if (usedKeys[d.dim_key]) return;
+    usedKeys[d.dim_key] = true;
+    displayDims.push(d);
+  });
+
+  // 限制显示的产品数量（最多 10 个避免表格过宽）
+  var displayProducts = products.slice(0, 10);
+
+  var wrap = document.createElement('div');
+  wrap.className = 'table-wrap dynamic-table-wrap ready';
+
+  var table = document.createElement('table');
+  table.className = 'dim-table-dynamic';
+
+  // 表头
+  var thead = document.createElement('thead');
+  var headerRow = document.createElement('tr');
+  var th0 = document.createElement('th');
+  th0.textContent = '维度';
+  headerRow.appendChild(th0);
+
+  displayProducts.forEach(function(p) {
+    var th = document.createElement('th');
+    th.className = 'brand-header';
+    th.innerHTML = '<span class="brand-name">' + escapeHtml(p.brand) + '</span>' +
+      (p.model ? '<span class="brand-model">' + escapeHtml(p.model) + '</span>' : '');
+    headerRow.appendChild(th);
+  });
+  thead.appendChild(headerRow);
+  table.appendChild(thead);
+
+  // 表体
+  var tbody = document.createElement('tbody');
+
+  // 第一行：价格
+  var priceRow = document.createElement('tr');
+  var priceLabel = document.createElement('td');
+  priceLabel.textContent = '价格区间';
+  priceRow.appendChild(priceLabel);
+  displayProducts.forEach(function(p) {
+    var td = document.createElement('td');
+    if (p.price_low > 0 && p.price_high > 0) {
+      td.textContent = formatPrice(p.price_low) + ' - ' + formatPrice(p.price_high) + '元';
+    } else if (p.price_low > 0) {
+      td.textContent = formatPrice(p.price_low) + '元起';
+    } else if (p.price_high > 0) {
+      td.textContent = '~' + formatPrice(p.price_high) + '元';
+    } else {
+      td.textContent = '—';
+    }
+    td.className = 'dim-val';
+    priceRow.appendChild(td);
+  });
+  tbody.appendChild(priceRow);
+
+  // 每个维度一行
+  displayDims.forEach(function(d) {
+    var row = document.createElement('tr');
+    var labelCell = document.createElement('td');
+    labelCell.textContent = d.label + (d.unit ? ' (' + d.unit + ')' : '');
+    row.appendChild(labelCell);
+
+    displayProducts.forEach(function(p) {
+      var td = document.createElement('td');
+      td.className = 'dim-val';
+      var rawVal = p.dimensions ? p.dimensions[d.dim_key] : undefined;
+      if (rawVal === undefined || rawVal === null || rawVal === '') {
+        td.textContent = '—';
+        td.style.color = 'var(--text-light)';
+      } else {
+        td.textContent = formatDimValue(rawVal, d.type, d.unit);
+        if (d.type === 'bool') {
+          td.className = 'dim-val ' + (rawVal ? 'dim-bool-yes' : 'dim-bool-no');
+        }
+      }
+      row.appendChild(td);
+    });
+    tbody.appendChild(row);
+  });
+
+  // 最后一行：综合得分
+  var scoreRow = document.createElement('tr');
+  var scoreLabel = document.createElement('td');
+  scoreLabel.textContent = '综合得分';
+  scoreRow.appendChild(scoreLabel);
+  displayProducts.forEach(function(p) {
+    var td = document.createElement('td');
+    td.className = 'score-cell';
+    td.textContent = p.total_score ? p.total_score.toFixed(1) : '—';
+    scoreRow.appendChild(td);
+  });
+  tbody.appendChild(scoreRow);
+
+  table.appendChild(tbody);
+  wrap.appendChild(table);
+  cardBody.insertBefore(wrap, panel.nextSibling);
+}
+
+// ============================================================
+// 工具函数
+// ============================================================
+function formatPrice(val) {
+  if (val >= 10000) return (val / 10000).toFixed(1) + '万';
+  if (val >= 1000) return Math.round(val).toString();
+  return val.toString();
+}
+
+function formatDimValue(val, type, unit) {
+  if (typeof val === 'boolean') return val ? '✅' : '❌';
+  if (typeof val === 'number') {
+    if (unit === '%') return val + '%';
+    if (unit === '分' || unit === '级') return val.toString();
+    return val.toFixed(1);
+  }
+  return String(val);
+}
+
+function escapeHtml(str) {
+  var div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
 }
 </script>
 
