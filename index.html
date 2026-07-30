@@ -13,53 +13,52 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--primary:#2563eb;--primary-light:#3b82f6;--accent:#f59e0b;--bg:#f5f7fa;--card:#fff;--text:#1e293b;--text-light:#64748b;--border:#e2e8f0;--success:#10b981;--danger:#ef4444;--warning:#f59e0b;--radius:12px;--shadow:0 2px 8px rgba(0,0,0,.08)}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:15px;-webkit-text-size-adjust:100%}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:17px;-webkit-text-size-adjust:100%}
 a{color:var(--primary);text-decoration:none}
 /* Header */
 .hero{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 50%,#3b82f6 100%);color:#fff;padding:48px 20px 32px;text-align:center;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,.05) 0%,transparent 60%);animation:pulse 8s ease-in-out infinite}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
-.hero h1{font-size:clamp(22px,5vw,36px);font-weight:800;margin-bottom:12px;position:relative;text-shadow:0 2px 4px rgba(0,0,0,.2)}
-.hero .subtitle{font-size:clamp(13px,3vw,16px);opacity:.9;margin-bottom:20px;position:relative}
+.hero h1{font-size:clamp(24px,5vw,38px);font-weight:800;margin-bottom:12px;position:relative;text-shadow:0 2px 4px rgba(0,0,0,.2)}
+.hero .subtitle{font-size:clamp(14px,3vw,17px);opacity:.9;margin-bottom:20px;position:relative}
 .search-box{max-width:500px;margin:0 auto;position:relative}
-.search-box input{width:100%;padding:12px 16px 12px 42px;border:none;border-radius:24px;font-size:15px;background:rgba(255,255,255,.95);color:var(--text);outline:none;box-shadow:0 4px 12px rgba(0,0,0,.15)}
+.search-box input{width:100%;padding:14px 16px 14px 44px;border:none;border-radius:24px;font-size:16px;background:rgba(255,255,255,.95);color:var(--text);outline:none;box-shadow:0 4px 12px rgba(0,0,0,.15)}
 .search-box .search-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:18px}
 /* Nav */
 .nav-wrap{position:sticky;top:0;z-index:100;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.08);border-bottom:1px solid var(--border)}
 .nav-scroll{display:flex;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:0 12px}
 .nav-scroll::-webkit-scrollbar{display:none}
-.nav-tab{flex-shrink:0;padding:12px 14px;font-size:13px;color:var(--text-light);cursor:pointer;border-bottom:3px solid transparent;transition:all .2s;white-space:nowrap;user-select:none}
+.nav-tab{flex-shrink:0;padding:14px 14px;font-size:14px;color:var(--text-light);cursor:pointer;border-bottom:3px solid transparent;transition:all .2s;white-space:nowrap;user-select:none}
 .nav-tab.active{color:var(--primary);border-bottom-color:var(--primary);font-weight:600}
 .nav-tab:hover{color:var(--primary)}
 /* Container */
-.container{max-width:960px;margin:0 auto;padding:16px}
+.container{max-width:960px;margin:0 auto;padding:20px}
 /* Section */
-.section{margin-bottom:20px}
-.section-title{font-size:18px;font-weight:700;padding:16px 0 12px;display:flex;align-items:center;gap:8px}
+.section{margin-bottom:28px}
+.section-title{font-size:20px;font-weight:700;padding:18px 0 14px;display:flex;align-items:center;gap:8px}
 /* Card */
-.card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:16px;overflow:hidden;border:1px solid var(--border)}
-.card-header{padding:16px;font-weight:700;font-size:16px;display:flex;align-items:center;gap:8px;cursor:pointer;user-select:none;transition:background .2s}
+.card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:18px;overflow:hidden;border:1px solid var(--border)}
+.card-header{padding:18px 18px;font-weight:700;font-size:17px;display:flex;align-items:center;gap:8px;cursor:pointer;user-select:none;transition:background .2s}
 .card-header:hover{background:#f8fafc}
-.card-header .arrow{margin-left:auto;transition:transform .3s;font-size:12px;color:var(--text-light)}
+.card-header .arrow{margin-left:auto;transition:transform .3s;font-size:13px;color:var(--text-light)}
 .card-header.open .arrow{transform:rotate(90deg)}
-.card-body{padding:0 16px 16px;display:none}
+.card-body{padding:0 18px 18px;display:none}
 .card-body.show{display:block}
 /* Sub section collapsible */
-.sub-section{border:1px solid var(--border);border-radius:8px;margin-bottom:10px;overflow:hidden}
-.sub-header{padding:12px 14px;background:#f8fafc;font-weight:600;font-size:14px;cursor:pointer;display:flex;align-items:center;gap:6px;user-select:none}
+.sub-section{border:1px solid var(--border);border-radius:8px;margin-bottom:12px;overflow:hidden}
+.sub-header{padding:14px 16px;background:#f8fafc;font-weight:600;font-size:15px;cursor:pointer;display:flex;align-items:center;gap:6px;user-select:none}
 .sub-header:hover{background:#f1f5f9}
-.sub-header .arrow{margin-left:auto;transition:transform .3s;font-size:11px;color:var(--text-light)}
+.sub-header .arrow{margin-left:auto;transition:transform .3s;font-size:12px;color:var(--text-light)}
 .sub-header.open .arrow{transform:rotate(90deg)}
-.sub-body{padding:12px 14px;display:none;border-top:1px solid var(--border)}
+.sub-body{padding:14px 16px;display:none;border-top:1px solid var(--border)}
 .sub-body.show{display:block}
 /* Table */
-.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:8px 0}
-table{width:100%;border-collapse:collapse;font-size:13px;min-width:400px}
-th{background:#f1f5f9;padding:10px 8px;text-align:left;font-weight:600;white-space:nowrap;border-bottom:2px solid var(--border)}
-td{padding:8px;border-bottom:1px solid var(--border);vertical-align:top}
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:10px 0}
+table{width:100%;border-collapse:collapse;font-size:15px;min-width:500px}
+th{background:#f1f5f9;padding:12px 10px;text-align:left;font-weight:600;white-space:nowrap;border-bottom:2px solid var(--border);font-size:15px}
+td{padding:10px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.6}
 tr:hover td{background:#f8fafc}
-/* Badge */
-.badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;margin:2px}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;margin:2px;white-space:nowrap}
 .badge-high{background:#fef2f2;color:#dc2626}
 .badge-mid{background:#fffbeb;color:#d97706}
 .badge-low{background:#f0fdf4;color:#16a34a}
@@ -68,10 +67,9 @@ tr:hover td{background:#f8fafc}
 /* Overview table */
 .overview-table td:first-child{font-weight:600;white-space:nowrap}
 /* Tags */
-.tag-list{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
-.tag{padding:4px 10px;border-radius:16px;font-size:12px;background:#f1f5f9;color:var(--text-light)}
-/* User feedback */
-.feedback-item{padding:8px 0;border-bottom:1px solid var(--border)}
+.tag-list{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.tag{padding:5px 12px;border-radius:16px;font-size:13px;background:#f1f5f9;color:var(--text-light)}
+.feedback-item{padding:10px 0;border-bottom:1px solid var(--border);font-size:15px;line-height:1.7}
 .feedback-item:last-child{border-bottom:none}
 .pros{color:var(--success)}
 .cons{color:var(--danger)}
@@ -80,24 +78,31 @@ tr:hover td{background:#f8fafc}
 .back-top{position:fixed;bottom:24px;right:24px;width:44px;height:44px;border-radius:50%;background:var(--primary);color:#fff;border:none;font-size:20px;cursor:pointer;box-shadow:0 4px 12px rgba(37,99,235,.4);display:none;z-index:200;align-items:center;justify-content:center;transition:opacity .3s}
 .back-top.show{display:flex}
 /* Topic card */
-.topic-card{background:linear-gradient(135deg,#f0f9ff,#eff6ff);border:1px solid #bfdbfe;border-radius:var(--radius);padding:16px;margin-bottom:16px}
-.topic-card h3{font-size:16px;color:#1e40af;margin-bottom:12px}
+.topic-card{background:linear-gradient(135deg,#f0f9ff,#eff6ff);border:1px solid #bfdbfe;border-radius:var(--radius);padding:18px;margin-bottom:18px}
+.topic-card h3{font-size:17px;color:#1e40af;margin-bottom:14px}
 /* Footer */
-.footer{background:#1e293b;color:#94a3b8;padding:32px 20px;text-align:center;font-size:13px;line-height:1.8}
+.footer{background:#1e293b;color:#94a3b8;padding:32px 20px;text-align:center;font-size:14px;line-height:1.8}
 .footer a{color:#60a5fa}
 /* Highlight box */
-.highlight-box{background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:12px;margin:8px 0;font-size:13px}
-.danger-box{background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:12px;margin:8px 0;font-size:13px}
-.info-box{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:12px;margin:8px 0;font-size:13px}
+.highlight-box{background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:14px;margin:8px 0;font-size:15px;line-height:1.7}
+.danger-box{background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:14px;margin:8px 0;font-size:15px;line-height:1.7}
+.info-box{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:14px;margin:8px 0;font-size:15px;line-height:1.7}
 /* Responsive */
 @media(min-width:768px){
-.container{padding:24px}
+.container{padding:28px}
 .card-header{font-size:18px}
-table{font-size:14px}
+table{font-size:15px}
+.section-title{font-size:22px}
 }
 /* Search highlight */
 .search-match{background:#fef08a;padding:1px 2px;border-radius:2px}
 .hidden{display:none!important}
+/* 选购建议独立卡片 */
+.advice-card{background:linear-gradient(135deg,#fffbeb,#fef3c7);border:2px solid #f59e0b;border-radius:var(--radius);padding:18px;margin-bottom:18px;font-size:15px;line-height:1.7}
+.advice-card::before{content:'💡 选购建议';display:block;font-weight:700;font-size:17px;margin-bottom:10px;color:#92400e}
+/* 多维度对比表：品牌为列 */
+.dim-table th:first-child{min-width:90px;background:#e8eef8;font-weight:700}
+.dim-table td:first-child{font-weight:600;background:#f8fafc;white-space:nowrap}
 </style>
 </head>
 <body>
@@ -151,10 +156,10 @@ table{font-size:14px}
 <div class="section-title">📋 速查总览 — 各品类品牌推荐一览</div>
 <div class="card">
 <div class="card-body show">
-<div class="highlight-box">💡 以下为各品类高端首选、性价比之选和极致低价速查，详细型号和参数请展开各品类卡片查看。价格仅供参考，以实际购买为准。</div>
+<div class="highlight-box">💡 以下为各品类品质型、均衡型和经济型速查，详细参数请展开各品类卡片查看。价格仅供参考，以实际购买为准。</div>
 <div class="table-wrap">
 <table class="overview-table">
-<thead><tr><th>品类</th><th>🏆 高端首选</th><th>⭐ 性价比之选</th><th>💰 极致低价</th></tr></thead>
+<thead><tr><th>品类</th><th>🏆 品质型</th><th>⭐ 均衡型</th><th>💰 经济型</th></tr></thead>
 <tbody>
 <tr><td>🍳 抽油烟机</td><td>方太、老板</td><td>美的、华帝</td><td>森太、苏泊尔</td></tr>
 <tr><td>🔥 燃气灶</td><td>方太、老板</td><td>华帝、美的</td><td>苏泊尔、万和</td></tr>
@@ -210,14 +215,17 @@ table{font-size:14px}
 <div class="info-box">📊 线上份额：方太17.28%、老板17.27%（仅差0.01%）、华帝10.03%，"方老华"三强合计近45%。方太在2000元以上价位段销量占比高达45.2%。</div>
 </div></div>
 
-<div class="card"><div class="card-header" onclick="toggleCard(this)">📊 多维度对比 <span class="arrow">▶</span></div><div class="card-body">
-<div class="table-wrap"><table><thead><tr><th>品牌</th><th>✅ 优点</th><th>❌ 缺点</th></tr></thead><tbody>
-<tr><td>方太</td><td>专利最多(全球TOP1)，高端品质，售后好，静音出色</td><td>价格贵，性价比低</td></tr>
-<tr><td>老板</td><td>市场份额大，技术成熟，型号丰富，双腔变频静音</td><td>中高端价格偏高</td></tr>
-<tr><td>美的</td><td>性价比极高，售后网点多，覆盖全价位</td><td>高端技术积累不如方太老板</td></tr>
-<tr><td>华帝</td><td>价格亲民，烟灶套装性价比高</td><td>品牌高端感不足</td></tr>
-<tr><td>海尔</td><td>品质稳定，智能功能丰富</td><td>油烟机非核心业务，创新略少</td></tr>
-<tr><td>西门子</td><td>德系精工，用料扎实</td><td>价格最贵，产品线少，售后成本高</td></tr>
+<div class="card"><div class="card-header" onclick="toggleCard(this)">📊 多维度详细对比 <span class="arrow">▶</span></div><div class="card-body">
+<div class="table-wrap"><table class="dim-table"><thead><tr><th>维度</th><th>方太</th><th>老板</th><th>美的</th><th>华帝</th><th>海尔</th><th>西门子</th></tr></thead><tbody>
+<tr><td>价格区间</td><td>2,500-6,000元</td><td>2,500-5,000元</td><td>800-2,500元</td><td>1,000-2,500元</td><td>1,500-3,000元</td><td>3,000-8,000元</td></tr>
+<tr><td>风量</td><td>22-30m³/min</td><td>23-26m³/min</td><td>18-23m³/min</td><td>20-23m³/min</td><td>20-22m³/min</td><td>18-22m³/min</td></tr>
+<tr><td>最大静压</td><td>500-1450Pa</td><td>550-1000Pa</td><td>350-550Pa</td><td>380-500Pa</td><td>380-500Pa</td><td>400-600Pa</td></tr>
+<tr><td>噪音</td><td>48-52dB，静音出色</td><td>50-53dB</td><td>52-58dB</td><td>52-56dB</td><td>52-56dB</td><td>50-55dB</td></tr>
+<tr><td>能效</td><td>一级能效</td><td>一级能效</td><td>一级能效</td><td>一级能效</td><td>一级能效</td><td>一级能效</td></tr>
+<tr><td>保修</td><td>整机5年</td><td>整机5年</td><td>整机6年</td><td>整机3年</td><td>整机5年</td><td>整机1年</td></tr>
+<tr><td>核心技术</td><td>巡航增压3.0，专利TOP1</td><td>双腔变频静音，三面拢烟</td><td>自清洗，高性价比</td><td>高频自清洗，烟灶联动</td><td>智能互联，自清洁</td><td>德系精工，无极变速</td></tr>
+<tr><td>线上份额</td><td>17.28%</td><td>17.27%</td><td>~10%</td><td>10.03%</td><td>~8%</td><td>~3%</td></tr>
+<tr><td>满意度</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐</td></tr>
 </tbody></table></div>
 </div></div>
 
@@ -238,6 +246,10 @@ table{font-size:14px}
 </div></div>
 </div>
 
+<div class="advice-card">预算2000元以下选<strong>美的J25S</strong>（21m³/min，自清洗），3000-4500元选<strong>方太JCD10TA</strong>（23m³/min，1000Pa静压），预算充足一步到位选<strong>方太V10-G</strong>（30m³/min）或<strong>老板小黑翼D1P</strong>。开放式厨房必须选大风量+高静压机型，中式爆炒优先选侧吸或顶侧双吸。</div>
+
+</div>
+
 <!-- ===== 2. 燃气灶 ===== -->
 <div class="section" id="cat-2">
 <div class="section-title">🔥 燃气灶</div>
@@ -248,6 +260,18 @@ table{font-size:14px}
 <tr><td><span class="badge badge-low">第三梯队</span></td><td>苏泊尔、万和、西门子、林内/能率</td></tr>
 </tbody></table></div>
 <div class="danger-box">⚠️ <strong>新国标GB30720-2025</strong>：2026年正式实行，一级能效门槛从63%提高到<strong>70%</strong>，旧国标一级现在只能算三级。选购时注意是否为新国标产品。</div>
+</div></div>
+
+<div class="card"><div class="card-header" onclick="toggleCard(this)">📊 多维度详细对比 <span class="arrow">▶</span></div><div class="card-body">
+<div class="table-wrap"><table class="dim-table"><thead><tr><th>维度</th><th>方太</th><th>老板</th><th>华帝</th><th>美的</th><th>苏泊尔</th><th>万和</th></tr></thead><tbody>
+<tr><td>价格区间</td><td>1,500-3,000元</td><td>1,500-2,500元</td><td>800-2,000元</td><td>600-1,800元</td><td>500-1,200元</td><td>600-1,200元</td></tr>
+<tr><td>火力</td><td>5.0kW+</td><td>5.0kW+</td><td>4.5-5.2kW</td><td>4.5-5.0kW</td><td>4.5-5.2kW</td><td>4.2-5.0kW</td></tr>
+<tr><td>热效率</td><td>新国标一级(70%+)</td><td>新国标一级(70%+)</td><td>一级(63-68%)</td><td>一级(63-68%)</td><td>一级(63-65%)</td><td>一级(63-65%)</td></tr>
+<tr><td>面板材质</td><td>钢化玻璃</td><td>钢化玻璃</td><td>钢化玻璃</td><td>钢化玻璃</td><td>钢化玻璃</td><td>钢化玻璃</td></tr>
+<tr><td>熄火保护</td><td>✅ 热电偶式</td><td>✅ 热电偶式</td><td>✅ 热电偶式</td><td>✅ 热电偶式</td><td>✅ 热电偶式</td><td>✅ 热电偶式</td></tr>
+<tr><td>保修</td><td>整机5年</td><td>整机5年</td><td>整机3年</td><td>整机3年</td><td>1-3年</td><td>1-3年</td></tr>
+<tr><td>核心特点</td><td>高效燃烧，烟灶联动</td><td>火力均匀，品质稳定</td><td>灶具专家，火盖耐用</td><td>智能定时，性价比高</td><td>价格极低，基础全</td><td>性价比突出</td></tr>
+</tbody></table></div>
 </div></div>
 
 <div class="card"><div class="card-header" onclick="toggleCard(this)">💰 推荐型号与价格 <span class="arrow">▶</span></div><div class="card-body">
@@ -261,14 +285,16 @@ table{font-size:14px}
 <tr><td>德普</td><td>热门款</td><td>800-1,500</td><td>表现均衡</td><td>一级能效</td></tr>
 <tr><td>林内/能率</td><td>日系款</td><td>2,000-4,000</td><td>火力精准控制</td><td>高品质</td></tr>
 </tbody></table></div>
-<div class="highlight-box">💡 选购建议：火力建议4.5kW以上，大火爆炒选5.0kW+。必须具有熄火保护装置和童锁功能。烟灶套装购买更划算（华帝烟灶套装仅2000+元）。</div>
 </div></div>
 
-<div class="card"><div class="card-header" onclick="toggleCard(this)">💬 用户口碑与售后 <span class="arrow">▶</span></div><div class="card-body">
+<div class="card"><div class="card-header" onclick="toggleCard(this)">💬 用户口碑 <span class="arrow">▶</span></div><div class="card-body">
 <div class="feedback-item"><span class="pros">✅ 好评：</span>方太/老板品质稳定，华帝性价比高，烟灶联动方便</div>
 <div class="feedback-item"><span class="cons">❌ 差评：</span>部分低价款火力不足；点火器寿命短</div>
 <div class="feedback-item"><span class="tip">💡 避坑：</span>确认气源类型（天然气/液化气）；注意新国标标识</div>
 </div></div>
+
+<div class="advice-card">火力建议<strong>4.5kW以上</strong>，大火爆炒选5.0kW+。必须具有熄火保护装置和童锁功能。烟灶套装更划算（华帝烟灶套装仅2000+元）。注意<strong>2026年新国标</strong>，旧一级能效可能降级为三级。</div>
+
 </div>
 
 <!-- ===== 3. 蒸烤箱 ===== -->
@@ -280,6 +306,19 @@ table{font-size:14px}
 <tr><td><span class="badge badge-mid">一线厨电</span></td><td>老板、方太</td><td>品牌溢价，品质保障</td></tr>
 <tr><td><span class="badge badge-blue">综合家电</span></td><td>美的、西门子、松下</td><td>智能功能强，生态完善</td></tr>
 <tr><td><span class="badge badge-low">性价比</span></td><td>德普</td><td>价格亲民</td></tr>
+</tbody></table></div>
+</div></div>
+
+<div class="card"><div class="card-header" onclick="toggleCard(this)">📊 多维度详细对比 <span class="arrow">▶</span></div><div class="card-body">
+<div class="table-wrap"><table class="dim-table"><thead><tr><th>维度</th><th>凯度</th><th>美的</th><th>老板</th><th>方太</th><th>西门子</th><th>松下</th></tr></thead><tbody>
+<tr><td>价格区间</td><td>4,000-8,000元</td><td>3,000-7,000元</td><td>3,500-6,000元</td><td>5,000-8,000元</td><td>6,000-12,000元</td><td>4,000-8,000元</td></tr>
+<tr><td>容量</td><td>50-60L</td><td>40-55L</td><td>50-60L</td><td>45-55L</td><td>45-60L</td><td>30-45L</td></tr>
+<tr><td>最高温度</td><td>230-250°C</td><td>230-250°C</td><td>230°C</td><td>230°C</td><td>250°C</td><td>230°C</td></tr>
+<tr><td>蒸功能</td><td>双直喷大蒸汽</td><td>澎湃蒸</td><td>高温蒸</td><td>大蒸汽蒸</td><td>精准蒸汽</td><td>日式蒸</td></tr>
+<tr><td>烤功能</td><td>双热风(专业烤)</td><td>多面烤</td><td>多面烤</td><td>多面烤</td><td>3D热风</td><td>多面烤</td></tr>
+<tr><td>微波功能</td><td>TR Pro有</td><td>寻味Pro有</td><td>D2有</td><td>部分有</td><td>部分有</td><td>部分有</td></tr>
+<tr><td>保修</td><td>整机3年</td><td>整机3年</td><td>整机5年</td><td>整机5年</td><td>整机1年</td><td>整机1年</td></tr>
+<tr><td>核心特点</td><td>双热风，专业标杆</td><td>五合一，智能互联</td><td>大容量，烤出色</td><td>高端嵌入式典范</td><td>德系精工</td><td>日系品质，蒸出色</td></tr>
 </tbody></table></div>
 </div></div>
 
@@ -305,6 +344,10 @@ table{font-size:14px}
 </div></div>
 </div>
 
+<div class="advice-card">蒸烤专业需求选<strong>凯度TD Pro三代</strong>（双热风技术，口碑最佳）；多功能一体选<strong>美的寻味Pro 2.0</strong>（微蒸炸烤炖五合一）；品牌品质选<strong>老板盐系G2</strong>。微蒸烤一体是主流趋势，容量建议40L以上。注意：蒸烤一体温度上限比独立烤箱低约30度。</div>
+
+</div>
+
 <!-- ===== 4. 洗碗机 ===== -->
 <div class="section" id="cat-4">
 <div class="section-title">🍽️ 洗碗机</div>
@@ -314,6 +357,19 @@ table{font-size:14px}
 <tr><td><span class="badge badge-mid">国产双雄</span></td><td>美的、海尔</td><td>覆盖低中高端，性价比优势</td></tr>
 <tr><td><span class="badge badge-blue">水槽式开创者</span></td><td>方太</td><td>水槽式洗碗机品类领导者</td></tr>
 <tr><td><span class="badge badge-purple">高端品牌</span></td><td>卡萨帝、美诺(Miele)</td><td>超高端市场</td></tr>
+</tbody></table></div>
+</div></div>
+
+<div class="card"><div class="card-header" onclick="toggleCard(this)">📊 多维度详细对比 <span class="arrow">▶</span></div><div class="card-body">
+<div class="table-wrap"><table class="dim-table"><thead><tr><th>维度</th><th>西门子</th><th>美的</th><th>海尔</th><th>方太</th><th>老板</th><th>慧曼</th></tr></thead><tbody>
+<tr><td>价格区间</td><td>3,000-8,000元</td><td>1,500-8,000元</td><td>2,000-6,000元</td><td>4,000-8,000元</td><td>3,000-7,000元</td><td>2,000-5,000元</td></tr>
+<tr><td>类型</td><td>嵌入式/独立式</td><td>台式/嵌入/灶下</td><td>嵌入式</td><td>水槽式</td><td>嵌入式</td><td>嵌入式</td></tr>
+<tr><td>容量</td><td>8-18套</td><td>小型-大容量</td><td>各容量段</td><td>小型</td><td>中大容量</td><td>中小容量</td></tr>
+<tr><td>烘干方式</td><td>晶蕾/热交换</td><td>热风烘干</td><td>热风烘干</td><td>余热烘干</td><td>热风烘干</td><td>热风烘干</td></tr>
+<tr><td>噪音</td><td>42-46dB</td><td>44-50dB</td><td>44-48dB</td><td>48-55dB</td><td>44-48dB</td><td>44-50dB</td></tr>
+<tr><td>水效</td><td>一级</td><td>一级</td><td>一级</td><td>一级</td><td>一级</td><td>一级</td></tr>
+<tr><td>保修</td><td>整机1年</td><td>整机3年</td><td>整机3年</td><td>整机5年</td><td>整机5年</td><td>整机1年</td></tr>
+<tr><td>核心特点</td><td>德系品质，线下王</td><td>全价位覆盖，连续7年销冠</td><td>智能洗，售后好</td><td>水槽式不占空间</td><td>大容量，洗净好</td><td>价格亲民</td></tr>
 </tbody></table></div>
 </div></div>
 
@@ -329,7 +385,6 @@ table{font-size:14px}
 <tr><td>老板</td><td>嵌入式系列</td><td>嵌入式</td><td>3,000-7,000</td><td>中大容量</td></tr>
 <tr><td>慧曼</td><td>多款</td><td>嵌入式</td><td>2,000-5,000</td><td>性价比之选</td></tr>
 </tbody></table></div>
-<div class="highlight-box">💡 类型选择：嵌入式（新房装修首选，美观容量大）| 独立式（已装修完，灵活摆放）| 水槽式（厨房小，可替换水槽加装）| 台式（租房/人口少）</div>
 </div></div>
 
 <div class="card"><div class="card-header" onclick="toggleCard(this)">💬 用户口碑与避坑 <span class="arrow">▶</span></div><div class="card-body">
@@ -348,6 +403,10 @@ table{font-size:14px}
 </div></div>
 </div>
 
+<div class="advice-card"><strong>类型选择：</strong>新房装修首选嵌入式（美观容量大）| 已装修选独立式（灵活摆放）| 厨房小选水槽式（替换水槽）| 租房选台式。<strong>容量宁大勿小</strong>，推荐13套以上，锅碗瓢盆一次搞定。美的连续7年全国销量第一，性价比最优；西门子线下王者，品质标杆。</div>
+
+</div>
+
 <!-- ===== 5. 净水器 ===== -->
 <div class="section" id="cat-5">
 <div class="section-title">💧 净水器</div>
@@ -357,6 +416,19 @@ table{font-size:14px}
 <tr><td><span class="badge badge-mid">综合家电</span></td><td>美的、海尔</td><td>智能控制，通量大，售后好</td></tr>
 <tr><td><span class="badge badge-low">互联网品牌</span></td><td>小米/米家、云米</td><td>极致性价比，智能互联</td></tr>
 <tr><td><span class="badge badge-blue">国际品牌</span></td><td>A.O.史密斯、霍尼韦尔、3M</td><td>进口RO膜，品质高端</td></tr>
+</tbody></table></div>
+</div></div>
+
+<div class="card"><div class="card-header" onclick="toggleCard(this)">📊 多维度详细对比 <span class="arrow">▶</span></div><div class="card-body">
+<div class="table-wrap"><table class="dim-table"><thead><tr><th>维度</th><th>小米/米家</th><th>美的</th><th>沁园</th><th>海尔</th><th>安吉尔</th><th>A.O.史密斯</th></tr></thead><tbody>
+<tr><td>价格区间</td><td>700-1,500元</td><td>1,500-3,000元</td><td>1,500-3,000元</td><td>1,000-2,500元</td><td>1,500-4,000元</td><td>3,000-6,000元</td></tr>
+<tr><td>通量</td><td>600-1200G</td><td>800-1200G</td><td>1000-1400G</td><td>600-1000G</td><td>600-1200G</td><td>600-1000G</td></tr>
+<tr><td>RO膜寿命</td><td>2-3年</td><td>3-5年</td><td>5-8年</td><td>2-4年</td><td>3-5年</td><td>3-5年</td></tr>
+<tr><td>废水比</td><td>2:1</td><td>3:1</td><td>3:1</td><td>2:1</td><td>2:1-3:1</td><td>2:1</td></tr>
+<tr><td>年均耗材</td><td>500-800元</td><td>600-1000元</td><td>400-800元</td><td>500-900元</td><td>600-1000元</td><td>800-1200元</td></tr>
+<tr><td>过滤级数</td><td>5级(RO反渗透)</td><td>5级(陶氏RO膜)</td><td>5级</td><td>5级</td><td>5级</td><td>5级(进口RO)</td></tr>
+<tr><td>保修</td><td>1年</td><td>3年</td><td>3年</td><td>3年</td><td>3年</td><td>3年</td></tr>
+<tr><td>核心特点</td><td>性价比之王，米家联动</td><td>进口陶氏RO膜</td><td>8年RO膜，超长寿命</td><td>品质稳定，售后好</td><td>专业净水品牌</td><td>国际品质高端</td></tr>
 </tbody></table></div>
 </div></div>
 
@@ -391,6 +463,10 @@ table{font-size:14px}
 </div></div>
 </div>
 
+<div class="advice-card">预算有限选<strong>小米厨下RO</strong>（700-1500元，极致性价比）；看重耗材成本选<strong>沁园金榜双子芯</strong>（8年RO膜，年均耗材最低）；追求品质选<strong>美的白泽Max 1200G</strong>（进口陶氏RO膜）。<strong>核心：</strong>核算3-5年总成本，机器便宜不一定省钱，长效滤芯才是真省钱。</div>
+
+</div>
+
 <!-- ===== 6. 冰箱 ===== -->
 <div class="section" id="cat-6">
 <div class="section-title">❄️ 冰箱</div>
@@ -403,6 +479,19 @@ table{font-size:14px}
 <tr><td><span class="badge badge-purple">互联网品牌</span></td><td>小米/米家</td><td>出货量超280万台</td></tr>
 </tbody></table></div>
 <div class="info-box">📊 高端市场（1.5万+）：卡萨帝71.08%，西门子12.3%，松下8.5%。嵌入式渗透率从2023年初9%升至2025年末53%。</div>
+</div></div>
+
+<div class="card"><div class="card-header" onclick="toggleCard(this)">📊 多维度详细对比 <span class="arrow">▶</span></div><div class="card-body">
+<div class="table-wrap"><table class="dim-table"><thead><tr><th>维度</th><th>海尔</th><th>美的</th><th>容声</th><th>卡萨帝</th><th>小米</th><th>西门子</th></tr></thead><tbody>
+<tr><td>价格区间</td><td>2,500-8,000元</td><td>2,500-6,000元</td><td>3,000-5,000元</td><td>8,000-15,000元</td><td>2,500-3,500元</td><td>5,000-15,000元</td></tr>
+<tr><td>主流容量</td><td>400-550L</td><td>400-550L</td><td>400-550L</td><td>500-600L</td><td>400-510L</td><td>400-600L</td></tr>
+<tr><td>主流门型</td><td>法式/十字/对开</td><td>法式/十字</td><td>法式/十字</td><td>法式多门</td><td>十字/法式</td><td>法式/对开</td></tr>
+<tr><td>制冷方式</td><td>风冷无霜</td><td>风冷无霜</td><td>风冷无霜</td><td>风冷无霜</td><td>风冷无霜</td><td>风冷/混冷</td></tr>
+<tr><td>双系统</td><td>中高端标配</td><td>部分型号</td><td>部分型号(如526)</td><td>标配双系统</td><td>无</td><td>双循环</td></tr>
+<tr><td>嵌入深度</td><td>594-600mm</td><td>594-600mm</td><td>标准/超薄</td><td>594mm超薄零嵌</td><td>600mm平嵌</td><td>标准</td></tr>
+<tr><td>保修</td><td>整机3年</td><td>整机3年</td><td>整机3年</td><td>整机10年</td><td>整机1年</td><td>整机1年</td></tr>
+<tr><td>核心特点</td><td>全球第一，全空间保鲜</td><td>超薄零嵌，双系统</td><td>双系统，干湿分储</td><td>高端标杆，自动制冰</td><td>极致性价比，米家联动</td><td>德系品质，双循环</td></tr>
+</tbody></table></div>
 </div></div>
 
 <div class="card"><div class="card-header" onclick="toggleCard(this)">🚪 门型选择指南 <span class="arrow">▶</span></div><div class="card-body">
@@ -436,30 +525,78 @@ table{font-size:14px}
 </div></div>
 </div>
 
+<div class="advice-card">极致性价比选<strong>华凌547</strong>（2500元，超薄嵌入）；均衡之选<strong>容声526</strong>（双系统，干湿分储）；品质升级选<strong>海尔麦浪顶配版</strong>或<strong>美的502L</strong>；高端一步到位选<strong>卡萨帝揽光520L</strong>（超薄零嵌+自动制冰）。<strong>核心：</strong>提前精确测量预留空间，嵌入式冰箱尺寸差1cm就装不上。</div>
+
+</div>
+
 <!-- ===== 7. 消毒柜 ===== -->
 <div class="section" id="cat-7">
 <div class="section-title">🧹 消毒柜</div>
-<div class="card"><div class="card-header" onclick="toggleCard(this)">🏗️ 品牌梯队与推荐 <span class="arrow">▶</span></div><div class="card-body">
+<div class="card"><div class="card-header" onclick="toggleCard(this)">🏗️ 品牌梯队 <span class="arrow">▶</span></div><div class="card-body">
 <div class="table-wrap"><table><thead><tr><th>梯队</th><th>品牌</th><th>特点</th></tr></thead><tbody>
 <tr><td><span class="badge badge-high">行业标杆</span></td><td>康宝</td><td>消毒柜专业品牌，口碑评分最高(8.6分)</td></tr>
 <tr><td><span class="badge badge-mid">一线厨电</span></td><td>方太、老板</td><td>高端嵌入式，品质好但性价比一般</td></tr>
 <tr><td><span class="badge badge-blue">综合家电</span></td><td>美的、海尔</td><td>覆盖全价位，智能互联</td></tr>
 </tbody></table></div>
+</div></div>
+
+<div class="card"><div class="card-header" onclick="toggleCard(this)">📊 多维度详细对比 <span class="arrow">▶</span></div><div class="card-body">
+<div class="table-wrap"><table class="dim-table"><thead><tr><th>维度</th><th>康宝</th><th>方太</th><th>老板</th><th>美的</th><th>海尔</th></tr></thead><tbody>
+<tr><td>价格区间</td><td>800-2,500元</td><td>2,000-4,000元</td><td>1,500-3,500元</td><td>800-2,000元</td><td>800-2,000元</td></tr>
+<tr><td>容量</td><td>100-110L</td><td>100-125L</td><td>100-120L</td><td>90-110L</td><td>90-110L</td></tr>
+<tr><td>消毒方式</td><td>高温+紫外线+臭氧</td><td>光热混动，无臭氧味</td><td>高温+紫外线</td><td>高温+紫外线</td><td>高温+紫外线</td></tr>
+<tr><td>杀菌率</td><td>99.99%</td><td>99.99%</td><td>99.9%</td><td>99.9%</td><td>99.9%</td></tr>
+<tr><td>安装方式</td><td>嵌入式/立式</td><td>嵌入式</td><td>嵌入式</td><td>嵌入式</td><td>嵌入式</td></tr>
+<tr><td>保修</td><td>整机3年</td><td>整机5年</td><td>整机5年</td><td>整机3年</td><td>整机3年</td></tr>
+<tr><td>核心特点</td><td>专业品牌，口碑最佳</td><td>光热混动科技</td><td>大容量，品质稳定</td><td>智能互联，母婴</td><td>售后好，智能联动</td></tr>
+</tbody></table></div>
+</div></div>
+
+<div class="card"><div class="card-header" onclick="toggleCard(this)">💰 推荐型号与价格 <span class="arrow">▶</span></div><div class="card-body">
 <div class="table-wrap"><table><thead><tr><th>品牌</th><th>推荐型号</th><th>类型</th><th>价格(元)</th><th>核心亮点</th></tr></thead><tbody>
 <tr><td>康宝</td><td>XDZ100-D1</td><td>嵌入式</td><td>800-1,500</td><td>三重消毒，杀菌率99.9%</td></tr>
 <tr><td>康宝</td><td>XDZ110-EN321PRO</td><td>嵌入式</td><td>1,500-2,500</td><td>304不锈钢，110L大容量</td></tr>
 <tr><td>美的</td><td>嵌入式系列</td><td>嵌入式</td><td>800-2,000</td><td>智能互联，母婴功能</td></tr>
 <tr><td>方太</td><td>ZTD125H-01-H01</td><td>嵌入式</td><td>2,000-4,000</td><td>光热混动科技，无臭氧味</td></tr>
 </tbody></table></div>
-<div class="highlight-box">💡 趋势：消毒柜市场逐渐被集成灶(带消毒功能)和洗碗机(带消毒功能)分流，独立消毒柜需求在下降。选高温+紫外线+臭氧三重消毒为佳。</div>
 </div></div>
+
+<div class="card"><div class="card-header" onclick="toggleCard(this)">💬 用户口碑与趋势 <span class="arrow">▶</span></div><div class="card-body">
+<div class="feedback-item"><span class="pros">✅ 好评：</span>康宝专业口碑好，杀菌效果靠谱</div>
+<div class="feedback-item"><span class="cons">❌ 差评：</span>部分低价款消毒不彻底；臭氧味残留</div>
+<div class="feedback-item"><span class="tip">💡 趋势：</span>消毒柜市场逐渐被集成灶(带消毒功能)和洗碗机(带消毒功能)分流，独立消毒柜需求下降</div>
+</div></div>
+
+<div class="advice-card">专业首选<strong>康宝</strong>（消毒柜专业品牌，口碑评分最高8.6分）；高端嵌入式选<strong>方太</strong>（光热混动，无臭氧味）；性价比选<strong>美的</strong>（智能互联，母婴功能）。选<strong>高温+紫外线+臭氧三重消毒</strong>为佳。</div>
+
 </div>
 
 <!-- ===== 8. 中央空调/风管机 ===== -->
 <div class="section" id="cat-8">
 <div class="section-title">🌬️ 中央空调/风管机</div>
-<div class="card"><div class="card-header" onclick="toggleCard(this)">🏗️ 品牌推荐与型号 <span class="arrow">▶</span></div><div class="card-body">
+<div class="card"><div class="card-header" onclick="toggleCard(this)">🏗️ 品牌梯队 <span class="arrow">▶</span></div><div class="card-body">
 <div class="info-box">📊 2025年国内中央空调市场销售额同比+4.5%，一级能效产品占比首超35%。风管机纳入国补名单，2025Q1销量猛增47%。市场前五：格力、美的、大金、日立、海尔。</div>
+<div class="table-wrap"><table><thead><tr><th>梯队</th><th>品牌</th><th>特点</th></tr></thead><tbody>
+<tr><td><span class="badge badge-high">日系高端</span></td><td>大金、日立、三菱电机</td><td>变频技术最成熟，静音出色，价格最高</td></tr>
+<tr><td><span class="badge badge-mid">国产双雄</span></td><td>格力、美的</td><td>市场份额最大，性价比高，售后覆盖广</td></tr>
+<tr><td><span class="badge badge-blue">追赶者</span></td><td>海尔、海信</td><td>省电技术突出，价位适中</td></tr>
+<tr><td><span class="badge badge-low">性价比</span></td><td>小米、统帅、TCL</td><td>价格亲民，适合预算有限</td></tr>
+</tbody></table></div>
+</div></div>
+
+<div class="card"><div class="card-header" onclick="toggleCard(this)">📊 多维度详细对比 <span class="arrow">▶</span></div><div class="card-body">
+<div class="table-wrap"><table class="dim-table"><thead><tr><th>维度</th><th>大金</th><th>日立</th><th>格力</th><th>美的</th><th>海尔</th><th>小米</th></tr></thead><tbody>
+<tr><td>价格(全屋)</td><td>8万-12万</td><td>6万-10万</td><td>5万-8万</td><td>4万-7万</td><td>4万-7万</td><td>3万-5万</td></tr>
+<tr><td>3匹风管机</td><td>—</td><td>4,400-5,600元</td><td>6,000-8,000元</td><td>5,000-6,000元</td><td>5,000-7,000元</td><td>~5,000元</td></tr>
+<tr><td>压缩机</td><td>自研变频</td><td>自研全直流</td><td>自研压缩机</td><td>美芝压缩机</td><td>三菱/自研</td><td>三洋双缸</td></tr>
+<tr><td>能效(APF)</td><td>一级(4.0+)</td><td>一级(4.15)</td><td>一级</td><td>一级</td><td>一级(4.75)</td><td>一级</td></tr>
+<tr><td>噪音</td><td>极低18-22dB</td><td>极低18-22dB</td><td>低20-25dB</td><td>低20-26dB</td><td>低20-25dB</td><td>中22-28dB</td></tr>
+<tr><td>保修</td><td>整机3年</td><td>整机3年</td><td>整机6年</td><td>整机6年</td><td>整机6年</td><td>整机3年</td></tr>
+<tr><td>核心技术</td><td>变频鼻祖，VRV系统</td><td>全直流，192mm超薄</td><td>自研压缩机+芯片</td><td>65℃不宕机，WiFi线控</td><td>纳米光触媒除醛</td><td>米家智能联动</td></tr>
+</tbody></table></div>
+</div></div>
+
+<div class="card"><div class="card-header" onclick="toggleCard(this)">💰 推荐型号与价格 <span class="arrow">▶</span></div><div class="card-body">
 <div class="table-wrap"><table><thead><tr><th>品牌</th><th>推荐型号</th><th>价格(元)</th><th>核心参数</th><th>口碑</th></tr></thead><tbody>
 <tr><td>日立</td><td>U享1.5匹 RPIZ-35HDQ1/P</td><td>4,400-5,600</td><td>全直流变频，APF4.15，192mm超薄，18dB低噪</td><td>日系务实之选</td></tr>
 <tr><td>美的</td><td>酷省电3匹风管机</td><td>5,000-6,000</td><td>美芝压缩机，65℃不宕机，WiFi线控器</td><td>性价比标杆，线上销量TOP1</td></tr>
@@ -477,30 +614,78 @@ table{font-size:14px}
 <div class="feedback-item"><span class="cons">❌ 差评：</span>漏水、噪音、制冷差多由安装不当造成</div>
 <div class="feedback-item"><span class="tip">💡 避坑：</span>精准匹配户型与匹数（每平米220W制冷量）；选全直流变频；合同注明辅材品牌规格；整机质保不低于6年</div>
 </div></div>
+
+<div class="advice-card">风管机性价比首选<strong>美的酷省电3匹</strong>（线上销量TOP1，65℃不宕机）；品质之选<strong>日立U享</strong>（日系变频，18dB超静音）；智能生态选<strong>小米强劲风超3匹</strong>（米家联动）。一拖多全屋方案：高端选大金VRV，均衡选格力/美的。<strong>核心：安装团队比品牌更重要</strong>，合同必须注明辅材品牌规格。</div>
+
 </div>
 
 <!-- ===== 9. 新风系统 ===== -->
 <div class="section" id="cat-9">
 <div class="section-title">🌿 新风系统</div>
-<div class="card"><div class="card-header" onclick="toggleCard(this)">🏗️ 品牌推荐与型号 <span class="arrow">▶</span></div><div class="card-body">
+<div class="card"><div class="card-header" onclick="toggleCard(this)">🏗️ 品牌梯队 <span class="arrow">▶</span></div><div class="card-body">
+<div class="table-wrap"><table><thead><tr><th>梯队</th><th>品牌</th><th>特点</th></tr></thead><tbody>
+<tr><td><span class="badge badge-high">国际标杆</span></td><td>松下、霍尼韦尔</td><td>技术成熟，过滤效果好，价格最高</td></tr>
+<tr><td><span class="badge badge-mid">国产技术</span></td><td>远大、造梦者</td><td>性价比高，过滤等级优秀</td></tr>
+<tr><td><span class="badge badge-blue">后装/精装</span></td><td>德普莱太、AIRMX</td><td>立柜式/壁挂式，无需破坏装修</td></tr>
+</tbody></table></div>
+</div></div>
+
+<div class="card"><div class="card-header" onclick="toggleCard(this)">📊 多维度详细对比 <span class="arrow">▶</span></div><div class="card-body">
+<div class="table-wrap"><table class="dim-table"><thead><tr><th>维度</th><th>松下</th><th>远大</th><th>霍尼韦尔</th><th>造梦者</th><th>德普莱太</th></tr></thead><tbody>
+<tr><td>价格区间</td><td>壁挂2k-5k；管道8k-18k</td><td>3,000-6,000元</td><td>8,000-15,000元</td><td>3,000-8,000元</td><td>6,000-12,000元</td></tr>
+<tr><td>风量(m³/h)</td><td>150-500</td><td>150-350</td><td>200-500</td><td>200-400</td><td>300-550</td></tr>
+<tr><td>过滤等级</td><td>HEPA H13</td><td>H13+静电除尘</td><td>HEPA高效</td><td>H13级HEPA</td><td>H13级HEPA</td></tr>
+<tr><td>热交换率</td><td>70-80%（全热）</td><td>60-70%</td><td>65-75%</td><td>65-75%</td><td>60-70%</td></tr>
+<tr><td>噪音</td><td>25-38dB</td><td>28-40dB</td><td>25-38dB</td><td>28-42dB</td><td>30-42dB</td></tr>
+<tr><td>安装方式</td><td>壁挂/管道</td><td>壁挂式为主</td><td>管道式</td><td>壁挂/立柜</td><td>立柜式</td></tr>
+<tr><td>保修</td><td>整机2年</td><td>整机2年</td><td>整机1年</td><td>整机2年</td><td>整机2年</td></tr>
+<tr><td>核心特点</td><td>第3代直流马达，智能风控</td><td>静电除尘98%PM2.5</td><td>过滤成熟，高端进口</td><td>大风量高静压</td><td>立柜式，不破坏装修</td></tr>
+</tbody></table></div>
+</div></div>
+
+<div class="card"><div class="card-header" onclick="toggleCard(this)">💰 推荐型号与价格 <span class="arrow">▶</span></div><div class="card-body">
 <div class="table-wrap"><table><thead><tr><th>品牌</th><th>推荐型号</th><th>价格(元)</th><th>核心参数</th><th>口碑</th></tr></thead><tbody>
 <tr><td>松下</td><td>FV-RP05HP1(壁挂)/全热交换器(管道)</td><td>壁挂2k-5k；管道8k-18k</td><td>第3代直流马达，智能风控</td><td>新风领域标杆</td></tr>
 <tr><td>远大</td><td>FE系列壁挂式</td><td>3,000-6,000</td><td>三级过滤+静电除尘(98% PM2.5)，H13级HEPA</td><td>国产技术领先</td></tr>
 <tr><td>霍尼韦尔</td><td>管道式新风系统</td><td>8,000-15,000</td><td>过滤技术成熟</td><td>高端进口品牌</td></tr>
-<tr><td>德普莱太</td><td>“臻致”系列(立柜式)</td><td>6,000-12,000</td><td>立式橱柜设计，无需破坏装修</td><td>精装房/老房改造首选</td></tr>
+<tr><td>德普莱太</td><td>"臻致"系列(立柜式)</td><td>6,000-12,000</td><td>立式橱柜设计，无需破坏装修</td><td>精装房/老房改造首选</td></tr>
 <tr><td>造梦者</td><td>壁挂/立柜系列</td><td>3,000-8,000</td><td>大风量高静压，H13级过滤</td><td>后装新风优选</td></tr>
 <tr><td>AIRMX</td><td>Pro 1S(立柜式)</td><td>8,000-15,000</td><td>550m³/h大风量，适用200㎡</td><td>大户型高端之选</td></tr>
 <tr><td>氧风</td><td>全热交换新风除湿一体机</td><td>15,000-20,000</td><td>除湿+新风二合一</td><td>别墅/地下室专用</td></tr>
 </tbody></table></div>
-<div class="highlight-box">💡 选购建议：精装房/老房改造→壁挂式（远大、松下、造梦者）；新房装修→管道式（松下、霍尼韦尔）；大户型/别墅→管道式全热交换+除湿一体机</div>
 </div></div>
+
+<div class="advice-card"><strong>精装房/老房改造</strong>→壁挂式（远大FE系列、松下FV-RP05HP1）；<strong>新房装修</strong>→管道式（松下全热交换器、霍尼韦尔）；<strong>大户型/别墅</strong>→管道式全热交换+除湿一体机（氧风）。注意过滤等级至少H13级HEPA。</div>
+
 </div>
 
 <!-- ===== 10. 挂机/柜机空调 ===== -->
 <div class="section" id="cat-10">
 <div class="section-title">🏠 挂机/柜机空调</div>
-<div class="card"><div class="card-header" onclick="toggleCard(this)">🏗️ 1.5匹挂机推荐 <span class="arrow">▶</span></div><div class="card-body">
+
+<div class="card"><div class="card-header" onclick="toggleCard(this)">🏗️ 品牌梯队 <span class="arrow">▶</span></div><div class="card-body">
 <div class="info-box">📊 2025年空调零售量7,604万台(+4.4%)。线上份额：美的~29%、格力~24%、海尔~15%、小米~13.5%（黑马崛起）。2100元以下首次超50%。</div>
+<div class="table-wrap"><table><thead><tr><th>梯队</th><th>品牌</th><th>特点</th></tr></thead><tbody>
+<tr><td><span class="badge badge-high">第一梯队</span></td><td>格力、美的</td><td>合计线上超53%，自研压缩机，售后覆盖广</td></tr>
+<tr><td><span class="badge badge-mid">第二梯队</span></td><td>海尔、小米</td><td>份额增长快，智能生态/售后优势</td></tr>
+<tr><td><span class="badge badge-low">性价比</span></td><td>华凌、TCL、奥克斯</td><td>价格极低，核心部件不差</td></tr>
+</tbody></table></div>
+</div></div>
+
+<div class="card"><div class="card-header" onclick="toggleCard(this)">📊 多维度详细对比（1.5匹挂机） <span class="arrow">▶</span></div><div class="card-body">
+<div class="table-wrap"><table class="dim-table"><thead><tr><th>维度</th><th>美的</th><th>格力</th><th>华凌</th><th>海尔</th><th>小米</th><th>TCL</th></tr></thead><tbody>
+<tr><td>价格区间</td><td>2,000-2,800元</td><td>2,500-3,500元</td><td>1,500-2,200元</td><td>2,000-3,000元</td><td>1,600-2,500元</td><td>1,500-2,000元</td></tr>
+<tr><td>能效(APF)</td><td>5.30(超高)</td><td>4.70-5.0</td><td>4.70-5.0</td><td>4.50-4.80</td><td>4.50-4.80</td><td>4.40-4.70</td></tr>
+<tr><td>压缩机</td><td>美芝(自研)</td><td>凌达(自研)</td><td>美芝(美的同款)</td><td>三菱/海立</td><td>美芝/海立</td><td>美芝/海立</td></tr>
+<tr><td>噪音(内机)</td><td>18-22dB</td><td>18-22dB</td><td>18-24dB</td><td>18-24dB</td><td>20-26dB</td><td>22-28dB</td></tr>
+<tr><td>自清洁</td><td>✅ 第四代</td><td>✅ 56℃</td><td>✅ 部分有</td><td>✅ 自清洁</td><td>✅ 部分有</td><td>✅ 部分有</td></tr>
+<tr><td>保修</td><td>6年+压缩机10年</td><td>6年+压缩机10年</td><td>整机6年</td><td>整机6年</td><td>整机3年</td><td>整机3年</td></tr>
+<tr><td>线上份额</td><td>~29%</td><td>~24%</td><td>美的子品牌</td><td>~15%</td><td>~13.5%</td><td>~5%</td></tr>
+<tr><td>核心特点</td><td>挂机销量王，超高能效</td><td>自研压缩机，品质过硬</td><td>高配低价，性价比王</td><td>自清洁好，售后广</td><td>米家联动，离子净化</td><td>价格最低，一级能效</td></tr>
+</tbody></table></div>
+</div></div>
+
+<div class="card"><div class="card-header" onclick="toggleCard(this)">💰 1.5匹挂机推荐 <span class="arrow">▶</span></div><div class="card-body">
 <div class="table-wrap"><table><thead><tr><th>品牌</th><th>推荐型号</th><th>价格(元)</th><th>核心参数</th><th>口碑</th></tr></thead><tbody>
 <tr><td>美的</td><td>酷省电1.5匹</td><td>2,000-2,800</td><td>APF5.30超高能效，美芝压缩机</td><td>挂机销量王</td></tr>
 <tr><td>格力</td><td>云佳/云锦系列</td><td>2,500-3,500</td><td>自研压缩机，静音出色</td><td>空调第一品牌</td></tr>
@@ -527,6 +712,10 @@ table{font-size:14px}
 </div></div>
 </div>
 
+<div class="advice-card">1.5匹性价比之王<strong>华凌N8HB1A</strong>（1500元，美芝核心，美的子品牌）；销量冠军<strong>美的酷省电</strong>（APF5.30超高能效）；品质标杆<strong>格力云佳/云锦</strong>；智能首选<strong>小米健康风Pro</strong>。3匹柜机性价比选华凌/美的，品质选格力。<strong>核心：安装费提前确认</strong>，避免被加收高额辅材费。</div>
+
+</div>
+
 <!-- ===== 11. 扫地机器人/洗地机 ===== -->
 <div class="section" id="cat-11">
 <div class="section-title">🤖 扫地机器人/洗地机</div>
@@ -543,6 +732,18 @@ table{font-size:14px}
 <tr><td>小米</td><td>扫地机器人系列</td><td>1,000-2,500</td><td>价格极低，米家生态联动</td><td>入门性价比之选</td></tr>
 </tbody></table></div>
 </div></div>
+<div class="card"><div class="card-header" onclick="toggleCard(this)">📊 多维度详细对比 <span class="arrow">▶</span></div><div class="card-body">
+<div class="table-wrap"><table class="dim-table"><thead><tr><th>维度</th><th>科沃斯</th><th>石头</th><th>追觅</th><th>云鲸</th><th>小米</th></tr></thead><tbody>
+<tr><td>价格区间</td><td>2,000-5,500元</td><td>2,500-4,500元</td><td>3,000-6,000元</td><td>3,000-4,500元</td><td>1,000-2,500元</td></tr>
+<tr><td>吸力</td><td>5000-12800Pa</td><td>6000-11000Pa</td><td>8000-15000Pa</td><td>5000-8000Pa</td><td>3000-6000Pa</td></tr>
+<tr><td>拖地方式</td><td>恒压活水滚筒</td><td>圆拖布旋转</td><td>滚筒/圆拖</td><td>履带式洗地</td><td>圆拖布/平板</td></tr>
+<tr><td>避障技术</td><td>3D结构光+AI</td><td>3D结构光+AI</td><td>3D结构光+AI</td><td>真双目(3D)</td><td>激光+AI</td></tr>
+<tr><td>基站功能</td><td>全能基站</td><td>全能+热水洗拖布</td><td>全能+自清洁</td><td>全能+自清洁</td><td>基础功能</td></tr>
+<tr><td>保修</td><td>整机1年</td><td>整机1年</td><td>整机1年</td><td>整机1年</td><td>整机1年</td></tr>
+<tr><td>核心特点</td><td>滚筒洗地王者，品类领导</td><td>100�C热水洗拖布</td><td>6cm仿生机械足越障</td><td>双目避障，履带洗地</td><td>极致性价比，米家生态</td></tr>
+</tbody></table></div>
+</div></div>
+
 
 <div class="card"><div class="card-header" onclick="toggleCard(this)">🏗️ 洗地机推荐 <span class="arrow">▶</span></div><div class="card-body">
 <div class="table-wrap"><table><thead><tr><th>品牌</th><th>推荐型号</th><th>价格(元)</th><th>核心参数</th><th>口碑</th></tr></thead><tbody>
@@ -560,6 +761,10 @@ table{font-size:14px}
 </div></div>
 </div>
 
+
+<div class="advice-card">2000元性价比之王<strong>科沃斯T50 Max</strong>（超薄，双机械臂）；3000元档综合最优<strong>科沃斯T80S Pro</strong>（活水滚筒洗地）；带娃家庭/避障需求<strong>云鲸JX</strong>（唯一真双目避障）；顶配旗舰<strong>科沃斯X12 Pro</strong>或<strong>追觅X60 Pro</strong>。洗地机：技术选追觅T40 Ultra，老牌选添可。</div>
+
+</div>
 <!-- ===== 12. 空气净化器 ===== -->
 <div class="section" id="cat-12">
 <div class="section-title">🌸 空气净化器</div>
@@ -574,8 +779,24 @@ table{font-size:14px}
 <tr><td>IQAir</td><td>家用系列</td><td>8,000-20,000+</td><td>瑞士品牌，HEPA滤网技术全球顶尖</td><td>顶级专业品牌</td></tr>
 </tbody></table></div>
 </div></div>
+<div class="card"><div class="card-header" onclick="toggleCard(this)">📊 多维度详细对比 <span class="arrow">▶</span></div><div class="card-body">
+<div class="table-wrap"><table class="dim-table"><thead><tr><th>维度</th><th>宫菱</th><th>352</th><th>IAM</th><th>小米</th><th>美的</th><th>IQAir</th></tr></thead><tbody>
+<tr><td>价格区间</td><td>3,000-5,000元</td><td>3,000-6,000元</td><td>4,000-8,000元</td><td>600-2,000元</td><td>1,500-4,000元</td><td>8,000-20,000+元</td></tr>
+<tr><td>颗粒物CADR</td><td>1689m³/h</td><td>800-1200m³/h</td><td>600-900m³/h</td><td>300-600m³/h</td><td>400-800m³/h</td><td>500-900m³/h</td></tr>
+<tr><td>甲醛CADR</td><td>1053m³/h</td><td>600-1000m³/h</td><td>400-700m³/h</td><td>200-400m³/h</td><td>300-600m³/h</td><td>300-600m³/h</td></tr>
+<tr><td>噪音</td><td>30-62dB</td><td>28-60dB</td><td>28-58dB</td><td>30-65dB</td><td>28-62dB</td><td>22-55dB</td></tr>
+<tr><td>滤芯寿命</td><td>1-2年</td><td>1-2年(堆料扎实)</td><td>1-2年</td><td>6-12月</td><td>1-2年</td><td>2-3年</td></tr>
+<tr><td>保修</td><td>整机1年</td><td>整机1年</td><td>整机2年</td><td>整机1年</td><td>整机1年</td><td>整机3年</td></tr>
+<tr><td>核心特点</td><td>5A医护级，除醛专家</td><td>专业除醛，堆料扎实</td><td>英国品牌，轻量设计</td><td>性价比之王，米家联动</td><td>母婴级认证，除菌好</td><td>瑞士顶级，HEPA全球顶尖</td></tr>
+</tbody></table></div>
+</div></div>
+
 </div>
 
+
+<div class="advice-card">新屋除甲醛首选<strong>宫菱MARS</strong>（甲醛CADR 1053m³/h，5A医护级）或<strong>352旗舰系列</strong>；日常防霾除菌选<strong>小米4 Pro H</strong>（入门性价比之王）；母婴家庭选<strong>美的</strong>（母婴级认证）；预算无上限选<strong>IQAir</strong>（瑞士顶级）。<strong>核心：看CADR值</strong>，数值越大净化越快。</div>
+
+</div>
 <!-- ===== 13. 智能马桶 ===== -->
 <div class="section" id="cat-13">
 <div class="section-title">🚽 智能马桶</div>
@@ -593,6 +814,19 @@ table{font-size:14px}
 <tr><td>海尔</td><td>H3K/H3C</td><td>2,000-3,500</td><td>全智能翻盖，泡沫盾，品牌售后好</td><td>家电跨界之选</td></tr>
 </tbody></table></div>
 </div></div>
+<div class="card"><div class="card-header" onclick="toggleCard(this)">📊 多维度详细对比 <span class="arrow">▶</span></div><div class="card-body">
+<div class="table-wrap"><table class="dim-table"><thead><tr><th>维度</th><th>九牧</th><th>恒洁</th><th>松下</th><th>箭牌</th><th>TOTO</th><th>海尔</th></tr></thead><tbody>
+<tr><td>价格区间</td><td>1,400-3,000元</td><td>2,500-4,000元</td><td>1,700-4,700元</td><td>2,000-3,000元</td><td>8,000-15,000元</td><td>2,000-3,500元</td></tr>
+<tr><td>加热方式</td><td>即热式</td><td>即热式</td><td>即热式</td><td>即热式</td><td>即热式</td><td>即热式</td></tr>
+<tr><td>冲洗技术</td><td>多模式冲洗</td><td>超漩虹吸静音</td><td>脉冲水流</td><td>多模式冲洗</td><td>卫洗丽技术</td><td>多模式冲洗</td></tr>
+<tr><td>翻盖方式</td><td>脚感翻盖</td><td>微波感应</td><td>手动/自动</td><td>微波感应</td><td>自动感应</td><td>全智能翻盖</td></tr>
+<tr><td>座圈抗菌</td><td>✅ SIAA认证</td><td>✅ 抗菌座圈</td><td>✅ 3D抗菌</td><td>✅ 抗菌座圈</td><td>✅ 抗菌釉面</td><td>✅ 抗菌座圈</td></tr>
+<tr><td>水压要求</td><td>无水压限制</td><td>无水压限制</td><td>需增压泵</td><td>无水压限制</td><td>标准水压</td><td>无水压限制</td></tr>
+<tr><td>保修</td><td>整机5年</td><td>整机5年</td><td>整机3年</td><td>整机3年</td><td>整机2年</td><td>整机5年</td></tr>
+<tr><td>核心特点</td><td>千元性价比之王</td><td>同价位功能最全</td><td>日系品质，简单实用</td><td>性价比好</td><td>卫浴标杆，质感无敌</td><td>品牌售后好</td></tr>
+</tbody></table></div>
+</div></div>
+
 
 <div class="card"><div class="card-header" onclick="toggleCard(this)">💬 用户口碑与避坑 <span class="arrow">▶</span></div><div class="card-body">
 <div class="feedback-item"><span class="pros">✅ 好评：</span>座圈加热、自动冲洗、暖风烘干提升体验</div>
@@ -601,6 +835,10 @@ table{font-size:14px}
 </div></div>
 </div>
 
+
+<div class="advice-card">千元性价比之王<strong>九牧SQ8450</strong>（1400元，内置水箱无水压限制）；2000元档选<strong>九牧SQ9650</strong>或<strong>松下Q6</strong>；功能最全选<strong>恒洁H5Pro</strong>（同价位功能最全）；高端质感选<strong>TOTO G5Lite</strong>或<strong>松下V8 Pro</strong>。<strong>核心：下单前确认水压和坑距</strong>，选即热式不选储热式。</div>
+
+</div>
 <!-- ===== 14. 热水器 ===== -->
 <div class="section" id="cat-14">
 <div class="section-title">🚿 热水器</div>
@@ -614,6 +852,18 @@ table{font-size:14px}
 <tr><td>卡萨帝</td><td>燃气热水器系列</td><td>4,000-8,000</td><td>质量售后一流，高端品质</td><td>国产高端标杆</td></tr>
 </tbody></table></div>
 </div></div>
+<div class="card"><div class="card-header" onclick="toggleCard(this)">📊 多维度详细对比（燃气热水器） <span class="arrow">▶</span></div><div class="card-body">
+<div class="table-wrap"><table class="dim-table"><thead><tr><th>维度</th><th>海尔</th><th>万和</th><th>林内</th><th>能率</th><th>卡萨帝</th><th>美的</th></tr></thead><tbody>
+<tr><td>价格区间</td><td>2,500-4,000元</td><td>1,500-3,000元</td><td>3,000-5,000元</td><td>3,000-5,000元</td><td>4,000-8,000元</td><td>2,000-3,500元</td></tr>
+<tr><td>恒温技术</td><td>水量伺服</td><td>燃气比例阀</td><td>双控伺服(恒温王)</td><td>双控伺服</td><td>水量伺服</td><td>水量伺服</td></tr>
+<tr><td>风机位置</td><td>下置风机</td><td>上置/下置</td><td>下置风机</td><td>下置风机</td><td>下置风机</td><td>上置/下置</td></tr>
+<tr><td>升数</td><td>12-16L</td><td>12-16L</td><td>12-24L</td><td>12-24L</td><td>12-16L</td><td>12-16L</td></tr>
+<tr><td>噪音</td><td>42-48dB</td><td>45-52dB</td><td>38-45dB</td><td>38-45dB</td><td>40-46dB</td><td>44-50dB</td></tr>
+<tr><td>保修</td><td>整机6年</td><td>整机3年</td><td>整机3年</td><td>整机3年</td><td>整机10年</td><td>整机6年</td></tr>
+<tr><td>核心特点</td><td>下置风机，恒温强</td><td>国产销量第一，冷凝节能</td><td>恒温王者，日系品质</td><td>日系高端，恒温精准</td><td>国产高端，品质一流</td><td>APP互联，智能体验</td></tr>
+</tbody></table></div>
+</div></div>
+
 
 <div class="card"><div class="card-header" onclick="toggleCard(this)">🏗️ 电热水器 & 空气能 <span class="arrow">▶</span></div><div class="card-body">
 <div class="table-wrap"><table><thead><tr><th>类型</th><th>品牌</th><th>价格(元)</th><th>核心参数</th></tr></thead><tbody>
@@ -628,6 +878,10 @@ table{font-size:14px}
 </div></div>
 </div>
 
+
+<div class="advice-card">有天然气管道→燃气热水器首选<strong>海尔KL5</strong>（下置风机，恒温技术强）或<strong>万和</strong>（国产销量王）；追求恒温体验→<strong>林内/能率</strong>（日系恒温王者）；无燃气→储水式电热水器（海尔防电墙技术领先）；大平层/别墅→空气能热水器。<strong>核心：安装费提前确认</strong>，避免被加收高额辅材费。</div>
+
+</div>
 <!-- ===== 15. 洗衣机/烘干机 ===== -->
 <div class="section" id="cat-15">
 <div class="section-title">👕 洗衣机/烘干机</div>
@@ -644,6 +898,18 @@ table{font-size:14px}
 </tbody></table></div>
 <div class="info-box">💡 趋势：热泵烘干成主流；双擎热泵烘干效果最佳；洗烘套装优于洗烘一体机（烘干容量更大）；超大容量(洗烘合计20kg)成趋势</div>
 </div></div>
+<div class="card"><div class="card-header" onclick="toggleCard(this)">📊 多维度详细对比 <span class="arrow">▶</span></div><div class="card-body">
+<div class="table-wrap"><table class="dim-table"><thead><tr><th>维度</th><th>海尔</th><th>小天鹅</th><th>卡萨帝</th><th>美的</th><th>西门子</th><th>东芝</th></tr></thead><tbody>
+<tr><td>价格区间</td><td>5,000-10,000元</td><td>4,000-8,000元</td><td>15,000-18,000元</td><td>3,000-6,000元</td><td>8,000-15,000元</td><td>6,000-10,000元</td></tr>
+<tr><td>容量</td><td>10kg洗+10kg烘</td><td>10kg洗+10kg烘</td><td>10kg洗+10kg烘</td><td>10kg洗+10kg烘</td><td>9-10kg</td><td>10kg洗+10kg烘</td></tr>
+<tr><td>电机类型</td><td>FPA直驱变频</td><td>DD直驱</td><td>FPA直驱变频</td><td>BLDC变频</td><td>BLDC变频</td><td>DD直驱</td></tr>
+<tr><td>烘干方式</td><td>双擎热泵</td><td>热泵烘干</td><td>双擎热泵</td><td>热泵烘干</td><td>热泵烘干</td><td>热泵烘干</td></tr>
+<tr><td>洗净比</td><td>1.10+</td><td>1.08+</td><td>1.12+</td><td>1.05+</td><td>1.03+</td><td>1.08+</td></tr>
+<tr><td>保修</td><td>整机3年</td><td>整机3年</td><td>整机10年</td><td>整机3年</td><td>整机1年</td><td>整机3年</td></tr>
+<tr><td>核心特点</td><td>全球销冠，双擎热泵最强</td><td>性价比标杆，羊毛洗烘认证</td><td>高端烘干效果最佳</td><td>价格亲民，功能全</td><td>德系品质，全球联保</td><td>筒根源降噪，0甲醛</td></tr>
+</tbody></table></div>
+</div></div>
+
 
 <div class="card"><div class="card-header" onclick="toggleCard(this)">💬 用户口碑与避坑 <span class="arrow">▶</span></div><div class="card-body">
 <div class="feedback-item"><span class="pros">✅ 好评：</span>海尔精华洗系列洗净效率高；热泵烘干技术成熟</div>
@@ -652,6 +918,10 @@ table{font-size:14px}
 </div></div>
 </div>
 
+
+<div class="advice-card">性价比之选<strong>小天鹅小乌梅/小蓝鲸系列</strong>（洗净比高，羊毛洗烘认证）；品质标杆<strong>海尔双擎热泵洗烘套装</strong>（FPA直驱，全球销冠）；高端一步到位<strong>卡萨帝纤诺L7</strong>（双擎热泵烘干最强）；入门选<strong>美的</strong>。<strong>核心：独立烘干机效果远优于洗烘一体机</strong>，关注电机类型（直驱优于皮带）。</div>
+
+</div>
 <!-- ===== 16. 电视机 ===== -->
 <div class="section" id="cat-16">
 <div class="section-title">📺 电视机</div>
@@ -666,6 +936,19 @@ table{font-size:14px}
 <tr><td>海信</td><td>E7S Pro(2026旗舰)</td><td>75寸10k+</td><td>RGB-MiniLED，黑曜屏Pro，帝瓦雷音响</td><td>年度旗舰</td></tr>
 </tbody></table></div>
 </div></div>
+<div class="card"><div class="card-header" onclick="toggleCard(this)">📊 多维度详细对比（75寸MiniLED） <span class="arrow">▶</span></div><div class="card-body">
+<div class="table-wrap"><table class="dim-table"><thead><tr><th>维度</th><th>TCL</th><th>海信</th><th>小米</th><th>索尼</th><th>三星</th><th>LG</th></tr></thead><tbody>
+<tr><td>价格区间</td><td>4,000-10,000元</td><td>6,000-10,000元</td><td>3,000-8,000元</td><td>15,000-30,000元</td><td>12,000-25,000元</td><td>8,000-18,000元</td></tr>
+<tr><td>面板类型</td><td>QD-MiniLED</td><td>ULED MiniLED</td><td>MiniLED</td><td>OLED</td><td>QD-OLED</td><td>OLED</td></tr>
+<tr><td>分区数</td><td>640+分区</td><td>512+分区</td><td>512-1092分区</td><td>自发光</td><td>自发光</td><td>自发光</td></tr>
+<tr><td>刷新率</td><td>144Hz</td><td>288Hz</td><td>144Hz</td><td>120Hz</td><td>144Hz</td><td>144Hz</td></tr>
+<tr><td>色域</td><td>98% DCI-P3</td><td>95% DCI-P3</td><td>94% DCI-P3</td><td>99% DCI-P3</td><td>99% DCI-P3</td><td>98% DCI-P3</td></tr>
+<tr><td>音响</td><td>2.1声道</td><td>2.1声道杜比全景声</td><td>2.0声道</td><td>屏幕发声</td><td>杜比全景声</td><td>杜比全景声</td></tr>
+<tr><td>保修</td><td>整机1年</td><td>整机1年</td><td>整机1年</td><td>整机1年</td><td>整机1年</td><td>整机1年</td></tr>
+<tr><td>核心特点</td><td>MiniLED画质全球第一</td><td>国产画质标杆，信芯AI芯片</td><td>同价位配置最高</td><td>画质调教最强</td><td>QD-OLED色彩鲜艳</td><td>OLED面板技术最强</td></tr>
+</tbody></table></div>
+</div></div>
+
 
 <div class="card"><div class="card-header" onclick="toggleCard(this)">🏗️ 大尺寸(98寸+) & OLED <span class="arrow">▶</span></div><div class="card-body">
 <div class="table-wrap"><table><thead><tr><th>类型</th><th>品牌</th><th>推荐型号</th><th>价格(元)</th><th>核心参数</th></tr></thead><tbody>
@@ -686,6 +969,10 @@ table{font-size:14px}
 </div></div>
 </div>
 
+
+<div class="advice-card">MiniLED性价比首选<strong>TCL T7K/T7L Ultra</strong>（画质全球第一）；国产品质<strong>海信E7N Pro</strong>（信芯AI芯片，288Hz高刷）；极致性价比<strong>小米S75 Mini LED</strong>；OLED画质巅峰<strong>索尼A95L</strong>。<strong>核心：不要只看参数，关注实际画质调校</strong>；75寸已成入门尺寸，85寸成主流。</div>
+
+</div>
 <!-- ===== 17. 集成灶/垃圾处理器/管线机 ===== -->
 <div class="section" id="cat-17">
 <div class="section-title">🔌 集成灶/垃圾处理器/管线机</div>
@@ -699,6 +986,18 @@ table{font-size:14px}
 <tr><td>帅丰</td><td>5,000-15,000</td><td>技术扎实，蒸烤款表现好</td><td>品牌知名度一般</td></tr>
 </tbody></table></div>
 </div></div>
+<div class="card"><div class="card-header" onclick="toggleCard(this)">📊 多维度详细对比 <span class="arrow">▶</span></div><div class="card-body">
+<div class="table-wrap"><table class="dim-table"><thead><tr><th>维度</th><th>火星人</th><th>亿田</th><th>美大</th><th>森歌</th><th>帅丰</th></tr></thead><tbody>
+<tr><td>价格区间</td><td>6,000-25,000元</td><td>4,799-30,800元</td><td>5,000-20,000元</td><td>4,000-18,000元</td><td>5,000-15,000元</td></tr>
+<tr><td>排风量</td><td>17-22m³/min</td><td>18-21m³/min</td><td>17-20m³/min</td><td>17-21m³/min</td><td>16-20m³/min</td></tr>
+<tr><td>热负荷</td><td>4.5-5.0kW</td><td>4.5-5.2kW</td><td>4.2-5.0kW</td><td>4.5-5.0kW</td><td>4.2-5.0kW</td></tr>
+<tr><td>消毒方式</td><td>紫外线+臭氧</td><td>紫外线+高温</td><td>紫外线+臭氧</td><td>紫外线+臭氧</td><td>紫外线+臭氧</td></tr>
+<tr><td>蒸烤功能</td><td>✅ 有蒸烤款</td><td>✅ AI智能烹饪</td><td>✅ 有蒸烤款</td><td>✅ 蒸烤款线上TOP2</td><td>✅ 蒸烤款表现好</td></tr>
+<tr><td>保修</td><td>整机3年</td><td>整机3年</td><td>整机3年</td><td>整机3年</td><td>整机3年</td></tr>
+<tr><td>核心特点</td><td>净烟最强，知名度最高</td><td>风机下置专利，噪音低</td><td>行业发明者，20年技术</td><td>线上TOP2，性价比好</td><td>技术扎实，蒸烤表现好</td></tr>
+</tbody></table></div>
+</div></div>
+
 
 <div class="card"><div class="card-header" onclick="toggleCard(this)">🏗️ 垃圾处理器 <span class="arrow">▶</span></div><div class="card-body">
 <div class="info-box">📊 中国厨余垃圾处理器普及率仅约1%，市场早期阶段。线上前10品牌零售额集中度约85%。</div>
@@ -722,6 +1021,10 @@ table{font-size:14px}
 </div></div>
 </div>
 
+
+<div class="advice-card">⚠️ <strong>集成灶市场警示：</strong>2025年零售额同比下降43.1%，市场严重萎缩，建议谨慎选择，传统分体烟灶仍是主流。如确需购买，首选<strong>火星人</strong>（净烟最强）或<strong>亿田</strong>（风机下置专利，噪音低）。垃圾处理器选<strong>贝克巴斯</strong>（国产龙头），管线机选<strong>美的</strong>（全品类覆盖）。</div>
+
+</div>
 <!-- ===== 专题 1: 全屋智能方案对比 ===== -->
 <div class="section" id="topic-1">
 <div class="section-title">🏡 全屋智能方案对比</div>
