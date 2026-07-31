@@ -138,7 +138,6 @@ table{font-size:15px}
 .dim-table-dynamic td:first-child,.dim-table-dynamic th:first-child{position:sticky;left:0;background:#f1f5f9;z-index:2}
 .dim-table-dynamic tr:hover td:first-child{background:#f8fafc}
 .dim-table-dynamic td:first-child{font-weight:600}
-.dim-table-dynamic .score-cell{font-weight:700;color:var(--primary)}
 .dim-table-dynamic .dim-bool-yes{color:var(--success)}
 .dim-table-dynamic .dim-bool-no{color:var(--danger)}
 @media(max-width:640px){
@@ -147,6 +146,15 @@ table{font-size:15px}
   .filter-panel .price-range-row{flex:1}
   .filter-panel .price-input{flex:1;width:auto}
 }
+/* 改动1：维度值颜色分级（前25%绿 / 中间黄 / 后25%红） */
+.dim-table-dynamic td.dim-green{background:#f0fdf4;color:#16a34a;font-weight:600}
+.dim-table-dynamic td.dim-yellow{background:#fffbeb;color:#b45309}
+.dim-table-dynamic td.dim-red{background:#fef2f2;color:#dc2626}
+.dim-table-dynamic tr:hover td.dim-green{background:#f0fdf4}
+.dim-table-dynamic tr:hover td.dim-yellow{background:#fffbeb}
+.dim-table-dynamic tr:hover td.dim-red{background:#fef2f2}
+/* 改动2：推荐星级列样式 */
+.dim-table-dynamic .score-cell{text-align:center;font-size:14px;letter-spacing:1px;color:var(--accent)}
 </style>
 </head>
 <body>
@@ -1856,12 +1864,48 @@ function renderDimTable(panel, products, dims) {
     displayDims.push(d);
   });
 
-  // 表头：品牌 | 型号 | 价格 | 维度1..n | 综合得分
+  // 改动1：收集所有产品每个 float 维度的值，计算 25%/75% 分位阈值用于颜色分级
+  var dimStats = {};
+  displayDims.forEach(function(d) {
+    if (d.type !== 'float') return;
+    var vals = [];
+    products.forEach(function(p) {
+      var v = p.dimensions ? p.dimensions[d.dim_key] : undefined;
+      if (typeof v === 'number') vals.push(v);
+    });
+    if (vals.length < 3) return; // 数值不足 3 个不参与分级
+    vals.sort(function(a, b) { return a - b; });
+    dimStats[d.dim_key] = {
+      higher_better: d.higher_better !== false, // 未声明时默认越高越好
+      p25: vals[Math.floor(vals.length * 0.25)],
+      p75: vals[Math.floor(vals.length * 0.75)]
+    };
+  });
+
+  // 改动1：根据分位阈值返回颜色类（前25%绿 / 中间黄 / 后25%红，higher_better 反转）
+  function getDimClass(dimKey, value) {
+    if (typeof value !== 'number') return '';
+    var stats = dimStats[dimKey];
+    if (!stats) return '';
+    var isGood, isBad;
+    if (stats.higher_better) {
+      isGood = value >= stats.p75;
+      isBad = value <= stats.p25;
+    } else {
+      isGood = value <= stats.p25;
+      isBad = value >= stats.p75;
+    }
+    if (isGood) return 'dim-green';
+    if (isBad) return 'dim-red';
+    return 'dim-yellow';
+  }
+
+  // 表头：品牌 | 型号 | 价格 | 维度1..n | 推荐星级
   var thead = '<tr><th>品牌</th><th>型号</th><th>价格</th>';
   displayDims.forEach(function(d) {
     thead += '<th>' + d.label + (d.unit ? '(' + d.unit + ')' : '') + '</th>';
   });
-  thead += '<th>综合得分</th></tr>';
+  thead += '<th>推荐星级</th></tr>';
 
   // 表体：一行一个产品（显示全部产品，不做数量截断）
   var tbody = '';
@@ -1877,12 +1921,17 @@ function renderDimTable(panel, products, dims) {
         row += '<td>—</td>';
         return;
       }
+      // bool 用 ✅/❌ 着色，float 用颜色分级，其余不加类
       var cls = '';
-      if (d.type === 'bool') cls = rawVal ? 'dim-bool-yes' : 'dim-bool-no';
+      if (d.type === 'bool') {
+        cls = rawVal ? 'dim-bool-yes' : 'dim-bool-no';
+      } else if (d.type === 'float') {
+        cls = getDimClass(d.dim_key, rawVal);
+      }
       row += '<td' + (cls ? ' class="' + cls + '"' : '') + '>' + formatDimValue(rawVal, d.type, d.unit) + '</td>';
     });
 
-    row += '<td class="score-cell">' + (p.total_score ? p.total_score.toFixed(1) : '—') + '</td>';
+    row += '<td class="score-cell">' + (p.total_score ? getStars(p.total_score) : '—') + '</td>';
     row += '</tr>';
     tbody += row;
   });
@@ -1907,6 +1956,15 @@ function formatDimValue(val, type, unit) {
     return val.toFixed(1).replace(/\.0$/, '');
   }
   return String(val);
+}
+
+// 改动2：综合得分 → 星级（>=85 五星，每 15 分降一星）
+function getStars(score) {
+  if (score >= 85) return '★★★★★';
+  if (score >= 70) return '★★★★☆';
+  if (score >= 55) return '★★★☆☆';
+  if (score >= 40) return '★★☆☆☆';
+  return '★☆☆☆☆';
 }
 
 function escapeHtml(str) {
