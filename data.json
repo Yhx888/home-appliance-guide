@@ -159,7 +159,7 @@
           "id": 4,
           "brand": "华帝",
           "model": "华帝抽油烟机通用款",
-          "price_low": 1000.0,
+          "price_low": 1500.0,
           "price_high": 2500.0,
           "dimensions": {
             "风量_m3": 21.5,
@@ -211,8 +211,8 @@
           "id": 6,
           "brand": "西门子",
           "model": "LC77",
-          "price_low": 3000.0,
-          "price_high": 8000.0,
+          "price_low": 4599.0,
+          "price_high": 4599.0,
           "dimensions": {
             "风量_m3": 22.0,
             "静压_Pa": 600.0,
@@ -238,7 +238,7 @@
           "brand": "美的",
           "model": "J30",
           "price_low": 800.0,
-          "price_high": 1200.0,
+          "price_high": 845.0,
           "dimensions": {
             "噪音_dB": 57.0,
             "保修_年": 6,
@@ -261,8 +261,8 @@
           "id": 8,
           "brand": "美的",
           "model": "J25S",
-          "price_low": 1500.0,
-          "price_high": 2000.0,
+          "price_low": 1299.0,
+          "price_high": 1399.0,
           "dimensions": {
             "噪音_dB": 54.0,
             "保修_年": 6,
@@ -287,8 +287,8 @@
           "id": 9,
           "brand": "海尔",
           "model": "MA2C1",
-          "price_low": 1500.0,
-          "price_high": 2000.0,
+          "price_low": 1899.0,
+          "price_high": 1899.0,
           "dimensions": {
             "噪音_dB": 55.0,
             "保修_年": 5,
@@ -311,8 +311,8 @@
           "id": 10,
           "brand": "华帝",
           "model": "i11206",
-          "price_low": 1000.0,
-          "price_high": 1500.0,
+          "price_low": 2199.0,
+          "price_high": 2199.0,
           "dimensions": {
             "噪音_dB": 52.0,
             "保修_年": 3,
@@ -337,8 +337,8 @@
           "id": 11,
           "brand": "老板",
           "model": "28D3S",
-          "price_low": 2394.0,
-          "price_high": 2394.0,
+          "price_low": 2899.0,
+          "price_high": 3999.0,
           "dimensions": {
             "噪音_dB": 50.0,
             "保修_年": 5,
@@ -363,8 +363,8 @@
           "id": 12,
           "brand": "老板",
           "model": "小黑翼D1P",
-          "price_low": 5699.0,
-          "price_high": 5699.0,
+          "price_low": 2599.0,
+          "price_high": 5899.0,
           "dimensions": {
             "噪音_dB": 53.0,
             "保修_年": 5,
@@ -389,8 +389,8 @@
           "id": 13,
           "brand": "方太",
           "model": "JCD10TA",
-          "price_low": 3000.0,
-          "price_high": 4500.0,
+          "price_low": 2499.0,
+          "price_high": 2899.0,
           "dimensions": {
             "噪音_dB": 50.0,
             "保修_年": 5,
@@ -415,8 +415,8 @@
           "id": 14,
           "brand": "方太",
           "model": "EMC5A",
-          "price_low": 2500.0,
-          "price_high": 3500.0,
+          "price_low": 1887.0,
+          "price_high": 2399.0,
           "dimensions": {
             "噪音_dB": 55.0,
             "保修_年": 5,
@@ -439,7 +439,7 @@
           "id": 15,
           "brand": "方太",
           "model": "V10-G",
-          "price_low": 4000.0,
+          "price_low": 5499.0,
           "price_high": 6000.0,
           "dimensions": {
             "噪音_dB": 52.0,
@@ -466,7 +466,7 @@
           "brand": "西门子",
           "model": "各系列",
           "price_low": 3000.0,
-          "price_high": 12000.0,
+          "price_high": 8000.0,
           "dimensions": {
             "噪音_dB": 52.0,
             "保修_年": 1,
@@ -489,8 +489,8 @@
           "id": 251,
           "brand": "美的",
           "model": "小西梅 AK11 Pro",
-          "price_low": 3999.0,
-          "price_high": 3999.0,
+          "price_low": 3882.0,
+          "price_high": 3882.0,
           "dimensions": {
             "风量_m3": 32,
             "静压_Pa": 1500,
@@ -515,8 +515,8 @@
           "id": 252,
           "brand": "美的",
           "model": "AK7 Max",
-          "price_low": 2999.0,
-          "price_high": 2999.0,
+          "price_low": 3000.0,
+          "price_high": 4000.0,
           "dimensions": {
             "风量_m3": 28,
             "静压_Pa": 1200,
@@ -541,8 +541,8 @@
           "id": 253,
           "brand": "华帝",
           "model": "小飞翼K9m",
-          "price_low": 3300.0,
-          "price_high": 3800.0,
+          "price_low": 2631.0,
+          "price_high": 2631.0,
           "dimensions": {
             "风量_m3": 28,
             "静压_Pa": 1100,
@@ -567,8 +567,8 @@
           "id": 254,
           "brand": "方太",
           "model": "Z5T",
-          "price_low": 3800.0,
-          "price_high": 4500.0,
+          "price_low": 5500.0,
+          "price_high": 8000.0,
           "dimensions": {
             "风量_m3": 26,
             "静压_Pa": 1050,
@@ -671,8 +671,8 @@
           "id": 258,
           "brand": "森太",
           "model": "B560",
-          "price_low": 500.0,
-          "price_high": 800.0,
+          "price_low": 739.0,
+          "price_high": 794.0,
           "dimensions": {
             "风量_m3": 17,
             "静压_Pa": 300,
@@ -697,8 +697,8 @@
           "id": 259,
           "brand": "苏泊尔",
           "model": "DJ13",
-          "price_low": 800.0,
-          "price_high": 1100.0,
+          "price_low": 413.0,
+          "price_high": 468.0,
           "dimensions": {
             "风量_m3": 18,
             "静压_Pa": 350,
@@ -749,8 +749,8 @@
           "id": 425,
           "brand": "老板",
           "model": "60D1S",
-          "price_low": 3000.0,
-          "price_high": 4000.0,
+          "price_low": 2999.0,
+          "price_high": 2999.0,
           "dimensions": {
             "风量_m3": 25,
             "静压_Pa": 1100,
@@ -801,8 +801,8 @@
           "id": 427,
           "brand": "华帝",
           "model": "i11210",
-          "price_low": 1800.0,
-          "price_high": 2500.0,
+          "price_low": 1919.0,
+          "price_high": 1919.0,
           "dimensions": {
             "风量_m3": 22,
             "静压_Pa": 500,
@@ -915,7 +915,7 @@
           "brand": "方太",
           "model": "方太燃气灶通用款",
           "price_low": 1500.0,
-          "price_high": 3000.0,
+          "price_high": 2500.0,
           "dimensions": {
             "火力_kW": 5.0,
             "热效率_pct": 70.0,
@@ -981,7 +981,7 @@
           "brand": "美的",
           "model": "美的燃气灶通用款",
           "price_low": 600.0,
-          "price_high": 1800.0,
+          "price_high": 1500.0,
           "dimensions": {
             "火力_kW": 4.75,
             "热效率_pct": 68.0,
@@ -1003,7 +1003,7 @@
           "brand": "苏泊尔",
           "model": "苏泊尔燃气灶通用款",
           "price_low": 500.0,
-          "price_high": 1200.0,
+          "price_high": 1000.0,
           "dimensions": {
             "火力_kW": 4.85,
             "热效率_pct": 65.0,
@@ -1046,8 +1046,8 @@
           "id": 23,
           "brand": "苏泊尔",
           "model": "DB28",
-          "price_low": 500.0,
-          "price_high": 800.0,
+          "price_low": 542.0,
+          "price_high": 699.0,
           "dimensions": {
             "面板材质": "钢化玻璃",
             "熄火保护": true,
@@ -1068,8 +1068,8 @@
           "id": 24,
           "brand": "苏泊尔",
           "model": "07S",
-          "price_low": 800.0,
-          "price_high": 1200.0,
+          "price_low": 377.0,
+          "price_high": 529.0,
           "dimensions": {
             "面板材质": "钢化玻璃",
             "熄火保护": true,
@@ -1091,7 +1091,7 @@
           "brand": "华帝",
           "model": "39B",
           "price_low": 1000.0,
-          "price_high": 1500.0,
+          "price_high": 1200.0,
           "dimensions": {
             "面板材质": "钢化玻璃",
             "熄火保护": true,
@@ -1156,7 +1156,7 @@
           "id": 28,
           "brand": "方太",
           "model": "旗舰款",
-          "price_low": 1500.0,
+          "price_low": 2000.0,
           "price_high": 3000.0,
           "dimensions": {
             "面板材质": "钢化玻璃",
@@ -1201,7 +1201,7 @@
           "brand": "林内/能率",
           "model": "日系款",
           "price_low": 2000.0,
-          "price_high": 4000.0,
+          "price_high": 3000.0,
           "dimensions": {
             "面板材质": "钢化玻璃",
             "熄火保护": true,
@@ -1222,7 +1222,7 @@
           "id": 260,
           "brand": "方太",
           "model": "TEK20",
-          "price_low": 2200.0,
+          "price_low": 2599.0,
           "price_high": 2600.0,
           "dimensions": {
             "火力_kW": 5.2,
@@ -1245,7 +1245,7 @@
           "brand": "老板",
           "model": "57B9A",
           "price_low": 2300.0,
-          "price_high": 2800.0,
+          "price_high": 2399.0,
           "dimensions": {
             "火力_kW": 5.2,
             "热效率_pct": 70,
@@ -1289,7 +1289,7 @@
           "brand": "米家",
           "model": "Pro MJ03A",
           "price_low": 1000.0,
-          "price_high": 1400.0,
+          "price_high": 1273.0,
           "dimensions": {
             "火力_kW": 5.2,
             "热效率_pct": 72,
@@ -1311,7 +1311,7 @@
           "brand": "华帝",
           "model": "i10308",
           "price_low": 1300.0,
-          "price_high": 1700.0,
+          "price_high": 1500.0,
           "dimensions": {
             "火力_kW": 5.2,
             "热效率_pct": 70,
@@ -1376,8 +1376,8 @@
           "id": 267,
           "brand": "美的",
           "model": "Q70",
-          "price_low": 1300.0,
-          "price_high": 1700.0,
+          "price_low": 799.0,
+          "price_high": 1200.0,
           "dimensions": {
             "火力_kW": 5.0,
             "热效率_pct": 68,
@@ -1398,8 +1398,8 @@
           "id": 268,
           "brand": "林内",
           "model": "2H2N",
-          "price_low": 2800.0,
-          "price_high": 3500.0,
+          "price_low": 1648.0,
+          "price_high": 2500.0,
           "dimensions": {
             "火力_kW": 4.5,
             "面板材质": "钢化玻璃",
@@ -1420,8 +1420,8 @@
           "id": 269,
           "brand": "能率",
           "model": "16820S",
-          "price_low": 3200.0,
-          "price_high": 3800.0,
+          "price_low": 1099.0,
+          "price_high": 2000.0,
           "dimensions": {
             "火力_kW": 4.5,
             "面板材质": "钢化玻璃",
@@ -1530,8 +1530,8 @@
           "id": 432,
           "brand": "美的",
           "model": "Q518S",
-          "price_low": 800.0,
-          "price_high": 1200.0,
+          "price_low": 1500.0,
+          "price_high": 2264.0,
           "dimensions": {
             "火力_kW": 4.8,
             "热效率_pct": 65,
@@ -1761,7 +1761,7 @@
           "brand": "松下",
           "model": "NU-SC350",
           "price_low": 4000.0,
-          "price_high": 8000.0,
+          "price_high": 5000.0,
           "dimensions": {
             "容量_L": 37.5,
             "最高温度_C": 230.0,
@@ -1808,7 +1808,7 @@
           "brand": "凯度",
           "model": "TR Pro",
           "price_low": 5000.0,
-          "price_high": 8000.0,
+          "price_high": 6199.0,
           "dimensions": {
             "最高温度_C": 230.0,
             "容量_L": 55,
@@ -1853,8 +1853,8 @@
           "id": 40,
           "brand": "美的",
           "model": "GR6",
-          "price_low": 3000.0,
-          "price_high": 5000.0,
+          "price_low": 3799.0,
+          "price_high": 4899.0,
           "dimensions": {
             "最高温度_C": 230.0,
             "容量_L": 45,
@@ -1876,7 +1876,7 @@
           "id": 41,
           "brand": "老板",
           "model": "盐系G2",
-          "price_low": 4000.0,
+          "price_low": 5000.0,
           "price_high": 6000.0,
           "dimensions": {
             "最高温度_C": 230.0,
@@ -2545,7 +2545,7 @@
           "brand": "美的",
           "model": "X6Max",
           "price_low": 5000.0,
-          "price_high": 8000.0,
+          "price_high": 6299.0,
           "dimensions": {
             "水效等级": "一级",
             "类型": "嵌入式",
@@ -2592,8 +2592,8 @@
           "id": 56,
           "brand": "西门子",
           "model": "SC73E810TI",
-          "price_low": 4199.0,
-          "price_high": 4199.0,
+          "price_low": 3500.0,
+          "price_high": 4500.0,
           "dimensions": {
             "水效等级": "一级",
             "类型": "嵌入式",
@@ -2640,7 +2640,7 @@
           "id": 58,
           "brand": "方太",
           "model": "水槽式系列",
-          "price_low": 4000.0,
+          "price_low": 5000.0,
           "price_high": 8000.0,
           "dimensions": {
             "水效等级": "一级",
@@ -2736,7 +2736,7 @@
           "id": 273,
           "brand": "海尔",
           "model": "W5000Plus",
-          "price_low": 4500.0,
+          "price_low": 4699.0,
           "price_high": 5500.0,
           "dimensions": {
             "容量_套": 18,
@@ -2904,7 +2904,7 @@
           "id": 418,
           "brand": "美的",
           "model": "RX600Max",
-          "price_low": 3500.0,
+          "price_low": 3954.0,
           "price_high": 5000.0,
           "dimensions": {
             "容量_套": 16,
@@ -3162,7 +3162,7 @@
           "id": 63,
           "brand": "沁园",
           "model": "金榜双子芯1200G",
-          "price_low": 1500.0,
+          "price_low": 2600.0,
           "price_high": 3000.0,
           "dimensions": {
             "通量_G": 1200.0,
@@ -3186,8 +3186,8 @@
           "id": 64,
           "brand": "海尔",
           "model": "HRO1200",
-          "price_low": 1000.0,
-          "price_high": 2500.0,
+          "price_low": 2255.0,
+          "price_high": 2255.0,
           "dimensions": {
             "通量_G": 800.0,
             "RO膜寿命_年": 3.0,
@@ -3210,8 +3210,8 @@
           "id": 65,
           "brand": "安吉尔",
           "model": "J2806",
-          "price_low": 1500.0,
-          "price_high": 4000.0,
+          "price_low": 1518.0,
+          "price_high": 1798.0,
           "dimensions": {
             "通量_G": 900.0,
             "RO膜寿命_年": 4.0,
@@ -3235,7 +3235,7 @@
           "brand": "A.O.史密斯",
           "model": "AR1300",
           "price_low": 3000.0,
-          "price_high": 6000.0,
+          "price_high": 3500.0,
           "dimensions": {
             "通量_G": 800.0,
             "RO膜寿命_年": 4.0,
@@ -3282,7 +3282,7 @@
           "id": 68,
           "brand": "美的",
           "model": "白泽Max 1200G",
-          "price_low": 1799.0,
+          "price_low": 1256.0,
           "price_high": 1799.0,
           "dimensions": {
             "过滤级数": 5,
@@ -3306,7 +3306,7 @@
           "id": 69,
           "brand": "沁园",
           "model": "金榜双子芯1000G/1200G",
-          "price_low": 1500.0,
+          "price_low": 1900.0,
           "price_high": 3000.0,
           "dimensions": {
             "过滤级数": 5,
@@ -3427,7 +3427,7 @@
           "brand": "A.O.史密斯",
           "model": "RO系列",
           "price_low": 3000.0,
-          "price_high": 6000.0,
+          "price_high": 5000.0,
           "dimensions": {
             "过滤级数": 5,
             "保修_年": 3,
@@ -3450,8 +3450,8 @@
           "id": 75,
           "brand": "霍尼韦尔",
           "model": "URHD1-210-M2",
-          "price_low": 3000.0,
-          "price_high": 5000.0,
+          "price_low": 3500.0,
+          "price_high": 4000.0,
           "dimensions": {
             "过滤级数": 5,
             "保修_年": 3,
@@ -3474,8 +3474,8 @@
           "id": 280,
           "brand": "小米/米家",
           "model": "1200G",
-          "price_low": 1200.0,
-          "price_high": 1500.0,
+          "price_low": 1999.0,
+          "price_high": 1999.0,
           "dimensions": {
             "通量_G": 1200,
             "RO膜寿命_年": 2,
@@ -3498,8 +3498,8 @@
           "id": 281,
           "brand": "小米/米家",
           "model": "800G",
-          "price_low": 700.0,
-          "price_high": 1000.0,
+          "price_low": 1199.0,
+          "price_high": 1199.0,
           "dimensions": {
             "通量_G": 800,
             "RO膜寿命_年": 2,
@@ -3522,7 +3522,7 @@
           "id": 282,
           "brand": "沁园",
           "model": "金榜双子芯1000G",
-          "price_low": 1500.0,
+          "price_low": 1900.0,
           "price_high": 2500.0,
           "dimensions": {
             "通量_G": 1000,
@@ -3594,8 +3594,8 @@
           "id": 347,
           "brand": "沁园",
           "model": "小白鲸Pro",
-          "price_low": 2000.0,
-          "price_high": 3000.0,
+          "price_low": 2950.0,
+          "price_high": 2950.0,
           "dimensions": {
             "通量_G": 800,
             "RO膜寿命_年": 4,
@@ -3618,7 +3618,7 @@
           "id": 348,
           "brand": "海尔",
           "model": "玉净1000G",
-          "price_low": 1500.0,
+          "price_low": 2000.0,
           "price_high": 2500.0,
           "dimensions": {
             "通量_G": 1000,
@@ -3666,8 +3666,8 @@
           "id": 350,
           "brand": "A.O.史密斯",
           "model": "佳尼特600G",
-          "price_low": 2000.0,
-          "price_high": 3000.0,
+          "price_low": 2499.0,
+          "price_high": 2499.0,
           "dimensions": {
             "通量_G": 600,
             "RO膜寿命_年": 3,
@@ -3690,7 +3690,7 @@
           "id": 351,
           "brand": "云米",
           "model": "Super S 1200G",
-          "price_low": 1500.0,
+          "price_low": 1800.0,
           "price_high": 2000.0,
           "dimensions": {
             "通量_G": 1200,
@@ -3715,7 +3715,7 @@
           "brand": "海尔",
           "model": "鲜活水1000G",
           "price_low": 1800.0,
-          "price_high": 2800.0,
+          "price_high": 2500.0,
           "dimensions": {
             "通量_G": 1000,
             "RO膜寿命_年": 5,
@@ -3738,8 +3738,8 @@
           "id": 479,
           "brand": "安吉尔",
           "model": "J2904",
-          "price_low": 2000.0,
-          "price_high": 3500.0,
+          "price_low": 1518.0,
+          "price_high": 1988.0,
           "dimensions": {
             "通量_G": 800,
             "RO膜寿命_年": 4,
@@ -3786,8 +3786,8 @@
           "id": 481,
           "brand": "海尔",
           "model": "HRO8H99-2",
-          "price_low": 1500.0,
-          "price_high": 2500.0,
+          "price_low": 2700.0,
+          "price_high": 3799.0,
           "dimensions": {
             "通量_G": 800,
             "RO膜寿命_年": 3,
@@ -3834,7 +3834,7 @@
           "id": 483,
           "brand": "格力",
           "model": "WTE-PG8-4081",
-          "price_low": 1500.0,
+          "price_low": 1599.0,
           "price_high": 2500.0,
           "dimensions": {
             "通量_G": 600,
@@ -4078,8 +4078,8 @@
           "id": 82,
           "brand": "华凌",
           "model": "547",
-          "price_low": 2449.0,
-          "price_high": 2449.0,
+          "price_low": 3749.0,
+          "price_high": 3749.0,
           "dimensions": {
             "制冷方式": "风冷",
             "保修_年": 3,
@@ -4102,8 +4102,8 @@
           "id": 83,
           "brand": "美的",
           "model": "小冰狗502L",
-          "price_low": 4000.0,
-          "price_high": 6000.0,
+          "price_low": 5110.0,
+          "price_high": 5678.0,
           "dimensions": {
             "制冷方式": "风冷",
             "保修_年": 3,
@@ -4126,7 +4126,7 @@
           "id": 84,
           "brand": "美的",
           "model": "M60",
-          "price_low": 3000.0,
+          "price_low": 4500.0,
           "price_high": 5000.0,
           "dimensions": {
             "制冷方式": "风冷",
@@ -4150,8 +4150,8 @@
           "id": 85,
           "brand": "容声",
           "model": "526",
-          "price_low": 3000.0,
-          "price_high": 4500.0,
+          "price_low": 4000.0,
+          "price_high": 4200.0,
           "dimensions": {
             "制冷方式": "风冷",
             "保修_年": 3,
@@ -4174,8 +4174,8 @@
           "id": 86,
           "brand": "海尔",
           "model": "麦浪顶配版",
-          "price_low": 5000.0,
-          "price_high": 8000.0,
+          "price_low": 9299.0,
+          "price_high": 9299.0,
           "dimensions": {
             "制冷方式": "风冷",
             "保修_年": 3,
@@ -4199,7 +4199,7 @@
           "brand": "卡萨帝",
           "model": "揽光520L",
           "price_low": 12630.0,
-          "price_high": 12630.0,
+          "price_high": 16999.0,
           "dimensions": {
             "制冷方式": "风冷",
             "保修_年": 10,
@@ -4222,8 +4222,8 @@
           "id": 88,
           "brand": "小米",
           "model": "508升十字",
-          "price_low": 2500.0,
-          "price_high": 3500.0,
+          "price_low": 3649.0,
+          "price_high": 4499.0,
           "dimensions": {
             "制冷方式": "风冷",
             "保修_年": 1,
@@ -4246,8 +4246,8 @@
           "id": 89,
           "brand": "小米",
           "model": "439升法式",
-          "price_low": 2500.0,
-          "price_high": 3500.0,
+          "price_low": 3649.0,
+          "price_high": 4499.0,
           "dimensions": {
             "制冷方式": "风冷",
             "保修_年": 1,
@@ -4294,7 +4294,7 @@
           "id": 91,
           "brand": "东芝",
           "model": "大白桃Pro",
-          "price_low": 5000.0,
+          "price_low": 8000.0,
           "price_high": 8000.0,
           "dimensions": {
             "制冷方式": "风冷",
@@ -4319,7 +4319,7 @@
           "brand": "西门子",
           "model": "KA98",
           "price_low": 7000.0,
-          "price_high": 9000.0,
+          "price_high": 7990.0,
           "dimensions": {
             "容量_L": 500,
             "门型": "对开门",
@@ -4343,7 +4343,7 @@
           "brand": "松下",
           "model": "NR-TE43",
           "price_low": 8000.0,
-          "price_high": 10000.0,
+          "price_high": 8000.0,
           "dimensions": {
             "容量_L": 435,
             "门型": "法式多门",
@@ -4390,7 +4390,7 @@
           "id": 354,
           "brand": "容声",
           "model": "双净516",
-          "price_low": 3500.0,
+          "price_low": 4000.0,
           "price_high": 4500.0,
           "dimensions": {
             "容量_L": 516,
@@ -4462,8 +4462,8 @@
           "id": 357,
           "brand": "TCL",
           "model": "超薄零嵌455L",
-          "price_low": 3000.0,
-          "price_high": 4000.0,
+          "price_low": 2067.0,
+          "price_high": 2500.0,
           "dimensions": {
             "容量_L": 455,
             "门型": "十字门",
@@ -4612,7 +4612,7 @@
           "brand": "康宝",
           "model": "康宝消毒柜通用款",
           "price_low": 800.0,
-          "price_high": 2500.0,
+          "price_high": 2000.0,
           "dimensions": {
             "容量_L": 105.0,
             "消毒方式": "高温+紫外线+臭氧",
@@ -4631,8 +4631,8 @@
           "id": 93,
           "brand": "方太",
           "model": "ZTD125H-01",
-          "price_low": 2000.0,
-          "price_high": 4000.0,
+          "price_low": 2800.0,
+          "price_high": 3300.0,
           "dimensions": {
             "容量_L": 112.5,
             "消毒方式": "光热混动，无臭氧味",
@@ -4652,7 +4652,7 @@
           "brand": "老板",
           "model": "ZTD100",
           "price_low": 1500.0,
-          "price_high": 3500.0,
+          "price_high": 3000.0,
           "dimensions": {
             "容量_L": 110.0,
             "消毒方式": "高温+紫外线",
@@ -4672,7 +4672,7 @@
           "brand": "美的",
           "model": "MXV-ZLP90",
           "price_low": 800.0,
-          "price_high": 2000.0,
+          "price_high": 1100.0,
           "dimensions": {
             "容量_L": 100.0,
             "消毒方式": "高温+紫外线",
@@ -4692,7 +4692,7 @@
           "brand": "海尔",
           "model": "ZTD100",
           "price_low": 800.0,
-          "price_high": 2000.0,
+          "price_high": 1300.0,
           "dimensions": {
             "容量_L": 100.0,
             "消毒方式": "高温+紫外线",
@@ -4712,7 +4712,7 @@
           "brand": "康宝",
           "model": "XDZ100-D1",
           "price_low": 800.0,
-          "price_high": 1500.0,
+          "price_high": 1000.0,
           "dimensions": {
             "消毒方式": "三重消毒(高温+紫外+臭氧)",
             "杀菌率_pct": 99.99,
@@ -4732,7 +4732,7 @@
           "brand": "康宝",
           "model": "XDZ110-EN321PRO",
           "price_low": 1500.0,
-          "price_high": 2500.0,
+          "price_high": 1500.0,
           "dimensions": {
             "消毒方式": "三重消毒(高温+紫外+臭氧)",
             "杀菌率_pct": 99.99,
@@ -4752,7 +4752,7 @@
           "brand": "美的",
           "model": "嵌入式系列",
           "price_low": 800.0,
-          "price_high": 2000.0,
+          "price_high": 1500.0,
           "dimensions": {
             "消毒方式": "高温+紫外",
             "杀菌率_pct": 99.9,
@@ -4771,8 +4771,8 @@
           "id": 100,
           "brand": "方太",
           "model": "ZTD125H-01-H01",
-          "price_low": 2000.0,
-          "price_high": 4000.0,
+          "price_low": 3259.0,
+          "price_high": 3259.0,
           "dimensions": {
             "消毒方式": "光热混动",
             "杀菌率_pct": 99.99,
@@ -4812,7 +4812,7 @@
           "brand": "海尔",
           "model": "嵌入式系列",
           "price_low": 800.0,
-          "price_high": 2000.0,
+          "price_high": 1500.0,
           "dimensions": {
             "容量_L": 100,
             "消毒方式": "高温+紫外",
@@ -4872,7 +4872,7 @@
           "brand": "德意",
           "model": "嵌入式系列",
           "price_low": 1000.0,
-          "price_high": 2000.0,
+          "price_high": 1700.0,
           "dimensions": {
             "容量_L": 100,
             "消毒方式": "高温+紫外",
@@ -4891,7 +4891,7 @@
           "id": 361,
           "brand": "康宝",
           "model": "ZTP108E-11",
-          "price_low": 600.0,
+          "price_low": 800.0,
           "price_high": 1000.0,
           "dimensions": {
             "容量_L": 80,
@@ -4992,7 +4992,7 @@
           "brand": "海尔",
           "model": "ZTD100-10",
           "price_low": 1000.0,
-          "price_high": 1800.0,
+          "price_high": 1300.0,
           "dimensions": {
             "容量_L": 100,
             "消毒方式": "高温+紫外",
@@ -5092,7 +5092,7 @@
           "brand": "美的",
           "model": "90Q15",
           "price_low": 800.0,
-          "price_high": 1500.0,
+          "price_high": 1100.0,
           "dimensions": {
             "容量_L": 90,
             "消毒方式": "高温+紫外",
@@ -5318,7 +5318,7 @@
           "id": 106,
           "brand": "统帅",
           "model": "超省电Pro",
-          "price_low": 4500.0,
+          "price_low": 5500.0,
           "price_high": 5500.0,
           "dimensions": {
             "保修_年": 6,
@@ -5411,7 +5411,7 @@
           "brand": "美的",
           "model": "理想家三代一拖四",
           "price_low": 25000.0,
-          "price_high": 40000.0,
+          "price_high": 28000.0,
           "dimensions": {
             "价格_全屋_万": 3.5,
             "压缩机": "美芝",
@@ -5434,7 +5434,7 @@
           "brand": "格力",
           "model": "GMV STAR系列一拖四",
           "price_low": 30000.0,
-          "price_high": 45000.0,
+          "price_high": 34000.0,
           "dimensions": {
             "价格_全屋_万": 4,
             "压缩机": "自研压缩机",
@@ -5457,7 +5457,7 @@
           "brand": "海尔",
           "model": "中央空调一拖四",
           "price_low": 25000.0,
-          "price_high": 40000.0,
+          "price_high": 35000.0,
           "dimensions": {
             "价格_全屋_万": 3.5,
             "压缩机": "三菱/自研",
@@ -5503,7 +5503,7 @@
           "brand": "三菱电机",
           "model": "菱耀一拖四",
           "price_low": 45000.0,
-          "price_high": 65000.0,
+          "price_high": 60000.0,
           "dimensions": {
             "价格_全屋_万": 5.5,
             "压缩机": "自研变频",
@@ -5572,7 +5572,7 @@
           "brand": "格力",
           "model": "GMV 一拖五",
           "price_low": 40000.0,
-          "price_high": 60000.0,
+          "price_high": 45000.0,
           "dimensions": {
             "价格_全屋_万": 5,
             "压缩机": "自研压缩机",
@@ -5595,7 +5595,7 @@
           "brand": "美的",
           "model": "理想家一拖五",
           "price_low": 35000.0,
-          "price_high": 50000.0,
+          "price_high": 45000.0,
           "dimensions": {
             "价格_全屋_万": 4.5,
             "压缩机": "美芝",
@@ -5618,7 +5618,7 @@
           "brand": "海信",
           "model": "中央空调一拖四",
           "price_low": 25000.0,
-          "price_high": 40000.0,
+          "price_high": 28000.0,
           "dimensions": {
             "价格_全屋_万": 3.5,
             "压缩机": "三菱/海立",
@@ -5641,7 +5641,7 @@
           "brand": "小米",
           "model": "中央空调一拖四",
           "price_low": 25000.0,
-          "price_high": 35000.0,
+          "price_high": 28000.0,
           "dimensions": {
             "价格_全屋_万": 3,
             "压缩机": "三洋双缸",
@@ -5775,8 +5775,8 @@
           "id": 109,
           "brand": "远大",
           "model": "FE系列",
-          "price_low": 3000.0,
-          "price_high": 6000.0,
+          "price_low": 2499.0,
+          "price_high": 2699.0,
           "dimensions": {
             "风量_m3h": 250.0,
             "过滤等级": "H13+静电除尘",
@@ -5798,7 +5798,7 @@
           "id": 110,
           "brand": "霍尼韦尔",
           "model": "ER350",
-          "price_low": 8000.0,
+          "price_low": 14000.0,
           "price_high": 15000.0,
           "dimensions": {
             "风量_m3h": 350.0,
@@ -5845,7 +5845,7 @@
           "brand": "德普莱太",
           "model": "臻致系列",
           "price_low": 6000.0,
-          "price_high": 12000.0,
+          "price_high": 8000.0,
           "dimensions": {
             "风量_m3h": 425.0,
             "过滤等级": "H13级HEPA",
@@ -5889,8 +5889,8 @@
           "id": 114,
           "brand": "远大",
           "model": "FE系列壁挂式",
-          "price_low": 3000.0,
-          "price_high": 6000.0,
+          "price_low": 2499.0,
+          "price_high": 2699.0,
           "dimensions": {
             "过滤等级": "H13 HEPA",
             "安装方式": "壁挂式",
@@ -5911,7 +5911,7 @@
           "id": 115,
           "brand": "霍尼韦尔",
           "model": "管道式新风系统",
-          "price_low": 8000.0,
+          "price_low": 10000.0,
           "price_high": 15000.0,
           "dimensions": {
             "过滤等级": "H13 HEPA",
@@ -5934,7 +5934,7 @@
           "brand": "德普莱太",
           "model": "\"臻致\"系列(立柜式)",
           "price_low": 6000.0,
-          "price_high": 12000.0,
+          "price_high": 8000.0,
           "dimensions": {
             "过滤等级": "H13 HEPA",
             "安装方式": "管道式",
@@ -5955,8 +5955,8 @@
           "id": 117,
           "brand": "造梦者",
           "model": "壁挂/立柜系列",
-          "price_low": 3000.0,
-          "price_high": 8000.0,
+          "price_low": 4999.0,
+          "price_high": 7299.0,
           "dimensions": {
             "过滤等级": "H13 HEPA",
             "安装方式": "壁挂式",
@@ -5977,8 +5977,8 @@
           "id": 118,
           "brand": "AIRMX",
           "model": "Pro 1S(立柜式)",
-          "price_low": 8000.0,
-          "price_high": 15000.0,
+          "price_low": 16999.0,
+          "price_high": 16999.0,
           "dimensions": {
             "过滤等级": "H13 HEPA",
             "安装方式": "管道式",
@@ -6000,7 +6000,7 @@
           "brand": "氧风",
           "model": "全热交换新风除湿一体机",
           "price_low": 15000.0,
-          "price_high": 20000.0,
+          "price_high": 15000.0,
           "dimensions": {
             "过滤等级": "H13 HEPA",
             "安装方式": "管道式",
@@ -6044,7 +6044,7 @@
           "brand": "德普莱太",
           "model": "臻致系列(立柜式)",
           "price_low": 6000.0,
-          "price_high": 12000.0,
+          "price_high": 8000.0,
           "dimensions": {
             "风量_m3h": 400,
             "过滤等级": "H13 HEPA",
@@ -6065,8 +6065,8 @@
           "id": 377,
           "brand": "松下",
           "model": "全热交换器FY-35ZJD1C",
-          "price_low": 8000.0,
-          "price_high": 12000.0,
+          "price_low": 14800.0,
+          "price_high": 16039.0,
           "dimensions": {
             "风量_m3h": 350,
             "过滤等级": "H13 HEPA",
@@ -6087,8 +6087,8 @@
           "id": 378,
           "brand": "远大",
           "model": "SG300",
-          "price_low": 5000.0,
-          "price_high": 8000.0,
+          "price_low": 13000.0,
+          "price_high": 16300.0,
           "dimensions": {
             "风量_m3h": 300,
             "过滤等级": "H13 HEPA",
@@ -6131,8 +6131,8 @@
           "id": 380,
           "brand": "米家",
           "model": "新风系统150",
-          "price_low": 2000.0,
-          "price_high": 3000.0,
+          "price_low": 1499.0,
+          "price_high": 1999.0,
           "dimensions": {
             "风量_m3h": 150,
             "过滤等级": "H13 HEPA",
@@ -6153,8 +6153,8 @@
           "id": 381,
           "brand": "美的",
           "model": "新风系统200",
-          "price_low": 3000.0,
-          "price_high": 5000.0,
+          "price_low": 6000.0,
+          "price_high": 9000.0,
           "dimensions": {
             "风量_m3h": 200,
             "过滤等级": "H13 HEPA",
@@ -6175,8 +6175,8 @@
           "id": 434,
           "brand": "米家",
           "model": "新风系统300",
-          "price_low": 3000.0,
-          "price_high": 4500.0,
+          "price_low": 2499.0,
+          "price_high": 2499.0,
           "dimensions": {
             "风量_m3h": 300,
             "过滤等级": "H13 HEPA",
@@ -6197,8 +6197,8 @@
           "id": 435,
           "brand": "海尔",
           "model": "新风系统350",
-          "price_low": 4000.0,
-          "price_high": 6000.0,
+          "price_low": 8000.0,
+          "price_high": 12000.0,
           "dimensions": {
             "风量_m3h": 350,
             "过滤等级": "H13 HEPA",
@@ -6219,8 +6219,8 @@
           "id": 436,
           "brand": "美的",
           "model": "新风系统500",
-          "price_low": 6000.0,
-          "price_high": 9000.0,
+          "price_low": 10000.0,
+          "price_high": 15000.0,
           "dimensions": {
             "风量_m3h": 500,
             "过滤等级": "H13 HEPA",
@@ -6241,8 +6241,8 @@
           "id": 437,
           "brand": "格力",
           "model": "新风系统250",
-          "price_low": 3500.0,
-          "price_high": 5500.0,
+          "price_low": 11278.0,
+          "price_high": 11389.0,
           "dimensions": {
             "风量_m3h": 250,
             "过滤等级": "H12",
@@ -6263,7 +6263,7 @@
           "id": 438,
           "brand": "松下",
           "model": "壁挂新风FV-09ZVD1C",
-          "price_low": 2500.0,
+          "price_low": 2699.0,
           "price_high": 4000.0,
           "dimensions": {
             "风量_m3h": 90,
@@ -6477,8 +6477,8 @@
           "id": 125,
           "brand": "TCL",
           "model": "真省电1.5匹",
-          "price_low": 1500.0,
-          "price_high": 2000.0,
+          "price_low": 1587.0,
+          "price_high": 1819.0,
           "dimensions": {
             "能效_APF": 4.550000000000001,
             "压缩机": "美芝/海立",
@@ -6502,7 +6502,7 @@
           "brand": "美的",
           "model": "酷省电1.5匹",
           "price_low": 2000.0,
-          "price_high": 2800.0,
+          "price_high": 2149.0,
           "dimensions": {
             "自清洁": true,
             "保修_年": 6,
@@ -6574,7 +6574,7 @@
           "brand": "海尔",
           "model": "静悦系列",
           "price_low": 2000.0,
-          "price_high": 3000.0,
+          "price_high": 2149.0,
           "dimensions": {
             "自清洁": true,
             "保修_年": 6,
@@ -6597,8 +6597,8 @@
           "id": 130,
           "brand": "小米",
           "model": "健康风Pro/上出风Pro",
-          "price_low": 1600.0,
-          "price_high": 2500.0,
+          "price_low": 2999.0,
+          "price_high": 3699.0,
           "dimensions": {
             "自清洁": true,
             "保修_年": 3,
@@ -6621,8 +6621,8 @@
           "id": 131,
           "brand": "TCL",
           "model": "真省电系列",
-          "price_low": 1500.0,
-          "price_high": 2000.0,
+          "price_low": 1587.0,
+          "price_high": 1819.0,
           "dimensions": {
             "自清洁": true,
             "保修_年": 3,
@@ -6646,7 +6646,7 @@
           "brand": "海尔",
           "model": "静悦3匹一级能效",
           "price_low": 5000.0,
-          "price_high": 7000.0,
+          "price_high": 5500.0,
           "dimensions": {
             "自清洁": true,
             "保修_年": 6,
@@ -6669,8 +6669,8 @@
           "id": 133,
           "brand": "华凌",
           "model": "N8HB1A 3匹",
-          "price_low": 3500.0,
-          "price_high": 5000.0,
+          "price_low": 4481.0,
+          "price_high": 4999.0,
           "dimensions": {
             "自清洁": true,
             "保修_年": 6,
@@ -6694,7 +6694,7 @@
           "brand": "美的",
           "model": "酷省电3匹柜机",
           "price_low": 4500.0,
-          "price_high": 6000.0,
+          "price_high": 5399.0,
           "dimensions": {
             "自清洁": true,
             "保修_年": 6,
@@ -6717,7 +6717,7 @@
           "id": 135,
           "brand": "格力",
           "model": "云锦3匹柜机",
-          "price_low": 5500.0,
+          "price_low": 7139.0,
           "price_high": 8000.0,
           "dimensions": {
             "自清洁": true,
@@ -6742,7 +6742,7 @@
           "brand": "格力",
           "model": "云佳1.5匹",
           "price_low": 2500.0,
-          "price_high": 3200.0,
+          "price_high": 2999.0,
           "dimensions": {
             "能效_APF": 5.0,
             "压缩机": "凌达",
@@ -6766,7 +6766,7 @@
           "brand": "格力",
           "model": "云锦1.5匹",
           "price_low": 2800.0,
-          "price_high": 3500.0,
+          "price_high": 3200.0,
           "dimensions": {
             "能效_APF": 5.0,
             "压缩机": "凌达",
@@ -6837,8 +6837,8 @@
           "id": 296,
           "brand": "小米",
           "model": "上出风Pro",
-          "price_low": 1800.0,
-          "price_high": 2500.0,
+          "price_low": 3699.0,
+          "price_high": 3699.0,
           "dimensions": {
             "能效_APF": 4.7,
             "压缩机": "美芝/海立",
@@ -6861,8 +6861,8 @@
           "id": 297,
           "brand": "TCL",
           "model": "真省电系列1.5匹",
-          "price_low": 1500.0,
-          "price_high": 2000.0,
+          "price_low": 1587.0,
+          "price_high": 1819.0,
           "dimensions": {
             "能效_APF": 4.5,
             "压缩机": "美芝/海立",
@@ -6886,7 +6886,7 @@
           "brand": "海尔",
           "model": "静悦1.5匹",
           "price_low": 2000.0,
-          "price_high": 2800.0,
+          "price_high": 2149.0,
           "dimensions": {
             "能效_APF": 4.6,
             "压缩机": "三菱/海立",
@@ -6909,8 +6909,8 @@
           "id": 439,
           "brand": "美的",
           "model": "酷省电2匹",
-          "price_low": 3000.0,
-          "price_high": 4000.0,
+          "price_low": 3099.0,
+          "price_high": 3500.0,
           "dimensions": {
             "能效_APF": 5.0,
             "压缩机": "美芝",
@@ -6933,7 +6933,7 @@
           "id": 440,
           "brand": "格力",
           "model": "云佳2匹",
-          "price_low": 3500.0,
+          "price_low": 4000.0,
           "price_high": 4500.0,
           "dimensions": {
             "能效_APF": 4.7,
@@ -6958,7 +6958,7 @@
           "brand": "华凌",
           "model": "N8HA1 1.5匹",
           "price_low": 1600.0,
-          "price_high": 2100.0,
+          "price_high": 1899.0,
           "dimensions": {
             "能效_APF": 4.7,
             "压缩机": "美芝",
@@ -6981,7 +6981,7 @@
           "id": 442,
           "brand": "小米",
           "model": "巨省电1.5匹",
-          "price_low": 1800.0,
+          "price_low": 2099.0,
           "price_high": 2400.0,
           "dimensions": {
             "能效_APF": 4.6,
@@ -7005,7 +7005,7 @@
           "id": 443,
           "brand": "TCL",
           "model": "智炫风3匹柜机",
-          "price_low": 4000.0,
+          "price_low": 4500.0,
           "price_high": 5500.0,
           "dimensions": {
             "能效_APF": 4.4,
@@ -7109,7 +7109,7 @@
           "id": 136,
           "brand": "科沃斯",
           "model": "T80S Pro",
-          "price_low": 3399.0,
+          "price_low": 3099.0,
           "price_high": 3399.0,
           "dimensions": {
             "吸力_Pa": 8900.0,
@@ -7254,7 +7254,7 @@
           "brand": "科沃斯",
           "model": "T90 Pro(上下水版)",
           "price_low": 3500.0,
-          "price_high": 4000.0,
+          "price_high": 3599.0,
           "dimensions": {
             "保修_年": 1,
             "拖地方式": "恒压活水滚筒",
@@ -7277,8 +7277,8 @@
           "id": 143,
           "brand": "科沃斯",
           "model": "X12 Pro",
-          "price_low": 5000.0,
-          "price_high": 7500.0,
+          "price_low": 4999.0,
+          "price_high": 4999.0,
           "dimensions": {
             "保修_年": 1,
             "拖地方式": "恒压活水滚筒",
@@ -7325,8 +7325,8 @@
           "id": 145,
           "brand": "石头",
           "model": "P20 Ultra Plus",
-          "price_low": 4699.0,
-          "price_high": 4699.0,
+          "price_low": 3200.0,
+          "price_high": 3500.0,
           "dimensions": {
             "保修_年": 1,
             "拖地方式": "圆拖布旋转",
@@ -7349,7 +7349,7 @@
           "id": 146,
           "brand": "云鲸",
           "model": "JX",
-          "price_low": 3500.0,
+          "price_low": 4000.0,
           "price_high": 4500.0,
           "dimensions": {
             "保修_年": 1,
@@ -7373,8 +7373,8 @@
           "id": 147,
           "brand": "追觅",
           "model": "X60 Pro",
-          "price_low": 5000.0,
-          "price_high": 7500.0,
+          "price_low": 5881.0,
+          "price_high": 7058.0,
           "dimensions": {
             "保修_年": 1,
             "拖地方式": "恒压活水滚筒",
@@ -7445,7 +7445,7 @@
           "id": 150,
           "brand": "添可",
           "model": "芙万Master Max",
-          "price_low": 2500.0,
+          "price_low": 2599.0,
           "price_high": 3500.0,
           "dimensions": {
             "保修_年": 1,
@@ -7470,7 +7470,7 @@
           "brand": "友望",
           "model": "大头/云朵2.0",
           "price_low": 2000.0,
-          "price_high": 3500.0,
+          "price_high": 2899.0,
           "dimensions": {
             "保修_年": 1,
             "拖地方式": "恒压活水滚筒",
@@ -7494,7 +7494,7 @@
           "brand": "石头",
           "model": "A30 Pro Steam",
           "price_low": 2500.0,
-          "price_high": 3500.0,
+          "price_high": 2500.0,
           "dimensions": {
             "保修_年": 1,
             "拖地方式": "圆拖布旋转",
@@ -7541,7 +7541,7 @@
           "id": 300,
           "brand": "添可",
           "model": "芙万Master Max(洗地机)",
-          "price_low": 2500.0,
+          "price_low": 2599.0,
           "price_high": 3500.0,
           "dimensions": {
             "吸力_Pa": 18000,
@@ -7565,8 +7565,8 @@
           "id": 382,
           "brand": "追觅",
           "model": "S50 Pro",
-          "price_low": 2500.0,
-          "price_high": 3000.0,
+          "price_low": 3528.0,
+          "price_high": 4116.0,
           "dimensions": {
             "吸力_Pa": 10000,
             "拖地方式": "圆拖布旋转",
@@ -7638,7 +7638,7 @@
           "brand": "科沃斯",
           "model": "N20 Pro",
           "price_low": 2000.0,
-          "price_high": 2500.0,
+          "price_high": 2399.0,
           "dimensions": {
             "吸力_Pa": 6000,
             "拖地方式": "圆拖布旋转",
@@ -7661,8 +7661,8 @@
           "id": 386,
           "brand": "云鲸",
           "model": "J5",
-          "price_low": 2500.0,
-          "price_high": 3500.0,
+          "price_low": 3799.0,
+          "price_high": 3799.0,
           "dimensions": {
             "吸力_Pa": 8000,
             "拖地方式": "履带式洗地",
@@ -7686,7 +7686,7 @@
           "brand": "米家",
           "model": "全能扫拖机器人1S",
           "price_low": 1500.0,
-          "price_high": 2500.0,
+          "price_high": 1500.0,
           "dimensions": {
             "吸力_Pa": 5000,
             "拖地方式": "圆拖布旋转",
@@ -7710,7 +7710,7 @@
           "brand": "友望",
           "model": "云朵2.0(洗地机)",
           "price_low": 2500.0,
-          "price_high": 3500.0,
+          "price_high": 2500.0,
           "dimensions": {
             "吸力_Pa": 15000,
             "保修_年": 1,
@@ -7733,8 +7733,8 @@
           "id": 444,
           "brand": "米家",
           "model": "扫拖机器人3C",
-          "price_low": 1000.0,
-          "price_high": 1500.0,
+          "price_low": 989.0,
+          "price_high": 989.0,
           "dimensions": {
             "吸力_Pa": 4000,
             "拖地方式": "平板拖",
@@ -7757,8 +7757,8 @@
           "id": 445,
           "brand": "追觅",
           "model": "W10s Pro",
-          "price_low": 2000.0,
-          "price_high": 3000.0,
+          "price_low": 3513.0,
+          "price_high": 3513.0,
           "dimensions": {
             "吸力_Pa": 8000,
             "拖地方式": "圆拖布旋转",
@@ -7782,7 +7782,7 @@
           "brand": "石头",
           "model": "P10S",
           "price_low": 2500.0,
-          "price_high": 3200.0,
+          "price_high": 2500.0,
           "dimensions": {
             "吸力_Pa": 8000,
             "拖地方式": "圆拖布旋转",
@@ -7911,7 +7911,7 @@
           "brand": "宫菱",
           "model": "宫菱空气净化器通用款",
           "price_low": 3000.0,
-          "price_high": 5000.0,
+          "price_high": 4399.0,
           "dimensions": {
             "颗粒物CADR": 1689.0,
             "甲醛CADR": 1053.0,
@@ -7932,8 +7932,8 @@
           "id": 154,
           "brand": "352",
           "model": "X88",
-          "price_low": 3000.0,
-          "price_high": 6000.0,
+          "price_low": 4599.0,
+          "price_high": 4599.0,
           "dimensions": {
             "颗粒物CADR": 1000.0,
             "甲醛CADR": 800.0,
@@ -7955,7 +7955,7 @@
           "brand": "IAM",
           "model": "KJ800F",
           "price_low": 4000.0,
-          "price_high": 8000.0,
+          "price_high": 4299.0,
           "dimensions": {
             "颗粒物CADR": 750.0,
             "甲醛CADR": 550.0,
@@ -7976,7 +7976,7 @@
           "id": 156,
           "brand": "小米",
           "model": "4 Pro H",
-          "price_low": 600.0,
+          "price_low": 1299.0,
           "price_high": 2000.0,
           "dimensions": {
             "颗粒物CADR": 450.0,
@@ -7999,7 +7999,7 @@
           "brand": "美的",
           "model": "KJ700G",
           "price_low": 1500.0,
-          "price_high": 4000.0,
+          "price_high": 3000.0,
           "dimensions": {
             "颗粒物CADR": 600.0,
             "甲醛CADR": 450.0,
@@ -8020,8 +8020,8 @@
           "id": 158,
           "brand": "IQAir",
           "model": "HealthPro 250",
-          "price_low": 8000.0,
-          "price_high": 30000.0,
+          "price_low": 10000.0,
+          "price_high": 15000.0,
           "dimensions": {
             "颗粒物CADR": 700.0,
             "甲醛CADR": 450.0,
@@ -8042,8 +8042,8 @@
           "id": 159,
           "brand": "宫菱",
           "model": "MARS",
-          "price_low": 3000.0,
-          "price_high": 5000.0,
+          "price_low": 2799.0,
+          "price_high": 2799.0,
           "dimensions": {
             "保修_年": 1,
             "颗粒物CADR": 1600.0,
@@ -8065,7 +8065,7 @@
           "brand": "352",
           "model": "旗舰除醛系列",
           "price_low": 3000.0,
-          "price_high": 6000.0,
+          "price_high": 5000.0,
           "dimensions": {
             "保修_年": 1,
             "颗粒物CADR": 800.0,
@@ -8086,7 +8086,7 @@
           "id": 161,
           "brand": "IAM",
           "model": "旗舰系列",
-          "price_low": 4000.0,
+          "price_low": 4299.0,
           "price_high": 8000.0,
           "dimensions": {
             "保修_年": 2,
@@ -8108,7 +8108,7 @@
           "id": 162,
           "brand": "小米",
           "model": "米家4 Pro H",
-          "price_low": 600.0,
+          "price_low": 1299.0,
           "price_high": 2000.0,
           "dimensions": {
             "保修_年": 1,
@@ -8131,7 +8131,7 @@
           "brand": "美的",
           "model": "除甲醛系列",
           "price_low": 1500.0,
-          "price_high": 4000.0,
+          "price_high": 2000.0,
           "dimensions": {
             "保修_年": 1,
             "颗粒物CADR": 400.0,
@@ -8152,8 +8152,8 @@
           "id": 164,
           "brand": "霍尼韦尔",
           "model": "旗舰系列",
-          "price_low": 4000.0,
-          "price_high": 10000.0,
+          "price_low": 4299.0,
+          "price_high": 7899.0,
           "dimensions": {
             "保修_年": 2,
             "颗粒物CADR": 500.0,
@@ -8174,8 +8174,8 @@
           "id": 165,
           "brand": "IQAir",
           "model": "家用系列",
-          "price_low": 8000.0,
-          "price_high": 30000.0,
+          "price_low": 10000.0,
+          "price_high": 25000.0,
           "dimensions": {
             "保修_年": 3,
             "颗粒物CADR": 700.0,
@@ -8197,7 +8197,7 @@
           "brand": "戴森",
           "model": "空气净化风扇系列",
           "price_low": 4000.0,
-          "price_high": 8000.0,
+          "price_high": 7000.0,
           "dimensions": {
             "颗粒物CADR": 350,
             "甲醛CADR": 200,
@@ -8240,7 +8240,7 @@
           "id": 389,
           "brand": "352",
           "model": "X88C",
-          "price_low": 2500.0,
+          "price_low": 3500.0,
           "price_high": 4000.0,
           "dimensions": {
             "颗粒物CADR": 800,
@@ -8262,8 +8262,8 @@
           "id": 390,
           "brand": "小米",
           "model": "米家空气净化器5",
-          "price_low": 1500.0,
-          "price_high": 2500.0,
+          "price_low": 879.0,
+          "price_high": 1099.0,
           "dimensions": {
             "颗粒物CADR": 600,
             "甲醛CADR": 350,
@@ -8285,7 +8285,7 @@
           "brand": "华为",
           "model": "智选720 C400",
           "price_low": 1500.0,
-          "price_high": 2500.0,
+          "price_high": 1500.0,
           "dimensions": {
             "颗粒物CADR": 500,
             "甲醛CADR": 300,
@@ -8306,8 +8306,8 @@
           "id": 392,
           "brand": "布鲁雅尔",
           "model": "Blue 7710i",
-          "price_low": 6000.0,
-          "price_high": 10000.0,
+          "price_low": 1639.0,
+          "price_high": 2194.0,
           "dimensions": {
             "颗粒物CADR": 700,
             "甲醛CADR": 400,
@@ -8328,8 +8328,8 @@
           "id": 393,
           "brand": "戴森",
           "model": "HP09 Hot+Cool",
-          "price_low": 5000.0,
-          "price_high": 7000.0,
+          "price_low": 5280.0,
+          "price_high": 5999.0,
           "dimensions": {
             "颗粒物CADR": 300,
             "甲醛CADR": 200,
@@ -8351,7 +8351,7 @@
           "brand": "夏普",
           "model": "KC-GG50",
           "price_low": 2000.0,
-          "price_high": 3500.0,
+          "price_high": 3000.0,
           "dimensions": {
             "颗粒物CADR": 400,
             "甲醛CADR": 250,
@@ -8372,7 +8372,7 @@
           "id": 395,
           "brand": "大金",
           "model": "MC55ZNV",
-          "price_low": 2000.0,
+          "price_low": 2500.0,
           "price_high": 4000.0,
           "dimensions": {
             "颗粒物CADR": 450,
@@ -8395,7 +8395,7 @@
           "brand": "美的",
           "model": "空气净化器KJ550G",
           "price_low": 2000.0,
-          "price_high": 3000.0,
+          "price_high": 2500.0,
           "dimensions": {
             "颗粒物CADR": 550,
             "甲醛CADR": 350,
@@ -8417,7 +8417,7 @@
           "brand": "小米",
           "model": "米家4 Lite",
           "price_low": 600.0,
-          "price_high": 1000.0,
+          "price_high": 699.0,
           "dimensions": {
             "颗粒物CADR": 300,
             "甲醛CADR": 150,
@@ -8438,8 +8438,8 @@
           "id": 451,
           "brand": "352",
           "model": "Y106",
-          "price_low": 1500.0,
-          "price_high": 2500.0,
+          "price_low": 2969.0,
+          "price_high": 3999.0,
           "dimensions": {
             "颗粒物CADR": 600,
             "甲醛CADR": 400,
@@ -8461,7 +8461,7 @@
           "brand": "华为",
           "model": "智选C500",
           "price_low": 1200.0,
-          "price_high": 2000.0,
+          "price_high": 1999.0,
           "dimensions": {
             "颗粒物CADR": 500,
             "甲醛CADR": 300,
@@ -8582,7 +8582,7 @@
           "id": 166,
           "brand": "九牧",
           "model": "九牧智能马桶通用款",
-          "price_low": 1400.0,
+          "price_low": 1500.0,
           "price_high": 3000.0,
           "dimensions": {
             "加热方式": "即热式",
@@ -8606,8 +8606,8 @@
           "id": 167,
           "brand": "恒洁",
           "model": "H5Pro",
-          "price_low": 2500.0,
-          "price_high": 4000.0,
+          "price_low": 2948.0,
+          "price_high": 3698.0,
           "dimensions": {
             "加热方式": "即热式",
             "冲洗技术": "超漩虹吸静音",
@@ -8703,7 +8703,7 @@
           "brand": "海尔",
           "model": "H3C",
           "price_low": 2000.0,
-          "price_high": 3500.0,
+          "price_high": 3000.0,
           "dimensions": {
             "加热方式": "即热式",
             "冲洗技术": "多模式冲洗",
@@ -8750,7 +8750,7 @@
           "id": 173,
           "brand": "九牧",
           "model": "SQ9650",
-          "price_low": 1800.0,
+          "price_low": 1876.0,
           "price_high": 2200.0,
           "dimensions": {
             "加热方式": "即热式",
@@ -8894,7 +8894,7 @@
           "id": 179,
           "brand": "东芝",
           "model": "小海豚Pro Max A415",
-          "price_low": 3420.0,
+          "price_low": 4020.0,
           "price_high": 4180.0,
           "dimensions": {
             "加热方式": "即热式",
@@ -8918,8 +8918,8 @@
           "id": 180,
           "brand": "TOTO",
           "model": "G5Lite",
-          "price_low": 8000.0,
-          "price_high": 22500.0,
+          "price_low": 9599.0,
+          "price_high": 9999.0,
           "dimensions": {
             "加热方式": "即热式",
             "座圈抗菌": true,
@@ -8967,7 +8967,7 @@
           "brand": "九牧",
           "model": "ZS700X",
           "price_low": 2500.0,
-          "price_high": 3500.0,
+          "price_high": 2939.0,
           "dimensions": {
             "加热方式": "即热式",
             "冲洗技术": "多模式冲洗",
@@ -9134,8 +9134,8 @@
           "id": 454,
           "brand": "九牧",
           "model": "S600",
-          "price_low": 1500.0,
-          "price_high": 2200.0,
+          "price_low": 2500.0,
+          "price_high": 4104.0,
           "dimensions": {
             "加热方式": "即热式",
             "冲洗技术": "多模式冲洗",
@@ -9207,7 +9207,7 @@
           "brand": "喜尔康",
           "model": "K8",
           "price_low": 3000.0,
-          "price_high": 4000.0,
+          "price_high": 3500.0,
           "dimensions": {
             "加热方式": "即热式",
             "冲洗技术": "超漩虹吸",
@@ -9231,7 +9231,7 @@
           "brand": "惠达",
           "model": "ET35",
           "price_low": 2500.0,
-          "price_high": 3500.0,
+          "price_high": 3499.0,
           "dimensions": {
             "加热方式": "即热式",
             "冲洗技术": "超漩虹吸",
@@ -9319,8 +9319,8 @@
           "id": 182,
           "brand": "海尔",
           "model": "KL5",
-          "price_low": 1699.0,
-          "price_high": 1699.0,
+          "price_low": 2399.0,
+          "price_high": 2399.0,
           "dimensions": {
             "恒温技术": "水量伺服",
             "升数_L": 14.0,
@@ -9341,8 +9341,8 @@
           "id": 183,
           "brand": "万和",
           "model": "JSQ25",
-          "price_low": 1500.0,
-          "price_high": 3000.0,
+          "price_low": 564.0,
+          "price_high": 1349.0,
           "dimensions": {
             "恒温技术": "燃气比例阀",
             "升数_L": 14.0,
@@ -9364,7 +9364,7 @@
           "brand": "林内",
           "model": "RUS-16",
           "price_low": 3000.0,
-          "price_high": 5000.0,
+          "price_high": 4828.0,
           "dimensions": {
             "恒温技术": "双控伺服(恒温王)",
             "升数_L": 18.0,
@@ -9407,8 +9407,8 @@
           "id": 186,
           "brand": "卡萨帝",
           "model": "JSQ32",
-          "price_low": 4000.0,
-          "price_high": 8000.0,
+          "price_low": 4999.0,
+          "price_high": 7000.0,
           "dimensions": {
             "恒温技术": "水量伺服",
             "升数_L": 14.0,
@@ -9430,7 +9430,7 @@
           "brand": "美的",
           "model": "JSQ30",
           "price_low": 2000.0,
-          "price_high": 3500.0,
+          "price_high": 2669.0,
           "dimensions": {
             "恒温技术": "水量伺服",
             "升数_L": 14.0,
@@ -9452,7 +9452,7 @@
           "brand": "海尔",
           "model": "KL5/麦浪系列",
           "price_low": 2500.0,
-          "price_high": 4000.0,
+          "price_high": 3500.0,
           "dimensions": {
             "类型": "燃气",
             "保修_年": 6,
@@ -9474,7 +9474,7 @@
           "brand": "美的",
           "model": "燃气热水器系列",
           "price_low": 2000.0,
-          "price_high": 3500.0,
+          "price_high": 3000.0,
           "dimensions": {
             "类型": "燃气",
             "保修_年": 6,
@@ -9496,7 +9496,7 @@
           "brand": "万和",
           "model": "燃气热水器系列",
           "price_low": 1500.0,
-          "price_high": 3000.0,
+          "price_high": 2500.0,
           "dimensions": {
             "类型": "燃气",
             "保修_年": 3,
@@ -9518,7 +9518,7 @@
           "brand": "林内",
           "model": "燃气热水器系列",
           "price_low": 3000.0,
-          "price_high": 7500.0,
+          "price_high": 6799.0,
           "dimensions": {
             "类型": "燃气",
             "保修_年": 3,
@@ -9561,7 +9561,7 @@
           "id": 193,
           "brand": "卡萨帝",
           "model": "燃气热水器系列",
-          "price_low": 4000.0,
+          "price_low": 4999.0,
           "price_high": 8000.0,
           "dimensions": {
             "类型": "燃气",
@@ -9583,8 +9583,8 @@
           "id": 194,
           "brand": "海尔",
           "model": "海尔燃气热水器13L通用款",
-          "price_low": 500.0,
-          "price_high": 2500.0,
+          "price_low": 688.0,
+          "price_high": 2399.0,
           "dimensions": {
             "类型": "燃气",
             "保修_年": 6,
@@ -9650,7 +9650,7 @@
           "brand": "海尔",
           "model": "海尔燃气热水器20L通用款",
           "price_low": 5000.0,
-          "price_high": 15000.0,
+          "price_high": 8000.0,
           "dimensions": {
             "类型": "燃气",
             "保修_年": 6,
@@ -9672,7 +9672,7 @@
           "brand": "美的",
           "model": "美的燃气热水器20L通用款",
           "price_low": 4000.0,
-          "price_high": 12000.0,
+          "price_high": 6000.0,
           "dimensions": {
             "类型": "燃气",
             "保修_年": 6,
@@ -9694,7 +9694,7 @@
           "brand": "纽恩泰",
           "model": "纽恩泰燃气热水器20L通用款",
           "price_low": 5000.0,
-          "price_high": 15000.0,
+          "price_high": 10000.0,
           "dimensions": {
             "类型": "燃气",
             "恒温技术": "水量伺服",
@@ -9890,8 +9890,8 @@
           "id": 406,
           "brand": "林内",
           "model": "QD06",
-          "price_low": 3500.0,
-          "price_high": 5000.0,
+          "price_low": 3852.0,
+          "price_high": 4500.0,
           "dimensions": {
             "类型": "燃气",
             "恒温技术": "双控伺服",
@@ -9935,7 +9935,7 @@
           "brand": "卡萨帝",
           "model": "鉴赏家",
           "price_low": 6000.0,
-          "price_high": 10000.0,
+          "price_high": 7764.0,
           "dimensions": {
             "类型": "燃气",
             "恒温技术": "水量伺服",
@@ -9979,7 +9979,7 @@
           "brand": "海尔",
           "model": "空气能热水器200L",
           "price_low": 5000.0,
-          "price_high": 10000.0,
+          "price_high": 6000.0,
           "dimensions": {
             "类型": "空气能",
             "升数_L": 200,
@@ -10001,7 +10001,7 @@
           "brand": "海尔",
           "model": "JSQ31-16KL7",
           "price_low": 3500.0,
-          "price_high": 5000.0,
+          "price_high": 4500.0,
           "dimensions": {
             "类型": "燃气",
             "恒温技术": "双控伺服",
@@ -10045,7 +10045,7 @@
           "brand": "万和",
           "model": "JSQ30-16LS5",
           "price_low": 2000.0,
-          "price_high": 3000.0,
+          "price_high": 2800.0,
           "dimensions": {
             "类型": "燃气",
             "恒温技术": "燃气比例阀",
@@ -10067,7 +10067,7 @@
           "brand": "林内",
           "model": "RUS-16QS06",
           "price_low": 3800.0,
-          "price_high": 5500.0,
+          "price_high": 3800.0,
           "dimensions": {
             "类型": "燃气",
             "恒温技术": "双控伺服",
@@ -10178,7 +10178,7 @@
           "brand": "海尔",
           "model": "双擎热泵套装",
           "price_low": 5000.0,
-          "price_high": 10000.0,
+          "price_high": 7000.0,
           "dimensions": {
             "容量_kg": 1010.0,
             "电机类型": "FPA直驱变频",
@@ -10199,7 +10199,7 @@
           "id": 201,
           "brand": "小天鹅",
           "model": "小乌梅",
-          "price_low": 4000.0,
+          "price_low": 4999.0,
           "price_high": 8000.0,
           "dimensions": {
             "容量_kg": 1010.0,
@@ -10221,8 +10221,8 @@
           "id": 202,
           "brand": "卡萨帝",
           "model": "纤诺L7",
-          "price_low": 15000.0,
-          "price_high": 18000.0,
+          "price_low": 7999.0,
+          "price_high": 7999.0,
           "dimensions": {
             "容量_kg": 1010.0,
             "电机类型": "FPA直驱变频",
@@ -10243,8 +10243,8 @@
           "id": 203,
           "brand": "美的",
           "model": "MG100",
-          "price_low": 3000.0,
-          "price_high": 6000.0,
+          "price_low": 1999.0,
+          "price_high": 2999.0,
           "dimensions": {
             "容量_kg": 1010.0,
             "电机类型": "BLDC变频",
@@ -10266,7 +10266,7 @@
           "brand": "西门子",
           "model": "WM14",
           "price_low": 8000.0,
-          "price_high": 15000.0,
+          "price_high": 10000.0,
           "dimensions": {
             "容量_kg": 9.5,
             "电机类型": "BLDC变频",
@@ -10310,7 +10310,7 @@
           "brand": "海尔",
           "model": "双擎热泵洗烘套装",
           "price_low": 5000.0,
-          "price_high": 10000.0,
+          "price_high": 7000.0,
           "dimensions": {
             "电机类型": "FPA直驱",
             "保修_年": 3,
@@ -10331,7 +10331,7 @@
           "id": 207,
           "brand": "小天鹅",
           "model": "小乌梅/小蓝鲸系列",
-          "price_low": 4000.0,
+          "price_low": 4999.0,
           "price_high": 8000.0,
           "dimensions": {
             "电机类型": "DD直驱",
@@ -10420,7 +10420,7 @@
           "brand": "东芝",
           "model": "玉兔3.0 Pro",
           "price_low": 6000.0,
-          "price_high": 10000.0,
+          "price_high": 8999.0,
           "dimensions": {
             "电机类型": "DD直驱",
             "保修_年": 3,
@@ -10463,7 +10463,7 @@
           "id": 308,
           "brand": "小天鹅",
           "model": "小乌梅洗烘套装",
-          "price_low": 4000.0,
+          "price_low": 4999.0,
           "price_high": 6000.0,
           "dimensions": {
             "容量_kg": 10,
@@ -10485,8 +10485,8 @@
           "id": 309,
           "brand": "小天鹅",
           "model": "小蓝鲸洗烘套装",
-          "price_low": 5000.0,
-          "price_high": 8000.0,
+          "price_low": 11499.0,
+          "price_high": 14999.0,
           "dimensions": {
             "容量_kg": 10,
             "电机类型": "DD直驱",
@@ -10507,8 +10507,8 @@
           "id": 310,
           "brand": "海信",
           "model": "洗烘套装",
-          "price_low": 2000.0,
-          "price_high": 4000.0,
+          "price_low": 6000.0,
+          "price_high": 9999.0,
           "dimensions": {
             "容量_kg": 10,
             "电机类型": "BLDC变频",
@@ -10552,7 +10552,7 @@
           "brand": "海尔",
           "model": "精华洗洗烘一体",
           "price_low": 4000.0,
-          "price_high": 6000.0,
+          "price_high": 5599.0,
           "dimensions": {
             "容量_kg": 10,
             "电机类型": "FPA直驱",
@@ -10574,7 +10574,7 @@
           "brand": "小天鹅",
           "model": "水魔方洗烘一体",
           "price_low": 3500.0,
-          "price_high": 5000.0,
+          "price_high": 4299.0,
           "dimensions": {
             "容量_kg": 10,
             "电机类型": "DD直驱",
@@ -10662,7 +10662,7 @@
           "brand": "美的",
           "model": "元气洗烘套装",
           "price_low": 4000.0,
-          "price_high": 6000.0,
+          "price_high": 5599.0,
           "dimensions": {
             "容量_kg": 10,
             "电机类型": "BLDC变频",
@@ -10727,8 +10727,8 @@
           "id": 465,
           "brand": "小天鹅",
           "model": "TG100V88WMUIADY4",
-          "price_low": 4000.0,
-          "price_high": 5500.0,
+          "price_low": 3999.0,
+          "price_high": 3999.0,
           "dimensions": {
             "容量_kg": 10,
             "电机类型": "DD直驱",
@@ -10772,7 +10772,7 @@
           "brand": "三星",
           "model": "洗烘一体DV90T",
           "price_low": 6000.0,
-          "price_high": 9000.0,
+          "price_high": 6000.0,
           "dimensions": {
             "容量_kg": 10,
             "电机类型": "DD直驱",
@@ -10902,8 +10902,8 @@
           "id": 213,
           "brand": "TCL",
           "model": "T7L Ultra 75寸",
-          "price_low": 4000.0,
-          "price_high": 10000.0,
+          "price_low": 4890.0,
+          "price_high": 6116.0,
           "dimensions": {
             "面板类型": "QD-MiniLED",
             "分区数": 640.0,
@@ -11058,7 +11058,7 @@
           "id": 219,
           "brand": "TCL",
           "model": "T7K/T7L Ultra",
-          "price_low": 4000.0,
+          "price_low": 4890.0,
           "price_high": 6000.0,
           "dimensions": {
             "保修_年": 1,
@@ -11085,7 +11085,7 @@
           "brand": "海信",
           "model": "75E5Q Pro/E7N Pro",
           "price_low": 6000.0,
-          "price_high": 10000.0,
+          "price_high": 7999.0,
           "dimensions": {
             "保修_年": 1,
             "音响": "2.1声道杜比",
@@ -11136,7 +11136,7 @@
           "id": 222,
           "brand": "雷鸟",
           "model": "系列MiniLED",
-          "price_low": 3000.0,
+          "price_low": 3199.0,
           "price_high": 5000.0,
           "dimensions": {
             "保修_年": 1,
@@ -11448,8 +11448,8 @@
           "id": 314,
           "brand": "海信",
           "model": "75E5Q Pro",
-          "price_low": 5961.0,
-          "price_high": 5961.0,
+          "price_low": 4135.0,
+          "price_high": 6599.0,
           "dimensions": {
             "尺寸_寸": 75,
             "面板类型": "ULED",
@@ -11501,7 +11501,7 @@
           "brand": "小米",
           "model": "S75 Mini LED",
           "price_low": 3000.0,
-          "price_high": 5000.0,
+          "price_high": 3799.0,
           "dimensions": {
             "尺寸_寸": 75,
             "面板类型": "MiniLED",
@@ -11526,8 +11526,8 @@
           "id": 317,
           "brand": "小米",
           "model": "S Pro 85",
-          "price_low": 5000.0,
-          "price_high": 8000.0,
+          "price_low": 6499.0,
+          "price_high": 6799.0,
           "dimensions": {
             "尺寸_寸": 85,
             "面板类型": "MiniLED",
@@ -11630,8 +11630,8 @@
           "id": 321,
           "brand": "雷鸟",
           "model": "75寸 MiniLED",
-          "price_low": 3000.0,
-          "price_high": 5000.0,
+          "price_low": 3679.0,
+          "price_high": 4599.0,
           "dimensions": {
             "尺寸_寸": 75,
             "面板类型": "MiniLED",
@@ -11873,8 +11873,8 @@
           "id": 232,
           "brand": "火星人",
           "model": "X5 Pro",
-          "price_low": 6000.0,
-          "price_high": 25000.0,
+          "price_low": 19980.0,
+          "price_high": 19980.0,
           "dimensions": {
             "风量_m3": 19.5,
             "热效率_pct": 4.75,
@@ -11895,8 +11895,8 @@
           "id": 233,
           "brand": "亿田",
           "model": "S8",
-          "price_low": 4799.0,
-          "price_high": 30800.0,
+          "price_low": 12999.0,
+          "price_high": 17800.0,
           "dimensions": {
             "风量_m3": 19.5,
             "热效率_pct": 4.85,
@@ -11961,8 +11961,8 @@
           "id": 236,
           "brand": "帅丰",
           "model": "J2",
-          "price_low": 5000.0,
-          "price_high": 15000.0,
+          "price_low": 10000.0,
+          "price_high": 10000.0,
           "dimensions": {
             "风量_m3": 18.0,
             "热效率_pct": 4.6,
@@ -12005,8 +12005,8 @@
           "id": 238,
           "brand": "亿田",
           "model": "亿田集成灶通用款",
-          "price_low": 4799.0,
-          "price_high": 30800.0,
+          "price_low": 5999.0,
+          "price_high": 17800.0,
           "dimensions": {
             "保修_年": 3,
             "类型": "蒸烤一体",
@@ -12093,8 +12093,8 @@
           "id": 242,
           "brand": "贝克巴斯",
           "model": "E50",
-          "price_low": 800.0,
-          "price_high": 5000.0,
+          "price_low": 1999.0,
+          "price_high": 1999.0,
           "dimensions": {
             "保修_年": 3,
             "类型": "垃圾处理器",
@@ -12115,8 +12115,8 @@
           "id": 243,
           "brand": "唯斯特姆",
           "model": "唯斯特姆垃圾处理器通用款",
-          "price_low": 1500.0,
-          "price_high": 5000.0,
+          "price_low": 1899.0,
+          "price_high": 1899.0,
           "dimensions": {
             "保修_年": 3,
             "类型": "垃圾处理器",
@@ -12137,8 +12137,8 @@
           "id": 244,
           "brand": "爱适易",
           "model": "E200",
-          "price_low": 2000.0,
-          "price_high": 7500.0,
+          "price_low": 6192.0,
+          "price_high": 6192.0,
           "dimensions": {
             "保修_年": 3,
             "类型": "垃圾处理器",
@@ -12225,8 +12225,8 @@
           "id": 248,
           "brand": "沁园",
           "model": "QY-2000",
-          "price_low": 1000.0,
-          "price_high": 4000.0,
+          "price_low": 1499.0,
+          "price_high": 1499.0,
           "dimensions": {
             "保修_年": 3,
             "类型": "管线机",
@@ -12248,7 +12248,7 @@
           "brand": "A.O.史密斯",
           "model": "AR600",
           "price_low": 4000.0,
-          "price_high": 12000.0,
+          "price_high": 6000.0,
           "dimensions": {
             "保修_年": 3,
             "类型": "管线机",
@@ -12291,7 +12291,7 @@
           "id": 323,
           "brand": "火星人",
           "model": "集成灶蒸烤一体",
-          "price_low": 6000.0,
+          "price_low": 10000.0,
           "price_high": 15000.0,
           "dimensions": {
             "类型": "蒸烤一体",
@@ -12313,8 +12313,8 @@
           "id": 324,
           "brand": "亿田",
           "model": "集成灶蒸烤一体",
-          "price_low": 5000.0,
-          "price_high": 20000.0,
+          "price_low": 10499.0,
+          "price_high": 17800.0,
           "dimensions": {
             "类型": "蒸烤一体",
             "风量_m3": 20,
@@ -12401,8 +12401,8 @@
           "id": 328,
           "brand": "贝克巴斯",
           "model": "垃圾处理器E70",
-          "price_low": 1500.0,
-          "price_high": 2500.0,
+          "price_low": 1899.0,
+          "price_high": 2484.0,
           "dimensions": {
             "容量_L": 1.4,
             "保修_年": 3,
@@ -12424,8 +12424,8 @@
           "id": 329,
           "brand": "贝克巴斯",
           "model": "垃圾处理器E60",
-          "price_low": 1000.0,
-          "price_high": 1800.0,
+          "price_low": 1099.0,
+          "price_high": 1599.0,
           "dimensions": {
             "容量_L": 1.2,
             "保修_年": 3,
@@ -12537,8 +12537,8 @@
           "id": 334,
           "brand": "沁园",
           "model": "管线机",
-          "price_low": 1000.0,
-          "price_high": 3000.0,
+          "price_low": 1499.0,
+          "price_high": 1499.0,
           "dimensions": {
             "保修_年": 3,
             "类型": "管线机",
