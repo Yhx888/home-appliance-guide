@@ -30,25 +30,37 @@ dim_key = 维度英文名_单位后缀
 
 ### 1.3 数据来源优先级
 
+当前实际数据来源：
+
 ```
-1. jd_html       — 京东页面 HTML 解析（最可靠）
-2. manufacturer_html — 厂商官网 HTML 解析
-3. jd_vision     — 京东截图视觉提取
-4. manufacturer_vision — 厂商官网截图视觉提取
-5. xhs_vision    — 小红书等截图提取（参考）
-6. seed_data     — 现有页面已有数据（降级使用）
+1. web_research  — 网络调研数据批量补充（expand_data.py，当前主要来源）
+2. 规则填充      — 按品牌/价格常识填补缺失维度值（enrich_data.py，仅补缺，不产 verified）
+3. 多方核验校对  — verify.py 对多源一致的数据点判定 verified（当前 data_points 为空，仅生成质量报告）
+```
+
+以下来源为**目标态（采集器未启用，jd.py / manufacturer.py 为占位实现）**：
+
+```
+jd_html       — 京东页面 HTML 解析（最可靠）
+manufacturer_html — 厂商官网 HTML 解析
+jd_vision     — 京东截图视觉提取
+manufacturer_vision — 厂商官网截图视觉提取
+xhs_vision    — 小红书等截图提取（参考）
+seed_data     — 现有页面已有数据（降级使用）
 ```
 
 ---
 
 ## 2. 各品类维度定义
 
+> **价格不入维度表**：价格由产品列 `price_low` / `price_high` 承载（单一事实源），
+> 不属于评分维度定义；评分引擎（scorer.py）通过 `PRICE_DIM_KEYS` 映射从产品列读取。
+> 下文各表不再列出 价格_low / 价格_high。
+
 ### 2.1 抽油烟机（Range Hood） — cat-1
 
 | dim_key | label | type | unit | higher_better | weight |
 |---------|-------|------|------|:-------------:|:------:|
-| 价格_low | 最低价 | float | 元 | false | 70 |
-| 价格_high | 最高价 | float | 元 | false | 60 |
 | 风量_m3 | 风量 | float | m³/min | true | 90 |
 | 静压_Pa | 最大静压 | float | Pa | true | 85 |
 | 噪音_dB | 噪音 | float | dB | false | 60 |
@@ -69,8 +81,6 @@ dim_key = 维度英文名_单位后缀
 
 | dim_key | label | type | unit | higher_better | weight |
 |---------|-------|------|------|:-------------:|:------:|
-| 价格_low | 最低价 | float | 元 | false | 70 |
-| 价格_high | 最高价 | float | 元 | false | 60 |
 | 火力_kW | 火力 | float | kW | true | 85 |
 | 热效率_pct | 热效率 | float | % | true | 80 |
 | 面板材质 | 面板材质 | enum | — | — | 40 |
@@ -88,8 +98,6 @@ dim_key = 维度英文名_单位后缀
 
 | dim_key | label | type | unit | higher_better | weight |
 |---------|-------|------|------|:-------------:|:------:|
-| 价格_low | 最低价 | float | 元 | false | 70 |
-| 价格_high | 最高价 | float | 元 | false | 60 |
 | 容量_L | 容量 | float | L | true | 80 |
 | 最高温度_C | 最高温度 | float | °C | true | 60 |
 | 有微波 | 微波功能 | bool | — | true | 40 |
@@ -108,8 +116,6 @@ dim_key = 维度英文名_单位后缀
 
 | dim_key | label | type | unit | higher_better | weight |
 |---------|-------|------|------|:-------------:|:------:|
-| 价格_low | 最低价 | float | 元 | false | 70 |
-| 价格_high | 最高价 | float | 元 | false | 60 |
 | 容量_套 | 容量 | float | 套 | true | 85 |
 | 类型 | 类型 | enum | — | — | 40 |
 | 烘干方式 | 烘干方式 | enum | — | — | 70 |
@@ -129,8 +135,6 @@ dim_key = 维度英文名_单位后缀
 
 | dim_key | label | type | unit | higher_better | weight |
 |---------|-------|------|------|:-------------:|:------:|
-| 价格_low | 最低价 | float | 元 | false | 70 |
-| 价格_high | 最高价 | float | 元 | false | 60 |
 | 通量_G | 通量 | float | G | true | 80 |
 | RO膜寿命_年 | RO膜寿命 | float | 年 | true | 85 |
 | 废水比 | 废水比 | float | — | true | 60 |
@@ -150,8 +154,6 @@ dim_key = 维度英文名_单位后缀
 
 | dim_key | label | type | unit | higher_better | weight |
 |---------|-------|------|------|:-------------:|:------:|
-| 价格_low | 最低价 | float | 元 | false | 65 |
-| 价格_high | 最高价 | float | 元 | false | 55 |
 | 容量_L | 容量 | float | L | true | 80 |
 | 门型 | 门型 | enum | — | — | 50 |
 | 制冷方式 | 制冷方式 | enum | — | — | 60 |
@@ -172,8 +174,6 @@ dim_key = 维度英文名_单位后缀
 
 | dim_key | label | type | unit | higher_better | weight |
 |---------|-------|------|------|:-------------:|:------:|
-| 价格_low | 最低价 | float | 元 | false | 70 |
-| 价格_high | 最高价 | float | 元 | false | 60 |
 | 容量_L | 容量 | float | L | true | 75 |
 | 消毒方式 | 消毒方式 | enum | — | — | 80 |
 | 杀菌率_pct | 杀菌率 | float | % | true | 70 |
@@ -209,8 +209,6 @@ dim_key = 维度英文名_单位后缀
 
 | dim_key | label | type | unit | higher_better | weight |
 |---------|-------|------|------|:-------------:|:------:|
-| 价格_low | 最低价 | float | 元 | false | 60 |
-| 价格_high | 最高价 | float | 元 | false | 50 |
 | 风量_m3h | 风量 | float | m³/h | true | 85 |
 | 过滤等级 | 过滤等级 | enum | — | — | 80 |
 | 热交换率_pct | 热交换率 | float | % | true | 70 |
@@ -229,8 +227,6 @@ dim_key = 维度英文名_单位后缀
 
 | dim_key | label | type | unit | higher_better | weight |
 |---------|-------|------|------|:-------------:|:------:|
-| 价格_low | 最低价 | float | 元 | false | 75 |
-| 价格_high | 最高价 | float | 元 | false | 65 |
 | 能效_APF | 能效 APF | float | — | true | 85 |
 | 压缩机 | 压缩机 | enum | — | — | 70 |
 | 噪音_dB | 噪音 | float | dB | false | 60 |
@@ -250,8 +246,6 @@ dim_key = 维度英文名_单位后缀
 
 | dim_key | label | type | unit | higher_better | weight |
 |---------|-------|------|------|:-------------:|:------:|
-| 价格_low | 最低价 | float | 元 | false | 70 |
-| 价格_high | 最高价 | float | 元 | false | 60 |
 | 吸力_Pa | 吸力 | float | Pa | true | 75 |
 | 拖地方式 | 拖地方式 | enum | — | — | 80 |
 | 避障技术 | 避障技术 | enum | — | — | 70 |
@@ -271,8 +265,6 @@ dim_key = 维度英文名_单位后缀
 
 | dim_key | label | type | unit | higher_better | weight |
 |---------|-------|------|------|:-------------:|:------:|
-| 价格_low | 最低价 | float | 元 | false | 65 |
-| 价格_high | 最高价 | float | 元 | false | 55 |
 | 颗粒物CADR | 颗粒物 CADR | float | m³/h | true | 85 |
 | 甲醛CADR | 甲醛 CADR | float | m³/h | true | 80 |
 | 噪音_dB | 噪音 | float | dB | false | 50 |
@@ -290,8 +282,6 @@ dim_key = 维度英文名_单位后缀
 
 | dim_key | label | type | unit | higher_better | weight |
 |---------|-------|------|------|:-------------:|:------:|
-| 价格_low | 最低价 | float | 元 | false | 75 |
-| 价格_high | 最高价 | float | 元 | false | 65 |
 | 加热方式 | 加热方式 | enum | — | — | 80 |
 | 冲洗技术 | 冲洗技术 | enum | — | — | 70 |
 | 翻盖方式 | 翻盖方式 | enum | — | — | 55 |
@@ -311,8 +301,6 @@ dim_key = 维度英文名_单位后缀
 
 | dim_key | label | type | unit | higher_better | weight |
 |---------|-------|------|------|:-------------:|:------:|
-| 价格_low | 最低价 | float | 元 | false | 70 |
-| 价格_high | 最高价 | float | 元 | false | 60 |
 | 类型 | 热水器类型 | enum | — | — | 40 |
 | 恒温技术 | 恒温技术 | enum | — | — | 85 |
 | 升数_L | 升数 | float | L | true | 75 |
@@ -330,8 +318,6 @@ dim_key = 维度英文名_单位后缀
 
 | dim_key | label | type | unit | higher_better | weight |
 |---------|-------|------|------|:-------------:|:------:|
-| 价格_low | 最低价 | float | 元 | false | 70 |
-| 价格_high | 最高价 | float | 元 | false | 60 |
 | 容量_kg | 容量 | float | kg | true | 80 |
 | 电机类型 | 电机类型 | enum | — | — | 65 |
 | 烘干方式 | 烘干方式 | enum | — | — | 75 |
@@ -350,8 +336,6 @@ dim_key = 维度英文名_单位后缀
 
 | dim_key | label | type | unit | higher_better | weight |
 |---------|-------|------|------|:-------------:|:------:|
-| 价格_low | 最低价 | float | 元 | false | 65 |
-| 价格_high | 最高价 | float | 元 | false | 55 |
 | 尺寸_寸 | 尺寸 | float | 英寸 | true | 60 |
 | 面板类型 | 面板类型 | enum | — | — | 85 |
 | 分区数 | 分区数 | float | — | true | 75 |
@@ -369,39 +353,34 @@ dim_key = 维度英文名_单位后缀
 
 ---
 
-### 2.17 集成灶/垃圾处理器/管线机（Integrated） — cat-17
+### 2.17 集成灶（Integrated） — cat-17
 
-该品类包含 3 个子品类，使用 `subcategory` 字段区分。
+**当前仅实现 2.17a 集成灶**（7 项维度：5 项评分维度 + 价格 2 项由产品列承载）。
+2.17b 垃圾处理器 / 2.17c 管线机为**目标态（未实现）**，仅作后续扩展预留，当前无对应数据与实现。
 
 #### 2.17a 集成灶
 
 | dim_key | label | type | unit | higher_better | weight |
 |---------|-------|------|------|:-------------:|:------:|
-| 价格_low | 最低价 | float | 元 | false | 70 |
-| 价格_high | 最高价 | float | 元 | false | 60 |
 | 类型 | 集成灶类型 | enum | — | — | 40 |
 | 风量_m3 | 风量 | float | m³/min | true | 80 |
 | 静压_Pa | 最大静压 | float | Pa | true | 75 |
 | 热效率_pct | 热效率 | float | % | true | 65 |
 | 保修_年 | 保修 | float | 年 | true | 40 |
 
-#### 2.17b 垃圾处理器
+#### 2.17b 垃圾处理器（目标态，未实现）
 
 | dim_key | label | type | unit | higher_better | weight |
 |---------|-------|------|------|:-------------:|:------:|
-| 价格_low | 最低价 | float | 元 | false | 70 |
-| 价格_high | 最高价 | float | 元 | false | 60 |
 | 电机类型 | 电机类型 | enum | — | — | 80 |
 | 研磨等级 | 研磨等级 | float | 级 | true | 75 |
 | 容量_L | 容量 | float | L | true | 60 |
 | 保修_年 | 保修 | float | 年 | true | 40 |
 
-#### 2.17c 管线机
+#### 2.17c 管线机（目标态，未实现）
 
 | dim_key | label | type | unit | higher_better | weight |
 |---------|-------|------|------|:-------------:|:------:|
-| 价格_low | 最低价 | float | 元 | false | 70 |
-| 价格_high | 最高价 | float | 元 | false | 60 |
 | 加热方式 | 加热方式 | enum | — | — | 75 |
 | 水温档位 | 水温档位 | float | 档 | true | 60 |
 | 保修_年 | 保修 | float | 年 | true | 35 |
@@ -464,6 +443,8 @@ dim_key = 维度英文名_单位后缀
 
 ### 4.2 置信度计算
 
+置信度**只来自真实核验流程**（verify.py 的多源数值校对，见 `calculate_confidence`）：
+
 ```
 confidence = 0.5  # 基础值
   + 0.15 × (sources_count - 1)  # 每多一个来源 +0.15
@@ -477,6 +458,10 @@ confidence = 0.5  # 基础值
   confidence < 0.3 → 不采纳，标记"需人工核查"
 ```
 
+> 注意：**规则填充（enrich_data.py）不产生 verified 数据**，也不产出置信度；
+> verified 状态仅由 verify.py 对多源一致的数据点判定。
+> verify.py 的质量报告基于 data_points 表真实置信度聚合（当前全部为 web_research 单一来源，置信度分布见报告输出）。
+
 ### 4.3 数据完成标准
 
 | 指标 | 目标值 |
@@ -484,6 +469,6 @@ confidence = 0.5  # 基础值
 | 每品类品牌数 | ≥8（小众品类≥5） |
 | 总产品数 | ≥500 |
 | 关键维度填充率 | ≥80%（指该品类最重要 5 个维度的平均填充率） |
-| 双源覆盖产品比例 | ≥70% |
+| 数据来源可追溯 | 每条数据可追溯到来源（web_research / 规则填充 / 核验记录） |
 | 核心品牌覆盖率 | 100%（美的、海尔、格力、方太、老板、小米等全品类品牌） |
 | 无未解决数据问题 | 0 条标记"需人工核查"的记录 |

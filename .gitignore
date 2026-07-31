@@ -2,4 +2,4 @@ __pycache__/
 *.pyc
 backend/app.db
 .aicoding-chat-workspace
-.slim/deepwork/
+.slim/
