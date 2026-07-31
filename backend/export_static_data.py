@@ -27,6 +27,7 @@ try:
             "slug": cat.slug,
             "icon": cat.icon or "",
             "sort_order": cat.sort_order or 0,
+            "product_count": len(products),
             "dimensions": [
                 {
                     "dim_key": d.dim_key,

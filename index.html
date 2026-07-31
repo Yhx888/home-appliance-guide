@@ -12,20 +12,28 @@
 <meta name="keywords" content="家居装修,电器选购,品牌推荐,2025,2026,家电指南">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--primary:#2563eb;--primary-light:#3b82f6;--accent:#f59e0b;--bg:#f5f7fa;--card:#fff;--text:#1e293b;--text-light:#64748b;--border:#e2e8f0;--success:#10b981;--danger:#ef4444;--warning:#f59e0b;--radius:12px;--shadow:0 2px 8px rgba(0,0,0,.08)}
+:root{--primary:#b03a2e;--primary-light:#c94c3d;--accent:#b0782a;--teal:#2f5d62;--bg:#f6f1e7;--card:#fffdf8;--text:#2b2620;--text-light:#867867;--border:#e6dcc9;--success:#3d7a4e;--danger:#b03a2e;--warning:#b0782a;--radius:10px;--shadow:0 2px 10px rgba(89,74,51,.08);--serif:"Noto Serif SC","Source Han Serif SC","Songti SC","STSong","SimSun",serif}
 body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:17px;-webkit-text-size-adjust:100%}
 a{color:var(--primary);text-decoration:none}
-/* Header */
-.hero{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 50%,#3b82f6 100%);color:#fff;padding:48px 20px 32px;text-align:center;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,.05) 0%,transparent 60%);animation:pulse 8s ease-in-out infinite}
-@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
-.hero h1{font-size:clamp(24px,5vw,38px);font-weight:800;margin-bottom:12px;position:relative;text-shadow:0 2px 4px rgba(0,0,0,.2)}
-.hero .subtitle{font-size:clamp(14px,3vw,17px);opacity:.9;margin-bottom:20px;position:relative}
-.search-box{max-width:500px;margin:0 auto;position:relative}
-.search-box input{width:100%;padding:14px 16px 14px 44px;border:none;border-radius:24px;font-size:16px;background:rgba(255,255,255,.95);color:var(--text);outline:none;box-shadow:0 4px 12px rgba(0,0,0,.15)}
+/* Header：暖纸编辑风页头（主页大幅 / 子页面细条） */
+.hero{background-color:var(--bg);background-image:radial-gradient(rgba(89,74,51,.07) 1px,transparent 1px);background-size:22px 22px;color:var(--text);padding:52px 20px 40px;text-align:center;position:relative}
+.hero::after{content:'';position:absolute;left:0;right:0;bottom:0;height:5px;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.hero-kicker{font-size:12px;letter-spacing:.4em;text-transform:uppercase;color:var(--text-light);margin-bottom:16px}
+.hero h1{font-family:var(--serif);font-size:clamp(26px,5vw,42px);font-weight:700;letter-spacing:.06em;margin-bottom:14px;position:relative}
+.hero-seal{display:inline-block;vertical-align:top;margin-left:12px;width:50px;height:50px;background:var(--primary);color:#fdf6ea;font-family:var(--serif);font-size:15px;line-height:1.3;letter-spacing:2px;padding:5px 0 0 7px;text-align:left;box-sizing:border-box;border-radius:5px;transform:rotate(6deg);box-shadow:0 2px 6px rgba(176,58,46,.3)}
+.hero .subtitle{font-size:clamp(13px,3vw,16px);color:var(--text-light);margin-bottom:26px;position:relative;letter-spacing:.08em}
+.search-box{max-width:520px;margin:0 auto;position:relative}
+.search-box input{width:100%;padding:14px 16px 14px 44px;border:1px solid var(--border);border-radius:10px;font-size:16px;background:var(--card);color:var(--text);outline:none;box-shadow:var(--shadow);transition:border-color .2s}
+.search-box input:focus{border-color:var(--primary)}
 .search-box .search-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:18px}
-/* Nav */
-.nav-wrap{position:sticky;top:0;z-index:100;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.08);border-bottom:1px solid var(--border)}
+/* 子页面：页头压缩为细条 */
+body.is-sub .hero{padding:14px 20px 12px;text-align:left}
+body.is-sub .hero h1{font-size:18px;margin:0;letter-spacing:.04em}
+body.is-sub .hero-kicker,body.is-sub .subtitle,body.is-sub .search-box{display:none}
+body.is-sub .hero-seal{width:27px;height:27px;font-size:9px;line-height:1.2;letter-spacing:1px;padding:3px 0 0 4px;margin-left:8px;border-radius:3px}
+/* Nav：主页隐藏，子页面保留 */
+.nav-wrap{position:sticky;top:0;z-index:100;background:rgba(251,247,238,.96);backdrop-filter:blur(6px);box-shadow:0 1px 0 var(--border)}
+body.is-home .nav-wrap{display:none}
 .nav-scroll{display:flex;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:0 12px}
 .nav-scroll::-webkit-scrollbar{display:none}
 .nav-tab{flex-shrink:0;padding:14px 14px;font-size:14px;color:var(--text-light);cursor:pointer;border-bottom:3px solid transparent;transition:all .2s;white-space:nowrap;user-select:none}
@@ -35,19 +43,19 @@ a{color:var(--primary);text-decoration:none}
 .container{max-width:960px;margin:0 auto;padding:20px}
 /* Section */
 .section{margin-bottom:28px}
-.section-title{font-size:20px;font-weight:700;padding:18px 0 14px;display:flex;align-items:center;gap:8px}
+.section-title{font-family:var(--serif);font-size:21px;font-weight:700;letter-spacing:.04em;padding:18px 0 14px;display:flex;align-items:center;gap:8px}
 /* Card */
 .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:18px;overflow:hidden;border:1px solid var(--border)}
 .card-header{padding:18px 18px;font-weight:700;font-size:17px;display:flex;align-items:center;gap:8px;cursor:pointer;user-select:none;transition:background .2s}
-.card-header:hover{background:#f8fafc}
+.card-header:hover{background:#faf5ea}
 .card-header .arrow{margin-left:auto;transition:transform .3s;font-size:13px;color:var(--text-light)}
 .card-header.open .arrow{transform:rotate(90deg)}
 .card-body{padding:0 18px 18px;display:none}
 .card-body.show{display:block}
 /* Sub section collapsible */
 .sub-section{border:1px solid var(--border);border-radius:8px;margin-bottom:12px;overflow:hidden}
-.sub-header{padding:14px 16px;background:#f8fafc;font-weight:600;font-size:15px;cursor:pointer;display:flex;align-items:center;gap:6px;user-select:none}
-.sub-header:hover{background:#f1f5f9}
+.sub-header{padding:14px 16px;background:#faf6ec;font-weight:600;font-size:15px;cursor:pointer;display:flex;align-items:center;gap:6px;user-select:none}
+.sub-header:hover{background:#f3ecdd}
 .sub-header .arrow{margin-left:auto;transition:transform .3s;font-size:12px;color:var(--text-light)}
 .sub-header.open .arrow{transform:rotate(90deg)}
 .sub-body{padding:14px 16px;display:none;border-top:1px solid var(--border)}
@@ -55,88 +63,88 @@ a{color:var(--primary);text-decoration:none}
 /* Table */
 .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:10px 0}
 table{width:100%;border-collapse:collapse;font-size:15px;min-width:500px}
-th{background:#f1f5f9;padding:12px 10px;text-align:left;font-weight:600;white-space:nowrap;border-bottom:2px solid var(--border);font-size:15px}
+th{background:#f1e9d8;padding:12px 10px;text-align:left;font-weight:600;white-space:nowrap;border-bottom:2px solid var(--border);font-size:15px}
 td{padding:10px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.6}
-tr:hover td{background:#f8fafc}
+tr:hover td{background:#faf5ea}
 .badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;margin:2px;white-space:nowrap}
-.badge-high{background:#fef2f2;color:#dc2626}
-.badge-mid{background:#fffbeb;color:#d97706}
-.badge-low{background:#f0fdf4;color:#16a34a}
-.badge-blue{background:#eff6ff;color:#2563eb}
-.badge-purple{background:#faf5ff;color:#7c3aed}
+.badge-high{background:#f7e3de;color:#a33325}
+.badge-mid{background:#f6ecd7;color:#96631c}
+.badge-low{background:#e4efe4;color:#33683f}
+.badge-blue{background:#e0ebec;color:#2f5d62}
+.badge-purple{background:#ece4f0;color:#6d4d8a}
 /* Overview table */
 .overview-table td:first-child{font-weight:600;white-space:nowrap}
 /* Tags */
 .tag-list{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
-.tag{padding:5px 12px;border-radius:16px;font-size:13px;background:#f1f5f9;color:var(--text-light)}
+.tag{padding:5px 12px;border-radius:16px;font-size:13px;background:#efe7d6;color:var(--text-light)}
 .feedback-item{padding:10px 0;border-bottom:1px solid var(--border);font-size:15px;line-height:1.7}
 .feedback-item:last-child{border-bottom:none}
 .pros{color:var(--success)}
 .cons{color:var(--danger)}
 .tip{color:var(--warning)}
 /* Back to top */
-.back-top{position:fixed;bottom:24px;right:24px;width:44px;height:44px;border-radius:50%;background:var(--primary);color:#fff;border:none;font-size:20px;cursor:pointer;box-shadow:0 4px 12px rgba(37,99,235,.4);display:none;z-index:200;align-items:center;justify-content:center;transition:opacity .3s}
+.back-top{position:fixed;bottom:24px;right:24px;width:44px;height:44px;border-radius:50%;background:var(--primary);color:#fdf6ea;border:none;font-size:20px;cursor:pointer;box-shadow:0 4px 12px rgba(176,58,46,.35);display:none;z-index:200;align-items:center;justify-content:center;transition:opacity .3s}
 .back-top.show{display:flex}
 /* Topic card */
-.topic-card{background:linear-gradient(135deg,#f0f9ff,#eff6ff);border:1px solid #bfdbfe;border-radius:var(--radius);padding:18px;margin-bottom:18px}
-.topic-card h3{font-size:17px;color:#1e40af;margin-bottom:14px}
+.topic-card{background:#fbf7ee;border:1px solid var(--border);border-radius:var(--radius);padding:18px;margin-bottom:18px}
+.topic-card h3{font-family:var(--serif);font-size:17px;color:var(--teal);margin-bottom:14px;letter-spacing:.03em}
 /* Footer */
-.footer{background:#1e293b;color:#94a3b8;padding:32px 20px;text-align:center;font-size:14px;line-height:1.8}
-.footer a{color:#60a5fa}
+.footer{background:#2b2620;color:#b8ab97;padding:32px 20px;text-align:center;font-size:14px;line-height:1.8}
+.footer a{color:#e2a17f}
 /* Highlight box */
-.highlight-box{background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:14px;margin:8px 0;font-size:15px;line-height:1.7}
-.danger-box{background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:14px;margin:8px 0;font-size:15px;line-height:1.7}
-.info-box{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:14px;margin:8px 0;font-size:15px;line-height:1.7}
+.highlight-box{background:#f9f3df;border:1px solid #eadfb9;border-radius:8px;padding:14px;margin:8px 0;font-size:15px;line-height:1.7}
+.danger-box{background:#f9e7e2;border:1px solid #eec8bd;border-radius:8px;padding:14px;margin:8px 0;font-size:15px;line-height:1.7}
+.info-box{background:#e9eff0;border:1px solid #ccdadb;border-radius:8px;padding:14px;margin:8px 0;font-size:15px;line-height:1.7}
 /* Responsive */
 @media(min-width:768px){
 .container{padding:28px}
 .card-header{font-size:18px}
 table{font-size:15px}
-.section-title{font-size:22px}
+.section-title{font-size:23px}
 }
 /* Search highlight */
-.search-match{background:#fef08a;padding:1px 2px;border-radius:2px}
+.search-match{background:#f6e3a1;padding:1px 2px;border-radius:2px}
 .hidden{display:none!important}
 /* 选购建议独立卡片 */
-.advice-card{background:linear-gradient(135deg,#fffbeb,#fef3c7);border:2px solid #f59e0b;border-radius:var(--radius);padding:18px;margin-bottom:18px;font-size:15px;line-height:1.7}
-.advice-card::before{content:'💡 选购建议';display:block;font-weight:700;font-size:17px;margin-bottom:10px;color:#92400e}
+.advice-card{background:#f9f3df;border:2px solid var(--accent);border-radius:var(--radius);padding:18px;margin-bottom:18px;font-size:15px;line-height:1.7}
+.advice-card::before{content:'💡 选购建议';display:block;font-weight:700;font-size:17px;margin-bottom:10px;color:#8a5f1d;font-family:var(--serif)}
 /* 多维度对比表：品牌为列 */
-.dim-table th:first-child{min-width:90px;background:#e8eef8;font-weight:700}
-.dim-table td:first-child{font-weight:600;background:#f8fafc;white-space:nowrap}
+.dim-table th:first-child{min-width:90px;background:#ece2cd;font-weight:700}
+.dim-table td:first-child{font-weight:600;background:#faf5ea;white-space:nowrap}
 
 /* 前端改造新增：筛选面板样式 */
-.filter-panel{background:#fafbfc;border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin-bottom:14px}
+.filter-panel{background:#fbf7ee;border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin-bottom:14px}
 .filter-panel .filter-row{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:10px}
 .filter-panel .filter-row:last-child{margin-bottom:0}
 .filter-panel .filter-label{font-size:13px;font-weight:600;color:var(--text-light);min-width:64px;flex-shrink:0}
 .filter-panel .brand-tags{display:flex;flex-wrap:wrap;gap:6px;flex:1}
-.filter-panel .brand-tag{padding:4px 12px;font-size:12px;border:1px solid var(--border);border-radius:14px;cursor:pointer;background:#fff;color:var(--text-light);transition:all .2s;user-select:none}
+.filter-panel .brand-tag{padding:4px 12px;font-size:12px;border:1px solid var(--border);border-radius:14px;cursor:pointer;background:var(--card);color:var(--text-light);transition:all .2s;user-select:none}
 .filter-panel .brand-tag:hover{border-color:var(--primary);color:var(--primary)}
-.filter-panel .brand-tag.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+.filter-panel .brand-tag.active{background:var(--primary);color:#fdf6ea;border-color:var(--primary)}
 /* 改动1新增：排序优先级预设标签（点击切换排序） */
 .filter-panel .priority-tags{display:flex;flex-wrap:wrap;gap:6px;flex:1}
-.filter-panel .priority-tag{padding:4px 12px;font-size:12px;border:1px solid var(--border);border-radius:14px;cursor:pointer;background:#fff;color:var(--text-light);transition:all .2s;user-select:none}
+.filter-panel .priority-tag{padding:4px 12px;font-size:12px;border:1px solid var(--border);border-radius:14px;cursor:pointer;background:var(--card);color:var(--text-light);transition:all .2s;user-select:none}
 .filter-panel .priority-tag:hover{border-color:var(--primary);color:var(--primary)}
-.filter-panel .priority-tag.active{background:var(--primary);color:#fff;border-color:var(--primary);font-weight:600}
+.filter-panel .priority-tag.active{background:var(--primary);color:#fdf6ea;border-color:var(--primary);font-weight:600}
 .filter-panel .price-range-row{display:flex;align-items:center;gap:6px;flex:1}
 .filter-panel .price-input{width:100px;padding:5px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;outline:none}
 .filter-panel .price-input:focus{border-color:var(--primary)}
 .filter-panel .price-sep{color:var(--text-light);font-size:14px}
 .filter-panel .filter-actions{gap:10px}
 .filter-panel .btn-apply,.filter-panel .btn-reset{padding:6px 18px;border:none;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s}
-.filter-panel .btn-apply{background:var(--primary);color:#fff}
+.filter-panel .btn-apply{background:var(--primary);color:#fdf6ea}
 .filter-panel .btn-apply:hover{background:var(--primary-light)}
-.filter-panel .btn-reset{background:#e8ecf2;color:var(--text-light)}
-.filter-panel .btn-reset:hover{background:#d1d5db;color:var(--text)}
+.filter-panel .btn-reset{background:#ece3d0;color:var(--text-light)}
+.filter-panel .btn-reset:hover{background:#ded2b8;color:var(--text)}
 .filter-panel .filter-result-count{font-size:13px;color:var(--text-light);margin-left:auto}
 .filter-panel .filter-loading{text-align:center;padding:20px;color:var(--text-light);font-size:14px}
 /* 动态维度对比表（横向=维度、纵向=产品）：品牌列固定 + 表头吸顶 */
 .dim-table-dynamic{width:100%;border-collapse:collapse;font-size:13px}
-.dim-table-dynamic th{background:#f1f5f9;padding:8px 10px;text-align:left;font-weight:600;white-space:nowrap;border-bottom:2px solid var(--border);position:sticky;top:0;z-index:1}
+.dim-table-dynamic th{background:#f1e9d8;padding:8px 10px;text-align:left;font-weight:600;white-space:nowrap;border-bottom:2px solid var(--border);position:sticky;top:0;z-index:1}
 .dim-table-dynamic td{padding:8px 10px;border-bottom:1px solid var(--border);white-space:nowrap}
-.dim-table-dynamic tr:hover td{background:#f8fafc}
-.dim-table-dynamic td:first-child,.dim-table-dynamic th:first-child{position:sticky;left:0;background:#f1f5f9;z-index:2}
-.dim-table-dynamic tr:hover td:first-child{background:#f8fafc}
+.dim-table-dynamic tr:hover td{background:#faf5ea}
+.dim-table-dynamic td:first-child,.dim-table-dynamic th:first-child{position:sticky;left:0;background:#f1e9d8;z-index:2}
+.dim-table-dynamic tr:hover td:first-child{background:#faf5ea}
 .dim-table-dynamic td:first-child{font-weight:600}
 .dim-table-dynamic .dim-bool-yes{color:var(--success)}
 .dim-table-dynamic .dim-bool-no{color:var(--danger)}
@@ -147,40 +155,56 @@ table{font-size:15px}
   .filter-panel .price-input{flex:1;width:auto}
 }
 /* 改动1：维度值颜色分级（前25%绿 / 中间黄 / 后25%红） */
-.dim-table-dynamic td.dim-green{background:#f0fdf4;color:#16a34a;font-weight:600}
-.dim-table-dynamic td.dim-yellow{background:#fffbeb;color:#b45309}
-.dim-table-dynamic td.dim-red{background:#fef2f2;color:#dc2626}
-.dim-table-dynamic tr:hover td.dim-green{background:#f0fdf4}
-.dim-table-dynamic tr:hover td.dim-yellow{background:#fffbeb}
-.dim-table-dynamic tr:hover td.dim-red{background:#fef2f2}
+.dim-table-dynamic td.dim-green{background:#e7f0e4;color:#33683f;font-weight:600}
+.dim-table-dynamic td.dim-yellow{background:#f6ecd7;color:#96631c}
+.dim-table-dynamic td.dim-red{background:#f7e3de;color:#a33325}
+.dim-table-dynamic tr:hover td.dim-green{background:#e7f0e4}
+.dim-table-dynamic tr:hover td.dim-yellow{background:#f6ecd7}
+.dim-table-dynamic tr:hover td.dim-red{background:#f7e3de}
 /* 改动2：推荐星级列样式 */
 .dim-table-dynamic .score-cell{text-align:center;font-size:14px;letter-spacing:1px;color:var(--accent)}
 /* 品牌型号列：京东搜索链接 */
 .dim-table-dynamic td a.jd-link{color:var(--primary);text-decoration:none}
 .dim-table-dynamic td a.jd-link:hover{text-decoration:underline}
 .dim-table-dynamic td a.jd-link .jd-brand{font-weight:700}
-/* SPA 拆分：品类卡片网格（主页面入口） */
-.category-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px;margin-bottom:20px}
-.category-card{display:flex;flex-direction:column;align-items:center;padding:16px 12px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);text-decoration:none;color:var(--text);transition:all .2s}
-.category-card:hover{border-color:var(--primary);transform:translateY(-2px);box-shadow:var(--shadow)}
-.category-card .cat-icon{font-size:28px;margin-bottom:6px}
-.category-card .cat-name{font-size:14px;font-weight:600}
-.category-card .cat-count{font-size:12px;color:var(--text-light);margin-top:2px}
-/* SPA 拆分：品类子页面面包屑 */
-.breadcrumb{padding:8px 0 16px;font-size:14px}
-.breadcrumb a{color:var(--primary);text-decoration:none}
-.breadcrumb a:hover{text-decoration:underline}
+/* 主页模块中心：分组标题 + 品类网格 + 专题入口 */
+.home-hub{padding-top:6px}
+.hub-heading{display:flex;align-items:baseline;gap:10px;font-family:var(--serif);font-size:22px;font-weight:700;letter-spacing:.06em;margin:26px 0 16px;padding-bottom:10px;border-bottom:1px solid var(--border);position:relative}
+.hub-heading::after{content:'';position:absolute;left:0;bottom:-2px;width:64px;height:3px;background:var(--primary)}
+.hub-num{flex-shrink:0;font-size:13px;font-weight:400;color:#fdf6ea;background:var(--primary);border-radius:3px;padding:2px 8px;letter-spacing:3px;align-self:center}
+.hub-sub{margin-left:auto;font-family:inherit;font-size:12px;font-weight:400;color:var(--text-light);letter-spacing:.12em}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.category-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(136px,1fr));gap:14px;margin-bottom:24px}
+.category-card{display:flex;flex-direction:column;align-items:center;padding:20px 12px 16px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);text-decoration:none;color:var(--text);transition:all .25s;animation:rise .55s cubic-bezier(.22,.7,.3,1) backwards}
+.category-card:hover{border-color:var(--primary);transform:translateY(-3px);box-shadow:0 6px 16px rgba(89,74,51,.13)}
+.category-card .cat-icon{font-size:30px;margin-bottom:8px}
+.category-card .cat-name{font-family:var(--serif);font-size:16px;font-weight:700;letter-spacing:.04em}
+.category-card .cat-count{font-size:12px;color:var(--text-light);margin-top:4px;letter-spacing:.05em}
+.topic-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-bottom:32px}
+.topic-entry{display:flex;gap:12px;align-items:flex-start;padding:18px 16px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);color:var(--text);transition:all .25s;animation:rise .55s cubic-bezier(.22,.7,.3,1) backwards}
+.topic-entry:nth-child(1){animation-delay:.08s}.topic-entry:nth-child(2){animation-delay:.14s}.topic-entry:nth-child(3){animation-delay:.2s}.topic-entry:nth-child(4){animation-delay:.26s}.topic-entry:nth-child(5){animation-delay:.32s}
+.topic-entry:hover{border-color:var(--primary);transform:translateY(-3px);box-shadow:0 6px 16px rgba(89,74,51,.13)}
+.topic-entry .t-icon{font-size:26px;line-height:1.3}
+.topic-entry .t-name{font-family:var(--serif);font-size:17px;font-weight:700;letter-spacing:.04em}
+.topic-entry .t-desc{font-size:13px;color:var(--text-light);line-height:1.6;margin-top:3px}
+.topic-entry .t-arrow{margin-left:auto;align-self:center;color:var(--text-light);font-size:16px;transition:transform .25s,color .25s}
+.topic-entry:hover .t-arrow{transform:translateX(4px);color:var(--primary)}
+/* SPA 拆分：子页面面包屑 */
+.breadcrumb{padding:8px 0 14px;font-size:14px;letter-spacing:.05em}
+.breadcrumb a{color:var(--text-light);text-decoration:none;transition:color .2s}
+.breadcrumb a:hover{color:var(--primary)}
 </style>
 </head>
 <body>
 
 <!-- Hero -->
 <div class="hero" id="top">
-<h1>🏠 2025-2026 家居装修电器选购全维度指南</h1>
-<p class="subtitle">覆盖 17+ 品类 · 34 个评价维度 · 真实用户口碑 · 售后维修红黑榜</p>
+<p class="hero-kicker">Home Appliance Guide · 2025–2026</p>
+<h1>家居装修电器选购全维度指南<span class="hero-seal">选购指南</span></h1>
+<p class="subtitle">17 品类 · 128 维度 · 493 款产品 · 真实口碑与售后红黑榜</p>
 <div class="search-box">
 <span class="search-icon">🔍</span>
-<input type="text" id="searchInput" placeholder="搜索品类、品牌、型号..." oninput="doSearch(this.value)">
+<input type="text" id="searchInput" placeholder="搜索品类模块，如：洗碗机 / 空调 / 电视…" oninput="doSearch(this.value)">
 </div>
 </div>
 
@@ -214,11 +238,25 @@ table{font-size:15px}
 
 <div class="container" id="mainContent">
 
-<!-- SPA 拆分：品类卡片网格（主页面入口，动态生成） -->
+<!-- SPA 拆分：主页模块中心（品类网格动态生成 + 专题入口静态） -->
+<div class="home-hub" id="homeHub">
+<div class="hub-heading"><span class="hub-num">壹</span>品类选购<span class="hub-sub">17 大品类 · 参数对比与型号推荐</span></div>
 <div class="category-grid" id="categoryGrid"></div>
+<div class="hub-heading"><span class="hub-num">贰</span>专题指南<span class="hub-sub">跨品类选购策略与行业观察</span></div>
+<div class="topic-grid">
+<a href="#overview" class="topic-entry"><span class="t-icon">📋</span><span><span class="t-name">速查总览</span><span class="t-desc" style="display:block">17 品类品质/均衡/经济型速查 · 售后口碑榜 · 5 年 TCO 成本</span></span><span class="t-arrow">→</span></a>
+<a href="#topic-1" class="topic-entry"><span class="t-icon">🏡</span><span><span class="t-name">全屋智能</span><span class="t-desc" style="display:block">米家/华为/海尔等 6 大平台方案横向对比</span></span><span class="t-arrow">→</span></a>
+<a href="#topic-5" class="topic-entry"><span class="t-icon">📊</span><span><span class="t-name">按预算方案</span><span class="t-desc" style="display:block">经济型 / 舒适型 / 高端型三档全屋配置清单</span></span><span class="t-arrow">→</span></a>
+<a href="#topic-6" class="topic-entry"><span class="t-icon">📈</span><span><span class="t-name">行业趋势</span><span class="t-desc" style="display:block">国补政策 · 技术风向 · 2025-2026 市场变化</span></span><span class="t-arrow">→</span></a>
+<a href="#topic-8" class="topic-entry"><span class="t-icon">🏅</span><span><span class="t-name">品牌软实力</span><span class="t-desc" style="display:block">核心技术壁垒 · 国际设计奖 · 品牌历史底蕴</span></span><span class="t-arrow">→</span></a>
+</div>
+</div>
 
 <!-- ===== 速查总览 ===== -->
 <div class="section" id="overview">
+<div class="breadcrumb" style="display:none">
+<a href="#" onclick="location.hash=''; return false;">← 返回全部模块</a>
+</div>
 <div class="section-title">📋 速查总览 — 各品类品牌推荐一览</div>
 <div class="card">
 <div class="card-body show">
@@ -301,7 +339,7 @@ table{font-size:15px}
 <!-- ===== 1. 抽油烟机 ===== -->
 <div class="section" id="cat-1">
 <div class="breadcrumb" style="display:none">
-<a href="#" onclick="location.hash=''; return false;">← 返回主页面</a>
+<a href="#" onclick="location.hash=''; return false;">← 返回全部模块</a>
 </div>
 
 <div class="section-title">🍳 抽油烟机</div>
@@ -356,7 +394,6 @@ table{font-size:15px}
 <tr><td>西门子</td><td>整机1年</td><td>⭐⭐⭐</td><td>售后成本高</td></tr>
 </tbody></table></div>
 </div></div>
-</div>
 
 <div class="advice-card">预算2000元以下选<strong>美的J25S</strong>（21m³/min，自清洗），3000-4500元选<strong>方太JCD10TA</strong>（23m³/min，1000Pa静压），预算充足一步到位选<strong>方太V10-G</strong>（30m³/min）或<strong>老板小黑翼D1P</strong>。开放式厨房必须选大风量+高静压机型，中式爆炒优先选侧吸或顶侧双吸。</div>
 
@@ -365,7 +402,7 @@ table{font-size:15px}
 <!-- ===== 2. 燃气灶 ===== -->
 <div class="section" id="cat-2">
 <div class="breadcrumb" style="display:none">
-<a href="#" onclick="location.hash=''; return false;">← 返回主页面</a>
+<a href="#" onclick="location.hash=''; return false;">← 返回全部模块</a>
 </div>
 
 <div class="section-title">🔥 燃气灶</div>
@@ -416,7 +453,7 @@ table{font-size:15px}
 <!-- ===== 3. 蒸烤箱 ===== -->
 <div class="section" id="cat-3">
 <div class="breadcrumb" style="display:none">
-<a href="#" onclick="location.hash=''; return false;">← 返回主页面</a>
+<a href="#" onclick="location.hash=''; return false;">← 返回全部模块</a>
 </div>
 
 <div class="section-title">🍞 蒸烤箱/嵌入式蒸烤一体机</div>
@@ -462,7 +499,6 @@ table{font-size:15px}
 <div class="feedback-item"><span class="cons">❌ 差评：</span>蒸烤一体温度上限比独立烤箱低约30度；嵌入式安装尺寸要求精确</div>
 <div class="feedback-item"><span class="tip">💡 避坑：</span>提前预留橱柜尺寸；注意散热空间；多功能合一≠每个功能都强</div>
 </div></div>
-</div>
 
 <div class="advice-card">蒸烤专业需求选<strong>凯度TD Pro三代</strong>（双热风技术，口碑最佳）；多功能一体选<strong>美的寻味Pro 2.0</strong>（微蒸炸烤炖五合一）；品牌品质选<strong>老板盐系G2</strong>。微蒸烤一体是主流趋势，容量建议40L以上。注意：蒸烤一体温度上限比独立烤箱低约30度。</div>
 
@@ -471,7 +507,7 @@ table{font-size:15px}
 <!-- ===== 4. 洗碗机 ===== -->
 <div class="section" id="cat-4">
 <div class="breadcrumb" style="display:none">
-<a href="#" onclick="location.hash=''; return false;">← 返回主页面</a>
+<a href="#" onclick="location.hash=''; return false;">← 返回全部模块</a>
 </div>
 
 <div class="section-title">🍽️ 洗碗机</div>
@@ -522,7 +558,6 @@ table{font-size:15px}
 <tr><td>方太</td><td>整机5年</td><td>适中</td><td>⭐⭐⭐⭐⭐</td></tr>
 </tbody></table></div>
 </div></div>
-</div>
 
 <div class="advice-card"><strong>类型选择：</strong>新房装修首选嵌入式（美观容量大）| 已装修选独立式（灵活摆放）| 厨房小选水槽式（替换水槽）| 租房选台式。<strong>容量宁大勿小</strong>，推荐13套以上，锅碗瓢盆一次搞定。美的连续7年全国销量第一，性价比最优；西门子线下王者，品质标杆。</div>
 
@@ -531,7 +566,7 @@ table{font-size:15px}
 <!-- ===== 5. 净水器 ===== -->
 <div class="section" id="cat-5">
 <div class="breadcrumb" style="display:none">
-<a href="#" onclick="location.hash=''; return false;">← 返回主页面</a>
+<a href="#" onclick="location.hash=''; return false;">← 返回全部模块</a>
 </div>
 
 <div class="section-title">💧 净水器</div>
@@ -583,7 +618,6 @@ table{font-size:15px}
 <tr><td>A.O.史密斯</td><td>3年</td><td>3-5年</td><td>约800-1200元</td></tr>
 </tbody></table></div>
 </div></div>
-</div>
 
 <div class="advice-card">预算有限选<strong>小米厨下RO</strong>（700-1500元，极致性价比）；看重耗材成本选<strong>沁园金榜双子芯</strong>（8年RO膜，年均耗材最低）；追求品质选<strong>美的白泽Max 1200G</strong>（进口陶氏RO膜）。<strong>核心：</strong>核算3-5年总成本，机器便宜不一定省钱，长效滤芯才是真省钱。</div>
 
@@ -592,7 +626,7 @@ table{font-size:15px}
 <!-- ===== 6. 冰箱 ===== -->
 <div class="section" id="cat-6">
 <div class="breadcrumb" style="display:none">
-<a href="#" onclick="location.hash=''; return false;">← 返回主页面</a>
+<a href="#" onclick="location.hash=''; return false;">← 返回全部模块</a>
 </div>
 
 <div class="section-title">❄️ 冰箱</div>
@@ -646,7 +680,6 @@ table{font-size:15px}
 <div class="feedback-item"><span class="cons">❌ 差评：</span>尺寸与橱柜不匹配（嵌入式）；小米冰箱售后严重外包；噪音问题；网红迷你冰箱（小吉等）1年内核心部件损坏、原厂配件停产维修无门</div>
 <div class="feedback-item"><span class="tip">💡 避坑：</span>提前精确测量预留空间（含散热距离）；优先选直营售后品牌；关注能效等级（一级能效年省电约135度）</div>
 </div></div>
-</div>
 
 <div class="advice-card">极致性价比选<strong>华凌547</strong>（2500元，超薄嵌入）；均衡之选<strong>容声526</strong>（双系统，干湿分储）；品质升级选<strong>海尔麦浪顶配版</strong>或<strong>美的502L</strong>；高端一步到位选<strong>卡萨帝揽光520L</strong>（超薄零嵌+自动制冰）。<strong>核心：</strong>提前精确测量预留空间，嵌入式冰箱尺寸差1cm就装不上。</div>
 
@@ -655,7 +688,7 @@ table{font-size:15px}
 <!-- ===== 7. 消毒柜 ===== -->
 <div class="section" id="cat-7">
 <div class="breadcrumb" style="display:none">
-<a href="#" onclick="location.hash=''; return false;">← 返回主页面</a>
+<a href="#" onclick="location.hash=''; return false;">← 返回全部模块</a>
 </div>
 
 <div class="section-title">🧹 消毒柜</div>
@@ -701,7 +734,7 @@ table{font-size:15px}
 <!-- ===== 8. 中央空调/风管机 ===== -->
 <div class="section" id="cat-8">
 <div class="breadcrumb" style="display:none">
-<a href="#" onclick="location.hash=''; return false;">← 返回主页面</a>
+<a href="#" onclick="location.hash=''; return false;">← 返回全部模块</a>
 </div>
 
 <div class="section-title">🌬️ 中央空调/风管机</div>
@@ -753,7 +786,7 @@ table{font-size:15px}
 <!-- ===== 9. 新风系统 ===== -->
 <div class="section" id="cat-9">
 <div class="breadcrumb" style="display:none">
-<a href="#" onclick="location.hash=''; return false;">← 返回主页面</a>
+<a href="#" onclick="location.hash=''; return false;">← 返回全部模块</a>
 </div>
 
 <div class="section-title">🌿 新风系统</div>
@@ -797,7 +830,7 @@ table{font-size:15px}
 <!-- ===== 10. 挂机/柜机空调 ===== -->
 <div class="section" id="cat-10">
 <div class="breadcrumb" style="display:none">
-<a href="#" onclick="location.hash=''; return false;">← 返回主页面</a>
+<a href="#" onclick="location.hash=''; return false;">← 返回全部模块</a>
 </div>
 
 <div class="section-title">🏠 挂机/柜机空调</div>
@@ -846,7 +879,6 @@ table{font-size:15px}
 <div class="feedback-item"><span class="cons">❌ 差评：</span>安装环节收费争议突出（支架费、加管费、高空作业费）；旺季报修等待3-7天；格力旺季报修拥堵、安装捆绑收费；小米空调投诉率家用空调第一，旺季安装排队7天起步，漏氟高发；康佳空调报修排期最长超100天；奥克斯整机减配多、乡镇无直营售后</div>
 <div class="feedback-item"><span class="tip">💡 避坑：</span>确认安装费包含项目并留存书面报价；预留4㎡以上专用插座；整机质保一般6年、压缩机10年；适老化需求可选美的/海尔/格力大按钮+语音控制机型（国标《家居产品适老化设计指南》已发布）</div>
 </div></div>
-</div>
 
 <div class="advice-card">1.5匹性价比之王<strong>华凌N8HB1A</strong>（1500元，美芝核心，美的子品牌）；销量冠军<strong>美的酷省电</strong>（APF5.30超高能效）；品质标杆<strong>格力云佳/云锦</strong>；智能首选<strong>小米健康风Pro</strong>。3匹柜机性价比选华凌/美的，品质选格力。<strong>核心：安装费提前确认</strong>，避免被加收高额辅材费。</div>
 
@@ -855,7 +887,7 @@ table{font-size:15px}
 <!-- ===== 11. 扫地机器人/洗地机 ===== -->
 <div class="section" id="cat-11">
 <div class="breadcrumb" style="display:none">
-<a href="#" onclick="location.hash=''; return false;">← 返回主页面</a>
+<a href="#" onclick="location.hash=''; return false;">← 返回全部模块</a>
 </div>
 
 <div class="section-title">🤖 扫地机器人/洗地机</div>
@@ -898,7 +930,6 @@ table{font-size:15px}
 <div class="feedback-item"><span class="cons">❌ 差评：</span>污水盒异味；边角清洁不到位；套娃机型多难选择；⚠️ 智能清洁机器人是2025年黑猫投诉量第一品类（占23.33%）；追觅存在无视三包退换条例的投诉</div>
 <div class="feedback-item"><span class="tip">💡 避坑：</span>有宠物/带娃选云鲸JX（双目避障）；复杂户型选追觅X60 Pro（6cm越障）；性价比选科沃斯T50Max</div>
 </div></div>
-</div>
 
 <div class="advice-card">2000元性价比之王<strong>科沃斯T50 Max</strong>（超薄，双机械臂）；3000元档综合最优<strong>科沃斯T80S Pro</strong>（活水滚筒洗地）；带娃家庭/避障需求<strong>云鲸JX</strong>（唯一真双目避障）；顶配旗舰<strong>科沃斯X12 Pro</strong>或<strong>追觅X60 Pro</strong>。洗地机：技术选追觅T40 Ultra，老牌选添可。</div>
 
@@ -906,7 +937,7 @@ table{font-size:15px}
 <!-- ===== 12. 空气净化器 ===== -->
 <div class="section" id="cat-12">
 <div class="breadcrumb" style="display:none">
-<a href="#" onclick="location.hash=''; return false;">← 返回主页面</a>
+<a href="#" onclick="location.hash=''; return false;">← 返回全部模块</a>
 </div>
 
 <div class="section-title">🌸 空气净化器</div>
@@ -933,15 +964,13 @@ table{font-size:15px}
 </tbody></table></div>
 </div></div>
 
-</div>
-
 <div class="advice-card">新屋除甲醛首选<strong>宫菱MARS</strong>（甲醛CADR 1053m³/h，5A医护级）或<strong>352旗舰系列</strong>；日常防霾除菌选<strong>小米4 Pro H</strong>（入门性价比之王）；母婴家庭选<strong>美的</strong>（母婴级认证）；预算无上限选<strong>IQAir</strong>（瑞士顶级）。<strong>核心：看CADR值</strong>，数值越大净化越快。</div>
 
 </div>
 <!-- ===== 13. 智能马桶 ===== -->
 <div class="section" id="cat-13">
 <div class="breadcrumb" style="display:none">
-<a href="#" onclick="location.hash=''; return false;">← 返回主页面</a>
+<a href="#" onclick="location.hash=''; return false;">← 返回全部模块</a>
 </div>
 
 <div class="section-title">🚽 智能马桶</div>
@@ -977,7 +1006,6 @@ table{font-size:15px}
 <div class="feedback-item"><span class="cons">❌ 差评：</span>水压不匹配导致无法使用；坑距买错无法安装；很多功能用不上</div>
 <div class="feedback-item"><span class="tip">💡 避坑：</span>下单前确认水压条件（低水压选带内置陶瓷水箱）；提前测好坑距（主流300mm/400mm）；选即热式不选储热式；不必追求过多智能功能；适老化需求选松下/九牧（操作简单、座圈加热、自动冲洗）</div>
 </div></div>
-</div>
 
 <div class="advice-card">千元性价比之王<strong>九牧SQ8450</strong>（1400元，内置水箱无水压限制）；2000元档选<strong>九牧SQ9650</strong>或<strong>松下Q6</strong>；功能最全选<strong>恒洁H5Pro</strong>（同价位功能最全）；高端质感选<strong>TOTO G5Lite</strong>或<strong>松下V8 Pro</strong>。<strong>核心：下单前确认水压和坑距</strong>，选即热式不选储热式。</div>
 
@@ -985,7 +1013,7 @@ table{font-size:15px}
 <!-- ===== 14. 热水器 ===== -->
 <div class="section" id="cat-14">
 <div class="breadcrumb" style="display:none">
-<a href="#" onclick="location.hash=''; return false;">← 返回主页面</a>
+<a href="#" onclick="location.hash=''; return false;">← 返回全部模块</a>
 </div>
 
 <div class="section-title">🚿 热水器</div>
@@ -1027,7 +1055,6 @@ table{font-size:15px}
 <div class="feedback-item"><span class="cons">❌ 差评：</span>⚠️ 万家乐为燃气热水器投诉重灾区（同一故障维修5次）；安装乱收费突出（阀门费/排烟管费），曾有2000元热水器安装费被收754元（占37.7%）</div>
 <div class="feedback-item"><span class="tip">💡 避坑：</span>安装费提前确认并留存书面报价；整机保修参考：海尔/美的6年、卡萨帝10年、林内/能率/万和3年；适老化需求选海尔防电墙技术（安全保护更可靠）</div>
 </div></div>
-</div>
 
 <div class="advice-card">有天然气管道→燃气热水器首选<strong>海尔KL5</strong>（下置风机，恒温技术强）或<strong>万和</strong>（国产销量王）；追求恒温体验→<strong>林内/能率</strong>（日系恒温王者）；无燃气→储水式电热水器（海尔防电墙技术领先）；大平层/别墅→空气能热水器。<strong>核心：安装费提前确认</strong>，避免被加收高额辅材费。</div>
 
@@ -1035,7 +1062,7 @@ table{font-size:15px}
 <!-- ===== 15. 洗衣机/烘干机 ===== -->
 <div class="section" id="cat-15">
 <div class="breadcrumb" style="display:none">
-<a href="#" onclick="location.hash=''; return false;">← 返回主页面</a>
+<a href="#" onclick="location.hash=''; return false;">← 返回全部模块</a>
 </div>
 
 <div class="section-title">👕 洗衣机/烘干机</div>
@@ -1069,7 +1096,6 @@ table{font-size:15px}
 <div class="feedback-item"><span class="cons">❌ 差评：</span>洗烘一体机烘干不均匀；机身漏水（小米洗烘一体机漏电漏水、维修后故障复发率高）；安装另收水龙头费</div>
 <div class="feedback-item"><span class="tip">💡 避坑：</span>独立烘干机效果远优于洗烘一体；确认水龙头接口匹配；关注电机类型（直驱优于皮带）；适老化需求选海尔（AI融入养老场景，简化操作）</div>
 </div></div>
-</div>
 
 <div class="advice-card">性价比之选<strong>小天鹅小乌梅/小蓝鲸系列</strong>（洗净比高，羊毛洗烘认证）；品质标杆<strong>海尔双擎热泵洗烘套装</strong>（FPA直驱，全球销冠）；高端一步到位<strong>卡萨帝纤诺L7</strong>（双擎热泵烘干最强）；入门选<strong>美的</strong>。<strong>核心：独立烘干机效果远优于洗烘一体机</strong>，关注电机类型（直驱优于皮带）。</div>
 
@@ -1077,7 +1103,7 @@ table{font-size:15px}
 <!-- ===== 16. 电视机 ===== -->
 <div class="section" id="cat-16">
 <div class="breadcrumb" style="display:none">
-<a href="#" onclick="location.hash=''; return false;">← 返回主页面</a>
+<a href="#" onclick="location.hash=''; return false;">← 返回全部模块</a>
 </div>
 
 <div class="section-title">📺 电视机</div>
@@ -1122,7 +1148,6 @@ table{font-size:15px}
 <div class="feedback-item"><span class="cons">❌ 差评：</span>小米MiniLED短期烧屏、主板损坏；开机广告烦人；参数虚标</div>
 <div class="feedback-item"><span class="tip">💡 避坑：</span>不要只看参数，关注实际画质调校；3500以下入门、3500-8000主流、8000+高端；电视市场持续萎缩，价格持续下探</div>
 </div></div>
-</div>
 
 <div class="advice-card">MiniLED性价比首选<strong>TCL T7K/T7L Ultra</strong>（画质全球第一）；国产品质<strong>海信E7N Pro</strong>（信芯AI芯片，288Hz高刷）；极致性价比<strong>小米S75 Mini LED</strong>；OLED画质巅峰<strong>索尼A95L</strong>。<strong>核心：不要只看参数，关注实际画质调校</strong>；75寸已成入门尺寸，85寸成主流。</div>
 
@@ -1130,7 +1155,7 @@ table{font-size:15px}
 <!-- ===== 17. 集成灶/垃圾处理器/管线机 ===== -->
 <div class="section" id="cat-17">
 <div class="breadcrumb" style="display:none">
-<a href="#" onclick="location.hash=''; return false;">← 返回主页面</a>
+<a href="#" onclick="location.hash=''; return false;">← 返回全部模块</a>
 </div>
 
 <div class="section-title">🔌 集成灶/垃圾处理器/管线机</div>
@@ -1176,13 +1201,15 @@ table{font-size:15px}
 <tr><td>安吉尔</td><td>~5-8%</td><td>2,000-6,000</td><td>专业净水</td></tr>
 </tbody></table></div>
 </div></div>
-</div>
 
 <div class="advice-card">⚠️ <strong>集成灶市场警示：</strong>2025年零售额同比下降43.1%，市场严重萎缩，建议谨慎选择，传统分体烟灶仍是主流。如确需购买，首选<strong>火星人</strong>（净烟最强）或<strong>亿田</strong>（风机下置专利，噪音低）。垃圾处理器选<strong>贝克巴斯</strong>（国产龙头），管线机选<strong>美的</strong>（全品类覆盖）。</div>
 
 </div>
 <!-- ===== 专题 1: 全屋智能方案对比 ===== -->
 <div class="section" id="topic-1">
+<div class="breadcrumb" style="display:none">
+<a href="#" onclick="location.hash=''; return false;">← 返回全部模块</a>
+</div>
 <div class="section-title">🏡 全屋智能方案对比</div>
 <div class="topic-card">
 <h3>6大平台方案综合对比</h3>
@@ -1238,6 +1265,9 @@ table{font-size:15px}
 
 <!-- ===== 专题 5: 按预算分级方案 ===== -->
 <div class="section" id="topic-5">
+<div class="breadcrumb" style="display:none">
+<a href="#" onclick="location.hash=''; return false;">← 返回全部模块</a>
+</div>
 <div class="section-title">📊 按预算分级方案</div>
 <div class="topic-card">
 <h3>💰 经济型（5-8万）</h3>
@@ -1292,6 +1322,9 @@ table{font-size:15px}
 
 <!-- ===== 专题 6: 行业趋势 ===== -->
 <div class="section" id="topic-6">
+<div class="breadcrumb" style="display:none">
+<a href="#" onclick="location.hash=''; return false;">← 返回全部模块</a>
+</div>
 <div class="section-title">📈 2025-2026 行业趋势</div>
 <div class="topic-card">
 <h3>🏛️ 国补政策</h3>
@@ -1319,6 +1352,9 @@ table{font-size:15px}
 
 <!-- ===== 专题 8: 品牌软实力 ===== -->
 <div class="section" id="topic-8">
+<div class="breadcrumb" style="display:none">
+<a href="#" onclick="location.hash=''; return false;">← 返回全部模块</a>
+</div>
 <div class="section-title">🏅 品牌软实力</div>
 <div class="topic-card">
 <h3>🔬 核心技术壁垒</h3>
@@ -1362,7 +1398,7 @@ table{font-size:15px}
 <button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
 <!-- 双模式运行：静态模式（GitHub Pages）时显示，本地模式隐藏 -->
-<span id="modeIndicator" style="position:fixed;right:24px;bottom:80px;z-index:200;font-size:11px;color:var(--text-light);background:#fff;border:1px solid var(--border);border-radius:12px;padding:4px 10px;box-shadow:var(--shadow);display:none">📦 静态数据模式</span>
+<span id="modeIndicator" style="position:fixed;right:24px;bottom:80px;z-index:200;font-size:11px;color:var(--text-light);background:var(--card);border:1px solid var(--border);border-radius:12px;padding:4px 10px;box-shadow:var(--shadow);display:none">📦 静态数据模式</span>
 
 <!-- Footer -->
 <div class="footer">
@@ -1373,78 +1409,79 @@ table{font-size:15px}
 
 <script>
 // ============================================================
-// SPA 拆分：Hash 路由（主页面 <-> 品类子页面）
+// SPA 拆分：Hash 路由（主页模块中心 <-> 子页面）
+// 子页面全集：cat-1~17 / overview（聚合三个总览 section）/ topic-1/5/6/8
 // ============================================================
+var SUB_PAGE_RE = /^(cat-\d+|overview|topic-1|topic-5|topic-6|topic-8)$/;
+
 window.addEventListener('hashchange', onHashChange);
 
 function onHashChange() {
   var hash = location.hash.replace('#', '');
-  if (hash && /^cat-\d+$/.test(hash)) {
-    showCategoryView(hash);
+  if (SUB_PAGE_RE.test(hash)) {
+    showSubPage(hash);
   } else {
     showMainView();
   }
 }
 
-// 主视图：品类 section 隐藏，速查总览/专题显示
+// 主视图：只显示模块中心，隐藏全部内容 section（导航栏由 body.is-home 隐藏）
 function showMainView() {
-  document.querySelectorAll('.section[id^="cat-"]').forEach(function(s) {
+  document.body.classList.add('is-home');
+  document.body.classList.remove('is-sub');
+  document.querySelectorAll('.container > .section').forEach(function(s) {
     s.style.display = 'none';
   });
-  document.querySelectorAll('.section[id^="overview"]').forEach(function(s) {
-    s.style.display = 'block';
-  });
-  document.querySelectorAll('.section[id^="topic-"]').forEach(function(s) {
-    s.style.display = 'block';
-  });
-  highlightNavTab('overview');
+  var hub = document.getElementById('homeHub');
+  if (hub) hub.style.display = '';
+  highlightNavTab('');
+  window.scrollTo(0, 0);
 }
 
-// 品类视图：只显示目标品类 + 面包屑，并初始化筛选面板
-function showCategoryView(slug) {
-  document.querySelectorAll('.section[id^="overview"]').forEach(function(s) {
+// 子页面：隐藏模块中心，只显示目标模块 + 面包屑；品类页额外初始化筛选面板
+function showSubPage(id) {
+  document.body.classList.add('is-sub');
+  document.body.classList.remove('is-home');
+  var hub = document.getElementById('homeHub');
+  if (hub) hub.style.display = 'none';
+  document.querySelectorAll('.container > .section').forEach(function(s) {
     s.style.display = 'none';
   });
-  document.querySelectorAll('.section[id^="topic-"]').forEach(function(s) {
-    s.style.display = 'none';
+  // 速查总览聚合三个 section，其余模块单 section
+  var ids = id === 'overview' ? ['overview', 'overview-aftersale', 'overview-tco'] : [id];
+  ids.forEach(function(sid) {
+    var s = document.getElementById(sid);
+    if (s) s.style.display = 'block';
   });
-  document.querySelectorAll('.section[id^="cat-"]').forEach(function(s) {
-    s.style.display = 'none';
-  });
-  var target = document.getElementById(slug);
-  if (target) {
-    target.style.display = 'block';
-    var bc = target.querySelector('.breadcrumb');
+  var first = document.getElementById(ids[0]);
+  if (first) {
+    var bc = first.querySelector('.breadcrumb');
     if (bc) bc.style.display = 'block';
-    initCategoryView(slug);
   }
-  highlightNavTab(slug);
+  if (/^cat-\d+$/.test(id)) initCategoryView(id);
+  highlightNavTab(id);
+  // 延迟覆盖浏览器原生锚点滚动（Chrome 会在目标可见后重试滚动）
+  window.scrollTo(0, 0);
+  requestAnimationFrame(function() { window.scrollTo(0, 0); });
+  setTimeout(function() { window.scrollTo(0, 0); }, 60);
 }
 
-// 高亮导航 tab（按 onclick 属性中的 id 匹配）
+// 高亮导航 tab（按 onclick 属性中的 id 匹配；传空串清除全部）
 function highlightNavTab(id) {
   document.querySelectorAll('.nav-tab').forEach(function(t) {
     t.classList.remove('active');
+    if (!id) return;
     var onclickAttr = t.getAttribute('onclick') || '';
     if (onclickAttr.indexOf("'" + id + "'") !== -1) t.classList.add('active');
   });
 }
 
-// Tab switching（SPA 路由：品类 tab → hash 子页面；总览/专题 tab → 主页面滚动）
+// Tab switching：统一走 hash 路由
 function switchTab(id){
-  if (/^cat-\d+$/.test(id)) {
+  if (SUB_PAGE_RE.test(id)) {
     location.hash = '#' + id;
-  } else if (id === 'overview' || /^topic-/.test(id)) {
-    location.hash = '';
-    // 回到主页面后滚动到对应位置（等待视图切换完成）
-    setTimeout(function() {
-      var el = document.getElementById(id);
-      if (el) el.scrollIntoView({behavior:'smooth',block:'start'});
-    }, 100);
   } else {
-    // 兼容旧行为
-    var el = document.getElementById(id);
-    if (el) el.scrollIntoView({behavior:'smooth',block:'start'});
+    location.hash = '';
   }
 }
 // Collapsible card
@@ -1464,14 +1501,11 @@ window.addEventListener('scroll',function(){
 const btn=document.getElementById('backTop');
 if(window.scrollY>window.innerHeight*0.8){btn.classList.add('show')}else{btn.classList.remove('show')}
 });
-// Search
+// Search：主页过滤模块卡片（搜索框仅主页可见）
 function doSearch(query){
 const q=query.trim().toLowerCase();
-const sections=document.querySelectorAll('.section[id]');
-if(!q){sections.forEach(s=>s.classList.remove('hidden'));return}
-sections.forEach(s=>{
-const text=s.textContent.toLowerCase();
-if(text.includes(q)){s.classList.remove('hidden')}else{s.classList.add('hidden')}
+document.querySelectorAll('#homeHub .category-card, #homeHub .topic-entry').forEach(function(c){
+  c.classList.toggle('hidden', !!q && c.textContent.toLowerCase().indexOf(q)===-1);
 });
 }
 </script>
@@ -1549,7 +1583,9 @@ async function fetchCategories() {
       return data.categories.map(function(c) {
         return {
           id: c.id, name: c.name, slug: c.slug, icon: c.icon,
-          sort_order: c.sort_order, dimensions: c.dimensions
+          sort_order: c.sort_order,
+          product_count: c.product_count || (c.products ? c.products.length : 0),
+          dimensions: c.dimensions
         };
       });
     } catch (e) {
@@ -2140,7 +2176,7 @@ function escapeHtml(str) {
 }
 
 // ============================================================
-// SPA 拆分：动态生成品类卡片网格（主页面入口）
+// SPA 拆分：动态生成品类卡片网格（主页模块中心，交错淡入）
 // ============================================================
 async function renderCategoryGrid() {
   var grid = document.getElementById('categoryGrid');
@@ -2148,28 +2184,27 @@ async function renderCategoryGrid() {
   var cats = await fetchCategories();
   if (!cats) return;
   var html = '';
+  var i = 0;
   cats.forEach(function(c) {
     if (!c.slug || c.slug.indexOf('cat-') !== 0) return;
-    var count = c.dimensions ? c.dimensions.length : 0;
-    html += '<a href="#' + c.slug + '" class="category-card">' +
+    var count = c.product_count || 0;
+    var dims = c.dimensions ? c.dimensions.length : 0;
+    var meta = count > 0 ? count + ' 款 · ' + dims + ' 维度' : dims + ' 维度';
+    html += '<a href="#' + c.slug + '" class="category-card" style="animation-delay:' + (i * 35) + 'ms">' +
       '<span class="cat-icon">' + (c.icon || '📋') + '</span>' +
       '<span class="cat-name">' + escapeHtml(c.name) + '</span>' +
-      '<span class="cat-count">' + count + '维度</span>' +
+      '<span class="cat-count">' + meta + '</span>' +
       '</a>';
+    i++;
   });
   grid.innerHTML = html;
 }
 
 // ============================================================
-// SPA 拆分：页面初始化（按 hash 决定初始视图，取代原 initFromHash）
+// SPA 拆分：页面初始化（按 hash 决定初始视图）
 // ============================================================
 (function initPage() {
-  var hash = location.hash.replace('#', '');
-  if (hash && /^cat-\d+$/.test(hash)) {
-    showCategoryView(hash);
-  } else {
-    showMainView();
-  }
+  onHashChange();
   renderCategoryGrid();
 })();
 </script>

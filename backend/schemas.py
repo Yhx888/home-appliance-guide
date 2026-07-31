@@ -24,6 +24,7 @@ class CategoryOut(BaseModel):
     slug: str
     icon: str = ""
     sort_order: int = 0
+    product_count: int = 0
     dimensions: list[DimensionOut] = []
 
     class Config:

@@ -6,6 +6,7 @@
       "slug": "cat-1",
       "icon": "🍳",
       "sort_order": 1,
+      "product_count": 30,
       "dimensions": [
         {
           "dim_key": "价格_low",
@@ -664,6 +665,7 @@
       "slug": "cat-2",
       "icon": "🔥",
       "sort_order": 2,
+      "product_count": 30,
       "dimensions": [
         {
           "dim_key": "价格_low",
@@ -1252,6 +1254,7 @@
       "slug": "cat-3",
       "icon": "🍞",
       "sort_order": 3,
+      "product_count": 27,
       "dimensions": [
         {
           "dim_key": "价格_low",
@@ -1805,6 +1808,7 @@
       "slug": "cat-4",
       "icon": "🍽️",
       "sort_order": 4,
+      "product_count": 29,
       "dimensions": [
         {
           "dim_key": "价格_low",
@@ -2424,6 +2428,7 @@
       "slug": "cat-5",
       "icon": "💧",
       "sort_order": 5,
+      "product_count": 31,
       "dimensions": [
         {
           "dim_key": "价格_low",
@@ -3065,6 +3070,7 @@
       "slug": "cat-6",
       "icon": "❄️",
       "sort_order": 6,
+      "product_count": 26,
       "dimensions": [
         {
           "dim_key": "价格_low",
@@ -3626,6 +3632,7 @@
       "slug": "cat-7",
       "icon": "🧹",
       "sort_order": 7,
+      "product_count": 26,
       "dimensions": [
         {
           "dim_key": "价格_low",
@@ -4112,6 +4119,7 @@
       "slug": "cat-8",
       "icon": "🌬️",
       "sort_order": 8,
+      "product_count": 27,
       "dimensions": [
         {
           "dim_key": "价格_全屋_万",
@@ -4592,6 +4600,7 @@
       "slug": "cat-9",
       "icon": "🌿",
       "sort_order": 9,
+      "product_count": 24,
       "dimensions": [
         {
           "dim_key": "价格_low",
@@ -5088,6 +5097,7 @@
       "slug": "cat-10",
       "icon": "🏠",
       "sort_order": 10,
+      "product_count": 29,
       "dimensions": [
         {
           "dim_key": "价格_low",
@@ -5699,6 +5709,7 @@
       "slug": "cat-11",
       "icon": "🤖",
       "sort_order": 11,
+      "product_count": 31,
       "dimensions": [
         {
           "dim_key": "价格_low",
@@ -6354,6 +6365,7 @@
       "slug": "cat-12",
       "icon": "🌸",
       "sort_order": 12,
+      "product_count": 27,
       "dimensions": [
         {
           "dim_key": "价格_low",
@@ -6887,6 +6899,7 @@
       "slug": "cat-13",
       "icon": "🚽",
       "sort_order": 13,
+      "product_count": 28,
       "dimensions": [
         {
           "dim_key": "价格_low",
@@ -7486,6 +7499,7 @@
       "slug": "cat-14",
       "icon": "🚿",
       "sort_order": 14,
+      "product_count": 32,
       "dimensions": [
         {
           "dim_key": "价格_low",
@@ -8112,6 +8126,7 @@
       "slug": "cat-15",
       "icon": "👕",
       "sort_order": 15,
+      "product_count": 29,
       "dimensions": [
         {
           "dim_key": "价格_low",
@@ -8689,6 +8704,7 @@
       "slug": "cat-16",
       "icon": "📺",
       "sort_order": 16,
+      "product_count": 35,
       "dimensions": [
         {
           "dim_key": "价格_low",
@@ -9452,6 +9468,7 @@
       "slug": "cat-17",
       "icon": "🔌",
       "sort_order": 17,
+      "product_count": 32,
       "dimensions": [
         {
           "dim_key": "价格_low",

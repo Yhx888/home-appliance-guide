@@ -41,6 +41,7 @@ def list_categories(db: Session = Depends(get_db)):
             slug=cat.slug,
             icon=cat.icon or "",
             sort_order=cat.sort_order or 0,
+            product_count=db.query(Product).filter(Product.category_id == cat.id).count(),
             dimensions=dim_out,
         ))
     return result
