@@ -1982,10 +1982,20 @@ function escapeHtml(str) {
   return div.innerHTML;
 }
 
-// 加载时若 URL 带品类 hash（如 #cat-1），直接初始化该品类视图
+// 加载时自动初始化品类视图：有 hash 则加载指定品类，否则展开第一个品类
 (function initFromHash() {
   var m = location.hash.match(/^#?(cat-\d+)$/);
-  if (m) initCategoryView(m[1]);
+  if (m) {
+    initCategoryView(m[1]);
+  } else {
+    // 无 hash 时，自动展开页面中第一个品类（cat-1）的对比表格
+    var firstTab = document.querySelector('.nav-tab[onclick*="cat-"]');
+    if (firstTab) {
+      var onclick = firstTab.getAttribute('onclick');
+      var slugMatch = onclick.match(/['\"]cat-\d+['\"]/);
+      if (slugMatch) initCategoryView(slugMatch[0].replace(/['\"]/g, ''));
+    }
+  }
 })();
 </script>
 
