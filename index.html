@@ -159,6 +159,17 @@ table{font-size:15px}
 .dim-table-dynamic td a.jd-link{color:var(--primary);text-decoration:none}
 .dim-table-dynamic td a.jd-link:hover{text-decoration:underline}
 .dim-table-dynamic td a.jd-link .jd-brand{font-weight:700}
+/* SPA 拆分：品类卡片网格（主页面入口） */
+.category-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px;margin-bottom:20px}
+.category-card{display:flex;flex-direction:column;align-items:center;padding:16px 12px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);text-decoration:none;color:var(--text);transition:all .2s}
+.category-card:hover{border-color:var(--primary);transform:translateY(-2px);box-shadow:var(--shadow)}
+.category-card .cat-icon{font-size:28px;margin-bottom:6px}
+.category-card .cat-name{font-size:14px;font-weight:600}
+.category-card .cat-count{font-size:12px;color:var(--text-light);margin-top:2px}
+/* SPA 拆分：品类子页面面包屑 */
+.breadcrumb{padding:8px 0 16px;font-size:14px}
+.breadcrumb a{color:var(--primary);text-decoration:none}
+.breadcrumb a:hover{text-decoration:underline}
 </style>
 </head>
 <body>
@@ -202,6 +213,9 @@ table{font-size:15px}
 </div>
 
 <div class="container" id="mainContent">
+
+<!-- SPA 拆分：品类卡片网格（主页面入口，动态生成） -->
+<div class="category-grid" id="categoryGrid"></div>
 
 <!-- ===== 速查总览 ===== -->
 <div class="section" id="overview">
@@ -286,6 +300,10 @@ table{font-size:15px}
 
 <!-- ===== 1. 抽油烟机 ===== -->
 <div class="section" id="cat-1">
+<div class="breadcrumb" style="display:none">
+<a href="#" onclick="location.hash=''; return false;">← 返回主页面</a>
+</div>
+
 <div class="section-title">🍳 抽油烟机</div>
 <div class="card"><div class="card-header" onclick="toggleCard(this)">🏗️ 品牌梯队 <span class="arrow">▶</span></div><div class="card-body">
 <div class="table-wrap"><table><thead><tr><th>梯队</th><th>品牌</th><th>特点</th></tr></thead><tbody>
@@ -346,6 +364,10 @@ table{font-size:15px}
 
 <!-- ===== 2. 燃气灶 ===== -->
 <div class="section" id="cat-2">
+<div class="breadcrumb" style="display:none">
+<a href="#" onclick="location.hash=''; return false;">← 返回主页面</a>
+</div>
+
 <div class="section-title">🔥 燃气灶</div>
 <div class="card"><div class="card-header" onclick="toggleCard(this)">🏗️ 品牌梯队 <span class="arrow">▶</span></div><div class="card-body">
 <div class="table-wrap"><table><thead><tr><th>梯队</th><th>品牌</th></tr></thead><tbody>
@@ -393,6 +415,10 @@ table{font-size:15px}
 
 <!-- ===== 3. 蒸烤箱 ===== -->
 <div class="section" id="cat-3">
+<div class="breadcrumb" style="display:none">
+<a href="#" onclick="location.hash=''; return false;">← 返回主页面</a>
+</div>
+
 <div class="section-title">🍞 蒸烤箱/嵌入式蒸烤一体机</div>
 <div class="card"><div class="card-header" onclick="toggleCard(this)">🏗️ 品牌梯队 <span class="arrow">▶</span></div><div class="card-body">
 <div class="table-wrap"><table><thead><tr><th>梯队</th><th>品牌</th><th>特点</th></tr></thead><tbody>
@@ -444,6 +470,10 @@ table{font-size:15px}
 
 <!-- ===== 4. 洗碗机 ===== -->
 <div class="section" id="cat-4">
+<div class="breadcrumb" style="display:none">
+<a href="#" onclick="location.hash=''; return false;">← 返回主页面</a>
+</div>
+
 <div class="section-title">🍽️ 洗碗机</div>
 <div class="card"><div class="card-header" onclick="toggleCard(this)">🏗️ 品牌梯队 <span class="arrow">▶</span></div><div class="card-body">
 <div class="table-wrap"><table><thead><tr><th>梯队</th><th>品牌</th><th>特点</th></tr></thead><tbody>
@@ -500,6 +530,10 @@ table{font-size:15px}
 
 <!-- ===== 5. 净水器 ===== -->
 <div class="section" id="cat-5">
+<div class="breadcrumb" style="display:none">
+<a href="#" onclick="location.hash=''; return false;">← 返回主页面</a>
+</div>
+
 <div class="section-title">💧 净水器</div>
 <div class="card"><div class="card-header" onclick="toggleCard(this)">🏗️ 品牌梯队 <span class="arrow">▶</span></div><div class="card-body">
 <div class="table-wrap"><table><thead><tr><th>梯队</th><th>品牌</th><th>特点</th></tr></thead><tbody>
@@ -557,6 +591,10 @@ table{font-size:15px}
 
 <!-- ===== 6. 冰箱 ===== -->
 <div class="section" id="cat-6">
+<div class="breadcrumb" style="display:none">
+<a href="#" onclick="location.hash=''; return false;">← 返回主页面</a>
+</div>
+
 <div class="section-title">❄️ 冰箱</div>
 <div class="card"><div class="card-header" onclick="toggleCard(this)">🏗️ 品牌梯队与市场份额 <span class="arrow">▶</span></div><div class="card-body">
 <div class="table-wrap"><table><thead><tr><th>梯队</th><th>品牌</th><th>市场份额</th></tr></thead><tbody>
@@ -616,6 +654,10 @@ table{font-size:15px}
 
 <!-- ===== 7. 消毒柜 ===== -->
 <div class="section" id="cat-7">
+<div class="breadcrumb" style="display:none">
+<a href="#" onclick="location.hash=''; return false;">← 返回主页面</a>
+</div>
+
 <div class="section-title">🧹 消毒柜</div>
 <div class="card"><div class="card-header" onclick="toggleCard(this)">🏗️ 品牌梯队 <span class="arrow">▶</span></div><div class="card-body">
 <div class="table-wrap"><table><thead><tr><th>梯队</th><th>品牌</th><th>特点</th></tr></thead><tbody>
@@ -658,6 +700,10 @@ table{font-size:15px}
 
 <!-- ===== 8. 中央空调/风管机 ===== -->
 <div class="section" id="cat-8">
+<div class="breadcrumb" style="display:none">
+<a href="#" onclick="location.hash=''; return false;">← 返回主页面</a>
+</div>
+
 <div class="section-title">🌬️ 中央空调/风管机</div>
 <div class="card"><div class="card-header" onclick="toggleCard(this)">🏗️ 品牌梯队 <span class="arrow">▶</span></div><div class="card-body">
 <div class="info-box">📊 2025年国内中央空调市场销售额同比+4.5%，一级能效产品占比首超35%。风管机纳入国补名单，2025Q1销量猛增47%。市场前五：格力、美的、大金、日立、海尔。</div>
@@ -706,6 +752,10 @@ table{font-size:15px}
 
 <!-- ===== 9. 新风系统 ===== -->
 <div class="section" id="cat-9">
+<div class="breadcrumb" style="display:none">
+<a href="#" onclick="location.hash=''; return false;">← 返回主页面</a>
+</div>
+
 <div class="section-title">🌿 新风系统</div>
 <div class="card"><div class="card-header" onclick="toggleCard(this)">🏗️ 品牌梯队 <span class="arrow">▶</span></div><div class="card-body">
 <div class="table-wrap"><table><thead><tr><th>梯队</th><th>品牌</th><th>特点</th></tr></thead><tbody>
@@ -746,6 +796,10 @@ table{font-size:15px}
 
 <!-- ===== 10. 挂机/柜机空调 ===== -->
 <div class="section" id="cat-10">
+<div class="breadcrumb" style="display:none">
+<a href="#" onclick="location.hash=''; return false;">← 返回主页面</a>
+</div>
+
 <div class="section-title">🏠 挂机/柜机空调</div>
 
 <div class="card"><div class="card-header" onclick="toggleCard(this)">🏗️ 品牌梯队 <span class="arrow">▶</span></div><div class="card-body">
@@ -800,6 +854,10 @@ table{font-size:15px}
 
 <!-- ===== 11. 扫地机器人/洗地机 ===== -->
 <div class="section" id="cat-11">
+<div class="breadcrumb" style="display:none">
+<a href="#" onclick="location.hash=''; return false;">← 返回主页面</a>
+</div>
+
 <div class="section-title">🤖 扫地机器人/洗地机</div>
 <div class="card"><div class="card-header" onclick="toggleCard(this)">🏗️ 扫地机器人推荐 <span class="arrow">▶</span></div><div class="card-body">
 <div class="info-box">🔥 2025年是“滚筒元年”，活水洗地机器人成版本答案，科沃斯占滚筒品类91.9%份额。</div>
@@ -847,6 +905,10 @@ table{font-size:15px}
 </div>
 <!-- ===== 12. 空气净化器 ===== -->
 <div class="section" id="cat-12">
+<div class="breadcrumb" style="display:none">
+<a href="#" onclick="location.hash=''; return false;">← 返回主页面</a>
+</div>
+
 <div class="section-title">🌸 空气净化器</div>
 <div class="card"><div class="card-header" onclick="toggleCard(this)">🏗️ 品牌推荐与型号 <span class="arrow">▶</span></div><div class="card-body">
 <div class="table-wrap"><table><thead><tr><th>品牌</th><th>推荐型号</th><th>价格(元)</th><th>核心参数</th><th>口碑</th><th>🔗 京东</th></tr></thead><tbody>
@@ -878,6 +940,10 @@ table{font-size:15px}
 </div>
 <!-- ===== 13. 智能马桶 ===== -->
 <div class="section" id="cat-13">
+<div class="breadcrumb" style="display:none">
+<a href="#" onclick="location.hash=''; return false;">← 返回主页面</a>
+</div>
+
 <div class="section-title">🚽 智能马桶</div>
 <div class="card"><div class="card-header" onclick="toggleCard(this)">🏗️ 品牌推荐与型号 <span class="arrow">▶</span></div><div class="card-body">
 <div class="table-wrap"><table><thead><tr><th>品牌</th><th>推荐型号</th><th>价格(元)</th><th>核心参数</th><th>口碑</th><th>🔗 京东</th></tr></thead><tbody>
@@ -918,6 +984,10 @@ table{font-size:15px}
 </div>
 <!-- ===== 14. 热水器 ===== -->
 <div class="section" id="cat-14">
+<div class="breadcrumb" style="display:none">
+<a href="#" onclick="location.hash=''; return false;">← 返回主页面</a>
+</div>
+
 <div class="section-title">🚿 热水器</div>
 <div class="card"><div class="card-header" onclick="toggleCard(this)">🏗️ 燃气热水器 <span class="arrow">▶</span></div><div class="card-body">
 <div class="table-wrap"><table><thead><tr><th>品牌</th><th>推荐型号</th><th>价格(元)</th><th>核心参数</th><th>口碑</th><th>🔗 京东</th></tr></thead><tbody>
@@ -964,6 +1034,10 @@ table{font-size:15px}
 </div>
 <!-- ===== 15. 洗衣机/烘干机 ===== -->
 <div class="section" id="cat-15">
+<div class="breadcrumb" style="display:none">
+<a href="#" onclick="location.hash=''; return false;">← 返回主页面</a>
+</div>
+
 <div class="section-title">👕 洗衣机/烘干机</div>
 <div class="card"><div class="card-header" onclick="toggleCard(this)">🏗️ 品牌推荐与型号 <span class="arrow">▶</span></div><div class="card-body">
 <div class="info-box">📊 海尔份额~37%，连续17年全球销量第一。小天鹅(美的系)线上~22%。洗烘套装从“可选升级”变为“标配”。高端(1.5万+)卡萨帝份额~88%。</div>
@@ -1002,6 +1076,10 @@ table{font-size:15px}
 </div>
 <!-- ===== 16. 电视机 ===== -->
 <div class="section" id="cat-16">
+<div class="breadcrumb" style="display:none">
+<a href="#" onclick="location.hash=''; return false;">← 返回主页面</a>
+</div>
+
 <div class="section-title">📺 电视机</div>
 <div class="card"><div class="card-header" onclick="toggleCard(this)">🏗️ MiniLED电视（主流趋势） <span class="arrow">▶</span></div><div class="card-body">
 <div class="info-box">📊 海信+TCL+小米+创维四大品牌合计78%份额。MiniLED 2026年预计出货1,115万台(+39%)，是拉动行业核心动力。75寸成入门，85寸成主流，98寸进入万元档。</div>
@@ -1051,6 +1129,10 @@ table{font-size:15px}
 </div>
 <!-- ===== 17. 集成灶/垃圾处理器/管线机 ===== -->
 <div class="section" id="cat-17">
+<div class="breadcrumb" style="display:none">
+<a href="#" onclick="location.hash=''; return false;">← 返回主页面</a>
+</div>
+
 <div class="section-title">🔌 集成灶/垃圾处理器/管线机</div>
 <div class="card"><div class="card-header" onclick="toggleCard(this)">🏗️ 集成灶 <span class="arrow">▶</span></div><div class="card-body">
 <div class="danger-box">⚠️ <strong>重要趋势警示</strong>：2025年集成灶市场零售额98亿元，<strong>同比下降43.1%</strong>，零售量120万台同比下降。集成灶因精装放缓和二手房改造难度而萎缩。建议谨慎选择，传统分体烟灶仍是主流。</div>
@@ -1290,14 +1372,80 @@ table{font-size:15px}
 </div>
 
 <script>
-// Tab switching
+// ============================================================
+// SPA 拆分：Hash 路由（主页面 <-> 品类子页面）
+// ============================================================
+window.addEventListener('hashchange', onHashChange);
+
+function onHashChange() {
+  var hash = location.hash.replace('#', '');
+  if (hash && /^cat-\d+$/.test(hash)) {
+    showCategoryView(hash);
+  } else {
+    showMainView();
+  }
+}
+
+// 主视图：品类 section 隐藏，速查总览/专题显示
+function showMainView() {
+  document.querySelectorAll('.section[id^="cat-"]').forEach(function(s) {
+    s.style.display = 'none';
+  });
+  document.querySelectorAll('.section[id^="overview"]').forEach(function(s) {
+    s.style.display = 'block';
+  });
+  document.querySelectorAll('.section[id^="topic-"]').forEach(function(s) {
+    s.style.display = 'block';
+  });
+  highlightNavTab('overview');
+}
+
+// 品类视图：只显示目标品类 + 面包屑，并初始化筛选面板
+function showCategoryView(slug) {
+  document.querySelectorAll('.section[id^="overview"]').forEach(function(s) {
+    s.style.display = 'none';
+  });
+  document.querySelectorAll('.section[id^="topic-"]').forEach(function(s) {
+    s.style.display = 'none';
+  });
+  document.querySelectorAll('.section[id^="cat-"]').forEach(function(s) {
+    s.style.display = 'none';
+  });
+  var target = document.getElementById(slug);
+  if (target) {
+    target.style.display = 'block';
+    var bc = target.querySelector('.breadcrumb');
+    if (bc) bc.style.display = 'block';
+    initCategoryView(slug);
+  }
+  highlightNavTab(slug);
+}
+
+// 高亮导航 tab（按 onclick 属性中的 id 匹配）
+function highlightNavTab(id) {
+  document.querySelectorAll('.nav-tab').forEach(function(t) {
+    t.classList.remove('active');
+    var onclickAttr = t.getAttribute('onclick') || '';
+    if (onclickAttr.indexOf("'" + id + "'") !== -1) t.classList.add('active');
+  });
+}
+
+// Tab switching（SPA 路由：品类 tab → hash 子页面；总览/专题 tab → 主页面滚动）
 function switchTab(id){
-document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
-event.target.classList.add('active');
-const el=document.getElementById(id);
-if(el){el.scrollIntoView({behavior:'smooth',block:'start'})}
-// 前端改造新增：品类 tab 时初始化筛选面板
-if(id&&/^cat-\d+$/.test(id)){initCategoryView(id)}
+  if (/^cat-\d+$/.test(id)) {
+    location.hash = '#' + id;
+  } else if (id === 'overview' || /^topic-/.test(id)) {
+    location.hash = '';
+    // 回到主页面后滚动到对应位置（等待视图切换完成）
+    setTimeout(function() {
+      var el = document.getElementById(id);
+      if (el) el.scrollIntoView({behavior:'smooth',block:'start'});
+    }, 100);
+  } else {
+    // 兼容旧行为
+    var el = document.getElementById(id);
+    if (el) el.scrollIntoView({behavior:'smooth',block:'start'});
+  }
 }
 // Collapsible card
 function toggleCard(header){
@@ -1991,20 +2139,38 @@ function escapeHtml(str) {
   return div.innerHTML;
 }
 
-// 加载时自动初始化品类视图：有 hash 则加载指定品类，否则展开第一个品类
-(function initFromHash() {
-  var m = location.hash.match(/^#?(cat-\d+)$/);
-  if (m) {
-    initCategoryView(m[1]);
+// ============================================================
+// SPA 拆分：动态生成品类卡片网格（主页面入口）
+// ============================================================
+async function renderCategoryGrid() {
+  var grid = document.getElementById('categoryGrid');
+  if (!grid) return;
+  var cats = await fetchCategories();
+  if (!cats) return;
+  var html = '';
+  cats.forEach(function(c) {
+    if (!c.slug || c.slug.indexOf('cat-') !== 0) return;
+    var count = c.dimensions ? c.dimensions.length : 0;
+    html += '<a href="#' + c.slug + '" class="category-card">' +
+      '<span class="cat-icon">' + (c.icon || '📋') + '</span>' +
+      '<span class="cat-name">' + escapeHtml(c.name) + '</span>' +
+      '<span class="cat-count">' + count + '维度</span>' +
+      '</a>';
+  });
+  grid.innerHTML = html;
+}
+
+// ============================================================
+// SPA 拆分：页面初始化（按 hash 决定初始视图，取代原 initFromHash）
+// ============================================================
+(function initPage() {
+  var hash = location.hash.replace('#', '');
+  if (hash && /^cat-\d+$/.test(hash)) {
+    showCategoryView(hash);
   } else {
-    // 无 hash 时，自动展开页面中第一个品类（cat-1）的对比表格
-    var firstTab = document.querySelector('.nav-tab[onclick*="cat-"]');
-    if (firstTab) {
-      var onclick = firstTab.getAttribute('onclick');
-      var slugMatch = onclick.match(/['\"]cat-\d+['\"]/);
-      if (slugMatch) initCategoryView(slugMatch[0].replace(/['\"]/g, ''));
-    }
+    showMainView();
   }
+  renderCategoryGrid();
 })();
 </script>
 
