@@ -54,8 +54,6 @@ CATEGORIES = [
 # 格式: (slug, dim_key, label, type, unit, higher_better, default_weight, enum_values)
 DIMENSIONS = {
     "cat-1": [
-        ("价格_low", "最低价", "float", "元", False, 70, None),
-        ("价格_high", "最高价", "float", "元", False, 60, None),
         ("风量_m3", "风量", "float", "m³/min", True, 90, None),
         ("静压_Pa", "最大静压", "float", "Pa", True, 85, None),
         ("噪音_dB", "噪音", "float", "dB", False, 60, None),
@@ -65,8 +63,6 @@ DIMENSIONS = {
         ("满意度评分", "满意度", "float", "分", True, 75, None),
     ],
     "cat-2": [
-        ("价格_low", "最低价", "float", "元", False, 70, None),
-        ("价格_high", "最高价", "float", "元", False, 60, None),
         ("火力_kW", "火力", "float", "kW", True, 85, None),
         ("热效率_pct", "热效率", "float", "%", True, 80, None),
         ("面板材质", "面板材质", "enum", "", True, 40, json.dumps(["钢化玻璃", "不锈钢", "陶瓷"], ensure_ascii=False)),
@@ -74,8 +70,6 @@ DIMENSIONS = {
         ("保修_年", "保修", "float", "年", True, 35, None),
     ],
     "cat-3": [
-        ("价格_low", "最低价", "float", "元", False, 70, None),
-        ("价格_high", "最高价", "float", "元", False, 60, None),
         ("容量_L", "容量", "float", "L", True, 80, None),
         ("最高温度_C", "最高温度", "float", "°C", True, 60, None),
         ("有微波", "微波功能", "bool", "", True, 40, None),
@@ -84,8 +78,6 @@ DIMENSIONS = {
         ("保修_年", "保修", "float", "年", True, 30, None),
     ],
     "cat-4": [
-        ("价格_low", "最低价", "float", "元", False, 70, None),
-        ("价格_high", "最高价", "float", "元", False, 60, None),
         ("容量_套", "容量", "float", "套", True, 85, None),
         ("类型", "类型", "enum", "", True, 40, json.dumps(["嵌入式", "独立式", "水槽式", "台式"], ensure_ascii=False)),
         ("烘干方式", "烘干方式", "enum", "", True, 70, json.dumps(["晶蕾", "热交换", "热风", "余热"], ensure_ascii=False)),
@@ -94,8 +86,6 @@ DIMENSIONS = {
         ("保修_年", "保修", "float", "年", True, 40, None),
     ],
     "cat-5": [
-        ("价格_low", "最低价", "float", "元", False, 70, None),
-        ("价格_high", "最高价", "float", "元", False, 60, None),
         ("通量_G", "通量", "float", "G", True, 80, None),
         ("RO膜寿命_年", "RO膜寿命", "float", "年", True, 85, None),
         ("废水比", "废水比", "float", "", True, 60, None),
@@ -104,8 +94,6 @@ DIMENSIONS = {
         ("保修_年", "保修", "float", "年", True, 35, None),
     ],
     "cat-6": [
-        ("价格_low", "最低价", "float", "元", False, 65, None),
-        ("价格_high", "最高价", "float", "元", False, 55, None),
         ("容量_L", "容量", "float", "L", True, 80, None),
         ("门型", "门型", "enum", "", True, 50, json.dumps(["法式多门", "十字门", "对开门", "三门", "双门"], ensure_ascii=False)),
         ("制冷方式", "制冷方式", "enum", "", True, 60, json.dumps(["风冷", "混冷", "直冷"], ensure_ascii=False)),
@@ -114,8 +102,6 @@ DIMENSIONS = {
         ("保修_年", "保修", "float", "年", True, 35, None),
     ],
     "cat-7": [
-        ("价格_low", "最低价", "float", "元", False, 70, None),
-        ("价格_high", "最高价", "float", "元", False, 60, None),
         ("容量_L", "容量", "float", "L", True, 75, None),
         ("消毒方式", "消毒方式", "enum", "", True, 80, json.dumps(["三重消毒(高温+紫外+臭氧)", "光热混动", "高温+紫外", "高温"], ensure_ascii=False)),
         ("杀菌率_pct", "杀菌率", "float", "%", True, 70, None),
@@ -130,8 +116,6 @@ DIMENSIONS = {
         ("保修_年", "保修", "float", "年", True, 50, None),
     ],
     "cat-9": [
-        ("价格_low", "最低价", "float", "元", False, 60, None),
-        ("价格_high", "最高价", "float", "元", False, 50, None),
         ("风量_m3h", "风量", "float", "m³/h", True, 85, None),
         ("过滤等级", "过滤等级", "enum", "", True, 80, json.dumps(["H13 HEPA", "H12", "H11", "静电集尘"], ensure_ascii=False)),
         ("热交换率_pct", "热交换率", "float", "%", True, 70, None),
@@ -139,8 +123,6 @@ DIMENSIONS = {
         ("安装方式", "安装方式", "enum", "", True, 45, json.dumps(["管道式", "壁挂式", "立柜式"], ensure_ascii=False)),
     ],
     "cat-10": [
-        ("价格_low", "最低价", "float", "元", False, 75, None),
-        ("价格_high", "最高价", "float", "元", False, 65, None),
         ("能效_APF", "能效 APF", "float", "", True, 85, None),
         ("压缩机", "压缩机", "enum", "", True, 70, json.dumps(["自研变频", "自研全直流", "美芝", "三菱", "三洋双缸"], ensure_ascii=False)),
         ("噪音_dB", "噪音", "float", "dB", False, 60, None),
@@ -149,8 +131,6 @@ DIMENSIONS = {
         ("匹数", "匹数", "float", "匹", True, 30, None),
     ],
     "cat-11": [
-        ("价格_low", "最低价", "float", "元", False, 70, None),
-        ("价格_high", "最高价", "float", "元", False, 60, None),
         ("吸力_Pa", "吸力", "float", "Pa", True, 75, None),
         ("拖地方式", "拖地方式", "enum", "", True, 80, json.dumps(["恒压活水滚筒", "圆拖布旋转", "履带式洗地", "平板拖"], ensure_ascii=False)),
         ("避障技术", "避障技术", "enum", "", True, 70, json.dumps(["3D结构光+AI", "真双目", "激光+AI", "激光"], ensure_ascii=False)),
@@ -159,8 +139,6 @@ DIMENSIONS = {
         ("保修_年", "保修", "float", "年", True, 30, None),
     ],
     "cat-12": [
-        ("价格_low", "最低价", "float", "元", False, 65, None),
-        ("价格_high", "最高价", "float", "元", False, 55, None),
         ("颗粒物CADR", "颗粒物 CADR", "float", "m³/h", True, 85, None),
         ("甲醛CADR", "甲醛 CADR", "float", "m³/h", True, 80, None),
         ("噪音_dB", "噪音", "float", "dB", False, 50, None),
@@ -168,8 +146,6 @@ DIMENSIONS = {
         ("保修_年", "保修", "float", "年", True, 30, None),
     ],
     "cat-13": [
-        ("价格_low", "最低价", "float", "元", False, 75, None),
-        ("价格_high", "最高价", "float", "元", False, 65, None),
         ("加热方式", "加热方式", "enum", "", True, 80, json.dumps(["即热式", "储热式"], ensure_ascii=False)),
         ("冲洗技术", "冲洗技术", "enum", "", True, 70, json.dumps(["超漩虹吸", "脉冲水流", "多模式冲洗", "卫洗丽"], ensure_ascii=False)),
         ("翻盖方式", "翻盖方式", "enum", "", True, 55, json.dumps(["自动感应", "脚感", "手动"], ensure_ascii=False)),
@@ -178,8 +154,6 @@ DIMENSIONS = {
         ("保修_年", "保修", "float", "年", True, 40, None),
     ],
     "cat-14": [
-        ("价格_low", "最低价", "float", "元", False, 70, None),
-        ("价格_high", "最高价", "float", "元", False, 60, None),
         ("类型", "热水器类型", "enum", "", True, 40, json.dumps(["燃气", "电储水", "空气能"], ensure_ascii=False)),
         ("恒温技术", "恒温技术", "enum", "", True, 85, json.dumps(["双控伺服", "水量伺服", "燃气比例阀"], ensure_ascii=False)),
         ("升数_L", "升数", "float", "L", True, 75, None),
@@ -187,8 +161,6 @@ DIMENSIONS = {
         ("保修_年", "保修", "float", "年", True, 45, None),
     ],
     "cat-15": [
-        ("价格_low", "最低价", "float", "元", False, 70, None),
-        ("价格_high", "最高价", "float", "元", False, 60, None),
         ("容量_kg", "容量", "float", "kg", True, 80, None),
         ("电机类型", "电机类型", "enum", "", True, 65, json.dumps(["DD直驱", "FPA直驱", "BLDC变频", "皮带定频"], ensure_ascii=False)),
         ("烘干方式", "烘干方式", "enum", "", True, 75, json.dumps(["双擎热泵", "热泵", "冷凝", "排气"], ensure_ascii=False)),
@@ -196,8 +168,6 @@ DIMENSIONS = {
         ("保修_年", "保修", "float", "年", True, 40, None),
     ],
     "cat-16": [
-        ("价格_low", "最低价", "float", "元", False, 65, None),
-        ("价格_high", "最高价", "float", "元", False, 55, None),
         ("尺寸_寸", "尺寸", "float", "英寸", True, 60, None),
         ("面板类型", "面板类型", "enum", "", True, 85, json.dumps(["QD-OLED", "OLED", "QD-MiniLED", "MiniLED", "ULED", "LCD"], ensure_ascii=False)),
         ("分区数", "分区数", "float", "", True, 75, None),
@@ -208,8 +178,6 @@ DIMENSIONS = {
     ],
     "cat-17": [
         # 集成灶相关维度
-        ("价格_low", "最低价", "float", "元", False, 70, None),
-        ("价格_high", "最高价", "float", "元", False, 60, None),
         ("类型", "集成灶类型", "enum", "", True, 40, json.dumps(["蒸烤一体", "消毒柜款", "储物柜款"], ensure_ascii=False)),
         ("风量_m3", "风量", "float", "m³/min", True, 80, None),
         ("静压_Pa", "最大静压", "float", "Pa", True, 75, None),
@@ -229,7 +197,29 @@ def parse_price(text):
     text = text.strip().replace(",", "").replace("，", "").replace(" ", "")
     # 判断是否有"万"（万元单位）
     is_wan = "万" in text
-    text_clean = text.replace("万", "").replace("元", "").replace("+", "")
+    text_clean = text.replace("万", "").replace("元", "")
+    # 归一化 k/K/千 单位："2k" → "2000"（"约2k" → "约2000"）
+    text_clean = re.sub(
+        r"(\d+(?:\.\d+)?)\s*[kK千]",
+        lambda m: str(int(round(float(m.group(1)) * 1000))),
+        text_clean,
+    )
+    # 无上限语法："15k-30k+" → (15000, 45000)；"10k+" → (10000, 15000)
+    m = re.search(r"([\d.]+)\s*[-~]\s*([\d.]+)\s*\+", text_clean)
+    if m:
+        low = float(m.group(1))
+        high = float(m.group(2))
+        if is_wan:
+            low *= 10000
+            high *= 10000
+        return (low, high * 1.5)
+    m = re.search(r"([\d.]+)\s*\+", text_clean)
+    if m:
+        v = float(m.group(1))
+        if is_wan:
+            v *= 10000
+        return (v, v * 1.5)
+    text_clean = text_clean.replace("+", "")
     # "800-1,200" → (800, 1200)
     m = re.search(r"([\d.]+)\s*[-~]\s*([\d.]+)", text_clean)
     if m:
@@ -618,8 +608,13 @@ def parse_dim_table(table, slug):
         label_cell = cells[0].get_text(strip=True)
         dim_key = get_dim_key_from_label(label_cell, slug)
         
-        # 特殊处理价格行：存储为价格字段
-        if label_cell == "价格区间":
+        # 跳过"价格(全屋)"行：全屋方案价与单机价混排且与 expand 一拖多产品重复，
+        # 全屋价维度由 expand 清单数据承载
+        if "全屋" in label_cell:
+            continue
+        
+        # 特殊处理价格行：存储为产品列价格字段（"价格区间"）
+        if "价格" in label_cell:
             for i, brand in enumerate(brands):
                 if i + 1 < len(cells):
                     val_text = cells[i + 1].get_text(strip=True)
@@ -628,6 +623,15 @@ def parse_dim_table(table, slug):
                         result[brand]["价格_low"] = price_low
                     if price_high:
                         result[brand]["价格_high"] = price_high
+            # "价格(全屋)" 另有维度定义（价格_全屋_万），保留维度值；"价格区间"无维度映射则跳过
+            if dim_key is None:
+                continue
+            dim_type = get_dim_type(dim_key, slug)
+            for i, brand in enumerate(brands):
+                if i + 1 < len(cells):
+                    val_text = cells[i + 1].get_text(strip=True)
+                    if val_text:
+                        result[brand][dim_key] = parse_cell_value(val_text, dim_type, dim_key)
             continue
         
         if dim_key is None:
@@ -674,15 +678,14 @@ def find_all_recommend_tables(section):
         # 跳过明显不是推荐表格的卡片
         if "品牌梯队" in header_text or "口碑" in header_text or "售后" in header_text or "维修" in header_text:
             continue
-        table_wrap = card.find("div", class_="table-wrap")
-        if not table_wrap:
-            continue
-        table = table_wrap.find("table")
-        if not table:
-            continue
-        if is_dim_table(table):
-            continue  # dim-table 由其他函数处理
-        tables.append((header_text, table))
+        # 卡片内可能有多张表（如 1.5匹表 + 3匹柜机表），全部收集
+        for table_wrap in card.find_all("div", class_="table-wrap"):
+            table = table_wrap.find("table")
+            if not table:
+                continue
+            if is_dim_table(table):
+                continue  # dim-table 由其他函数处理
+            tables.append((header_text, table))
     return tables
 
 
@@ -709,6 +712,9 @@ def parse_recommend_table(table):
     
     # 没有品牌列的表头，但第一列可能是品牌名
     if "brand" not in col_map:
+        # 纯信息表（如"门型/适合人群"对比表）无品牌/型号/价格语义，直接跳过
+        if "model" not in col_map and "price" not in col_map:
+            return []
         # 尝试判断：如果第一列内容都是品牌名，则视为品牌列
         brands_from_rows = []
         for row in rows[1:]:
@@ -724,25 +730,52 @@ def parse_recommend_table(table):
         return []
     
     products = []
+    # rowspan 展开：跨行列后续行用 None 占位，保证行内列索引与表头一致
+    span_remain = {}  # col -> 剩余行数
     for row in rows[1:]:
         cells = row.find_all("td")
+        aligned = []
+        col, ci = 0, 0
+        while ci < len(cells) or col in span_remain:
+            if col in span_remain:
+                span_remain[col] -= 1
+                if span_remain[col] <= 0:
+                    del span_remain[col]
+                aligned.append(None)
+                col += 1
+            elif ci < len(cells):
+                cell = cells[ci]
+                try:
+                    rs = int(cell.get("rowspan", 1) or 1)
+                except (TypeError, ValueError):
+                    rs = 1
+                if rs > 1:
+                    span_remain[col] = rs - 1
+                aligned.append(cell)
+                ci += 1
+                col += 1
+            else:
+                break
+        cells = aligned
+
         if len(cells) <= col_map.get("brand", 0):
             continue
         
-        brand = cells[col_map["brand"]].get_text(strip=True) if "brand" in col_map else ""
-        if not brand:
-            continue
+        brand_cell = cells[col_map["brand"]]
+        if brand_cell is None:
+            continue  # 品牌列被 rowspan 占据（类型分组行），跳过
+        brand = brand_cell.get_text(strip=True)
         # 跳过表头或无效行
         if brand in ("品牌", "品牌/型号"):
             continue
         
         model = ""
-        if "model" in col_map and col_map["model"] < len(cells):
+        if "model" in col_map and col_map["model"] < len(cells) and cells[col_map["model"]] is not None:
             model = cells[col_map["model"]].get_text(strip=True)
         
         price_low = 0
         price_high = 0
-        if "price" in col_map and col_map["price"] < len(cells):
+        if "price" in col_map and col_map["price"] < len(cells) and cells[col_map["price"]] is not None:
             price_text = cells[col_map["price"]].get_text(strip=True)
             price_low, price_high = parse_price(price_text)
         
@@ -851,6 +884,10 @@ def main():
                     # 提取价格
                     price_low = dims.pop("价格_low", 0) or 0
                     price_high = dims.pop("价格_high", 0) or 0
+                    
+                    # 无价格的产品（如被跳过的全屋方案价行）不创建
+                    if not price_low and not price_high:
+                        continue
                     
                     # 清理仅用于展示的非维度字段
                     dims.pop("核心技术", None)

@@ -2,7 +2,7 @@
 
 三个修复点：
 1. 为 121 个缺型号产品补型号（品牌热门型号；与库中已有型号冲突的用"品牌+品类通用款"）
-2. 价格更新：已知 JD 精确价的产品用精确价；其余取价格范围中值（整到 10 元）
+2. 价格更新：已知 JD 精确价的产品用精确价；其余保留原始价格区间（只修正 low>high 颠倒，不再取中值压缩区间）
 3. 按型号补充/修正维度参数（抽油烟机/燃气灶/冰箱/空调/电视）
 
 脏数据产品（品牌为门型/价格区间，无真实品牌信息）按用户确认直接删除。
@@ -226,24 +226,19 @@ def main():
             else:
                 print(f'警告: JD价格未匹配产品 {brand} {model}')
 
-        median_applied = 0
+        # ===== 问题2b：价格区间修正（只处理颠倒/无数据，保留合法区间） =====
+        # 旧逻辑把合法区间（low < high）取中值整到 10 元，摧毁区间信息，已废弃。
+        # 现在只修 price_low > price_high 的颠倒；price_low=price_high=0 无数据不猜测；单边为 0 的残缺数据保持原样。
+        price_fixed = 0
         for p in db.query(Product).all():
             low, high = p.price_low or 0, p.price_high or 0
             if low == high:
-                continue
-            if low > 0 and high > 0:
-                avg = (low + high) / 2
-                mid = round(avg, -1)
-                if mid < 10:  # 极小值说明单位可能是"万"，避免取整成 0
-                    mid = round(avg)
-                p.price_low = p.price_high = float(mid)
-                median_applied += 1
-            elif low > 0:
-                p.price_high = low
-                median_applied += 1
-            elif high > 0:
-                p.price_low = high
-                median_applied += 1
+                continue  # 无数据(0,0)或已确定价格（含 JD 精确价），保持不动
+            if low > 0 and high > 0 and low > high:
+                # 区间颠倒 → 交换修正
+                p.price_low, p.price_high = high, low
+                price_fixed += 1
+            # 其余情况（合法区间 low<high）保持不动
 
         # ===== 问题3：补充/修正维度参数 =====
         dims_applied = 0
@@ -271,7 +266,7 @@ def main():
         print(f'通用型号补全: {len(generic)} 个')
         print(f'删除脏数据产品: {len(deleted)} 个 {deleted}')
         print(f'JD精确价格: {len(jd_applied)} 个 {jd_applied}')
-        print(f'中值价格更新: {median_applied} 个')
+        print(f'价格颠倒修正: {price_fixed} 个')
         print(f'维度参数补充: {dims_applied} 个产品')
         print(f'剩余缺型号: {remaining}')
         print(f'产品总数: {total}')

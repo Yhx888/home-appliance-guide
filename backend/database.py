@@ -1,8 +1,10 @@
 """数据库模型定义 — SQLAlchemy ORM"""
+from pathlib import Path
 from sqlalchemy import create_engine, Column, Integer, String, Float, Boolean, Text, DateTime, JSON, ForeignKey, func
 from sqlalchemy.orm import DeclarativeBase, relationship, sessionmaker
 
-DATABASE_URL = "sqlite:///backend/app.db"
+# 基于本文件位置派生绝对路径，避免依赖启动时的 CWD（Windows 盘符路径转 URL 用正斜杠）
+DATABASE_URL = f"sqlite:///{(Path(__file__).resolve().parent / 'app.db').as_posix()}"
 engine = create_engine(DATABASE_URL, echo=False, connect_args={"check_same_thread": False})
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 

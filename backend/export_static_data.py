@@ -3,6 +3,9 @@ import json
 import sys
 from pathlib import Path
 
+# 输出路径基于本文件位置派生（任意 CWD 运行都写项目根目录 data.json）
+OUTPUT_PATH = Path(__file__).resolve().parent.parent / "data.json"
+
 # 确保以 `python backend/export_static_data.py` 方式运行时也能找到 backend 包
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
@@ -54,6 +57,9 @@ try:
                     "price_low": p.price_low or 0,
                     "price_high": p.price_high or 0,
                     "dimensions": p.dimensions or {},
+                    # 各维度归一化分（与后端 scorer 一致，含价格/枚举维度），供静态模式排序
+                    # 保留 4 位小数：舍入过粗会导致相邻产品排序乱序（如 2999 与 3000 同分）
+                    "scores": {k: round(v.normalized, 4) for k, v in scores.items()},
                     "total_score": round(total, 1),
                 }
             )
@@ -62,7 +68,7 @@ try:
 finally:
     db.close()
 
-with open("data.json", "w", encoding="utf-8") as f:
+with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
     json.dump(result, f, ensure_ascii=False, indent=2)
 
 print(f"导出完成：{len(result['categories'])} 个品类")

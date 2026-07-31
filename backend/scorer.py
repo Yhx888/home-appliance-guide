@@ -43,6 +43,10 @@ ENUM_SCORE_MAP: dict[str, dict[str, int]] = {
     },
     "压缩机": {
         "自研变频": 90, "自研全直流": 85, "美芝": 80, "三菱": 85, "三洋双缸": 70,
+        # 补充真实取值（DB 查询：56 个产品 14 种取值；复合值取成分均值，括号注释值取主品牌分）
+        "凌达": 85, "海立": 78, "自研压缩机": 75,
+        "美芝/海立": 79, "三菱/海立": 82, "三菱/自研": 80,
+        "美芝压缩机": 80, "美芝(自研)": 80, "美芝(美的同款)": 80, "凌达(自研)": 85,
     },
     "过滤等级": {
         "H13 HEPA": 100, "H12": 80, "H11": 60, "静电集尘": 70,
@@ -81,6 +85,10 @@ ENUM_SCORE_MAP: dict[str, dict[str, int]] = {
         "帝瓦雷": 95, "2.1声道杜比": 85, "屏幕发声": 80, "2.0声道": 65,
     },
 }
+
+
+# 价格维度 → 产品列映射（价格为单一事实源，不入 dimensions）
+PRICE_DIM_KEYS = {"价格_low": "price_low", "价格_high": "price_high"}
 
 
 class Scorer:
@@ -162,7 +170,13 @@ class Scorer:
         dims_data = product.dimensions or {}
 
         for dim_key, dim_def in dims_map.items():
-            raw_value = dims_data.get(dim_key)
+            if dim_key in PRICE_DIM_KEYS:
+                # 价格从产品列读取（0 视为无价格）
+                raw_value = getattr(product, PRICE_DIM_KEYS[dim_key], None)
+                if not raw_value:
+                    raw_value = None
+            else:
+                raw_value = dims_data.get(dim_key)
             weight = custom_weights.get(dim_key, dim_def.default_weight or 50)
 
             if raw_value is None:
@@ -190,9 +204,16 @@ class Scorer:
         for dim_key in dims_map:
             vals = []
             for p in products:
-                dim_data = p.dimensions or {}
-                v = dim_data.get(dim_key)
-                if v is not None:
-                    vals.append(v)
+                if dim_key in PRICE_DIM_KEYS:
+                    v = getattr(p, PRICE_DIM_KEYS[dim_key], None)
+                else:
+                    dim_data = p.dimensions or {}
+                    v = dim_data.get(dim_key)
+                if v is None:
+                    continue
+                if dim_key in PRICE_DIM_KEYS and v == 0:
+                    # 价格 0 视为无价格，不参与归一化范围
+                    continue
+                vals.append(v)
             all_values[dim_key] = vals
         return all_values

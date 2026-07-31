@@ -1,4 +1,4 @@
-"""数据填充脚本 — 基于品牌常识填充缺失维度值 + 创建双源覆盖"""
+"""数据填充脚本 — 基于品牌常识填充缺失维度值"""
 import sys
 import io
 import re
@@ -9,7 +9,7 @@ from collections import defaultdict
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from backend.database import init_db, SessionLocal, Product, Category, Dimension, DataSource, DataPoint
+from backend.database import init_db, SessionLocal, Product, Category, Dimension
 from sqlalchemy import func
 
 # ============================================================
@@ -775,20 +775,6 @@ def get_fill_values(cat_slug: str, brand: str, price_low: float, model: str = ""
     return {}
 
 
-def try_parse_number(val):
-    if val is None:
-        return None
-    if isinstance(val, (int, float)):
-        return float(val)
-    if isinstance(val, bool):
-        return None
-    if isinstance(val, str):
-        m = re.search(r'(\d+\.?\d*)', val.replace(',', ''))
-        if m:
-            return float(m.group(1))
-    return None
-
-
 def main():
     init_db()
     db = SessionLocal()
@@ -798,18 +784,11 @@ def main():
         print(f"当前产品数: {total_products}")
 
         cats = db.query(Category).filter(Category.slug.like('cat-%')).order_by(Category.sort_order).all()
-        cat_map = {c.slug: c for c in cats}
 
         cat_dim_keys = {}
         for c in cats:
             dims = db.query(Dimension).filter(Dimension.category_id == c.id).all()
             cat_dim_keys[c.slug] = [(d.dim_key, d.type) for d in dims]
-
-        # 创建"enriched"来源
-        enriched_source = DataSource(platform="enriched", method="knowledge_base", url="")
-        db.add(enriched_source)
-        db.flush()
-        enriched_source_id = enriched_source.id
 
         fill_count = 0
 
@@ -824,17 +803,7 @@ def main():
                 p_dims = dict(p.dimensions or {})
                 changed = False
 
-                # 1. 填充 价格_low / 价格_high（从 product 列复制到 dimensions JSON）
-                price_filled = False
-                for price_key, price_val in [("价格_low", p.price_low), ("价格_high", p.price_high)]:
-                    if price_key in dim_keys and price_key not in p_dims:
-                        if price_val and price_val > 0:
-                            p_dims[price_key] = price_val
-                            changed = True
-                            fill_count += 1
-                            price_filled = True
-
-                # 2. 基于规则的填充
+                # 基于规则的填充（价格以产品列 price_low/price_high 为单一事实源，不入 dimensions）
                 fill_vals = get_fill_values(c.slug, p.brand, p.price_low or 0, p.model or "")
                 for dk, val in fill_vals.items():
                     if dk in dim_keys and (dk not in p_dims or p_dims[dk] is None):
@@ -862,47 +831,6 @@ def main():
 
         print(f"\n  共填充 {fill_count} 个维度值")
 
-        # ---- 任务B：双源覆盖 ----
-        print("\n=== 任务B：双源覆盖 ===")
-
-        existing_sources_per_product = defaultdict(set)
-        for dp in db.query(DataPoint).all():
-            existing_sources_per_product[dp.product_id].add(dp.source_id)
-
-        double_source_count = 0
-        for c in cats:
-            products = db.query(Product).filter(Product.category_id == c.id).all()
-            for p in products:
-                p_dims = p.dimensions or {}
-                if not p_dims:
-                    continue
-                existing = existing_sources_per_product.get(p.id, set())
-                if enriched_source_id in existing:
-                    continue
-
-                dp_count = 0
-                for dk, val in p_dims.items():
-                    if val is None:
-                        continue
-                    numeric_val = try_parse_number(val)
-                    dp = DataPoint(
-                        product_id=p.id,
-                        dimension_key=dk,
-                        source_id=enriched_source_id,
-                        raw_value=str(val),
-                        numeric_value=numeric_val,
-                        confidence=0.85,
-                        status="verified",
-                    )
-                    db.add(dp)
-                    dp_count += 1
-
-                if dp_count > 0:
-                    double_source_count += 1
-                    existing_sources_per_product[p.id].add(enriched_source_id)
-
-        db.commit()
-
         # ---- 最终统计 ----
         print("\n=== 最终统计 ===")
 
@@ -923,14 +851,6 @@ def main():
                         grand_filled += 1
         fill_rate = grand_filled / grand_expected * 100 if grand_expected > 0 else 0
         print(f"  总体维度填充率: {grand_filled}/{grand_expected} = {fill_rate:.1f}%")
-
-        # 双源覆盖
-        product_source_count = defaultdict(set)
-        for dp in db.query(DataPoint).all():
-            product_source_count[dp.product_id].add(dp.source_id)
-        dual_source = sum(1 for s in product_source_count.values() if len(s) >= 2)
-        dual_rate = dual_source / total_products_after * 100 if total_products_after > 0 else 0
-        print(f"  双源覆盖产品: {dual_source}/{total_products_after} = {dual_rate:.1f}%")
 
         # 各品类
         print(f"\n  品类明细:")

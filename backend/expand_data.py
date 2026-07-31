@@ -244,8 +244,6 @@ NEW_PRODUCTS = {
          {"能效_APF": 4.5, "压缩机": "美芝/海立", "噪音_dB": 26, "自清洁": True, "保修_年": 3, "匹数": 1.5}),
         ("海尔", "静悦1.5匹", 2000, 2800,
          {"能效_APF": 4.6, "压缩机": "三菱/海立", "噪音_dB": 22, "自清洁": True, "保修_年": 6, "匹数": 1.5}),
-        ("海尔", "静悦3匹柜机", 5000, 7000,
-         {"能效_APF": 4.5, "压缩机": "三菱/海立", "自清洁": True, "保修_年": 6, "匹数": 3}),
         ("华凌", "N8HB1A 3匹", 3500, 5000,
          {"能效_APF": 4.6, "压缩机": "美芝", "噪音_dB": 24, "自清洁": True, "保修_年": 6, "匹数": 3}),
         ("美的", "酷省电3匹柜机", 4500, 6000,
@@ -656,19 +654,17 @@ def main():
         for c in cats:
             cat_map[c.slug] = c
 
-        # 获取已有 (brand, model) 组合（避免重复）
-        existing = set()
-        for p in db.query(Product).all():
-            existing.add((p.category_id, p.brand, p.model or ""))
-
-        # 创建数据来源记录
-        data_source = DataSource(
-            platform="web_research",
-            url="",
-            method="search",
+        # 复用已有数据来源记录（按 platform+method），避免每次重跑都新建
+        data_source = (
+            db.query(DataSource)
+            .filter(DataSource.platform == "web_research", DataSource.method == "search")
+            .order_by(DataSource.id)
+            .first()
         )
-        db.add(data_source)
-        db.flush()
+        if data_source is None:
+            data_source = DataSource(platform="web_research", url="", method="search")
+            db.add(data_source)
+            db.flush()
         source_id = data_source.id
 
         total_added = 0
@@ -686,8 +682,17 @@ def main():
                 added = 0
                 for item in products:
                     brand, model, price_low, price_high, dims = item
-                    key = (cat.id, brand, model or "")
-                    if key in existing:
+                    # 基于 DB 查询 (category_id, brand, model) 已存在则跳过（不依赖内存集合，重跑安全）
+                    dup = (
+                        db.query(Product.id)
+                        .filter(
+                            Product.category_id == cat.id,
+                            Product.brand == brand,
+                            Product.model == (model or ""),
+                        )
+                        .first()
+                    )
+                    if dup:
                         continue  # 跳过已存在的
 
                     product = Product(
@@ -701,7 +706,6 @@ def main():
                     )
                     db.add(product)
                     db.flush()
-                    existing.add(key)
                     added += 1
 
                     # 为每个维度值创建 data_point
