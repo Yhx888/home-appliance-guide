@@ -205,3 +205,16 @@ uvicorn backend.main:app --reload --host 0.0.0.0 --port 8000
 - [ ] `git status` 确认没有意外包含 `app.db` 或 `__pycache__`
 - [ ] `git diff --cached` 确认改动的文件符合预期
 - [ ] 代码可以正常运行（后端不报错）
+
+### Bug 修复工作流
+- **每次修完 bug 后，必须立即更新 AGENTS.md**（反映修复内容、新增的注意事项）
+- 每次任务开始时，对照下方核验清单逐项检查完成情况
+
+### 任务核验清单
+| 检查项 | 说明 |
+|--------|------|
+| 代码已提交 | `git status` 干净，commit 信息清晰 |
+| 已 push 到 GitHub | `git push origin master` 执行成功 |
+| AGENTS.md 已更新 | 修复内容、架构变化已写入 |
+| 数据有变化 | 重新运行 `python backend\export_static_data.py` |
+| GitHub Pages 已验证 | 等 CDN 传播后用浏览器确认页面正常 |
