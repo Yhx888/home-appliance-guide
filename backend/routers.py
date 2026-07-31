@@ -75,15 +75,23 @@ def list_products(
     # 收集全局维度值范围
     all_dim_values = Scorer.collect_all_dim_values(all_products, dim_map)
 
-    # 解析权重
+    # 解析权重：必须 JSON 对象，值必须 0-100 数字
     weights_dict = {}
     if weights:
         try:
-            weights_dict = json.loads(weights)
+            parsed = json.loads(weights)
         except (json.JSONDecodeError, TypeError):
-            pass
+            raise HTTPException(status_code=400, detail="weights 必须是合法 JSON 对象")
+        if not isinstance(parsed, dict):
+            raise HTTPException(status_code=400, detail="weights 必须是 JSON 对象")
+        for k, v in parsed.items():
+            if isinstance(v, bool) or not isinstance(v, (int, float)):
+                raise HTTPException(status_code=400, detail=f"weights 中 {k} 必须是 0-100 的数字")
+            if not 0 <= v <= 100:
+                raise HTTPException(status_code=400, detail=f"weights 中 {k} 超出 0-100 范围")
+        weights_dict = parsed
 
-    # 筛选
+    # 筛选（price_min/price_max = 0 视为未过滤，不排除价格未知产品）
     query = db.query(Product).filter(Product.category_id == category.id)
     if brands:
         brand_list = [b.strip() for b in brands.split(",") if b.strip()]
@@ -94,13 +102,17 @@ def list_products(
     if price_max > 0:
         query = query.filter(Product.price_low <= price_max)
 
-    total = query.count()
-    products = query.offset((page - 1) * page_size).limit(page_size).all()
+    # 排序键校验：仅允许本品类维度 key 或 total_score
+    if sort_key and sort_key != "total_score" and sort_key not in dim_map:
+        raise HTTPException(status_code=400, detail=f"未知排序键: {sort_key}")
 
-    # 计算得分
+    # 全量筛选 → 计算得分 → 排序 → 切片分页（数百行规模全量取成本可忽略，保证跨页有序）
+    filtered = query.all()
+    total = len(filtered)
+
     scorer = Scorer(db)
     product_list = []
-    for p in products:
+    for p in filtered:
         scores = scorer.calc_product_scores(p, dim_map, weights_dict, all_dim_values)
         total_score = Scorer.calc_total_score(scores)
         product_list.append(ProductOut(
@@ -116,16 +128,18 @@ def list_products(
             total_score=total_score,
         ))
 
-    # 排序
-    if sort_key:
-        reverse = sort_dir == "desc"
-        product_list.sort(key=lambda x: (
-            x.dim_scores.get(sort_key, ProductDim(normalized=0, weight=0)).normalized
-            if sort_key in x.dim_scores
-            else x.total_score
-        ), reverse=reverse)
+    # 排序：单维度按归一化分（缺失维度恒有 normalized=0 条目，按 0 分参与排序），否则按综合分
+    # 方向：asc/desc 是原始值语义；normalized 对 higher_better=false 维度（价格/噪音等）已反转，需取反
+    if sort_key and sort_key != "total_score":
+        dim_def = dim_map.get(sort_key)
+        reverse = (sort_dir == "desc") != (dim_def is not None and not dim_def.higher_better)
+        product_list.sort(key=lambda x: x.dim_scores.get(sort_key, ProductDim(normalized=0, weight=0)).normalized, reverse=reverse)
     else:
         product_list.sort(key=lambda x: x.total_score, reverse=True)
+
+    # 切片分页
+    start = (page - 1) * page_size
+    product_list = product_list[start:start + page_size]
 
     return ProductListOut(
         total=total,

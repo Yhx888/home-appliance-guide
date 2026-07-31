@@ -1,7 +1,6 @@
 """FastAPI 应用入口"""
 from pathlib import Path
 from fastapi import FastAPI
-from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 
 from backend.database import init_db
@@ -18,9 +17,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# 静态文件：serve index.html
+# 静态文件：serve index.html（不再挂载整个仓库根目录，仅 root 路由返回单文件）
 static_dir = Path(__file__).resolve().parent.parent  # backend/ 的父目录
-app.mount("/static", StaticFiles(directory=str(static_dir), html=True), name="static")
 
 # API 路由
 app.include_router(api_router, prefix="/api")

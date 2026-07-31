@@ -14,8 +14,10 @@
   python -m backend.scrapers.verify
 """
 
+import argparse
 import json
 import sys
+from pathlib import Path
 from statistics import mean, stdev
 from datetime import datetime
 from collections import defaultdict
@@ -23,8 +25,8 @@ from typing import Any
 
 from sqlalchemy.orm import Session
 
-# 确保能导入 backend 包
-sys.path.insert(0, r"C:\HOME\Project\home-appliance-guide")
+# 确保能导入 backend 包（路径基于本文件派生，不依赖固定目录）
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 
 from backend.database import SessionLocal, Product, Category, Dimension, DataPoint, DataSource
 
@@ -95,12 +97,12 @@ class Verifier:
 
     # ── 单产品单维度核对 ────────────────────────────────────────────────
 
-    def check_product_dimension(self, product_id: int, dim_key: str) -> dict:
+    def check_product_dimension(self, product_id: int, dim_key: str, apply: bool = False) -> dict:
         """核对一个产品的单个维度。
 
         流程：
           1. 查询该 (product_id, dim_key) 的所有 data_points
-          2. 多源一致(偏差<15%) → 置信度≥0.9，写入 products.dimensions
+          2. 多源一致(偏差<15%) → 置信度≥0.9，写入 products.dimensions（仅 apply=True）
           3. 多源偏差>20% → 标记 manual_review_needed
           4. 单源 → 置信度 0.5，标记 pending
 
@@ -148,14 +150,29 @@ class Verifier:
         # 共识值：取均值（多源时）或第一个有效值
         consensus = mean(numeric_values) if len(numeric_values) > 1 else (numeric_values[0] if numeric_values else None)
 
-        # 置信度充足且已验证 → 写入 products.dimensions
-        if status == STATUS_VERIFIED and consensus is not None:
+        # 置信度充足且已验证 → 写入 products.dimensions（仅 --apply 模式）
+        write_back = False
+        skip_reason = ""
+        if status == STATUS_VERIFIED and consensus is not None and apply:
             product = self.db.query(Product).filter(Product.id == product_id).first()
             if product:
-                dims = dict(product.dimensions or {})
-                dims[dim_key] = consensus
-                product.dimensions = dims
-                self.db.commit()
+                # 枚举/文本维度禁止数值写回（consensus 是数值均值，会把"一级"写成浮点数）
+                dim = (
+                    self.db.query(Dimension)
+                    .filter(
+                        Dimension.category_id == product.category_id,
+                        Dimension.dim_key == dim_key,
+                    )
+                    .first()
+                )
+                if dim and dim.type in ("enum", "text") and isinstance(consensus, (int, float)):
+                    skip_reason = "枚举/文本维度禁止数值写回"
+                else:
+                    dims = dict(product.dimensions or {})
+                    dims[dim_key] = consensus
+                    product.dimensions = dims
+                    self.db.commit()
+                    write_back = True
 
         return {
             "confidence": round(confidence, 4),
@@ -166,6 +183,8 @@ class Verifier:
                 "data_points_count": len(points),
                 "numeric_values": [round(v, 4) for v in numeric_values] if numeric_values else [],
                 "raw_values": [p.raw_value for p in points[:5]],
+                "write_back": write_back,
+                "skip_reason": skip_reason,
             },
         }
 
@@ -202,11 +221,13 @@ class Verifier:
 
     # ── 全量校对 ────────────────────────────────────────────────────────
 
-    def check_all(self) -> dict:
+    def check_all(self, apply: bool = False) -> dict:
         """遍历所有未核查 data_points，执行校对。
 
+        apply=True 时才写回 products.dimensions，默认只读。
+
         返回数据质量报告：
-          {total_checked, resolved, disputed, pending, coverage}
+          {total_checked, resolved, disputed, pending}
         """
         unchecked = (
             self.db.query(DataPoint)
@@ -233,7 +254,7 @@ class Verifier:
         pending = 0
 
         for (pid, dk), _ in groups.items():
-            result = self.check_product_dimension(pid, dk)
+            result = self.check_product_dimension(pid, dk, apply=apply)
             s = result["status"]
             if s == STATUS_VERIFIED:
                 resolved += 1
@@ -254,10 +275,9 @@ class Verifier:
     def generate_report(self) -> dict:
         """生成数据质量报告。
 
-        由于当前 data_points 表为空，报告基于 products.dimensions JSON 分析。
         包含：
           - 品类统计（品类名、产品数、维度填充率）
-          - 置信度分布（基于数据来源评估）
+          - 置信度分布（聚合 data_points 真实置信度，按 产品×维度 分组）
           - 覆盖率（关键维度填充率）
           - 未解决项统计
 
@@ -268,7 +288,18 @@ class Verifier:
         total_products = 0
         total_expected_dims = 0
         total_filled_dims = 0
+
+        # 聚合 data_points 真实置信度：按 (product, dimension_key) 分组，
+        # 有数值数据点的组用 calculate_confidence 计算（缺失维度无数据点 → 不计入分布）
         all_confidences: list[float] = []
+        dp_groups: dict[tuple[int, str], list[DataPoint]] = defaultdict(list)
+        for dp in self.db.query(DataPoint).all():
+            dp_groups[(dp.product_id, dp.dimension_key)].append(dp)
+        for points in dp_groups.values():
+            numeric_values = [p.numeric_value for p in points if p.numeric_value is not None]
+            if numeric_values:
+                sources_count = len(set(p.source_id for p in points))
+                all_confidences.append(calculate_confidence(sources_count, numeric_values))
 
         for cat in categories:
             dims = self.db.query(Dimension).filter(Dimension.category_id == cat.id).all()
@@ -291,13 +322,6 @@ class Verifier:
 
                 # 填充率
                 fill_rate = filled / len(dim_keys) if dim_keys else 0
-
-                # 基于填充率估算该产品单维度置信度
-                for dk in dim_keys:
-                    if dk in p_dims and p_dims[dk] is not None:
-                        all_confidences.append(0.5 + 0.2 * fill_rate)  # 填充率越高越可信
-                    else:
-                        all_confidences.append(0.0)
 
                 product_details.append({
                     "id": p.id,
@@ -373,8 +397,8 @@ class Verifier:
             },
             "category_stats": category_stats,
             "note": (
-                "当前 data_points 表为空，报告基于 products.dimensions JSON 数据分析。"
-                "收集多源 data_points 后可运行更精确的数值校对。"
+                "置信度分布聚合自 data_points 真实数据；"
+                "若 data_points 为空则置信度分布为空，填充率统计仍基于 products.dimensions。"
             ),
         }
 
@@ -430,7 +454,18 @@ def print_report(report: dict):
 
 
 def main():
-    """独立运行入口"""
+    """独立运行入口（默认只读，--apply 才写回）"""
+    parser = argparse.ArgumentParser(
+        prog="python -m backend.scrapers.verify",
+        description="数据校对与质量报告：默认只生成报告不写库，--apply 显式开启写回。",
+    )
+    parser.add_argument(
+        "--apply",
+        action="store_true",
+        help="启用写回：将多源一致的数值共识写入 products.dimensions（默认只读）",
+    )
+    args = parser.parse_args()
+
     verifier = Verifier()
     report = verifier.generate_report()
     print_report(report)
@@ -438,11 +473,13 @@ def main():
     # 若有 data_points，执行全量校对
     if not report.get("data_points_table_empty", True):
         print("\n正在执行全量校对…")
-        check_result = verifier.check_all()
+        check_result = verifier.check_all(apply=args.apply)
         print(f"  校对完成：共 {check_result['total_checked']} 组，"
               f"已解决 {check_result['resolved']}，"
               f"争议 {check_result['disputed']}，"
               f"待定 {check_result['pending']}")
+        if not args.apply:
+            print("  （只读模式：未写库；使用 --apply 可开启写回）")
 
     verifier.db.close()
 
