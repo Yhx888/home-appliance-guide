@@ -155,6 +155,10 @@ table{font-size:15px}
 .dim-table-dynamic tr:hover td.dim-red{background:#fef2f2}
 /* 改动2：推荐星级列样式 */
 .dim-table-dynamic .score-cell{text-align:center;font-size:14px;letter-spacing:1px;color:var(--accent)}
+/* 品牌型号列：京东搜索链接 */
+.dim-table-dynamic td a.jd-link{color:var(--primary);text-decoration:none}
+.dim-table-dynamic td a.jd-link:hover{text-decoration:underline}
+.dim-table-dynamic td a.jd-link .jd-brand{font-weight:700}
 </style>
 </head>
 <body>
@@ -1909,8 +1913,8 @@ function renderDimTable(panel, products, dims) {
     return 'dim-yellow';
   }
 
-  // 表头：品牌 | 型号 | 价格 | 维度1..n | 推荐星级
-  var thead = '<tr><th>品牌</th><th>型号</th><th>价格</th>';
+  // 表头：品牌型号 | 价格 | 维度1..n | 推荐星级
+  var thead = '<tr><th>品牌型号</th><th>价格</th>';
   displayDims.forEach(function(d) {
     thead += '<th>' + d.label + (d.unit ? '(' + d.unit + ')' : '') + '</th>';
   });
@@ -1920,8 +1924,13 @@ function renderDimTable(panel, products, dims) {
   var tbody = '';
   products.forEach(function(p) {
     var row = '<tr>';
-    row += '<td>' + escapeHtml(p.brand) + '</td>';
-    row += '<td>' + (p.model ? escapeHtml(p.model) : '—') + '</td>';
+
+    // 品牌型号列：合并为一列，链接到京东搜索（空格编码为 +，与站内"去京东"链接一致）
+    var kw = encodeURIComponent(p.brand + (p.model ? ' ' + p.model : '')).replace(/%20/g, '+');
+    row += '<td><a class="jd-link" href="https://search.jd.com/Search?keyword=' + kw +
+      '&enc=utf-8" target="_blank" rel="nofollow"><span class="jd-brand">' + escapeHtml(p.brand) +
+      '</span>' + (p.model ? ' ' + escapeHtml(p.model) : '') + '</a></td>';
+
     row += '<td>' + (p.price_low > 0 ? '¥' + formatPrice(p.price_low) : '—') + '</td>';
 
     displayDims.forEach(function(d) {
