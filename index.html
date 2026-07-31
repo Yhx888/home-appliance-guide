@@ -1520,20 +1520,29 @@ async function initCategoryView(slug) {
 
   state.currentDims = cat.dimensions;
 
-  // 找到 dim-table 卡片
+  // 找到包含 dim-table 的卡片
   const section = document.getElementById(slug);
   if (!section) return;
-  const cards = section.querySelectorAll('.card');
-  let dimCard = null;
-  for (let i = 0; i < cards.length; i++) {
-    if (cards[i].querySelector('.dim-table')) {
-      dimCard = cards[i];
-      break;
+  const dimTable = section.querySelector('.dim-table, .dim-table-dynamic');
+  let cardBody = dimTable ? dimTable.closest('.card-body') : null;
+  if (!cardBody) {
+    // fallback: 找第一个没有 show 类的 card-body
+    const allBodies = section.querySelectorAll('.card-body');
+    for (let i = 0; i < allBodies.length; i++) {
+      if (!allBodies[i].classList.contains('show')) {
+        cardBody = allBodies[i];
+        break;
+      }
     }
   }
-  if (!dimCard) return;
-  const cardBody = dimCard.querySelector('.card-body');
   if (!cardBody) return;
+
+  // 自动展开卡片，让 filter-panel 和动态表格可见（含截图场景）
+  cardBody.classList.add('show');
+  const cardHeader = cardBody.previousElementSibling;
+  if (cardHeader && cardHeader.classList.contains('card-header')) {
+    cardHeader.classList.add('open');
+  }
 
   // 创建/获取 filter-panel
   let panel = cardBody.querySelector('.filter-panel');
@@ -1972,6 +1981,12 @@ function escapeHtml(str) {
   div.textContent = str;
   return div.innerHTML;
 }
+
+// 加载时若 URL 带品类 hash（如 #cat-1），直接初始化该品类视图
+(function initFromHash() {
+  var m = location.hash.match(/^#?(cat-\d+)$/);
+  if (m) initCategoryView(m[1]);
+})();
 </script>
 
 </body>
