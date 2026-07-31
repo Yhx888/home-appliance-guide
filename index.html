@@ -167,6 +167,7 @@ table{font-size:15px}
 .dim-table-dynamic td a.jd-link{color:var(--primary);text-decoration:none}
 .dim-table-dynamic td a.jd-link:hover{text-decoration:underline}
 .dim-table-dynamic td a.jd-link .jd-brand{font-weight:700}
+.dim-table-dynamic td a.jd-link .jd-badge{display:inline-block;margin-left:6px;padding:1px 6px;font-size:11px;line-height:1.4;border-radius:3px;background:var(--accent);color:#fff;vertical-align:1px}
 /* 主页模块中心：分组标题 + 品类网格 + 专题入口 */
 .home-hub{padding-top:6px}
 .hub-heading{display:flex;align-items:baseline;gap:10px;font-family:var(--serif);font-size:22px;font-weight:700;letter-spacing:.06em;margin:26px 0 16px;padding-bottom:10px;border-bottom:1px solid var(--border);position:relative}
@@ -201,7 +202,7 @@ table{font-size:15px}
 <div class="hero" id="top">
 <p class="hero-kicker">Home Appliance Guide · 2025–2026</p>
 <h1>家居装修电器选购全维度指南<span class="hero-seal">选购指南</span></h1>
-<p class="subtitle">17 品类 · 128 维度 · 493 款产品 · 真实口碑与售后红黑榜</p>
+<p class="subtitle">17 品类 · 96 维度 · 490 款产品 · 真实口碑与售后红黑榜</p>
 <div class="search-box">
 <span class="search-icon">🔍</span>
 <input type="text" id="searchInput" placeholder="搜索品类模块，如：洗碗机 / 空调 / 电视…" oninput="doSearch(this.value)">
@@ -1633,27 +1634,30 @@ async function fetchProducts(slug, params) {
       }
 
       // 排序：优先权重加权分 → 优先级标签单维度 → 综合分降序
+      // 统一消费 data.json 导出的归一化分 p.scores（与后端 scorer 一致，含价格/枚举维度）
       if (params.weights) {
-        // 简化归一化：原始数值 × 权重 的加权平均（模拟后端 scorer）
         const w = params.weights;
         products.forEach(function(p) {
           let total = 0, totalWeight = 0;
           for (const key in w) {
-            const val = p.dimensions[key];
-            if (typeof val === 'number') {
-              total += val * w[key];
+            if (p.scores && typeof p.scores[key] === 'number') {
+              total += p.scores[key] * w[key];
               totalWeight += w[key];
             }
           }
-          p._weightedScore = totalWeight > 0 ? total / totalWeight : 0;
+          // 权重键在 scores 中无对应条目（如价格键）时回退综合分，与后端兜底语义一致
+          p._weightedScore = totalWeight > 0 ? total / totalWeight : p.total_score;
         });
         products.sort(function(a, b) { return (b._weightedScore || 0) - (a._weightedScore || 0); });
       } else if (params.sortKey && params.sortKey !== 'total_score') {
         const key = params.sortKey, dir = params.sortDir === 'asc' ? 1 : -1;
+        // normalized 分对 higher_better=false 维度（价格/噪音等）已反转，方向取反才是原始值语义
+        const dim = cat.dimensions.find(function(d) { return d.dim_key === key; });
+        const factor = (dim && dim.higher_better === false) ? -1 : 1;
         products.sort(function(a, b) {
-          const va = typeof a.dimensions[key] === 'number' ? a.dimensions[key] : 0;
-          const vb = typeof b.dimensions[key] === 'number' ? b.dimensions[key] : 0;
-          return dir * (vb - va);
+          const va = a.scores && typeof a.scores[key] === 'number' ? a.scores[key] : 0;
+          const vb = b.scores && typeof b.scores[key] === 'number' ? b.scores[key] : 0;
+          return factor * dir * (va - vb);
         });
       } else {
         products.sort(function(a, b) { return b.total_score - a.total_score; });
@@ -2110,10 +2114,13 @@ function renderDimTable(panel, products, dims) {
     var row = '<tr>';
 
     // 品牌型号列：合并为一列，链接到京东搜索（空格编码为 +，与站内"去京东"链接一致）
-    var kw = encodeURIComponent(p.brand + (p.model ? ' ' + p.model : '')).replace(/%20/g, '+');
+    // 通用款（品牌代表产品）无具体型号：京东只搜品牌，并显示"代表款"徽标
+    var isGeneric = p.model && p.model.indexOf('通用款') >= 0;
+    var kw = encodeURIComponent(p.brand + (p.model && !isGeneric ? ' ' + p.model : '')).replace(/%20/g, '+');
     row += '<td><a class="jd-link" href="https://search.jd.com/Search?keyword=' + kw +
       '&enc=utf-8" target="_blank" rel="nofollow"><span class="jd-brand">' + escapeHtml(p.brand) +
-      '</span>' + (p.model ? ' ' + escapeHtml(p.model) : '') + '</a></td>';
+      '</span>' + (p.model ? ' ' + escapeHtml(p.model) : '') +
+      (isGeneric ? '<span class="jd-badge">代表款</span>' : '') + '</a></td>';
 
     row += '<td>' + (p.price_low > 0 ? '¥' + formatPrice(p.price_low) : '—') + '</td>';
 
