@@ -109,23 +109,15 @@ table{font-size:15px}
 .filter-panel .filter-row{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:10px}
 .filter-panel .filter-row:last-child{margin-bottom:0}
 .filter-panel .filter-label{font-size:13px;font-weight:600;color:var(--text-light);min-width:64px;flex-shrink:0}
-.filter-panel .sort-mode-tabs{display:flex;gap:4px;background:#e8ecf2;border-radius:6px;padding:3px}
-.filter-panel .sort-tab{padding:5px 14px;font-size:13px;border:none;border-radius:4px;cursor:pointer;background:transparent;color:var(--text-light);font-weight:500;transition:all .2s}
-.filter-panel .sort-tab.active{background:#fff;color:var(--text);font-weight:600;box-shadow:0 1px 3px rgba(0,0,0,.1)}
-.filter-panel .sort-tab:hover{color:var(--text)}
-.filter-panel .sort-single-row select,.filter-panel .filter-select{padding:5px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:#fff;color:var(--text);outline:none;cursor:pointer}
-.filter-panel .sort-single-row select:focus,.filter-panel .filter-select:focus{border-color:var(--primary)}
-.filter-panel .weight-sliders{display:flex;flex-wrap:wrap;gap:8px;flex:1}
-.filter-panel .weight-slider-row{display:flex;align-items:center;gap:6px;min-width:140px}
-.filter-panel .weight-slider-row label{font-size:12px;color:var(--text-light);min-width:50px;white-space:nowrap}
-.filter-panel .weight-slider-row input[type="range"]{width:80px;height:4px;-webkit-appearance:none;appearance:none;background:var(--border);border-radius:2px;outline:none;cursor:pointer}
-.filter-panel .weight-slider-row input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:14px;height:14px;border-radius:50%;background:var(--primary);cursor:pointer;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,.2)}
-.filter-panel .weight-slider-row input[type="range"]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:var(--primary);cursor:pointer;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,.2)}
-.filter-panel .weight-value{font-size:12px;font-weight:600;color:var(--primary);min-width:24px;text-align:right}
 .filter-panel .brand-tags{display:flex;flex-wrap:wrap;gap:6px;flex:1}
 .filter-panel .brand-tag{padding:4px 12px;font-size:12px;border:1px solid var(--border);border-radius:14px;cursor:pointer;background:#fff;color:var(--text-light);transition:all .2s;user-select:none}
 .filter-panel .brand-tag:hover{border-color:var(--primary);color:var(--primary)}
 .filter-panel .brand-tag.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+/* 改动1新增：排序优先级预设标签（点击切换排序） */
+.filter-panel .priority-tags{display:flex;flex-wrap:wrap;gap:6px;flex:1}
+.filter-panel .priority-tag{padding:4px 12px;font-size:12px;border:1px solid var(--border);border-radius:14px;cursor:pointer;background:#fff;color:var(--text-light);transition:all .2s;user-select:none}
+.filter-panel .priority-tag:hover{border-color:var(--primary);color:var(--primary)}
+.filter-panel .priority-tag.active{background:var(--primary);color:#fff;border-color:var(--primary);font-weight:600}
 .filter-panel .price-range-row{display:flex;align-items:center;gap:6px;flex:1}
 .filter-panel .price-input{width:100px;padding:5px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;outline:none}
 .filter-panel .price-input:focus{border-color:var(--primary)}
@@ -151,15 +143,11 @@ table{font-size:15px}
 .dim-table-dynamic .dim-val{font-size:13px}
 .dim-table-dynamic .dim-val.dim-bool-yes{color:var(--success)}
 .dim-table-dynamic .dim-val.dim-bool-no{color:var(--danger)}
-.dynamic-table-wrap.ready+.table-wrap{display:none}
 @media(max-width:640px){
   .filter-panel .filter-row{flex-direction:column;align-items:stretch}
   .filter-panel .filter-label{min-width:auto}
-  .filter-panel .weight-slider-row{min-width:100%}
   .filter-panel .price-range-row{flex:1}
   .filter-panel .price-input{flex:1;width:auto}
-  .filter-panel .sort-mode-tabs{flex:1}
-  .filter-panel .sort-tab{flex:1;text-align:center}
 }
 </style>
 </head>
@@ -197,12 +185,8 @@ table{font-size:15px}
 <div class="nav-tab" onclick="switchTab('cat-16')">📺 电视机</div>
 <div class="nav-tab" onclick="switchTab('cat-17')">🔌 集成灶等</div>
 <div class="nav-tab" onclick="switchTab('topic-1')">🏡 全屋智能</div>
-<div class="nav-tab" onclick="switchTab('topic-2')">🏆 售后红黑榜</div>
-<div class="nav-tab" onclick="switchTab('topic-3')">💬 口碑风云榜</div>
-<div class="nav-tab" onclick="switchTab('topic-4')">💰 生命周期成本</div>
 <div class="nav-tab" onclick="switchTab('topic-5')">📊 按预算方案</div>
 <div class="nav-tab" onclick="switchTab('topic-6')">📈 行业趋势</div>
-<div class="nav-tab" onclick="switchTab('topic-7')">👶 特殊人群</div>
 <div class="nav-tab" onclick="switchTab('topic-8')">🏅 品牌软实力</div>
 </div>
 </div>
@@ -241,7 +225,52 @@ table{font-size:15px}
 </tbody>
 </table>
 </div>
+<div class="highlight-box">📚 <strong>全网避坑共识（知乎高赞"三不买"）：</strong>① 不买多功能合一（如蒸烤一体机温度上限比独立烤箱低约30度）② 不买安装后看不见的（嵌入式家电慎选）③ 不买售后无保障的。<br>🛒 <strong>什么值得买共识：</strong>美的性价比首选、格力品质标杆、海尔售后最优、小米入门性价比。<br>📱 <strong>社区趋势：</strong>B站硬核评测UP主成"赛博导购"（2025年测评搜索数+30%）；小红书从"买便宜的"转向"买质价比高的"，"国补"成重要决策因素。</div>
 </div>
+</div>
+</div>
+
+<div class="section" id="overview-aftersale">
+<div class="section-title">🏆 售后口碑速览</div>
+<div class="card">
+<div class="card-body show">
+<div class="table-wrap"><table><thead><tr><th>排名</th><th>品牌</th><th>售后满意度</th><th>保修亮点</th></tr></thead><tbody>
+<tr><td>🥇 1</td><td>美的</td><td>4.45分</td><td>整机6年+压缩机10年，售后备件100%原厂</td></tr>
+<tr><td>🥈 2</td><td>格力</td><td>4.36分</td><td>整机6年+压缩机10年，行业最长质保</td></tr>
+<tr><td>🥉 3</td><td>海尔</td><td>4.35分</td><td>售后体系最完善，网点最全，100%原厂高端配件</td></tr>
+<tr><td>4</td><td>小米</td><td>4.28分</td><td>整机1-3年，售后外包，大件问题较多</td></tr>
+<tr><td>5</td><td>海信</td><td>4.22分</td><td>投诉高发，需关注具体品类</td></tr>
+<tr><td>6</td><td>卡萨帝</td><td>—</td><td>整机10年+10年原厂，高端保障最足</td></tr>
+<tr><td>7</td><td>小天鹅</td><td>4.17分</td><td>—</td></tr>
+<tr><td>8</td><td>TCL</td><td>4.17分</td><td>—</td></tr>
+<tr><td>9</td><td>美菱</td><td>4.15分</td><td>—</td></tr>
+<tr><td>10</td><td>华凌</td><td>4.03分</td><td>—</td></tr>
+<tr><td>11</td><td>方太</td><td>3.82分</td><td>直营网点多、权责清晰，但满意度评分靠后</td></tr>
+</tbody></table></div>
+<div class="danger-box">⚠️ <strong>售后风险提示：</strong>2025年黑猫投诉日用电器投诉超3.2万件（+23%），售后服务类占40%。投诉结构：售后服务40.33%、产品质量25.52%、退货退款难25.31%、虚假宣传8.84%；品类投诉排名：智能清洁机器人23.33%居首、空调17.91%居次、生活小家电13.18%。高风险品牌：小米/米家（全系投诉量断层最高、售后完全外包）、网红小众品牌（配件停产、维修无门）、康佳（空调报修排期超100天）、奥克斯（整机减配、乡镇无直营售后）、万家乐（燃气热水器重灾区）；中等风险：格力（旺季报修拥堵、安装捆绑收费）、追觅（无视三包退换条例）、戴森（过保电池更换费近千元）。投诉回复率&gt;99%的品牌：添可、科沃斯、美的、苏泊尔、TCL、追觅、格力。</div>
+<div class="info-box">💡 <strong>安装乱收费三大套路</strong>（新华社/中消协曝光）：①低价引流高价加项 ②配件以次充好 ③模糊报价事后算账。重灾品类：空调（支架费/加管费/高空费）、热水器（阀门费/排烟管费）、洗衣机（水龙头费）。下单前务必确认安装费包含项目并留存书面报价。</div>
+</div>
+</div>
+</div>
+
+<!-- ===== 全生命周期成本（原专题4保留为独立卡片） ===== -->
+<div class="section" id="overview-tco">
+<div class="section-title">💰 全生命周期成本(TCO)</div>
+<div class="topic-card">
+<h3>各品类 5年 TCO对比</h3>
+<div class="table-wrap"><table><thead><tr><th>品类</th><th>购机价格(元)</th><th>年均能耗(元)</th><th>5年耗材/维修(元)</th><th>5年总成本(元)</th></tr></thead><tbody>
+<tr><td>空调(1.5匹一级能效)</td><td>2,000-3,500</td><td>~300-500</td><td>~500</td><td>4,000-7,000</td></tr>
+<tr><td>冰箱(法式)</td><td>3,000-8,000</td><td>~200-400</td><td>~500</td><td>5,000-12,000</td></tr>
+<tr><td>洗衣机(洗烘套装)</td><td>4,000-10,000</td><td>~200-400</td><td>~1,000</td><td>7,000-14,000</td></tr>
+<tr><td>净水器</td><td>700-6,000</td><td>~50</td><td>2,500-6,000(滤芯)</td><td>3,750-12,250</td></tr>
+<tr><td>油烟机</td><td>1,500-6,000</td><td>~100</td><td>~500</td><td>3,000-8,000</td></tr>
+<tr><td>洗碗机</td><td>2,000-8,000</td><td>~200-400</td><td>~1,000</td><td>5,000-13,000</td></tr>
+<tr><td>智能马桶</td><td>1,500-15,000</td><td>~50-100</td><td>~500</td><td>2,750-17,500</td></tr>
+</tbody></table></div>
+</div>
+<div class="topic-card">
+<h3>能耗电费对比</h3>
+<div class="info-box">• 1级能效比5级能效空调10年可省电费约<strong>1,320元</strong><br>• 一级能效冰箱年省电约<strong>135度</strong><br>• 格力/海尔/美的一级能效产品线覆盖最全<br>• 日系品牌（大金、三菱电机）在变频节能技术上长期领先</div>
 </div>
 </div>
 
@@ -287,13 +316,10 @@ table{font-size:15px}
 </tbody></table></div>
 </div></div>
 
-<div class="card"><div class="card-header" onclick="toggleCard(this)">💬 用户口碑 <span class="arrow">▶</span></div><div class="card-body">
+<div class="card"><div class="card-header" onclick="toggleCard(this)">💬 口碑与售后 <span class="arrow">▶</span></div><div class="card-body">
 <div class="feedback-item"><span class="pros">✅ 好评要点：</span>顶侧双吸效果好（方太L10-AI）；大吸力静音设计；挥手感应方便</div>
 <div class="feedback-item"><span class="cons">❌ 差评要点：</span>欧式顶吸不适合中式爆炒；使用几年后吸力衰减明显；安装高度不当导致跑烟</div>
 <div class="feedback-item"><span class="tip">💡 避坑建议：</span>中式爆炒优先选侧吸或顶侧双吸；风量≥17m³/min、静压≥300Pa是基本线；开放式厨房需更大风量</div>
-</div></div>
-
-<div class="card"><div class="card-header" onclick="toggleCard(this)">🔧 售后维修 <span class="arrow">▶</span></div><div class="card-body">
 <div class="table-wrap"><table><thead><tr><th>品牌</th><th>保修期</th><th>售后评分</th><th>备注</th></tr></thead><tbody>
 <tr><td>方太</td><td>整机5年</td><td>⭐⭐⭐⭐⭐</td><td>直营网点多，权责清晰</td></tr>
 <tr><td>老板</td><td>整机5年</td><td>⭐⭐⭐⭐⭐</td><td>厨电专业品牌</td></tr>
@@ -445,13 +471,10 @@ table{font-size:15px}
 </tbody></table></div>
 </div></div>
 
-<div class="card"><div class="card-header" onclick="toggleCard(this)">💬 用户口碑与避坑 <span class="arrow">▶</span></div><div class="card-body">
+<div class="card"><div class="card-header" onclick="toggleCard(this)">💬 口碑与售后 <span class="arrow">▶</span></div><div class="card-body">
 <div class="feedback-item"><span class="pros">✅ 好评：</span>对中式油污洗净效果大幅提升；消毒功能（99.9%幽门螺旋杆菌杀灭）</div>
 <div class="feedback-item"><span class="cons">❌ 差评：</span>容量买小是第一大坑；洗不净、烘不干；老房改造成本高</div>
 <div class="feedback-item"><span class="tip">💡 避坑：</span>容量宁大勿小（推荐13套以上）；提前预留空间和水管电路；选带烘干功能</div>
-</div></div>
-
-<div class="card"><div class="card-header" onclick="toggleCard(this)">🔧 售后维修 <span class="arrow">▶</span></div><div class="card-body">
 <div class="table-wrap"><table><thead><tr><th>品牌</th><th>保修期</th><th>维修成本</th><th>售后评分</th></tr></thead><tbody>
 <tr><td>西门子</td><td>整机1年</td><td>偏高</td><td>⭐⭐⭐⭐</td></tr>
 <tr><td>美的</td><td>整机3年</td><td>适中</td><td>⭐⭐⭐⭐</td></tr>
@@ -504,14 +527,11 @@ table{font-size:15px}
 </tbody></table></div>
 </div></div>
 
-<div class="card"><div class="card-header" onclick="toggleCard(this)">💬 用户口碑与避坑 <span class="arrow">▶</span></div><div class="card-body">
-<div class="danger-box">⚠️ <strong>最大痛点："买得起机器，换不起耗材"</strong>——年均滤芯更换成本约500-1200元，5年耗材费超过机器价格！滤芯更换周期由企业单方面决定，即使水质达标机器仍强制报警要求更换。</div>
+<div class="card"><div class="card-header" onclick="toggleCard(this)">💬 口碑与售后 <span class="arrow">▶</span></div><div class="card-body">
+<div class="danger-box">⚠️ <strong>最大痛点："买得起机器，换不起耗材"</strong>——年均滤芯更换成本约500-1200元，5年耗材费超过机器价格（占5年总使用成本62%-78%）！滤芯更换周期由企业单方面决定，即使水质达标机器仍强制报警要求更换。</div>
 <div class="feedback-item"><span class="pros">✅ 好评：</span>出水质量好；安装方便；小米性价比极高</div>
 <div class="feedback-item"><span class="cons">❌ 差评：</span>耗材贵；强制更换周期；NFC锁定原装耗材</div>
 <div class="feedback-item"><span class="tip">💡 避坑：</span>核算3-5年整体使用成本；优先选长效滤芯机型（RO滤芯6年更换一次的产品）；可用TDS检测笔自行判断水质</div>
-</div></div>
-
-<div class="card"><div class="card-header" onclick="toggleCard(this)">🔧 售后维修 <span class="arrow">▶</span></div><div class="card-body">
 <div class="table-wrap"><table><thead><tr><th>品牌</th><th>保修期</th><th>RO膜寿命</th><th>年均耗材</th></tr></thead><tbody>
 <tr><td>小米</td><td>1年</td><td>2-3年</td><td>约500-800元</td></tr>
 <tr><td>美的</td><td>3年</td><td>3-5年</td><td>约600-1000元</td></tr>
@@ -552,15 +572,12 @@ table{font-size:15px}
 </tbody></table></div>
 </div></div>
 
-<div class="card"><div class="card-header" onclick="toggleCard(this)">🚪 门型选择指南 <span class="arrow">▶</span></div><div class="card-body">
+<div class="card"><div class="card-header" onclick="toggleCard(this)">💰 推荐型号与价格 <span class="arrow">▶</span></div><div class="card-body">
 <div class="table-wrap"><table><thead><tr><th>门型</th><th>适合人群</th><th>优势</th><th>劣势</th></tr></thead><tbody>
 <tr><td>法式多门</td><td>3人及以下小户型</td><td>冷藏区在视线高度，利用率高</td><td>容量相对小(300-600L)</td></tr>
 <tr><td>十字门</td><td>4人及以上多孩家庭</td><td>容量大，分区精细</td><td>占地大</td></tr>
 <tr><td>对开门</td><td>5人及以上大家庭</td><td>容量最大</td><td>空间利用率不如法式/十字</td></tr>
 </tbody></table></div>
-</div></div>
-
-<div class="card"><div class="card-header" onclick="toggleCard(this)">💰 推荐型号与价格 <span class="arrow">▶</span></div><div class="card-body">
 <div class="table-wrap"><table><thead><tr><th>品牌</th><th>推荐型号</th><th>门型</th><th>价格(元)</th><th>核心亮点</th><th>🔗 京东</th></tr></thead><tbody>
 <tr><td>华凌</td><td>547</td><td>十字/法式</td><td>2,500-3,000</td><td>超薄嵌入，极致性价比"华凌神机"</td><td><a href="https://search.jd.com/Search?keyword=华凌+547&enc=utf-8" target="_blank" rel="nofollow">去京东</a></td></tr>
 <tr><td>美的</td><td>小冰狗502L</td><td>法式</td><td>4,000-6,000</td><td>零嵌入，双系统(2026新款)</td><td><a href="https://search.jd.com/Search?keyword=美的+小冰狗502L&enc=utf-8" target="_blank" rel="nofollow">去京东</a></td></tr>
@@ -576,10 +593,10 @@ table{font-size:15px}
 <div class="info-box">💡 2025-2026趋势：超薄零嵌入(594-600mm)成主流标准；双系统双循环中高端标配；500L+大容量成主流选择；国产品称雄。</div>
 </div></div>
 
-<div class="card"><div class="card-header" onclick="toggleCard(this)">💬 用户口碑与避坑 <span class="arrow">▶</span></div><div class="card-body">
-<div class="feedback-item"><span class="pros">✅ 好评：</span>大容量、保鲜技术升级；平嵌设计美观</div>
-<div class="feedback-item"><span class="cons">❌ 差评：</span>尺寸与橱柜不匹配（嵌入式）；小米冰箱售后严重外包；噪音问题</div>
-<div class="feedback-item"><span class="tip">💡 避坑：</span>提前精确测量预留空间（含散热距离）；优先选直营售后品牌；关注能效等级</div>
+<div class="card"><div class="card-header" onclick="toggleCard(this)">💬 口碑与避坑 <span class="arrow">▶</span></div><div class="card-body">
+<div class="feedback-item"><span class="pros">✅ 好评：</span>大容量、保鲜技术升级；平嵌设计美观；海尔全空间保鲜+除菌技术适合母婴家庭</div>
+<div class="feedback-item"><span class="cons">❌ 差评：</span>尺寸与橱柜不匹配（嵌入式）；小米冰箱售后严重外包；噪音问题；网红迷你冰箱（小吉等）1年内核心部件损坏、原厂配件停产维修无门</div>
+<div class="feedback-item"><span class="tip">💡 避坑：</span>提前精确测量预留空间（含散热距离）；优先选直营售后品牌；关注能效等级（一级能效年省电约135度）</div>
 </div></div>
 </div>
 
@@ -619,8 +636,8 @@ table{font-size:15px}
 </tbody></table></div>
 </div></div>
 
-<div class="card"><div class="card-header" onclick="toggleCard(this)">💬 用户口碑与趋势 <span class="arrow">▶</span></div><div class="card-body">
-<div class="feedback-item"><span class="pros">✅ 好评：</span>康宝专业口碑好，杀菌效果靠谱</div>
+<div class="card"><div class="card-header" onclick="toggleCard(this)">💬 口碑与趋势 <span class="arrow">▶</span></div><div class="card-body">
+<div class="feedback-item"><span class="pros">✅ 好评：</span>康宝专业口碑好，杀菌效果靠谱；母婴家庭选美的/海尔（母婴功能+三重消毒）</div>
 <div class="feedback-item"><span class="cons">❌ 差评：</span>部分低价款消毒不彻底；臭氧味残留</div>
 <div class="feedback-item"><span class="tip">💡 趋势：</span>消毒柜市场逐渐被集成灶(带消毒功能)和洗碗机(带消毒功能)分流，独立消毒柜需求下降</div>
 </div></div>
@@ -743,19 +760,16 @@ table{font-size:15px}
 </tbody></table></div>
 </div></div>
 
-<div class="card"><div class="card-header" onclick="toggleCard(this)">💰 1.5匹挂机推荐 <span class="arrow">▶</span></div><div class="card-body">
+<div class="card"><div class="card-header" onclick="toggleCard(this)">💰 推荐型号与价格 <span class="arrow">▶</span></div><div class="card-body">
 <div class="table-wrap"><table><thead><tr><th>品牌</th><th>推荐型号</th><th>价格(元)</th><th>核心参数</th><th>口碑</th><th>🔗 京东</th></tr></thead><tbody>
 <tr><td>美的</td><td>酷省电1.5匹</td><td>2,000-2,800</td><td>APF5.30超高能效，美芝压缩机</td><td>挂机销量王</td><td><a href="https://search.jd.com/Search?keyword=美的+酷省电1.5匹&enc=utf-8" target="_blank" rel="nofollow">去京东</a></td></tr>
 <tr><td>格力</td><td>云佳/云锦系列</td><td>2,500-3,500</td><td>自研压缩机，静音出色</td><td>空调第一品牌</td><td><a href="https://search.jd.com/Search?keyword=格力&enc=utf-8" target="_blank" rel="nofollow">去京东</a></td></tr>
-<tr><td>华凌</td><td>N8HB1A等</td><td>1,500-2,200</td><td>高配低价，美芝核心部件</td><td>性价比之王</td><td><a href="https://search.jd.com/Search?keyword=华凌&enc=utf-8" target="_blank" rel="nofollow">去京东</a></td></tr>
+<tr><td>华凌</td><td>N8HB1A等</td><td>1,500-2,200</td><td>高配低价，美芝核心部件</td><td>性价比之王</td><td><a href="https://search.jd.com/Search?keyword=华凌+N8HB1A&enc=utf-8" target="_blank" rel="nofollow">去京东</a></td></tr>
 <tr><td>海尔</td><td>静悦系列</td><td>2,000-3,000</td><td>自清洁技术好，售后网络广</td><td>品质稳定</td><td><a href="https://search.jd.com/Search?keyword=海尔&enc=utf-8" target="_blank" rel="nofollow">去京东</a></td></tr>
 <tr><td>小米</td><td>健康风Pro/上出风Pro</td><td>1,600-2,500</td><td>离子净化+除醛滤网，米家联动</td><td>智能生态首选</td><td><a href="https://search.jd.com/Search?keyword=小米+健康风Pro+上出风Pro&enc=utf-8" target="_blank" rel="nofollow">去京东</a></td></tr>
 <tr><td>TCL</td><td>真省电系列</td><td>1,500-2,000</td><td>价格极低，一级能效</td><td>预算有限之选</td><td><a href="https://search.jd.com/Search?keyword=TCL&enc=utf-8" target="_blank" rel="nofollow">去京东</a></td></tr>
 </tbody></table></div>
-</div></div>
-
-<div class="card"><div class="card-header" onclick="toggleCard(this)">🏗️ 3匹柜机推荐 <span class="arrow">▶</span></div><div class="card-body">
-<div class="table-wrap"><table><thead><tr><th>品牌</th><th>推荐型号</th><th>价格(元)</th><th>核心参数</th><th>🔗 京东</th></tr></thead><tbody>
+<div class="table-wrap"><table><thead><tr><th>品牌</th><th>3匹柜机推荐型号</th><th>价格(元)</th><th>核心参数</th><th>🔗 京东</th></tr></thead><tbody>
 <tr><td>海尔</td><td>静悦3匹一级能效</td><td>5,000-7,000</td><td>省电静音，品质稳定</td><td><a href="https://search.jd.com/Search?keyword=海尔+静悦3匹一级能效&enc=utf-8" target="_blank" rel="nofollow">去京东</a></td></tr>
 <tr><td>华凌</td><td>N8HB1A 3匹</td><td>3,500-5,000</td><td>性价比极高</td><td><a href="https://search.jd.com/Search?keyword=华凌+N8HB1A+3匹&enc=utf-8" target="_blank" rel="nofollow">去京东</a></td></tr>
 <tr><td>美的</td><td>酷省电3匹柜机</td><td>4,500-6,000</td><td>高能效，智能互联</td><td><a href="https://search.jd.com/Search?keyword=美的+酷省电3匹柜机&enc=utf-8" target="_blank" rel="nofollow">去京东</a></td></tr>
@@ -763,10 +777,10 @@ table{font-size:15px}
 </tbody></table></div>
 </div></div>
 
-<div class="card"><div class="card-header" onclick="toggleCard(this)">💬 用户口碑与避坑 <span class="arrow">▶</span></div><div class="card-body">
-<div class="feedback-item"><span class="pros">✅ 好评：</span>节能效果好、自清洁功能实用、制冷速度快</div>
-<div class="feedback-item"><span class="cons">❌ 差评：</span>安装环节收费争议突出（支架费、加管费、高空作业费）；旺季报修等待3-7天</div>
-<div class="feedback-item"><span class="tip">💡 避坑：</span>确认安装费包含项目并留存书面报价；预留4㎡以上专用插座；整机质保一般6年、压缩机10年</div>
+<div class="card"><div class="card-header" onclick="toggleCard(this)">💬 口碑与避坑 <span class="arrow">▶</span></div><div class="card-body">
+<div class="feedback-item"><span class="pros">✅ 好评：</span>节能效果好（1级能效比5级10年省电费约1320元）、自清洁功能实用、制冷速度快</div>
+<div class="feedback-item"><span class="cons">❌ 差评：</span>安装环节收费争议突出（支架费、加管费、高空作业费）；旺季报修等待3-7天；格力旺季报修拥堵、安装捆绑收费；小米空调投诉率家用空调第一，旺季安装排队7天起步，漏氟高发；康佳空调报修排期最长超100天；奥克斯整机减配多、乡镇无直营售后</div>
+<div class="feedback-item"><span class="tip">💡 避坑：</span>确认安装费包含项目并留存书面报价；预留4㎡以上专用插座；整机质保一般6年、压缩机10年；适老化需求可选美的/海尔/格力大按钮+语音控制机型（国标《家居产品适老化设计指南》已发布）</div>
 </div></div>
 </div>
 
@@ -798,10 +812,9 @@ table{font-size:15px}
 <tr><td>避障技术</td><td>3D结构光+AI</td><td>3D结构光+AI</td><td>3D结构光+AI</td><td>真双目(3D)</td><td>激光+AI</td></tr>
 <tr><td>基站功能</td><td>全能基站</td><td>全能+热水洗拖布</td><td>全能+自清洁</td><td>全能+自清洁</td><td>基础功能</td></tr>
 <tr><td>保修</td><td>整机1年</td><td>整机1年</td><td>整机1年</td><td>整机1年</td><td>整机1年</td></tr>
-<tr><td>核心特点</td><td>滚筒洗地王者，品类领导</td><td>100�C热水洗拖布</td><td>6cm仿生机械足越障</td><td>双目避障，履带洗地</td><td>极致性价比，米家生态</td></tr>
+<tr><td>核心特点</td><td>滚筒洗地王者，品类领导</td><td>100℃热水洗拖布</td><td>6cm仿生机械足越障</td><td>双目避障，履带洗地</td><td>极致性价比，米家生态</td></tr>
 </tbody></table></div>
 </div></div>
-
 
 <div class="card"><div class="card-header" onclick="toggleCard(this)">🏗️ 洗地机推荐 <span class="arrow">▶</span></div><div class="card-body">
 <div class="table-wrap"><table><thead><tr><th>品牌</th><th>推荐型号</th><th>价格(元)</th><th>核心参数</th><th>口碑</th><th>🔗 京东</th></tr></thead><tbody>
@@ -812,13 +825,12 @@ table{font-size:15px}
 </tbody></table></div>
 </div></div>
 
-<div class="card"><div class="card-header" onclick="toggleCard(this)">💬 用户口碑 <span class="arrow">▶</span></div><div class="card-body">
-<div class="feedback-item"><span class="pros">✅ 好评：</span>活水洗地效果大幅提升；AI避障越来越智能；续航焦虑缓解</div>
-<div class="feedback-item"><span class="cons">❌ 差评：</span>污水盒异味；边角清洁不到位；套娃机型多难选择</div>
+<div class="card"><div class="card-header" onclick="toggleCard(this)">💬 口碑与避坑 <span class="arrow">▶</span></div><div class="card-body">
+<div class="feedback-item"><span class="pros">✅ 好评：</span>活水洗地效果大幅提升；AI避障越来越智能；续航焦虑缓解；添可/科沃斯投诉回复率&gt;99%</div>
+<div class="feedback-item"><span class="cons">❌ 差评：</span>污水盒异味；边角清洁不到位；套娃机型多难选择；⚠️ 智能清洁机器人是2025年黑猫投诉量第一品类（占23.33%）；追觅存在无视三包退换条例的投诉</div>
 <div class="feedback-item"><span class="tip">💡 避坑：</span>有宠物/带娃选云鲸JX（双目避障）；复杂户型选追觅X60 Pro（6cm越障）；性价比选科沃斯T50Max</div>
 </div></div>
 </div>
-
 
 <div class="advice-card">2000元性价比之王<strong>科沃斯T50 Max</strong>（超薄，双机械臂）；3000元档综合最优<strong>科沃斯T80S Pro</strong>（活水滚筒洗地）；带娃家庭/避障需求<strong>云鲸JX</strong>（唯一真双目避障）；顶配旗舰<strong>科沃斯X12 Pro</strong>或<strong>追觅X60 Pro</strong>。洗地机：技术选追觅T40 Ultra，老牌选添可。</div>
 
@@ -850,7 +862,6 @@ table{font-size:15px}
 </div></div>
 
 </div>
-
 
 <div class="advice-card">新屋除甲醛首选<strong>宫菱MARS</strong>（甲醛CADR 1053m³/h，5A医护级）或<strong>352旗舰系列</strong>；日常防霾除菌选<strong>小米4 Pro H</strong>（入门性价比之王）；母婴家庭选<strong>美的</strong>（母婴级认证）；预算无上限选<strong>IQAir</strong>（瑞士顶级）。<strong>核心：看CADR值</strong>，数值越大净化越快。</div>
 
@@ -885,14 +896,12 @@ table{font-size:15px}
 </tbody></table></div>
 </div></div>
 
-
-<div class="card"><div class="card-header" onclick="toggleCard(this)">💬 用户口碑与避坑 <span class="arrow">▶</span></div><div class="card-body">
-<div class="feedback-item"><span class="pros">✅ 好评：</span>座圈加热、自动冲洗、暖风烘干提升体验</div>
+<div class="card"><div class="card-header" onclick="toggleCard(this)">💬 口碑与避坑 <span class="arrow">▶</span></div><div class="card-body">
+<div class="feedback-item"><span class="pros">✅ 好评：</span>座圈加热、自动冲洗、暖风烘干提升体验；TOTO/科勒高端口碑好，箭牌/九牧国产性价比优</div>
 <div class="feedback-item"><span class="cons">❌ 差评：</span>水压不匹配导致无法使用；坑距买错无法安装；很多功能用不上</div>
-<div class="feedback-item"><span class="tip">💡 避坑：</span>下单前确认水压条件（低水压选带内置陶瓷水箱）；提前测好坑距（主流300mm/400mm）；选即热式不选储热式；不必追求过多智能功能</div>
+<div class="feedback-item"><span class="tip">💡 避坑：</span>下单前确认水压条件（低水压选带内置陶瓷水箱）；提前测好坑距（主流300mm/400mm）；选即热式不选储热式；不必追求过多智能功能；适老化需求选松下/九牧（操作简单、座圈加热、自动冲洗）</div>
 </div></div>
 </div>
-
 
 <div class="advice-card">千元性价比之王<strong>九牧SQ8450</strong>（1400元，内置水箱无水压限制）；2000元档选<strong>九牧SQ9650</strong>或<strong>松下Q6</strong>；功能最全选<strong>恒洁H5Pro</strong>（同价位功能最全）；高端质感选<strong>TOTO G5Lite</strong>或<strong>松下V8 Pro</strong>。<strong>核心：下单前确认水压和坑距</strong>，选即热式不选储热式。</div>
 
@@ -922,7 +931,6 @@ table{font-size:15px}
 </tbody></table></div>
 </div></div>
 
-
 <div class="card"><div class="card-header" onclick="toggleCard(this)">🏗️ 电热水器 & 空气能 <span class="arrow">▶</span></div><div class="card-body">
 <div class="table-wrap"><table><thead><tr><th>类型</th><th>品牌</th><th>价格(元)</th><th>核心参数</th></tr></thead><tbody>
 <tr><td rowspan="3">电热水器</td><td>海尔</td><td>500-2,500</td><td>防电墙技术领先，龙头品牌</td></tr>
@@ -934,8 +942,12 @@ table{font-size:15px}
 </tbody></table></div>
 <div class="highlight-box">💡 选购建议：有天然气管道→燃气热水器（海尔KL5/万和）；无燃气→储水式电热水器（海尔）；大平层/别墅→空气能热水器（海尔/美的）</div>
 </div></div>
+<div class="card"><div class="card-header" onclick="toggleCard(this)">💬 口碑与售后 <span class="arrow">▶</span></div><div class="card-body">
+<div class="feedback-item"><span class="pros">✅ 好评：</span>海尔下置风机恒温稳定；万和国产销量第一性价比高；林内/能率恒温体验最佳</div>
+<div class="feedback-item"><span class="cons">❌ 差评：</span>⚠️ 万家乐为燃气热水器投诉重灾区（同一故障维修5次）；安装乱收费突出（阀门费/排烟管费），曾有2000元热水器安装费被收754元（占37.7%）</div>
+<div class="feedback-item"><span class="tip">💡 避坑：</span>安装费提前确认并留存书面报价；整机保修参考：海尔/美的6年、卡萨帝10年、林内/能率/万和3年；适老化需求选海尔防电墙技术（安全保护更可靠）</div>
+</div></div>
 </div>
-
 
 <div class="advice-card">有天然气管道→燃气热水器首选<strong>海尔KL5</strong>（下置风机，恒温技术强）或<strong>万和</strong>（国产销量王）；追求恒温体验→<strong>林内/能率</strong>（日系恒温王者）；无燃气→储水式电热水器（海尔防电墙技术领先）；大平层/别墅→空气能热水器。<strong>核心：安装费提前确认</strong>，避免被加收高额辅材费。</div>
 
@@ -968,14 +980,12 @@ table{font-size:15px}
 </tbody></table></div>
 </div></div>
 
-
-<div class="card"><div class="card-header" onclick="toggleCard(this)">💬 用户口碑与避坑 <span class="arrow">▶</span></div><div class="card-body">
-<div class="feedback-item"><span class="pros">✅ 好评：</span>海尔精华洗系列洗净效率高；热泵烘干技术成熟</div>
-<div class="feedback-item"><span class="cons">❌ 差评：</span>洗烘一体机烘干不均匀；机身漏水（小米）</div>
-<div class="feedback-item"><span class="tip">💡 避坑：</span>独立烘干机效果远优于洗烘一体；确认水龙头接口匹配；关注电机类型（直驱优于皮带）</div>
+<div class="card"><div class="card-header" onclick="toggleCard(this)">💬 口碑与避坑 <span class="arrow">▶</span></div><div class="card-body">
+<div class="feedback-item"><span class="pros">✅ 好评：</span>海尔精华洗系列洗净效率高；热泵烘干技术成熟；母婴家庭选海尔/美的/惠而浦（母婴级认证+高温除菌洗，已有《母婴家电评价方法及技术要求》标准，选购时关注认证标识）</div>
+<div class="feedback-item"><span class="cons">❌ 差评：</span>洗烘一体机烘干不均匀；机身漏水（小米洗烘一体机漏电漏水、维修后故障复发率高）；安装另收水龙头费</div>
+<div class="feedback-item"><span class="tip">💡 避坑：</span>独立烘干机效果远优于洗烘一体；确认水龙头接口匹配；关注电机类型（直驱优于皮带）；适老化需求选海尔（AI融入养老场景，简化操作）</div>
 </div></div>
 </div>
-
 
 <div class="advice-card">性价比之选<strong>小天鹅小乌梅/小蓝鲸系列</strong>（洗净比高，羊毛洗烘认证）；品质标杆<strong>海尔双擎热泵洗烘套装</strong>（FPA直驱，全球销冠）；高端一步到位<strong>卡萨帝纤诺L7</strong>（双擎热泵烘干最强）；入门选<strong>美的</strong>。<strong>核心：独立烘干机效果远优于洗烘一体机</strong>，关注电机类型（直驱优于皮带）。</div>
 
@@ -1007,7 +1017,6 @@ table{font-size:15px}
 </tbody></table></div>
 </div></div>
 
-
 <div class="card"><div class="card-header" onclick="toggleCard(this)">🏗️ 大尺寸(98寸+) & OLED <span class="arrow">▶</span></div><div class="card-body">
 <div class="table-wrap"><table><thead><tr><th>类型</th><th>品牌</th><th>推荐型号</th><th>价格(元)</th><th>核心参数</th><th>🔗 京东</th></tr></thead><tbody>
 <tr><td rowspan="3">98寸+</td><td>小米</td><td>S98 MiniLED</td><td>8,000-12,000</td><td>1092分区，1700nit，性价比最高</td><td><a href="https://search.jd.com/Search?keyword=小米+S98+MiniLED&enc=utf-8" target="_blank" rel="nofollow">去京东</a></td></tr>
@@ -1026,7 +1035,6 @@ table{font-size:15px}
 <div class="feedback-item"><span class="tip">💡 避坑：</span>不要只看参数，关注实际画质调校；3500以下入门、3500-8000主流、8000+高端；电视市场持续萎缩，价格持续下探</div>
 </div></div>
 </div>
-
 
 <div class="advice-card">MiniLED性价比首选<strong>TCL T7K/T7L Ultra</strong>（画质全球第一）；国产品质<strong>海信E7N Pro</strong>（信芯AI芯片，288Hz高刷）；极致性价比<strong>小米S75 Mini LED</strong>；OLED画质巅峰<strong>索尼A95L</strong>。<strong>核心：不要只看参数，关注实际画质调校</strong>；75寸已成入门尺寸，85寸成主流。</div>
 
@@ -1056,7 +1064,6 @@ table{font-size:15px}
 </tbody></table></div>
 </div></div>
 
-
 <div class="card"><div class="card-header" onclick="toggleCard(this)">🏗️ 垃圾处理器 <span class="arrow">▶</span></div><div class="card-body">
 <div class="info-box">📊 中国厨余垃圾处理器普及率仅约1%，市场早期阶段。线上前10品牌零售额集中度约85%。</div>
 <div class="table-wrap"><table><thead><tr><th>品牌</th><th>线上份额</th><th>价格(元)</th><th>特点</th></tr></thead><tbody>
@@ -1078,7 +1085,6 @@ table{font-size:15px}
 </tbody></table></div>
 </div></div>
 </div>
-
 
 <div class="advice-card">⚠️ <strong>集成灶市场警示：</strong>2025年零售额同比下降43.1%，市场严重萎缩，建议谨慎选择，传统分体烟灶仍是主流。如确需购买，首选<strong>火星人</strong>（净烟最强）或<strong>亿田</strong>（风机下置专利，噪音低）。垃圾处理器选<strong>贝克巴斯</strong>（国产龙头），管线机选<strong>美的</strong>（全品类覆盖）。</div>
 
@@ -1135,126 +1141,6 @@ table{font-size:15px}
 <h3>用户核心痛点</h3>
 <div class="danger-box">⚠️ <strong>断网瘫痪</strong>：超40%大户型用户反馈设备频繁失联；DIY方案56%因安装不当导致控制失效；80%以上家装智能属于“伪全屋智能”</div>
 <div class="info-box">✅ 华为PLC方案稳定性最佳：“100+客户无一吐槽掉线”；小米WiFi方案适合小户型(90㎡以下)</div>
-</div>
-</div>
-
-<!-- ===== 专题 2: 售后维修红黑榜 ===== -->
-<div class="section" id="topic-2">
-<div class="section-title">🏆 售后维修红黑榜</div>
-<div class="topic-card">
-<h3>售后满意度排名（广东省消委会数据，5分制）</h3>
-<div class="table-wrap"><table><thead><tr><th>排名</th><th>品牌</th><th>满意度评分</th></tr></thead><tbody>
-<tr><td>🥇 1</td><td>美的</td><td><strong>4.45分</strong></td></tr>
-<tr><td>🥈 2</td><td>格力</td><td>4.36分</td></tr>
-<tr><td>🥉 3</td><td>海尔</td><td>4.35分</td></tr>
-<tr><td>4</td><td>小米</td><td>4.28分</td></tr>
-<tr><td>5</td><td>海信</td><td>4.22分</td></tr>
-<tr><td>6</td><td>小天鹅</td><td>4.17分</td></tr>
-<tr><td>7</td><td>TCL</td><td>4.17分</td></tr>
-<tr><td>8</td><td>美菱</td><td>4.15分</td></tr>
-<tr><td>9</td><td>华凌</td><td>4.03分</td></tr>
-<tr><td>10</td><td>方太</td><td>3.82分</td></tr>
-</tbody></table></div>
-</div>
-
-<div class="topic-card">
-<h3>品牌风险分级</h3>
-<div class="danger-box"><strong>🚫 高风险品牌（慎选）</strong></div>
-<div class="table-wrap"><table><thead><tr><th>品牌</th><th>风险点</th></tr></thead><tbody>
-<tr><td>小米/米家</td><td>全系投诉量断层最高，售后完全外包，大件缩水，小家电强制自寄维修</td></tr>
-<tr><td>网红小众品牌（小吉等）</td><td>配件停产、维修无门、整机报废风险高</td></tr>
-<tr><td>万家乐</td><td>燃气热水器重灾区，同一故障维修5次</td></tr>
-<tr><td>康佳</td><td>空调报修排期最长超100天，多地撤销官方维修点</td></tr>
-<tr><td>奥克斯</td><td>整机减配多，乡镇无直营售后</td></tr>
-</tbody></table></div>
-<div class="highlight-box"><strong>⚠️ 中等风险品牌</strong>：格力（旺季报修拥堵，安装捆绑收费）、海信（投诉高发）、追觅（无视三包退换条例）、戴森（过保电池更换费近千元）</div>
-<div class="info-box"><strong>✅ 低风险品牌（推荐）</strong>：海尔（售后体系最完善、网点最全）、美的（满意度第一4.45分）、方太/老板（直营网点多，权责清晰）</div>
-</div>
-
-<div class="topic-card">
-<h3>安装乱收费曝光（新华社/中消协）</h3>
-<div class="danger-box">⚠️ <strong>“免费安装”成噱头</strong>：2000元热水器安装费花了754元（占商品价格37.7%）<br>三大套路：①低价引流高价加项 ②配件以次充好 ③模糊报价事后算账<br>重灾品类：空调（支架费/加管费/高空费）、热水器（阀门费/排烟管费）、洗衣机（水龙头费）</div>
-</div>
-
-<div class="topic-card">
-<h3>保修期对比</h3>
-<div class="table-wrap"><table><thead><tr><th>品牌</th><th>整机保修</th><th>核心部件</th><th>特色</th></tr></thead><tbody>
-<tr><td>格力</td><td>6年</td><td>压缩机10年</td><td>行业最长质保</td></tr>
-<tr><td>海尔</td><td>标准三包</td><td>可选延保</td><td>100%原厂高端配件</td></tr>
-<tr><td>美的</td><td>6年</td><td>压缩机10年</td><td>售后备件100%原厂</td></tr>
-<tr><td>卡萨帝</td><td>10年</td><td>10年原厂</td><td>100%原厂高端配件维修</td></tr>
-</tbody></table></div>
-</div>
-</div>
-
-<!-- ===== 专题 3: 用户口碑风云榜 ===== -->
-<div class="section" id="topic-3">
-<div class="section-title">💬 用户口碑风云榜</div>
-<div class="topic-card">
-<h3>各品类好评率 TOP</h3>
-<div class="table-wrap"><table><thead><tr><th>品类</th><th>好评率最高品牌</th><th>核心好评点</th></tr></thead><tbody>
-<tr><td>空调</td><td>美的、格力、海尔</td><td>节能效果好、自清洁实用、制冷速度快</td></tr>
-<tr><td>冰箱</td><td>海尔（份额48%）</td><td>大容量、保鲜技术升级、平嵌设计美观</td></tr>
-<tr><td>洗衣机</td><td>海尔、美的系</td><td>洗净效率高、热泵烘干技术成熟</td></tr>
-<tr><td>油烟机</td><td>方太、老板</td><td>顶侧双吸效果好、大吸力静音</td></tr>
-<tr><td>洗碗机</td><td>美的（连续7年销量第一）、西门子</td><td>中式油污洗净效果大幅提升</td></tr>
-<tr><td>电视</td><td>海信、小米、TCL、创维</td><td>大屏性价比极高、MiniLED画质提升明显</td></tr>
-<tr><td>智能马桶</td><td>TOTO、科勒（高端）；箭牌、九牧（国产）</td><td>座圈加热、自动冲洗、暖风烘干</td></tr>
-</tbody></table></div>
-</div>
-
-<div class="topic-card">
-<h3>黑猫投诉数据（2025年）</h3>
-<div class="danger-box">📊 2025年黑猫投诉平台日用电器行业全年投诉量超<strong>3.2万件</strong>，同比上涨<strong>23.07%</strong><br>投诉结构：售后服务40.33%（最大类）、产品质量25.52%、退货退款难25.31%、虚假宣传8.84%<br>品类投诉排名：智能清洁机器人23.33%居首、空调17.91%居次、生活小家电13.18%排第三</div>
-<div class="highlight-box">黑猫投诉商家回复率&gt;99%：添可、科沃斯、美的、苏泊尔、TCL、追觅、格力</div>
-</div>
-
-<div class="topic-card">
-<h3>“买了就后悔”型号</h3>
-<div class="table-wrap"><table><thead><tr><th>品类</th><th>“后悔”型号</th><th>原因</th></tr></thead><tbody>
-<tr><td>空调</td><td>小米/米家空调</td><td>投诉率家用空调第一，旺季安装排队7天起步，漏氟高发</td></tr>
-<tr><td>冰箱</td><td>网红迷你冰箱（小吉等）</td><td>1年内核心部件损坏，原厂配件停产无货，维修无门</td></tr>
-<tr><td>洗衣机</td><td>小米洗烘一体机</td><td>漏电、机身漏水、维修后故障复发率极高</td></tr>
-<tr><td>电视</td><td>小米MiniLED低端款</td><td>短期烧屏、主板损坏</td></tr>
-</tbody></table></div>
-</div>
-
-<div class="topic-card">
-<h3>知乎/B站/小红书推荐汇总</h3>
-<div class="info-box">
-<strong>知乎高赞“三不买”原则：</strong><br>① 不买多功能合一（如蒸烤一体机温度上限比独立烤箱低30度）<br>② 不买安装后看不见的（嵌入式家电慎选）<br>③ 不买售后无保障的<br><br>
-<strong>什么值得买共识：</strong>美的性价比首选、格力品质标杆、海尔售后最优、小米入门性价比<br>
-<strong>B站趋势：</strong>2025年测评搜索数同比+30%，UP主测评内容同比+50%，硬核评测UP主成“赛博导购”<br>
-<strong>小红书趋势：</strong>从“买便宜的”转向“买质价比高的”，“国补”政策成重要购买决策因素
-</div>
-</div>
-</div>
-
-<!-- ===== 专题 4: 全生命周期成本 ===== -->
-<div class="section" id="topic-4">
-<div class="section-title">💰 全生命周期成本(TCO)</div>
-<div class="topic-card">
-<h3>各品类 5年 TCO对比</h3>
-<div class="table-wrap"><table><thead><tr><th>品类</th><th>购机价格(元)</th><th>年均能耗(元)</th><th>5年耗材/维修(元)</th><th>5年总成本(元)</th></tr></thead><tbody>
-<tr><td>空调(1.5匹一级能效)</td><td>2,000-3,500</td><td>~300-500</td><td>~500</td><td>4,000-7,000</td></tr>
-<tr><td>冰箱(法式)</td><td>3,000-8,000</td><td>~200-400</td><td>~500</td><td>5,000-12,000</td></tr>
-<tr><td>洗衣机(洗烘套装)</td><td>4,000-10,000</td><td>~200-400</td><td>~1,000</td><td>7,000-14,000</td></tr>
-<tr><td>净水器</td><td>700-6,000</td><td>~50</td><td>2,500-6,000(滤芯)</td><td>3,750-12,250</td></tr>
-<tr><td>油烟机</td><td>1,500-6,000</td><td>~100</td><td>~500</td><td>3,000-8,000</td></tr>
-<tr><td>洗碗机</td><td>2,000-8,000</td><td>~200-400</td><td>~1,000</td><td>5,000-13,000</td></tr>
-<tr><td>智能马桶</td><td>1,500-15,000</td><td>~50-100</td><td>~500</td><td>2,750-17,500</td></tr>
-</tbody></table></div>
-</div>
-
-<div class="topic-card">
-<h3>净水器耗材陷阱</h3>
-<div class="danger-box">⚠️ <strong>“买得起机器，换不起耗材”</strong><br>• 年均滤芯更换成本约500-1200元，5年耗材费超过机器价格<br>• 滤芯年更换成本占全生命周期使用成本的62%-78%<br>• NFC/扫码锁定原装耗材，第三方滤芯无法使用<br>• 即使水质达标，时间到期机器仍强制报警要求更换<br><br>
-💡 建议：选长效滤芯机型（RO滤芯6年更换一次的产品）；可用TDS检测笔自行判断水质</div>
-</div>
-
-<div class="topic-card">
-<h3>能耗电费对比</h3>
-<div class="info-box">• 1级能效比5级能效空调10年可省电费约<strong>1,320元</strong><br>• 一级能效冰箱年省电约<strong>135度</strong><br>• 格力/海尔/美的一级能效产品线覆盖最全<br>• 日系品牌（大金、三菱电机）在变频节能技术上长期领先</div>
 </div>
 </div>
 
@@ -1336,34 +1222,6 @@ table{font-size:15px}
 <div class="topic-card">
 <h3>🇨🇳 国产替代加速</h3>
 <div class="info-box">• <strong>冰箱</strong>：海尔+美的合计超55%份额，外资品牌持续败退<br>• <strong>洗碗机</strong>：美的+海尔份额快速增长，西门子线下仍强<br>• <strong>空调</strong>：美的、格力、海尔三强格局稳定，小米黑马崛起<br>• <strong>电视</strong>：海信+TCL+小米+创维合计78%份额<br>• <strong>洗衣机</strong>：海尔连续17年全球销量第一<br>• <strong>核心技术</strong>：格力自研压缩机+芯片(自研率90%+)；美的收购库卡机器人+自研IPM芯片；追觅自研高速数字马达</div>
-</div>
-</div>
-
-<!-- ===== 专题 7: 特殊人群指南 ===== -->
-<div class="section" id="topic-7">
-<div class="section-title">👶 特殊人群指南</div>
-<div class="topic-card">
-<h3>🍼 母婴家电</h3>
-<div class="table-wrap"><table><thead><tr><th>品类</th><th>推荐品牌</th><th>核心特点</th></tr></thead><tbody>
-<tr><td>洗衣机</td><td>海尔、美的、惠而浦</td><td>通过母婴级认证，高温除菌洗</td></tr>
-<tr><td>消毒柜</td><td>美的、海尔</td><td>母婴功能，三重消毒</td></tr>
-<tr><td>空气净化器</td><td>美的</td><td>母婴级认证，除菌效果好</td></tr>
-<tr><td>冰箱</td><td>海尔</td><td>全空间保鲜+除菌技术</td></tr>
-<tr><td>小家电</td><td>好孩子、小熊、小白熊</td><td>专注母婴小家电（温奶器、辅食机等）</td></tr>
-</tbody></table></div>
-<div class="info-box">💡 已有《母婴家电评价方法及技术要求》标准，选购时关注母婴级认证标识</div>
-</div>
-
-<div class="topic-card">
-<h3>👴 适老化家电</h3>
-<div class="table-wrap"><table><thead><tr><th>品类</th><th>推荐品牌</th><th>适老特点</th></tr></thead><tbody>
-<tr><td>智能马桶</td><td>松下、九牧</td><td>操作简单，座圈加热，自动冲洗</td></tr>
-<tr><td>空调</td><td>美的、海尔、格力</td><td>适老化产品线，大按钮/语音控制</td></tr>
-<tr><td>洗衣机</td><td>海尔</td><td>AI融入养老场景，简化操作</td></tr>
-<tr><td>热水器</td><td>海尔</td><td>防电墙技术，安全保护</td></tr>
-<tr><td>卫浴</td><td>专业品牌</td><td>坐式淋浴器防摔设计+环绕喷浴</td></tr>
-</tbody></table></div>
-<div class="info-box">💡 关键是“不教就会用”的直觉设计，防摔、大字、简化操作。国标《家居产品适老化设计指南》已发布。</div>
 </div>
 </div>
 
@@ -1467,14 +1325,36 @@ const state = {
   categories: [],
   currentDims: [],
   products: [],
-  sortMode: 'weighted',
-  sortKey: '',
+  sortKey: 'total_score',
   sortDir: 'desc',
-  weights: {},
   selectedBrands: [],
   priceMin: 0,
   priceMax: 0,
   cachedCategories: null
+};
+
+// ============================================================
+// 改动1新增：各品类排序优先级预设标签（标签 → sort_key + sort_dir）
+// 数组元素格式: [标签文字, sort_key, sort_dir]
+// ============================================================
+const PRIORITY_TAGS = {
+  'cat-1': [['大吸力优先','风量_m3','desc'],['高静压','静压_Pa','desc'],['静音','噪音_dB','asc'],['性价比','价格_low','asc'],['综合推荐','total_score','desc']],
+  'cat-2': [['大火力','火力_kW','desc'],['高热效','热效率_pct','desc'],['性价比','价格_low','asc'],['综合推荐','total_score','desc']],
+  'cat-3': [['大容量','容量_L','desc'],['蒸功能','蒸功能评分','desc'],['烤功能','烤功能评分','desc'],['性价比','价格_low','asc'],['综合推荐','total_score','desc']],
+  'cat-4': [['大容量','容量_套','desc'],['静音','噪音_dB','asc'],['性价比','价格_low','asc'],['综合推荐','total_score','desc']],
+  'cat-5': [['大通量','通量_G','desc'],['RO膜长寿','RO膜寿命_年','desc'],['省耗材','年均耗材_元','asc'],['性价比','价格_low','asc'],['综合推荐','total_score','desc']],
+  'cat-6': [['大容量','容量_L','desc'],['超薄','嵌入深度_mm','asc'],['性价比','价格_low','asc'],['综合推荐','total_score','desc']],
+  'cat-7': [['大容量','容量_L','desc'],['杀菌率','杀菌率_pct','desc'],['性价比','价格_low','asc'],['综合推荐','total_score','desc']],
+  'cat-8': [['高能效','能效_APF','desc'],['静音','噪音_dB','asc'],['性价比','价格_low','asc'],['综合推荐','total_score','desc']],
+  'cat-9': [['大风量','风量_m3h','desc'],['高交换率','热交换率_pct','desc'],['静音','噪音_dB','asc'],['性价比','价格_low','asc'],['综合推荐','total_score','desc']],
+  'cat-10': [['高能效','能效_APF','desc'],['静音','噪音_dB','asc'],['性价比','价格_low','asc'],['综合推荐','total_score','desc']],
+  'cat-11': [['大吸力','吸力_Pa','desc'],['续航久','续航_min','desc'],['性价比','价格_low','asc'],['综合推荐','total_score','desc']],
+  'cat-12': [['除颗粒物','颗粒物CADR','desc'],['除甲醛','甲醛CADR','desc'],['静音','噪音_dB','asc'],['性价比','价格_low','asc'],['综合推荐','total_score','desc']],
+  'cat-13': [['性价比','价格_low','asc'],['综合推荐','total_score','desc']],
+  'cat-14': [['恒温','恒温技术','desc'],['静音','噪音_dB','asc'],['性价比','价格_low','asc'],['综合推荐','total_score','desc']],
+  'cat-15': [['洗净比','洗净比','desc'],['大容量','容量_kg','desc'],['性价比','价格_low','asc'],['综合推荐','total_score','desc']],
+  'cat-16': [['高画质','面板类型','desc'],['大尺寸','尺寸_寸','desc'],['高色域','色域_pct','desc'],['性价比','价格_low','asc'],['综合推荐','total_score','desc']],
+  'cat-17': [['大风量','风量_m3','desc'],['性价比','价格_low','asc'],['综合推荐','total_score','desc']]
 };
 
 // ============================================================
@@ -1500,12 +1380,9 @@ async function fetchProducts(slug, params) {
   if (params.priceMax > 0) qp.set('price_max', params.priceMax);
   if (params.sortKey) qp.set('sort_key', params.sortKey);
   if (params.sortDir) qp.set('sort_dir', params.sortDir);
+  if (params.weights) qp.set('weights', JSON.stringify(params.weights));
   if (params.page) qp.set('page', params.page);
   if (params.pageSize) qp.set('page_size', params.pageSize);
-  // 构建权重 JSON
-  const w = params.weights || {};
-  const hasWeights = Object.values(w).some(v => v !== undefined);
-  if (hasWeights) qp.set('weights', JSON.stringify(w));
 
   try {
     const res = await fetch('/api/categories/' + slug + '/products?' + qp.toString());
@@ -1522,6 +1399,10 @@ async function fetchProducts(slug, params) {
 // ============================================================
 async function initCategoryView(slug) {
   state.currentSlug = slug;
+
+  // 切换品类时重置排序为"综合推荐"
+  state.sortKey = 'total_score';
+  state.sortDir = 'desc';
 
   // 获取品类维度定义
   let cats = state.cachedCategories;
@@ -1569,7 +1450,7 @@ async function initCategoryView(slug) {
 }
 
 // ============================================================
-// 创建 filter-panel 元素
+// 改动1：创建 filter-panel 元素（排序优先级标签 + 品牌 + 价格）
 // ============================================================
 function createFilterPanel(slug, cat) {
   const panel = document.createElement('div');
@@ -1578,30 +1459,15 @@ function createFilterPanel(slug, cat) {
 
   panel.innerHTML =
     '<div class="filter-row">' +
-      '<label class="filter-label">排序模式</label>' +
-      '<div class="sort-mode-tabs">' +
-        '<button class="sort-tab active" data-mode="weighted">加权综合排序</button>' +
-        '<button class="sort-tab" data-mode="single">单维度排序</button>' +
-      '</div>' +
-    '</div>' +
-    '<div class="filter-row sort-single-row" style="display:none">' +
-      '<label class="filter-label">排序维度</label>' +
-      '<select class="filter-select dim-sort-select"></select>' +
-      '<select class="filter-select sort-dir-select">' +
-        '<option value="desc">从高到低</option>' +
-        '<option value="asc">从低到高</option>' +
-      '</select>' +
-    '</div>' +
-    '<div class="filter-row sort-weighted-row">' +
-      '<label class="filter-label">维度权重</label>' +
-      '<div class="weight-sliders"></div>' +
+      '<label class="filter-label">排序优先级</label>' +
+      '<div class="priority-tags"></div>' +
     '</div>' +
     '<div class="filter-row">' +
       '<label class="filter-label">品牌</label>' +
       '<div class="brand-tags"></div>' +
     '</div>' +
     '<div class="filter-row">' +
-      '<label class="filter-label">价格区间</label>' +
+      '<label class="filter-label">价格</label>' +
       '<div class="price-range-row">' +
         '<input type="number" class="price-input" placeholder="最低价" data-price="min">' +
         '<span class="price-sep">—</span>' +
@@ -1614,24 +1480,6 @@ function createFilterPanel(slug, cat) {
       '<span class="filter-result-count"></span>' +
     '</div>' +
     '<div class="filter-loading" style="display:none">加载中...</div>';
-
-  // 事件绑定 - 排序模式切换
-  panel.querySelectorAll('.sort-tab').forEach(function(tab) {
-    tab.addEventListener('click', function() {
-      panel.querySelectorAll('.sort-tab').forEach(function(t) { t.classList.remove('active'); });
-      this.classList.add('active');
-      state.sortMode = this.dataset.mode;
-      var wRow = panel.querySelector('.sort-weighted-row');
-      var sRow = panel.querySelector('.sort-single-row');
-      if (this.dataset.mode === 'weighted') {
-        wRow.style.display = '';
-        sRow.style.display = 'none';
-      } else {
-        wRow.style.display = 'none';
-        sRow.style.display = '';
-      }
-    });
-  });
 
   // 事件绑定 - 应用筛选
   panel.querySelector('.btn-apply').addEventListener('click', function() {
@@ -1655,102 +1503,50 @@ function createFilterPanel(slug, cat) {
     });
   });
 
-  // 事件绑定 - 排序维度/方向
-  var dirSelect = panel.querySelector('.sort-dir-select');
-  if (dirSelect) {
-    dirSelect.addEventListener('change', function() {
-      state.sortDir = this.value;
-    });
-  }
-
   return panel;
 }
 
 // ============================================================
-// 填充 filter-panel 数据
+// 改动1新增：填充排序优先级标签（按品类预设生成，默认选中"综合推荐"）
+// 点击标签立即切换排序并刷新
+// ============================================================
+function populatePriorityTags(panel, slug) {
+  var container = panel.querySelector('.priority-tags');
+  if (!container) return;
+  container.innerHTML = '';
+  var tags = PRIORITY_TAGS[slug] || [];
+  tags.forEach(function(t) {
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'priority-tag';
+    btn.textContent = t[0];
+    btn.dataset.key = t[1];
+    btn.dataset.dir = t[2];
+    if (t[1] === 'total_score') btn.classList.add('active');
+    // 点击标签 → 多选切换并立即重新取数（至少保留一个选中）
+    btn.addEventListener('click', function() {
+      btn.classList.toggle('active');
+      // 全部取消时恢复当前标签，保证至少一个选中
+      if (!container.querySelector('.priority-tag.active')) {
+        btn.classList.add('active');
+      }
+      applyFilters(panel.dataset.category);
+    });
+    container.appendChild(btn);
+  });
+}
+
+// ============================================================
+// 改动1：填充 filter-panel 数据（排序优先级标签 + 品牌标签）
 // ============================================================
 function populateFilterPanel(panel, cat) {
-  var dims = cat.dimensions;
-
-  // 填充维度选项下拉
-  var dimSelect = panel.querySelector('.dim-sort-select');
-  if (dimSelect) populateDimSortOptions(dimSelect, dims);
-
-  // 填充权重滑块
-  var wsContainer = panel.querySelector('.weight-sliders');
-  if (wsContainer) populateWeightSliders(wsContainer, dims);
+  // 生成排序优先级标签
+  populatePriorityTags(panel, panel.dataset.category);
 
   // 从产品中收集品牌（首次加载后再次调用时更新产品品牌）
   if (state.products.length > 0) {
     populateBrandTags(panel, state.products, state.selectedBrands);
   }
-}
-
-// ============================================================
-// 填充维度排序下拉选项
-// ============================================================
-function populateDimSortOptions(select, dims) {
-  select.innerHTML = '';
-  dims.forEach(function(d) {
-    var opt = document.createElement('option');
-    opt.value = d.dim_key;
-    // 跳过价格维度的排序选项（它们不是常规性能维度）
-    var isPrice = d.dim_key.indexOf('价格') !== -1 || d.dim_key === '价格_low' || d.dim_key === '价格_high';
-    if (isPrice) return;
-    opt.textContent = d.label + (d.unit ? ' (' + d.unit + ')' : '');
-    select.appendChild(opt);
-  });
-  // 默认选中第一个维度
-  if (select.options.length > 0) {
-    select.selectedIndex = 0;
-    state.sortKey = select.value;
-  }
-  select.addEventListener('change', function() {
-    state.sortKey = this.value;
-  });
-}
-
-// ============================================================
-// 填充权重滑块
-// ============================================================
-function populateWeightSliders(container, dims) {
-  container.innerHTML = '';
-  dims.forEach(function(d) {
-    // 跳过纯文本型维度
-    if (d.type === 'text') return;
-    var row = document.createElement('div');
-    row.className = 'weight-slider-row';
-
-    var label = document.createElement('label');
-    label.textContent = shortenDimLabel(d.label);
-    row.appendChild(label);
-
-    var slider = document.createElement('input');
-    slider.type = 'range';
-    slider.min = 0;
-    slider.max = 100;
-    slider.value = state.weights[d.dim_key] !== undefined ? state.weights[d.dim_key] : d.default_weight;
-    slider.dataset.dim = d.dim_key;
-    row.appendChild(slider);
-
-    var valSpan = document.createElement('span');
-    valSpan.className = 'weight-value';
-    valSpan.textContent = slider.value;
-    row.appendChild(valSpan);
-
-    slider.addEventListener('input', function() {
-      valSpan.textContent = this.value;
-      state.weights[d.dim_key] = parseInt(this.value, 10);
-    });
-
-    container.appendChild(row);
-  });
-}
-
-// 截断维度标签（太长的缩短）
-function shortenDimLabel(label) {
-  if (label.length > 5) return label.substring(0, 4) + '…';
-  return label;
 }
 
 // ============================================================
@@ -1826,24 +1622,31 @@ async function applyFilters(slug) {
   var resultCount = panel.querySelector('.filter-result-count');
   if (resultCount) resultCount.textContent = '';
 
-  // 收集当前状态
+  // 改动1：收集筛选条件 —— 品牌 + 价格 + 多选优先级标签对应的权重
+  // 收集所有选中的优先级标签（多选）
+  var activeTags = panel.querySelectorAll('.priority-tag.active');
+  var selectedKeys = [];
+  activeTags.forEach(function(t) { selectedKeys.push(t.dataset.key); });
+
+  // 非"综合推荐"标签均分权重；只选"综合推荐"时不传 weights（走默认 total_score）
+  var nonSummary = selectedKeys.filter(function(k) { return k !== 'total_score'; });
+  var weights = null;
+  if (nonSummary.length > 0) {
+    weights = {};
+    var weightEach = Math.floor(100 / nonSummary.length);
+    nonSummary.forEach(function(k) { weights[k] = weightEach; });
+  }
+
   var params = {
     brands: state.selectedBrands,
     priceMin: state.priceMin,
     priceMax: state.priceMax,
-    sortKey: state.sortMode === 'single' ? state.sortKey : '',
+    sortKey: weights ? '' : state.sortKey,
     sortDir: state.sortDir,
-    weights: state.sortMode === 'weighted' ? state.weights : {},
+    weights: weights,
     page: 1,
     pageSize: 100
   };
-
-  // 排序：加权模式下，排序维度使用加权综合分
-  if (state.sortMode === 'single' && params.sortKey) {
-    // 单维度模式已有 sortKey
-  } else {
-    params.sortKey = '';
-  }
 
   var data = await fetchProducts(slug, params);
 
@@ -1871,52 +1674,31 @@ async function applyFilters(slug) {
 }
 
 // ============================================================
-// 重置筛选
+// 重置筛选（恢复"综合推荐"排序、清空品牌与价格）
 // ============================================================
 function resetFilters(slug) {
   state.selectedBrands = [];
   state.priceMin = 0;
   state.priceMax = 0;
-  state.sortMode = 'weighted';
-  state.sortKey = '';
+  state.sortKey = 'total_score';
   state.sortDir = 'desc';
-  state.weights = {};
 
   var section = document.getElementById(slug);
   if (!section) return;
   var panel = section.querySelector('.filter-panel');
   if (!panel) return;
 
-  // 重置 UI
-  panel.querySelectorAll('.sort-tab').forEach(function(t) {
+  // 重置 UI：优先级标签恢复"综合推荐"，品牌恢复"全部"，清空价格
+  panel.querySelectorAll('.priority-tag').forEach(function(t) {
     t.classList.remove('active');
-    if (t.dataset.mode === 'weighted') t.classList.add('active');
+    if (t.dataset.key === 'total_score') t.classList.add('active');
   });
-  panel.querySelector('.sort-weighted-row').style.display = '';
-  panel.querySelector('.sort-single-row').style.display = 'none';
 
   panel.querySelectorAll('.brand-tag').forEach(function(t) { t.classList.remove('active'); });
   var allTag = panel.querySelector('.brand-tag[data-brand="__all__"]');
   if (allTag) allTag.classList.add('active');
 
   panel.querySelectorAll('.price-input').forEach(function(inp) { inp.value = ''; });
-
-  panel.querySelector('.sort-dir-select').value = 'desc';
-
-  // 重置滑块到默认权重
-  var wsContainer = panel.querySelector('.weight-sliders');
-  if (wsContainer) {
-    wsContainer.querySelectorAll('input[type="range"]').forEach(function(slider) {
-      var dimKey = slider.dataset.dim;
-      if (dimKey) {
-        var dimDef = state.currentDims.find(function(d) { return d.dim_key === dimKey; });
-        var defaultW = dimDef ? dimDef.default_weight : 50;
-        slider.value = defaultW;
-        var vs = slider.parentElement.querySelector('.weight-value');
-        if (vs) vs.textContent = defaultW;
-      }
-    });
-  }
 
   applyFilters(slug);
 }
