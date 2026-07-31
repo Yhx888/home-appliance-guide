@@ -1269,6 +1269,9 @@ table{font-size:15px}
 <!-- Back to top -->
 <button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
+<!-- 双模式运行：静态模式（GitHub Pages）时显示，本地模式隐藏 -->
+<span id="modeIndicator" style="position:fixed;right:24px;bottom:80px;z-index:200;font-size:11px;color:var(--text-light);background:#fff;border:1px solid var(--border);border-radius:12px;padding:4px 10px;box-shadow:var(--shadow);display:none">📦 静态数据模式</span>
+
 <!-- Footer -->
 <div class="footer">
 <p>⚠️ <strong>免责声明</strong>：本页所有价格和型号信息均为参考价，实际购买时请以各平台最新售价为准。品牌推荐基于公开数据整理，不构成购买建议。</p>
@@ -1318,6 +1321,26 @@ if(text.includes(q)){s.classList.remove('hidden')}else{s.classList.add('hidden')
 <!-- 前端改造新增：筛选面板与 API 动态渲染 -->
 <script>
 // ============================================================
+// 双模式运行：本地（localhost）走后端 API，静态站点（GitHub Pages）读 data.json
+// ============================================================
+const IS_STATIC = !location.hostname.includes('localhost') && !location.hostname.includes('127.0.0.1');
+
+let STATIC_DATA = null;
+
+async function loadStaticData() {
+  if (STATIC_DATA) return STATIC_DATA;
+  const resp = await fetch('data.json');
+  STATIC_DATA = await resp.json();
+  return STATIC_DATA;
+}
+
+// 模式指示器：静态模式显示"📦 静态数据模式"，本地模式保持隐藏
+(function showModeIndicator() {
+  const el = document.getElementById('modeIndicator');
+  if (el && IS_STATIC) el.style.display = 'block';
+})();
+
+// ============================================================
 // 全局状态
 // ============================================================
 const state = {
@@ -1361,6 +1384,22 @@ const PRIORITY_TAGS = {
 // API 客户端
 // ============================================================
 async function fetchCategories() {
+  // 静态模式：读取内嵌 data.json，返回与 API 一致的格式
+  if (IS_STATIC) {
+    try {
+      const data = await loadStaticData();
+      return data.categories.map(function(c) {
+        return {
+          id: c.id, name: c.name, slug: c.slug, icon: c.icon,
+          sort_order: c.sort_order, dimensions: c.dimensions
+        };
+      });
+    } catch (e) {
+      console.warn('静态数据加载失败:', e.message);
+      return null;
+    }
+  }
+  // 本地模式：原有 API 逻辑不变
   try {
     const res = await fetch('/api/categories');
     if (!res.ok) throw new Error('API 不可用');
@@ -1374,6 +1413,66 @@ async function fetchCategories() {
 }
 
 async function fetchProducts(slug, params) {
+  // 静态模式：从 data.json 取数，本地筛选 + 排序，返回与 API 一致格式
+  if (IS_STATIC) {
+    try {
+      const data = await loadStaticData();
+      const cat = data.categories.find(function(c) { return c.slug === slug; });
+      if (!cat) return { total: 0, products: [] };
+
+      let products = cat.products.slice();
+
+      // 品牌筛选（兼容数组或逗号分隔字符串）
+      if (params.brands && params.brands.length) {
+        const brands = Array.isArray(params.brands)
+          ? params.brands
+          : params.brands.split(',').map(function(b) { return b.trim(); });
+        products = products.filter(function(p) { return brands.indexOf(p.brand) !== -1; });
+      }
+
+      // 价格区间筛选（与 API 语义一致：与产品价格区间有交集即命中）
+      if (params.priceMin > 0) {
+        products = products.filter(function(p) { return p.price_high >= params.priceMin; });
+      }
+      if (params.priceMax > 0) {
+        products = products.filter(function(p) { return p.price_low <= params.priceMax; });
+      }
+
+      // 排序：优先权重加权分 → 优先级标签单维度 → 综合分降序
+      if (params.weights) {
+        // 简化归一化：原始数值 × 权重 的加权平均（模拟后端 scorer）
+        const w = params.weights;
+        products.forEach(function(p) {
+          let total = 0, totalWeight = 0;
+          for (const key in w) {
+            const val = p.dimensions[key];
+            if (typeof val === 'number') {
+              total += val * w[key];
+              totalWeight += w[key];
+            }
+          }
+          p._weightedScore = totalWeight > 0 ? total / totalWeight : 0;
+        });
+        products.sort(function(a, b) { return (b._weightedScore || 0) - (a._weightedScore || 0); });
+      } else if (params.sortKey && params.sortKey !== 'total_score') {
+        const key = params.sortKey, dir = params.sortDir === 'asc' ? 1 : -1;
+        products.sort(function(a, b) {
+          const va = typeof a.dimensions[key] === 'number' ? a.dimensions[key] : 0;
+          const vb = typeof b.dimensions[key] === 'number' ? b.dimensions[key] : 0;
+          return dir * (vb - va);
+        });
+      } else {
+        products.sort(function(a, b) { return b.total_score - a.total_score; });
+      }
+
+      return { total: products.length, products: products };
+    } catch (e) {
+      console.warn('静态产品数据加载失败:', e.message);
+      return null;
+    }
+  }
+
+  // 本地模式：原有 API 逻辑不变
   const qp = new URLSearchParams();
   if (params.brands && params.brands.length) qp.set('brands', params.brands.join(','));
   if (params.priceMin > 0) qp.set('price_min', params.priceMin);
