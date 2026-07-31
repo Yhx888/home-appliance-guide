@@ -26,6 +26,23 @@
 
 ---
 
+## 最终验收步骤：发布同步（对外分享）
+
+> 本项目的 GitHub Pages 会对外分享，**任何代码/数据改动完成后，同步更新线上网页是任务的最后一步验收，不可省略**。
+
+**执行顺序（先核验、后统一提交推送）：**
+
+1. **先完成全部核验**（对照上方核验清单 + 多模态截图自检），确认无遗留问题——用户偏好*全部完成后再一次性统一提交*，不必每步单独确认。
+2. 数据有变更时，先 `python backend\export_static_data.py` 重导 `data.json`。
+3. 统一 `git add <文件>` → `git commit -m "中文信息"` → `git push origin master`。
+4. 确认 GitHub Pages 已同步最新版本（约 1~2 分钟自动重建）：
+   - 部署地址：<https://yhx888.github.io/home-appliance-guide/>
+   - 源码仓库：<https://github.com/Yhx888/home-appliance-guide.git>
+
+**只有线上网页同步到最新版本，任务才算验收通过。**
+
+---
+
 ## Bug 修复工作流
 
 1. **定位**：用 JS evaluate / snapshot / screenshot 确认问题
