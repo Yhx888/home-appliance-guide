@@ -149,10 +149,45 @@ table{font-size:15px}
 .dim-table-dynamic .dim-bool-yes{color:var(--success)}
 .dim-table-dynamic .dim-bool-no{color:var(--danger)}
 @media(max-width:640px){
-  .filter-panel .filter-row{flex-direction:column;align-items:stretch}
-  .filter-panel .filter-label{min-width:auto}
-  .filter-panel .price-range-row{flex:1}
-  .filter-panel .price-input{flex:1;width:auto}
+  .container{padding:16px}
+  /* 主页 hero 压缩：减小留白，让首屏露出品类网格 */
+  .hero{padding:28px 16px 22px}
+  .hero-kicker{font-size:11px;margin-bottom:10px;letter-spacing:.3em}
+  .hero h1{font-size:24px;margin-bottom:10px}
+  .hero-seal{width:42px;height:42px;font-size:13px;padding:4px 0 0 6px}
+  .hero .subtitle{margin-bottom:14px}
+  .search-box input{padding:12px 14px 12px 40px;font-size:15px}
+  .category-card{padding:16px 10px 12px}
+  /* 子页细条 hero 的印章字号过小（9px），提升到 12px */
+  body.is-sub .hero-seal{font-size:12px}
+  /* 筛选面板：列排布 + 价格行 min-width:0 允许收缩，杜绝横向溢出 */
+  .filter-panel{padding:10px 12px}
+  .filter-panel .filter-row{flex-direction:column;align-items:stretch;margin-bottom:8px}
+  .filter-panel .filter-label{min-width:auto;line-height:1.3}
+  .filter-panel .price-range-row{flex:1;min-width:0;width:100%}
+  .filter-panel .price-input{flex:1 1 0;min-width:0;width:auto;padding:10px 12px;font-size:14px}
+  .filter-panel .price-sep{flex-shrink:0}
+  /* 标签 min-height 40px（可点下限），padding 收窄后 priority 标签行内塞得更多、减少换行 */
+  .filter-panel .priority-tag,.filter-panel .brand-tag{display:inline-flex;align-items:center;min-height:40px;padding:8px 14px;font-size:13px;line-height:1.4;border-radius:20px}
+  /* 品牌标签：单行横向滚动省高度；滚动条隐藏；右缘伪元素渐变淡出提示可滑动。
+     width:100% 防止 flex item 被 nowrap 内容撑破容器（滚动区右缘出屏） */
+  .filter-panel .brand-tags{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;position:relative;min-width:0;width:100%}
+  .filter-panel .brand-tags::-webkit-scrollbar{display:none}
+  .filter-panel .brand-tags .brand-tag{flex-shrink:0}
+  .filter-panel .brand-tags::after{content:'';position:absolute;top:0;right:0;bottom:0;width:24px;background:linear-gradient(to right,rgba(251,247,238,0),rgba(251,247,238,.95));pointer-events:none}
+  /* 优先级标签：同品牌标签单行横滚省高度（总宽超出窄屏容器时横滑，渐变淡出提示可滑动） */
+  .filter-panel .priority-tags{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;position:relative;min-width:0;width:100%}
+  .filter-panel .priority-tags::-webkit-scrollbar{display:none}
+  .filter-panel .priority-tags .priority-tag{flex-shrink:0}
+  .filter-panel .priority-tags::after{content:'';position:absolute;top:0;right:0;bottom:0;width:24px;background:linear-gradient(to right,rgba(251,247,238,0),rgba(251,247,238,.95));pointer-events:none}
+  .filter-panel .btn-apply,.filter-panel .btn-reset{padding:11px 20px;font-size:14px;line-height:1.4}
+  /* 面包屑返回链接：padding 撑大可点区域，负 margin 抵消视觉位移 */
+  .breadcrumb a{display:inline-block;padding:10px 12px;margin:-10px 0 -10px -12px}
+  /* overview 大表横向滚动：右缘伪元素渐变淡出提示可滑动（渐变终点取卡片底色，内容不满时落在空白处无副作用） */
+  #overview .table-wrap{position:relative}
+  #overview .table-wrap::after{content:'';position:absolute;top:0;right:0;bottom:0;width:32px;background:linear-gradient(to right,rgba(255,253,248,0),rgba(255,253,248,.95));pointer-events:none}
+  /* 静态数据模式标签：移动端字号与其他小字标签对齐 */
+  #modeIndicator{font-size:12px;padding:5px 12px}
 }
 /* 改动1：维度值颜色分级（前25%绿 / 中间黄 / 后25%红） */
 .dim-table-dynamic td.dim-green{background:#e7f0e4;color:#33683f;font-weight:600}
@@ -169,6 +204,11 @@ table{font-size:15px}
 .dim-table-dynamic td a.jd-link .jd-brand{font-weight:700}
 .dim-table-dynamic td a.jd-link .jd-badge{display:inline-block;margin-left:6px;padding:1px 6px;font-size:11px;line-height:1.4;border-radius:3px;background:var(--accent);color:#fff;vertical-align:1px}
 .price-time{font-size:11px;color:#999;margin-top:2px}
+/* 移动端小字号提升（置于基础规则之后，确保同具体性覆盖生效） */
+@media(max-width:640px){
+  .dim-table-dynamic td a.jd-link .jd-badge{font-size:12px}
+  .price-time{font-size:12px}
+}
 /* 主页模块中心：分组标题 + 品类网格 + 专题入口 */
 .home-hub{padding-top:6px}
 .hub-heading{display:flex;align-items:baseline;gap:10px;font-family:var(--serif);font-size:22px;font-weight:700;letter-spacing:.06em;margin:26px 0 16px;padding-bottom:10px;border-bottom:1px solid var(--border);position:relative}
