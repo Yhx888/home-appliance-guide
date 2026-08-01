@@ -3,7 +3,7 @@ import json
 from fastapi import APIRouter, Depends, Query, HTTPException
 from sqlalchemy.orm import Session
 
-from backend.database import get_db, Category, Dimension, Product
+from backend.database import get_db, Category, Dimension, Product, DataPoint
 from backend.schemas import CategoryOut, DimensionOut, ProductOut, ProductListOut, ProductDim
 from backend.scorer import Scorer
 
@@ -110,6 +110,15 @@ def list_products(
     filtered = query.all()
     total = len(filtered)
 
+    # 需人工核查的产品（任一维度被 verify 标记 manual_review_needed）默认排后
+    review_ids = {
+        row[0] for row in db.query(Product.id)
+        .join(DataPoint, DataPoint.product_id == Product.id)
+        .filter(Product.category_id == category.id, DataPoint.status == "manual_review_needed")
+        .distinct()
+        .all()
+    }
+
     scorer = Scorer(db)
     product_list = []
     for p in filtered:
@@ -135,7 +144,14 @@ def list_products(
         reverse = (sort_dir == "desc") != (dim_def is not None and not dim_def.higher_better)
         product_list.sort(key=lambda x: x.dim_scores.get(sort_key, ProductDim(normalized=0, weight=0)).normalized, reverse=reverse)
     else:
-        product_list.sort(key=lambda x: x.total_score, reverse=True)
+        # 默认综合排序：需人工核查 → 通用款 → 具体型号按综合分降序
+        product_list.sort(
+            key=lambda x: (
+                1 if x.id in review_ids else 0,
+                1 if "通用款" in (x.brand + x.model) else 0,
+                -x.total_score,
+            )
+        )
 
     # 切片分页
     start = (page - 1) * page_size
@@ -208,6 +224,3 @@ def list_dimensions(slug: str, db: Session = Depends(get_db)):
             enum_values=enum_vals,
         ))
     return result
-
-
-

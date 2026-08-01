@@ -1,5 +1,6 @@
 __pycache__/
 *.pyc
 backend/app.db
+backend/app.db.bak-*
 .aicoding-chat-workspace
 .slim/

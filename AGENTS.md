@@ -20,12 +20,22 @@ home-appliance-guide/
     expand_data.py    # 数据扩充：网络调研（web_research）数据批量补充（逐条去重）
     enrich_data.py    # 数据富化：规则填补缺失维度值
     fix_data.py       # 数据修复：补型号 + JD 价格 + 参数修正（保留价格区间）
+    fix_verified_data.py   # 核验修复：官方/多源核验后修正已知数据错误
+    add_new_models.py      # 博主主推新款入库（仅写入已核验参数/价格）
+    update_verified_prices.py  # 京东浏览器实测国补后价格写库
+    apply_scoring_changes.py   # 评分变更：价格维度入分 + 主观维度降权
     export_static_data.py  # 导出 data.json 供 GitHub Pages 使用
     scrapers/
+      base.py           # 采集调度器：低频限速 + 失败退避 + 统一落库
       jd.py             # 京东数据采集（占位实现，未启用）
-      manufacturer.py   # 厂商官网数据采集（占位实现，未启用）
+      jd_union.py       # 京东联盟 API（需 AppKey/Secret，未配置时跳过）
+      browser.py        # playwright 浏览器补采（京东/苏宁价格 + 渲染页规格）
+      energy_label.py   # 中国能效/水效标识备案查询（半自动）
+      manufacturer.py   # 厂商官网规格表采集（低频）
       verify.py         # 多方核验校对引擎 + 质量报告（默认只读，--apply 写回）
-    app.db           # SQLite 数据库（不提交 git，490 产品）
+    tests/
+      test_scorer_price.py  # 价格评分/权重/枚举映射单元测试
+    app.db           # SQLite 数据库（不提交 git，507 产品）
   AGENTS.md           # AI 工作上下文（本文件，项目索引）
   SCHEMA.md           # 数据规范（品类维度定义、枚举映射、质量规则）
   PLAN.md             # 目标模式执行提示词
@@ -57,6 +67,10 @@ python -m backend.seed_data        # 从 index.html 解析初始数据
 python -m backend.expand_data      # 网络调研数据批量补充（扩充产品数）
 python -m backend.enrich_data      # 规则填补缺失维度值
 python -m backend.fix_data         # 补型号 + 价格修正
+python backend\fix_verified_data.py         # 核验修复（官方核验后）
+python backend\add_new_models.py            # 新款入库（可选）
+python backend\update_verified_prices.py    # 京东实测国补后价格写库（可选）
+python backend\apply_scoring_changes.py     # 价格维度入分 + 权重调整（一次性）
 
 # 3. 启动后端
 uvicorn backend.main:app --reload --host 0.0.0.0 --port 8000
@@ -75,13 +89,15 @@ python -m backend.scrapers.verify
 | 指标 | 值 |
 |------|-----|
 | 品类数 | 17 |
-| 产品数 | 490 |
-| 维度定义 | 96（128 - 32 价格键，cat-8 保留 价格_全屋_万） |
-| 维度填充率 | 98.3%（verify 报告口径 2729/2775；enrich 口径 97.9%） |
-| 数据点 | 2870 条（全部 web_research/search，单一来源） |
-| data.json | 352 KB（含每产品 scores 归一化分） |
+| 产品数 | 507（含 17 款博主主推新款） |
+| 维度定义 | 112（96 + 16 个价格_low，cat-8 保留 价格_全屋_万） |
+| 维度填充率 | 97.3%（verify 报告口径，价格维度按产品列统计） |
+| 数据点 | 2610+ 组（web_research / manufacturer_html / jd_html 浏览器核验） |
+| data.json | 428 KB（含 scores、price_collected_at、needs_review） |
 
-置信度分布（verify 报告）：中 0.5~0.9 = 885（87.6%）、低 0.3~0.5 = 100（9.9%）、极低 <0.3 = 25（2.5%）、高 ≥0.9 = 0、缺失 0。
+置信度分布（verify 报告）：中 0.5~0.9 = 1600（84.0%）、低 0.3~0.5 = 219（11.5%）、极低 <0.3 = 84（4.4%）、高 ≥0.9 = 1、缺失 0。
+
+价格说明：`price_low` 为浏览器实测国补后/到手价（20 款已核验），`price_high` 为原价；价格参与综合评分（权重 50）。需人工核查产品（当前 1 款：宫菱 MARS）默认排最后。
 
 ---
 

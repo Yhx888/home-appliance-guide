@@ -156,6 +156,26 @@ class Verifier:
         if status == STATUS_VERIFIED and consensus is not None and apply:
             product = self.db.query(Product).filter(Product.id == product_id).first()
             if product:
+                # 价格维度走产品列（价格单一事实源），不打入 dimensions JSON
+                if dim_key == "价格_low":
+                    product.price_low = consensus
+                    product.price_collected_at = datetime.now()
+                    self.db.commit()
+                    write_back = True
+                    skip_reason = ""
+                    return {
+                        "confidence": round(confidence, 4),
+                        "status": status,
+                        "consensus_value": consensus,
+                        "details": {
+                            "sources_count": sources_count,
+                            "data_points_count": len(points),
+                            "numeric_values": [round(v, 4) for v in numeric_values] if numeric_values else [],
+                            "raw_values": [p.raw_value for p in points[:5]],
+                            "write_back": write_back,
+                            "skip_reason": skip_reason,
+                        },
+                    }
                 # 枚举/文本维度禁止数值写回（consensus 是数值均值，会把"一级"写成浮点数）
                 dim = (
                     self.db.query(Dimension)
@@ -315,7 +335,13 @@ class Verifier:
 
             for p in products:
                 p_dims = p.dimensions or {}
-                filled = sum(1 for dk in dim_keys if dk in p_dims and p_dims[dk] is not None)
+                filled = 0
+                for dk in dim_keys:
+                    if dk == "价格_low":
+                        # 价格维度由产品列承载，price_low>0 即视为已填充
+                        filled += 1 if (p.price_low or 0) > 0 else 0
+                    elif dk in p_dims and p_dims[dk] is not None:
+                        filled += 1
                 cat_filled += filled
                 total_filled_dims += filled
                 total_expected_dims += len(dim_keys)
@@ -341,7 +367,11 @@ class Verifier:
             top_total = len(products) * len(top_dim_keys)
             for p in products:
                 p_dims = p.dimensions or {}
-                top_filled += sum(1 for dk in top_dim_keys if dk in p_dims and p_dims[dk] is not None)
+                for dk in top_dim_keys:
+                    if dk == "价格_low":
+                        top_filled += 1 if (p.price_low or 0) > 0 else 0
+                    elif dk in p_dims and p_dims[dk] is not None:
+                        top_filled += 1
             top_fill_rate = top_filled / top_total if top_total > 0 else 0
 
             category_stats.append({
@@ -379,6 +409,7 @@ class Verifier:
         report = {
             "report_time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             "data_points_table_empty": self.db.query(DataPoint).count() == 0,
+            "data_audit": self.audit_data(),
             "summary": {
                 "total_categories": len(category_stats),
                 "total_products": total_products,
@@ -403,6 +434,51 @@ class Verifier:
         }
 
         return report
+
+    # ── 数据审计 ────────────────────────────────────────────────────────
+
+    def audit_data(self) -> dict:
+        """自动扫描已知数据质量问题，只读不修改。
+
+        检查项：
+          - 价格浮点精度异常（超过 2 位小数）
+          - price_low > price_high
+          - 价格缺失（low=high=0）
+          - 容量类维度超出合理域（>1000 或 <1，捕获 MG100=1010 这类明显错误）
+          - 通用款产品数量
+        """
+        import re
+        issues = {
+            "price_float_precision": [],
+            "price_reversed": [],
+            "price_missing": [],
+            "capacity_out_of_range": [],
+            "generic_count": 0,
+        }
+        for p in self.db.query(Product).all():
+            for label, val in (("price_low", p.price_low), ("price_high", p.price_high)):
+                if val is not None and val != 0 and val != round(val, 2):
+                    issues["price_float_precision"].append({
+                        "id": p.id, "brand": p.brand, "model": p.model or "", "field": label, "value": val,
+                    })
+            if p.price_low and p.price_high and p.price_low > p.price_high:
+                issues["price_reversed"].append({
+                    "id": p.id, "brand": p.brand, "model": p.model or "",
+                    "price_low": p.price_low, "price_high": p.price_high,
+                })
+            if not p.price_low and not p.price_high:
+                issues["price_missing"].append({
+                    "id": p.id, "brand": p.brand, "model": p.model or "",
+                })
+            if "通用款" in (p.brand + (p.model or "")):
+                issues["generic_count"] += 1
+            dims = p.dimensions or {}
+            cap = dims.get("容量_L") or dims.get("容量_kg") or dims.get("容量_套")
+            if cap is not None and (float(cap) > 1000 or float(cap) < 1):
+                issues["capacity_out_of_range"].append({
+                    "id": p.id, "brand": p.brand, "model": p.model or "", "capacity": float(cap),
+                })
+        return issues
 
 
 # ══════════════════════════════════════════════════════════════════════════
@@ -436,6 +512,18 @@ def print_report(report: dict):
         print(f"  缺失:             {cd['missing']:>4}  ({cd['missing']/total*100:.1f}%)")
     else:
         print("  (无维度数据)")
+
+    audit = report.get("data_audit") or {}
+    print(f"\n[数据审计]")
+    print(f"  通用款产品:           {audit.get('generic_count', 0)}")
+    print(f"  价格浮点精度异常:     {len(audit.get('price_float_precision', []))}")
+    print(f"  价格颠倒(low>high):   {len(audit.get('price_reversed', []))}")
+    print(f"  价格缺失:             {len(audit.get('price_missing', []))}")
+    print(f"  容量超出合理域:       {len(audit.get('capacity_out_of_range', []))}")
+    for item in (audit.get("price_float_precision") or [])[:5]:
+        print(f"    精度: {item['brand']} {item['model']} {item['field']}={item['value']}")
+    for item in (audit.get("capacity_out_of_range") or [])[:8]:
+        print(f"    容量: {item['brand']} {item['model']} 容量{item['capacity']}")
 
     print(f"\n[品类详情]")
     print(f"  {'品类':<14} {'产品数':>5} {'维度数':>5} {'填充率':>8} {'关键维填充率':>10}")

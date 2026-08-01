@@ -65,7 +65,11 @@
 **排序消费**：
 - 后端模式：`weights` 传给 API 作为自定义权重参与综合分计算（`total_score = Σ(normalized × weight) / Σ(weight)`），按综合分降序；单维度排序按维度 normalized 分（后端已处理 `higher_better=false` 的方向反转）
 - 静态模式：权重排序与单维度排序统一消费 data.json 导出的 `scores`（各维度 normalized 分，4 位小数，与后端同一 scorer 算法）；单维度排序同样按 `higher_better` 反转方向；默认排序消费 `total_score`
-- 价格（性价比标签）：价格为单一事实源，由产品列 `price_low` / `price_high` 承载（不入 dimensions / scores）；价格维度已不在维度定义中，`价格_low` 键在权重与单维排序中无对应得分条目，该标签排序按剩余维度权重/综合分兜底
+- 价格（性价比标签）：价格已恢复为维度 `价格_low`（weight=50，higher_better=false），
+  由产品列 `price_low` 承载，参与综合分与单维排序；`price_low` 为浏览器实测的国补后/到手价
+
+### 默认排序
+- 综合推荐（默认）：需人工核查（`needs_review`）排最后 → 通用款（"代表款"徽标）次之 → 具体型号按 `total_score` 降序
 
 ### 品牌筛选
 标签样式，点击切换选中。收集后通过 `brands` 参数传给 API（"全部"标签 `data-brand="__all__"` 清空选中）。
@@ -82,7 +86,7 @@
 - 每行一个产品（品牌 + 具体型号）
 - 品牌型号列为京东搜索链接
 - 表格容器 `.dim-table-wrap` 由 JS 动态创建（复用/创建，插在 filter-panel 后面），内部为 `.table-wrap > table.dim-table-dynamic`
-- 价格列取产品列 `price_low`（`formatPrice` 格式化，≥1 万显示"x.x万"）
+- 价格列取产品列 `price_low`（`formatPrice` 格式化，≥1 万显示"x.x万"）；有 `price_collected_at` 时显示"更新于 YYYY-MM-DD"小字
 - 文本型维度（type=text）不参与表格展示
 
 ### 滚动吸顶

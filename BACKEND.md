@@ -69,8 +69,16 @@ data_points  (id, product_id→products, dimension_key, source_id→data_sources
 - **bool**：true=100, false=0
 
 ### 价格
-价格单一事实源为产品列 `price_low` / `price_high`，不入 dimensions。批3 后价格维度已从维度定义移除（cat-8 的 `价格_全屋_万` / `风管机3匹_元` 为独立业务维度，保留），
-`PRICE_DIM_KEYS = {"价格_low": "price_low", "价格_high": "price_high"}` 映射保留为兜底机制：若未来重新引入价格维度定义，自动从产品列读取参与归一化与加权（0 视为无价格）。
+价格单一事实源为产品列 `price_low` / `price_high`，不入 dimensions JSON。
+**v2 已恢复价格维度**：cat-1~cat-7、cat-9~cat-17 各含 `价格_low` 维度（weight=50，
+higher_better=false），经 `PRICE_DIM_KEYS` 从产品列读取参与归一化与加权（0 视为无价格）。
+cat-8 保留 `价格_全屋_万` / `风管机3匹_元` 业务维度。
+`price_low` 为浏览器实测的国补后/到手价，`price_high` 为原价；更新后打 `price_collected_at`。
+
+### 默认排序规则
+1. 需人工核查产品（任一维度 data_points 被 verify 标记 manual_review_needed）排最后
+2. 通用款（model 含"通用款"）次之
+3. 具体型号按综合分降序
 
 ### 综合分
 ```python
@@ -89,6 +97,10 @@ total_score = Σ(normalized_i × weight_i) / Σ(weight_i)
 | `expand_data.py` | 网络调研（web_research）数据批量补充产品（逐条按 category_id+brand+model 去重，DataSource 按 platform+method 复用） | 需要扩充产品数量 |
 | `enrich_data.py` | 规则填补缺失维度值（不产生 verified 数据） | 数据不完整时 |
 | `fix_data.py` | 补型号 + 价格修正（只修 low>high 颠倒与 0=0 无数据情况，保留价格区间，无中值塌缩） | 数据错误修复 |
+| `fix_verified_data.py` | 核验修复：小米508容量/双系统/嵌入深度、H5Pro价格精度、白泽Max RO膜寿命、洗衣机容量1010→10 | 官方参数核验后 |
+| `add_new_models.py` | 博主主推新款入库（17 款，仅写入已核验参数/价格，维度带 data_points 来源） | 新款补充 |
+| `update_verified_prices.py` | 京东浏览器实测国补后价格写库（price_low=到手价，price_high=原价） | 价格核验后 |
+| `apply_scoring_changes.py` | 评分变更：16 品类插入价格维度 + 满意度/份额降权至 10 | 评分逻辑调整 |
 | `export_static_data.py` | 导出 `data.json`（含每产品 `scores` 归一化分，4 位小数）供 GitHub Pages | **每次数据变更后必须运行** |
 
 ---
@@ -97,8 +109,12 @@ total_score = Σ(normalized_i × weight_i) / Σ(weight_i)
 
 | 文件 | 功能 |
 |------|------|
-| `jd.py` | 京东商品采集（**占位实现，未启用**） |
-| `manufacturer.py` | 厂商官网采集（**占位实现，未启用**） |
+| `base.py` | 采集调度器：单线程低频（2~5 秒间隔、每品类每日 ≤50）、失败指数退避、统一写 data_points |
+| `jd.py` | 京东规格表 HTML 解析（搜索接口占位；价格走 jd_union / browser） |
+| `jd_union.py` | 京东联盟 API（需 JD_UNION_APPKEY/SECRET，未配置时 dry-run 跳过） |
+| `browser.py` | playwright 浏览器补采：京东/苏宁搜索页价格 + 渲染页规格兜底 |
+| `energy_label.py` | 中国能效/水效标识备案查询（JS 渲染，半自动 + 浏览器核验） |
+| `manufacturer.py` | 厂商官网采集（OFFICIAL_PAGES 清单 + 复用 data_sources 官网 URL，低频抓取规格表） |
 | `verify.py` | 多方校对引擎：数值核对 → 质量报告（argparse：默认只读，`--apply` 才写回） |
 
 ### 运行校对
@@ -116,18 +132,18 @@ python -m backend.scrapers.verify --apply # 写回：多源一致的数值共识
 | 指标 | 值 |
 |------|-----|
 | 品类数 | 17 |
-| 产品数 | 490 |
-| 维度定义 | 96（128 - 32 价格键，cat-8 保留 价格_全屋_万） |
-| 维度填充率 | 98.3%（verify 报告口径 2729/2775；enrich 口径 97.9%） |
-| 数据点 | 2870 条（全部 web_research/search，单一来源） |
-| data.json | 352 KB（含每产品 scores 归一化分） |
+| 产品数 | 507（含 17 款博主主推新款） |
+| 维度定义 | 112（96 + 16 个价格_low，cat-8 保留 价格_全屋_万） |
+| 维度填充率 | 97.3%（verify 报告口径，价格维度按产品列统计） |
+| 数据点 | 2610+ 组（web_research / manufacturer_html / jd_html 浏览器核验） |
+| data.json | 含 scores、price_collected_at、needs_review 字段 |
 
 ### 置信度分布（verify 报告）
 
 | 区间 | 数量 | 占比 |
 |------|-----:|-----:|
-| 高 ≥0.9 | 0 | 0% |
-| 中 0.5~0.9 | 885 | 87.6% |
-| 低 0.3~0.5 | 100 | 9.9% |
-| 极低 <0.3 | 25 | 2.5% |
+| 高 ≥0.9 | 1 | 0.1% |
+| 中 0.5~0.9 | 1600 | 84.0% |
+| 低 0.3~0.5 | 219 | 11.5% |
+| 极低 <0.3 | 84 | 4.4% |
 | 缺失 | 0 | 0% |

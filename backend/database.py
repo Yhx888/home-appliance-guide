@@ -2,6 +2,7 @@
 from pathlib import Path
 from sqlalchemy import create_engine, Column, Integer, String, Float, Boolean, Text, DateTime, JSON, ForeignKey, func
 from sqlalchemy.orm import DeclarativeBase, relationship, sessionmaker
+from sqlalchemy import text
 
 # 基于本文件位置派生绝对路径，避免依赖启动时的 CWD（Windows 盘符路径转 URL 用正斜杠）
 DATABASE_URL = f"sqlite:///{(Path(__file__).resolve().parent / 'app.db').as_posix()}"
@@ -52,6 +53,7 @@ class Product(Base):
     model = Column(String(100), default="", comment="型号")
     price_low = Column(Float, default=0, comment="最低价")
     price_high = Column(Float, default=0, comment="最高价")
+    price_collected_at = Column(DateTime, nullable=True, comment="价格采集时间")
     dimensions = Column(JSON, default=dict, comment="维度值 JSON {dim_key: value}")
     rating = Column(Float, default=0, comment="综合评分")
     created_at = Column(DateTime, server_default=func.now())
@@ -88,9 +90,19 @@ class DataPoint(Base):
     source = relationship("DataSource", back_populates="data_points")
 
 
+def migrate_schema(engine):
+    """轻量 schema 迁移：为已存在的数据库补齐新列，不破坏现有数据。"""
+    with engine.connect() as conn:
+        cols = [row[1] for row in conn.execute(text("PRAGMA table_info(products)"))]
+        if "price_collected_at" not in cols:
+            conn.execute(text("ALTER TABLE products ADD COLUMN price_collected_at DATETIME"))
+            conn.commit()
+
+
 def init_db():
     """初始化数据库，创建所有表"""
     Base.metadata.create_all(bind=engine)
+    migrate_schema(engine)
 
 
 def get_db():

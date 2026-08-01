@@ -9,7 +9,7 @@ OUTPUT_PATH = Path(__file__).resolve().parent.parent / "data.json"
 # 确保以 `python backend/export_static_data.py` 方式运行时也能找到 backend 包
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from backend.database import SessionLocal, Category, Dimension, Product
+from backend.database import SessionLocal, Category, Dimension, Product, DataPoint
 from backend.scorer import Scorer
 
 db = SessionLocal()
@@ -23,6 +23,13 @@ try:
         dim_map = {d.dim_key: d for d in dims}
         all_dim_values = Scorer.collect_all_dim_values(products, dim_map)
         scorer = Scorer(db)
+        review_ids = {
+            row[0] for row in db.query(Product.id)
+            .join(DataPoint, DataPoint.product_id == Product.id)
+            .filter(Product.category_id == cat.id, DataPoint.status == "manual_review_needed")
+            .distinct()
+            .all()
+        }
 
         cat_data = {
             "id": cat.id,
@@ -46,9 +53,19 @@ try:
             "products": [],
         }
 
+        # 默认顺序与后端一致：需人工核查 → 通用款 → 具体型号按综合分降序
+        product_rows = []
         for p in products:
             scores = scorer.calc_product_scores(p, dim_map, {}, all_dim_values)
             total = Scorer.calc_total_score(scores)
+            product_rows.append((p, total, scores))
+        product_rows.sort(key=lambda x: (
+            1 if x[0].id in review_ids else 0,
+            1 if "通用款" in (x[0].brand + (x[0].model or "")) else 0,
+            -x[1],
+        ))
+
+        for p, total, scores in product_rows:
             cat_data["products"].append(
                 {
                     "id": p.id,
@@ -56,6 +73,8 @@ try:
                     "model": p.model or "",
                     "price_low": p.price_low or 0,
                     "price_high": p.price_high or 0,
+                    "price_collected_at": p.price_collected_at.strftime("%Y-%m-%d") if p.price_collected_at else "",
+                    "needs_review": p.id in review_ids,
                     "dimensions": p.dimensions or {},
                     # 各维度归一化分（与后端 scorer 一致，含价格/枚举维度），供静态模式排序
                     # 保留 4 位小数：舍入过粗会导致相邻产品排序乱序（如 2999 与 3000 同分）

@@ -1,24 +1,124 @@
-"""厂商官网参数采集
+"""厂商官网参数采集 — 低频抓取官方规格表
 
 使用方法：
-  from backend.scrapers.manufacturer import search_manufacturer_site, extract_specs_from_manufacturer_html
+  from backend.scrapers.manufacturer import collect_official_pages, extract_specs_from_manufacturer_html
 
-注意：
-  - search_manufacturer_site 为接口定义，实际采集需配合浏览器工具
-  - extract_specs_from_manufacturer_html 解析常见厂商官网规格表
+两类采集入口：
+  1. collect_official_pages()      — 抓取官方页面清单（品牌官网产品页）
+  2. collect_from_existing_sources() — 复用 data_sources 中已记录的厂商官网 URL 补采
+
+全部经 Collector 限速 + 失败退避，结果写入 data_points（platform=manufacturer_html）。
 """
 
 import re
+from pathlib import Path
+import sys
+
 from bs4 import BeautifulSoup
 
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 
-def search_manufacturer_site(brand: str, category: str) -> list[dict]:
-    """搜索厂商官网产品页。
+from backend.database import SessionLocal, Category, Dimension, Product
+from backend.scrapers.base import Collector
 
-    返回产品列表，每项含 title, url, specs。
-    当前为占位实现，实际采集需配合 Kimi WebBridge / playwright 使用。
-    """
-    return []
+
+# 官方产品页清单：(品类slug, 品牌, 型号, 官方URL) — 已核验可访问的页面
+OFFICIAL_PAGES = [
+    ("cat-6", "海尔", "山茶花510", "https://www.haier.com/cooling/20250605_265348.shtml"),
+    ("cat-6", "小米", "分储鲜Pro十字508L", "https://www.mi.com/mijia-fridge-pro-dsfr508-white"),
+    ("cat-6", "松下", "NR-E452SX-PX", "https://consumer.panasonic.cn/product/ref/multi/nr-e452sx-px.html"),
+]
+
+# 厂商官网域名白名单（用于复用 data_sources 中已有的官网 URL）
+MANUFACTURER_DOMAINS = (
+    "haier.com", "midea.cn", "mi.com", "panasonic.cn", "dreame.tech",
+    "ecovacs.cn", "dyson.cn", "iqair.cn", "casarte.com", "littleswan.com",
+    "consumer.huawei.com", "supor.com", "robam.com", "fotile.com",
+)
+
+
+def collect_official_pages(category_slug: str = None, limit: int = 20) -> dict:
+    """抓取 OFFICIAL_PAGES 清单中的官方规格表并写入 data_points。"""
+    collector = Collector()
+    db = collector.db
+    stats = {"fetched": 0, "parsed": 0, "points": 0, "skipped": []}
+    for cat_slug, brand, model, url in OFFICIAL_PAGES:
+        if category_slug and cat_slug != category_slug:
+            continue
+        if stats["fetched"] >= limit:
+            break
+        cat = db.query(Category).filter(Category.slug == cat_slug).first()
+        product = (
+            db.query(Product)
+            .filter(Product.category_id == cat.id, Product.brand == brand)
+            .filter(Product.model.like(f"%{model}%"))
+            .first()
+        )
+        if product is None:
+            stats["skipped"].append(f"{brand} {model} 未入库")
+            continue
+        dims = db.query(Dimension).filter(Dimension.category_id == cat.id).all()
+        dim_keys = [d.dim_key for d in dims]
+        html = collector.fetch(url, category_slug=cat_slug)
+        stats["fetched"] += 1
+        if not html:
+            stats["skipped"].append(f"{brand} {model} 抓取失败")
+            continue
+        specs = extract_specs_from_manufacturer_html(html, dim_keys)
+        if not specs:
+            stats["skipped"].append(f"{brand} {model} 未解析到规格")
+            continue
+        source = collector.get_or_create_source("manufacturer_html", url=url, method="html")
+        for dk, raw in specs.items():
+            collector.save_point(product, dk, raw, source)
+            stats["points"] += 1
+        stats["parsed"] += 1
+    collector.close()
+    return stats
+
+
+def collect_from_existing_sources(category_slug: str = None, limit: int = 50) -> dict:
+    """复用 data_sources 中已记录的厂商官网 URL，低频补采参数。"""
+    collector = Collector()
+    db = collector.db
+    stats = {"sources": 0, "points": 0, "skipped": []}
+    from backend.database import DataPoint, DataSource
+    rows = (
+        db.query(DataSource, DataPoint, Product, Category)
+        .join(DataPoint, DataPoint.source_id == DataSource.id)
+        .join(Product, Product.id == DataPoint.product_id)
+        .join(Category, Category.id == Product.category_id)
+        .filter(DataSource.platform == "web_research")
+        .all()
+    )
+    seen = set()
+    for src, dp, product, cat in rows:
+        url = (src.url or "").strip()
+        if not url or not any(d in url for d in MANUFACTURER_DOMAINS):
+            continue
+        if category_slug and cat.slug != category_slug:
+            continue
+        key = (product.id, url)
+        if key in seen or stats["sources"] >= limit:
+            continue
+        seen.add(key)
+        dims = db.query(Dimension).filter(Dimension.category_id == cat.id).all()
+        dim_keys = [d.dim_key for d in dims]
+        html = collector.fetch(url, category_slug=cat.slug)
+        if not html:
+            stats["skipped"].append(f"{cat.slug} {product.brand} {product.model} 抓取失败")
+            continue
+        specs = extract_specs_from_manufacturer_html(html, dim_keys)
+        stats["sources"] += 1
+        if not specs:
+            stats["skipped"].append(f"{cat.slug} {product.brand} {product.model} 未解析到规格")
+            continue
+        source = collector.get_or_create_source("manufacturer_html", url=url, method="html")
+        for dk, raw in specs.items():
+            collector.save_point(product, dk, raw, source)
+            stats["points"] += 1
+    collector.close()
+    return stats
 
 
 def extract_specs_from_manufacturer_html(html: str, dim_keys: list[str]) -> dict:
