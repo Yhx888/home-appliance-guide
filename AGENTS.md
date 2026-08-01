@@ -1,6 +1,6 @@
 # 全国家电选购指南 — 全栈项目
 
-覆盖 17 品类（+ 4 专题子页）的家电选购指南。前端支持**双模式**：本地 FastAPI 后端 + GitHub Pages 静态托管。数据 490 产品，经网络调研（web_research）+ 规则填充 + 多方核验校对。
+覆盖 17 品类（+ 4 专题子页）的家电选购指南。前端支持**双模式**：本地 FastAPI 后端 + GitHub Pages 静态托管。数据 448 产品，经网络调研（web_research）+ 规则填充 + 多方核验校对。
 
 ---
 
@@ -35,7 +35,7 @@ home-appliance-guide/
       verify.py         # 多方核验校对引擎 + 质量报告（默认只读，--apply 写回）
     tests/
       test_scorer_price.py  # 价格评分/权重/枚举映射单元测试
-    app.db           # SQLite 数据库（不提交 git，507 产品）
+    app.db           # SQLite 数据库（不提交 git，448 产品）
   AGENTS.md           # AI 工作上下文（本文件，项目索引）
   SCHEMA.md           # 数据规范（品类维度定义、枚举映射、质量规则）
   PLAN.md             # 目标模式执行提示词
@@ -89,7 +89,7 @@ python -m backend.scrapers.verify
 | 指标 | 值 |
 |------|-----|
 | 品类数 | 17 |
-| 产品数 | 507（含 17 款博主主推新款） |
+| 产品数 | 448 |
 | 维度定义 | 112（96 + 16 个价格_low，cat-8 保留 价格_全屋_万） |
 | 维度填充率 | 97.3%（verify 报告口径，价格维度按产品列统计） |
 | 数据点 | 2610+ 组（web_research / manufacturer_html / jd_html 浏览器核验） |
