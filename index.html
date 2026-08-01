@@ -248,7 +248,7 @@ table{font-size:15px}
 <div class="hero" id="top">
 <p class="hero-kicker">Home Appliance Guide · 2025–2026</p>
 <h1>家居装修电器选购全维度指南<span class="hero-seal">选购指南</span></h1>
-<p class="subtitle">17 品类 · 112 维度 · 448 款产品 · 真实口碑与售后红黑榜</p>
+<p class="subtitle">17 品类 · 112 维度 · 497 款产品 · 真实口碑与售后红黑榜</p>
 <div class="search-box">
 <span class="search-icon">🔍</span>
 <input type="text" id="searchInput" placeholder="搜索品类模块，如：洗碗机 / 空调 / 电视…" oninput="doSearch(this.value)">
@@ -258,6 +258,7 @@ table{font-size:15px}
 <!-- Nav -->
 <div class="nav-wrap">
 <div class="nav-scroll" id="navScroll">
+<div class="nav-tab" onclick="switchTab('')">🏠 主页</div>
 <div class="nav-tab active" onclick="switchTab('overview')">📋 速查总览</div>
 <div class="nav-tab" onclick="switchTab('cat-1')">🍳 抽油烟机</div>
 <div class="nav-tab" onclick="switchTab('cat-2')">🔥 燃气灶</div>
@@ -2214,12 +2215,12 @@ function formatDimValue(val, type, unit) {
   return String(val);
 }
 
-// 改动2：综合得分 → 星级（>=85 五星，每 15 分降一星）
+// 改动2：综合得分 → 星级（>=80 五星，每 15 分降一星；阈值取中位分布，避免大量 1-2 星观感极端）
 function getStars(score) {
-  if (score >= 85) return '★★★★★';
-  if (score >= 70) return '★★★★☆';
-  if (score >= 55) return '★★★☆☆';
-  if (score >= 40) return '★★☆☆☆';
+  if (score >= 80) return '★★★★★';
+  if (score >= 65) return '★★★★☆';
+  if (score >= 50) return '★★★☆☆';
+  if (score >= 35) return '★★☆☆☆';
   return '★☆☆☆☆';
 }
 
