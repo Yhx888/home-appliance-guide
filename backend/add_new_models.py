@@ -224,6 +224,72 @@ NEW_MODELS = [
             "有微波": (False, ["https://post.smzdm.com/p/a95nv26e/"]),
         },
     },
+    # ── 抽油烟机：2025-2026 博主高赞调研主推（多篇来源重合）──
+    {
+        "slug": "cat-1", "brand": "方太", "model": "V1S-G",
+        "price_low": 4299.0, "price_high": 4749.0,
+        "price_sources": ["https://zhuanlan.zhihu.com/p/1892874680102277427",
+                          "https://finance.sina.com.cn/tech/roll/2025-06-06/doc-inezcvsc5365689.shtml"],
+        "dims": {
+            "风量_m3": (28.0, ["https://zhuanlan.zhihu.com/p/1892874680102277427",
+                               "https://zhuanlan.zhihu.com/p/1962510983126820825"]),
+            "静压_Pa": (1000.0, ["https://zhuanlan.zhihu.com/p/1892874680102277427",
+                                 "https://zhuanlan.zhihu.com/p/2021709921184400553"]),
+        },
+    },
+    {
+        "slug": "cat-1", "brand": "美的", "model": "AK7 Pro",
+        "price_low": 2599.0, "price_high": 3199.0,
+        "price_sources": ["https://zhuanlan.zhihu.com/p/685641331",
+                          "https://finance.sina.com.cn/tech/roll/2025-06-06/doc-inezcvsc5365689.shtml"],
+        "dims": {
+            "风量_m3": (28.0, ["https://zhuanlan.zhihu.com/p/1892874680102277427",
+                               "https://zhuanlan.zhihu.com/p/1962510983126820825"]),
+            "静压_Pa": (1000.0, ["https://zhuanlan.zhihu.com/p/1892874680102277427",
+                                 "https://zhuanlan.zhihu.com/p/2021709921184400553"]),
+        },
+    },
+    {
+        "slug": "cat-1", "brand": "小米/米家", "model": "净烟机P2(MJ06CY)",
+        "price_low": 2000.0, "price_high": 2500.0,
+        "price_sources": ["https://zhihu.com/question/678509688",
+                          "https://zhuanlan.zhihu.com/p/2021709921184400553"],
+        "dims": {},
+    },
+    # ── 电视机：2025-2026 博主高赞调研主推（多篇来源重合）──
+    {
+        "slug": "cat-16", "brand": "海信", "model": "E8Q Pro 75寸",
+        "price_low": 8000.0, "price_high": 9000.0,
+        "price_sources": ["https://zhuanlan.zhihu.com/p/1103224133",
+                          "https://zhuanlan.zhihu.com/p/2020186080427647609"],
+        "dims": {
+            "尺寸_寸": (75.0, ["https://zhuanlan.zhihu.com/p/1103224133"]),
+            "面板类型": ("MiniLED", ["https://zhuanlan.zhihu.com/p/1103224133"]),
+            "分区数": (5040.0, ["https://zhuanlan.zhihu.com/p/1103224133",
+                                "https://zhuanlan.zhihu.com/p/2020186080427647609"]),
+        },
+    },
+    {
+        "slug": "cat-16", "brand": "TCL", "model": "Q10L 75寸",
+        "price_low": 7000.0, "price_high": 8000.0,
+        "price_sources": ["https://zhuanlan.zhihu.com/p/1103224133",
+                          "https://zhuanlan.zhihu.com/p/2020186080427647609"],
+        "dims": {
+            "尺寸_寸": (75.0, ["https://zhuanlan.zhihu.com/p/1103224133"]),
+            "面板类型": ("QD-MiniLED", ["https://zhuanlan.zhihu.com/p/1103224133"]),
+            "分区数": (2176.0, ["https://zhuanlan.zhihu.com/p/1103224133",
+                                "https://zhuanlan.zhihu.com/p/2020186080427647609"]),
+        },
+    },
+    {
+        "slug": "cat-16", "brand": "创维", "model": "A5F Pro 55寸",
+        "price_low": 3500.0, "price_high": 5000.0,
+        "price_sources": ["https://post.m.smzdm.com/zz/p/awd2p9wk/",
+                          "https://zhuanlan.zhihu.com/p/1979859785684902924"],
+        "dims": {
+            "尺寸_寸": (55.0, ["https://post.m.smzdm.com/zz/p/awd2p9wk/"]),
+        },
+    },
 ]
 
 
