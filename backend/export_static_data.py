@@ -18,9 +18,10 @@ def is_generic_product(brand: str, model: str) -> bool:
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from backend.database import SessionLocal, Category, Dimension, Product, DataPoint
-from backend.scorer import Scorer
+from backend.scorer import Scorer, compute_verify_status
 
 db = SessionLocal()
+VERIFY_MAP = compute_verify_status(db)
 result = {"categories": []}
 
 try:
@@ -80,6 +81,14 @@ try:
         for p, total, scores, data_incomplete in product_rows:
             # 产品 JSON 只保留本品类维度定义的键（清理历史残留）
             dims_data = {k: v for k, v in (p.dimensions or {}).items() if k in dim_map}
+            # 多源核验状态：已核验维度列表 + 产品级标记
+            verify_dims = [dk for dk in dim_map if VERIFY_MAP.get((p.id, dk)) == "verified"]
+            if verify_dims:
+                # 核心维度（权重 top3）全部核验 → verified；否则 partial
+                top3 = sorted(dim_map.values(), key=lambda d: d.default_weight or 0, reverse=True)[:3]
+                verify_status = "verified" if all(d.dim_key in verify_dims for d in top3) else "partial"
+            else:
+                verify_status = ""
             cat_data["products"].append(
                 {
                     "id": p.id,
@@ -90,6 +99,8 @@ try:
                     "price_collected_at": p.price_collected_at.strftime("%Y-%m-%d") if p.price_collected_at else "",
                     "needs_review": p.id in review_ids,
                     "data_incomplete": data_incomplete,
+                    "verify_dims": verify_dims,
+                    "verify_status": verify_status,
                     "dimensions": dims_data,
                     # 各维度归一化分（与后端 scorer 一致，含价格/枚举维度），供静态模式排序
                     # 保留 4 位小数：舍入过粗会导致相邻产品排序乱序（如 2999 与 3000 同分）

@@ -7,9 +7,31 @@ from sqlalchemy.orm import Session
 
 from backend.database import get_db, Category, Dimension, Product, DataPoint
 from backend.schemas import CategoryOut, DimensionOut, ProductOut, ProductListOut, ProductDim
-from backend.scorer import Scorer
+from backend.scorer import Scorer, compute_verify_status
 
 router = APIRouter()
+
+# 核验状态缓存：数据变更后重启服务刷新（项目常规流程：改数据 → export → 重启）
+_VERIFY_MAP: dict | None = None
+
+
+def get_verify_map(db) -> dict:
+    global _VERIFY_MAP
+    if _VERIFY_MAP is None:
+        _VERIFY_MAP = compute_verify_status(db)
+    return _VERIFY_MAP
+
+
+def verify_fields_for(db, product, dim_map):
+    """计算单产品核验状态字段（verify_dims / verify_status）"""
+    vmap = get_verify_map(db)
+    verify_dims = [dk for dk in dim_map if vmap.get((product.id, dk)) == "verified"]
+    if verify_dims:
+        top3 = sorted(dim_map.values(), key=lambda d: d.default_weight or 0, reverse=True)[:3]
+        status = "verified" if all(d.dim_key in verify_dims for d in top3) else "partial"
+    else:
+        status = ""
+    return verify_dims, status
 
 # 通用款判定：model 为"通用款"或纯中文无型号字符（如"集成灶蒸烤一体"）→ 品牌代表款
 GENERIC_MODEL_RE = re.compile(r"^[\u4e00-\u9fa5]+$")
@@ -140,6 +162,7 @@ def list_products(
         scores = scorer.calc_product_scores(p, dim_map, weights_dict, all_dim_values)
         total_score = Scorer.calc_total_score(scores)
         data_incomplete = Scorer.missing_weight_ratio(scores) >= 0.3
+        verify_dims, verify_status = verify_fields_for(db, p, dim_map)
         product_list.append(ProductOut(
             id=p.id,
             category_id=p.category_id,
@@ -153,6 +176,8 @@ def list_products(
             total_score=total_score,
             needs_review=p.id in review_ids,
             data_incomplete=data_incomplete,
+            verify_dims=verify_dims,
+            verify_status=verify_status,
         ))
 
     # 排序：单维度按归一化分（缺失维度恒有 normalized=0 条目，按 0 分参与排序），否则按综合分
@@ -204,6 +229,7 @@ def get_product(product_id: int, db: Session = Depends(get_db)):
     scorer = Scorer(db)
     scores = scorer.calc_product_scores(product, dim_map, {}, all_dim_values)
     total_score = Scorer.calc_total_score(scores)
+    verify_dims, verify_status = verify_fields_for(db, product, dim_map)
 
     return ProductOut(
         id=product.id,
@@ -217,6 +243,8 @@ def get_product(product_id: int, db: Session = Depends(get_db)):
         dim_scores=scores,
         total_score=total_score,
         data_incomplete=Scorer.missing_weight_ratio(scores) >= 0.3,
+        verify_dims=verify_dims,
+        verify_status=verify_status,
     )
 
 

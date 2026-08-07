@@ -473,8 +473,12 @@ confidence = 0.5  # 基础值
 
 > 注意：**规则填充（enrich_data.py）不产生 verified 数据**，也不产出置信度；
 > verified 状态仅由 verify.py 对多源一致的数据点判定。
-> **当前现状（2026-08-07）**：data_points 表 3419 条全部为 pending（0 条 verified），
-> confidence 仅 0.5/0.6（单源基础值）；verify 报告中的置信度分布为实时聚合计算，未写回。
+> **当前现状（2026-08-07）**：data_points 表 4526 条；核验管线已打通——
+> `backend/verification/*.json`（web 多源调研结果）→ `backend/verify_web.py` 注入第二来源
+> → `python -m backend.scrapers.verify --apply` 判定写回。
+> cat-1（抽油烟机）试点已完成：12 款产品 19 个维度多源 verified，4 处参数修正（C50max 风量 24→30、
+> J20 风量 18→21 等）、3 款补全缺失参数（J30/MA2C1/EMC5A 风量静压）。
+> 其余品类仍为单源 pending，待后续批次核验。
 > **数据完整性标记**：产品缺失维度权重占比 ≥30%（`Scorer.missing_weight_ratio`）时标记
 > `data_incomplete`，从默认排序中排除（排最后），前端显示"数据待补充"徽标。
 

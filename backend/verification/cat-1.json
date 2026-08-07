@@ -1,0 +1,91 @@
+[
+  {
+    "product_id": 15,
+    "url": "https://item.jd.com/10210252708397.html",
+    "platform": "web_verify",
+    "note": "京东标题确认 V10-G 30风量+1450静压（与DB一致）",
+    "dims": {"风量_m3": 30.0, "静压_Pa": 1450.0}
+  },
+  {
+    "product_id": 251,
+    "url": "https://product.suning.com/0071641878/000000012449358797.html",
+    "platform": "web_verify",
+    "note": "苏宁标题 32立方+1500Pa（与DB一致）",
+    "dims": {"风量_m3": 32.0, "静压_Pa": 1500.0}
+  },
+  {
+    "product_id": 12,
+    "url": "https://item.jd.com/10218621529285.html",
+    "platform": "web_verify",
+    "note": "京东标题 CXW-260-27A15-D1P 27风量+1300Pa（与DB一致）",
+    "dims": {"风量_m3": 27.0, "静压_Pa": 1300.0}
+  },
+  {
+    "product_id": 252,
+    "url": "https://product.suning.com/0071567188/000000012449056899.html",
+    "platform": "web_verify",
+    "note": "苏宁标题 AK7MAX 28风量+1100Pa（DB 1200，差8.7%在15%一致域内）",
+    "dims": {"风量_m3": 28.0, "静压_Pa": 1100.0}
+  },
+  {
+    "product_id": 508,
+    "url": "https://item.jd.com/10210252708397.html",
+    "platform": "web_verify",
+    "note": "京东套装页标题确认 V1S-G 28大风量（与DB一致）",
+    "dims": {"风量_m3": 28.0}
+  },
+  {
+    "product_id": 6,
+    "url": "https://item.jd.com/100142781092.html",
+    "platform": "web_verify",
+    "note": "京东标题 LC77UA951W 21.5m³/min（DB 22，差2.3%一致）",
+    "dims": {"风量_m3": 22.0}
+  },
+  {
+    "product_id": 510,
+    "url": "https://product.suning.com/0010346179/000000012439932495.html",
+    "platform": "web_verify",
+    "note": "苏宁参数页+知乎 最大静压1100Pa（与已补DB一致）",
+    "dims": {"静压_Pa": 1100.0}
+  },
+  {
+    "product_id": 256,
+    "url": "https://cu.manmanbuy.com/discuxiao_555397419.aspx",
+    "platform": "web_verify",
+    "override": true,
+    "note": "慢慢买+逛丢(京东) 两源确认 C50max 30风量（修正DB 24）",
+    "dims": {"风量_m3": 30.0}
+  },
+  {
+    "product_id": 424,
+    "url": "https://detail.zol.com.cn/1342/1341618/param.shtml",
+    "platform": "web_verify",
+    "override": true,
+    "note": "ZOL 两源确认 美的J20 排风量21m³/min（修正DB 18）",
+    "dims": {"风量_m3": 21.0}
+  },
+  {
+    "product_id": 7,
+    "url": "https://baike.baidu.com/item/%E7%BE%8E%E7%9A%84CXW-180-J30/56936762",
+    "platform": "web_verify",
+    "override": true,
+    "note": "百度百科/中关村：美的J30(CXW-180-J30) 17m³/min+300Pa（补缺失）",
+    "dims": {"风量_m3": 17.0, "静压_Pa": 300.0}
+  },
+  {
+    "product_id": 9,
+    "url": "https://zhuanlan.zhihu.com/p/274329383",
+    "platform": "web_verify",
+    "override": true,
+    "note": "知乎评测：海尔MA2C1 22m³/min+420Pa（补缺失）",
+    "dims": {"风量_m3": 22.0, "静压_Pa": 420.0}
+  },
+  {
+    "product_id": 14,
+    "url": "https://www.fotile.com/",
+    "platform": "web_verify",
+    "override": true,
+    "note": "方太官网产品页：CXW-358-EMC5A 瞬吸风量22m³（补缺失）",
+    "dims": {"风量_m3": 22.0}
+  }
+]

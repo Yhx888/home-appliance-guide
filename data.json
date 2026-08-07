@@ -77,6 +77,11 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [
+            "风量_m3",
+            "静压_Pa"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "噪音_dB": 52.0,
             "保修_年": 5,
@@ -85,14 +90,14 @@
             "静压_Pa": 1450.0
           },
           "scores": {
-            "风量_m3": 85.7143,
-            "静压_Pa": 95.6522,
+            "风量_m3": 86.6667,
+            "静压_Pa": 95.8333,
             "噪音_dB": 71.4286,
             "能效等级": 100.0,
             "保修_年": 80.0,
             "价格_low": 1.3611
           },
-          "total_score": 75.7
+          "total_score": 76.0
         },
         {
           "id": 251,
@@ -103,6 +108,11 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [
+            "风量_m3",
+            "静压_Pa"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "风量_m3": 32,
             "静压_Pa": 1500,
@@ -121,6 +131,34 @@
           "total_score": 74.9
         },
         {
+          "id": 256,
+          "brand": "海尔",
+          "model": "小红花C50max",
+          "price_low": 2200.0,
+          "price_high": 2800.0,
+          "price_collected_at": "",
+          "needs_review": false,
+          "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
+          "dimensions": {
+            "风量_m3": 30.0,
+            "静压_Pa": 1300,
+            "能效等级": "一级",
+            "噪音_dB": 54,
+            "保修_年": 5
+          },
+          "scores": {
+            "风量_m3": 86.6667,
+            "静压_Pa": 83.3333,
+            "噪音_dB": 42.8571,
+            "能效等级": 100.0,
+            "保修_年": 80.0,
+            "价格_low": 36.2659
+          },
+          "total_score": 73.2
+        },
+        {
           "id": 426,
           "brand": "方太",
           "model": "CXW-358-Z5TA",
@@ -129,6 +167,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "风量_m3": 26,
             "静压_Pa": 1100,
@@ -137,14 +177,14 @@
             "保修_年": 5
           },
           "scores": {
-            "风量_m3": 57.1429,
-            "静压_Pa": 65.2174,
+            "风量_m3": 60.0,
+            "静压_Pa": 66.6667,
             "噪音_dB": 100.0,
             "能效等级": 100.0,
             "保修_年": 80.0,
             "价格_low": 18.5753
           },
-          "total_score": 68.8
+          "total_score": 69.9
         },
         {
           "id": 255,
@@ -155,6 +195,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "风量_m3": 28,
             "静压_Pa": 1200,
@@ -163,40 +205,14 @@
             "保修_年": 5
           },
           "scores": {
-            "风量_m3": 71.4286,
-            "静压_Pa": 73.913,
+            "风量_m3": 73.3333,
+            "静压_Pa": 75.0,
             "噪音_dB": 57.1429,
             "能效等级": 100.0,
             "保修_年": 80.0,
             "价格_low": 11.6287
           },
-          "total_score": 66.5
-        },
-        {
-          "id": 252,
-          "brand": "美的",
-          "model": "AK7 Max",
-          "price_low": 3000.0,
-          "price_high": 4000.0,
-          "price_collected_at": "",
-          "needs_review": false,
-          "data_incomplete": false,
-          "dimensions": {
-            "风量_m3": 28,
-            "静压_Pa": 1200,
-            "能效等级": "一级",
-            "保修_年": 6,
-            "噪音_dB": 55.0
-          },
-          "scores": {
-            "风量_m3": 71.4286,
-            "静压_Pa": 73.913,
-            "噪音_dB": 28.5714,
-            "能效等级": 100.0,
-            "保修_年": 100.0,
-            "价格_low": 24.4486
-          },
-          "total_score": 65.7
+          "total_score": 67.2
         },
         {
           "id": 254,
@@ -207,6 +223,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "风量_m3": 26,
             "静压_Pa": 1050,
@@ -215,14 +233,14 @@
             "保修_年": 5
           },
           "scores": {
-            "风量_m3": 57.1429,
-            "静压_Pa": 60.8696,
+            "风量_m3": 60.0,
+            "静压_Pa": 62.5,
             "噪音_dB": 100.0,
             "能效等级": 100.0,
             "保修_年": 80.0,
             "价格_low": 1.3542
           },
-          "total_score": 65.6
+          "total_score": 66.6
         },
         {
           "id": 12,
@@ -233,6 +251,11 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [
+            "风量_m3",
+            "静压_Pa"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "噪音_dB": 53.0,
             "保修_年": 5,
@@ -241,14 +264,45 @@
             "静压_Pa": 1300.0
           },
           "scores": {
-            "风量_m3": 64.2857,
-            "静压_Pa": 82.6087,
+            "风量_m3": 66.6667,
+            "静压_Pa": 83.3333,
             "噪音_dB": 57.1429,
             "能效等级": 100.0,
             "保修_年": 80.0,
             "价格_low": 0.0
           },
-          "total_score": 65.2
+          "total_score": 65.9
+        },
+        {
+          "id": 252,
+          "brand": "美的",
+          "model": "AK7 Max",
+          "price_low": 3000.0,
+          "price_high": 4000.0,
+          "price_collected_at": "",
+          "needs_review": false,
+          "data_incomplete": false,
+          "verify_dims": [
+            "风量_m3",
+            "静压_Pa"
+          ],
+          "verify_status": "partial",
+          "dimensions": {
+            "风量_m3": 28,
+            "静压_Pa": 1150.0,
+            "能效等级": "一级",
+            "保修_年": 6,
+            "噪音_dB": 55.0
+          },
+          "scores": {
+            "风量_m3": 73.3333,
+            "静压_Pa": 70.8333,
+            "噪音_dB": 28.5714,
+            "能效等级": 100.0,
+            "保修_年": 100.0,
+            "价格_low": 24.4486
+          },
+          "total_score": 65.5
         },
         {
           "id": 13,
@@ -259,6 +313,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "噪音_dB": 50.0,
             "保修_年": 5,
@@ -267,14 +323,14 @@
             "静压_Pa": 1000.0
           },
           "scores": {
-            "风量_m3": 35.7143,
-            "静压_Pa": 56.5217,
+            "风量_m3": 40.0,
+            "静压_Pa": 58.3333,
             "噪音_dB": 100.0,
             "能效等级": 100.0,
             "保修_年": 80.0,
             "价格_low": 31.4105
           },
-          "total_score": 63.4
+          "total_score": 64.9
         },
         {
           "id": 425,
@@ -285,6 +341,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "风量_m3": 25,
             "静压_Pa": 1100,
@@ -293,40 +351,14 @@
             "保修_年": 5
           },
           "scores": {
-            "风量_m3": 50.0,
-            "静压_Pa": 65.2174,
+            "风量_m3": 53.3333,
+            "静压_Pa": 66.6667,
             "噪音_dB": 71.4286,
             "能效等级": 100.0,
             "保修_年": 80.0,
             "价格_low": 24.4613
           },
-          "total_score": 63.3
-        },
-        {
-          "id": 256,
-          "brand": "海尔",
-          "model": "小红花C50max",
-          "price_low": 2200.0,
-          "price_high": 2800.0,
-          "price_collected_at": "",
-          "needs_review": false,
-          "data_incomplete": false,
-          "dimensions": {
-            "风量_m3": 24,
-            "静压_Pa": 1300,
-            "能效等级": "一级",
-            "噪音_dB": 54,
-            "保修_年": 5
-          },
-          "scores": {
-            "风量_m3": 42.8571,
-            "静压_Pa": 82.6087,
-            "噪音_dB": 42.8571,
-            "能效等级": 100.0,
-            "保修_年": 80.0,
-            "价格_low": 36.2659
-          },
-          "total_score": 62.6
+          "total_score": 64.5
         },
         {
           "id": 253,
@@ -337,6 +369,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "风量_m3": 28,
             "静压_Pa": 1100,
@@ -345,14 +379,14 @@
             "保修_年": 3
           },
           "scores": {
-            "风量_m3": 71.4286,
-            "静压_Pa": 65.2174,
+            "风量_m3": 73.3333,
+            "静压_Pa": 66.6667,
             "噪音_dB": 42.8571,
             "能效等级": 100.0,
             "保修_年": 40.0,
             "价格_low": 29.4493
           },
-          "total_score": 60.3
+          "total_score": 61.1
         },
         {
           "id": 11,
@@ -363,6 +397,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "噪音_dB": 50.0,
             "保修_年": 5,
@@ -371,14 +407,43 @@
             "静压_Pa": 550.0
           },
           "scores": {
-            "风量_m3": 35.7143,
-            "静压_Pa": 17.3913,
+            "风量_m3": 40.0,
+            "静压_Pa": 20.8333,
             "噪音_dB": 100.0,
             "能效等级": 100.0,
             "保修_年": 80.0,
             "价格_low": 33.046
           },
-          "total_score": 54.8
+          "total_score": 56.6
+        },
+        {
+          "id": 14,
+          "brand": "方太",
+          "model": "EMC5A",
+          "price_low": 1887.0,
+          "price_high": 2399.0,
+          "price_collected_at": "",
+          "needs_review": false,
+          "data_incomplete": false,
+          "verify_dims": [
+            "风量_m3"
+          ],
+          "verify_status": "partial",
+          "dimensions": {
+            "噪音_dB": 55.0,
+            "保修_年": 5,
+            "能效等级": "一级",
+            "风量_m3": 22.0
+          },
+          "scores": {
+            "风量_m3": 33.3333,
+            "静压_Pa": 0.0,
+            "噪音_dB": 28.5714,
+            "能效等级": 100.0,
+            "保修_年": 80.0,
+            "价格_low": 42.1132
+          },
+          "total_score": 51.8
         },
         {
           "id": 8,
@@ -389,6 +454,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "噪音_dB": 54.0,
             "保修_年": 6,
@@ -397,14 +464,14 @@
             "静压_Pa": 450.0
           },
           "scores": {
-            "风量_m3": 21.4286,
-            "静压_Pa": 8.6957,
+            "风量_m3": 26.6667,
+            "静压_Pa": 12.5,
             "噪音_dB": 42.8571,
             "能效等级": 100.0,
             "保修_年": 100.0,
             "价格_low": 56.3399
           },
-          "total_score": 45.5
+          "total_score": 47.6
         },
         {
           "id": 6,
@@ -415,6 +482,10 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [
+            "风量_m3"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "风量_m3": 22.0,
             "静压_Pa": 600.0,
@@ -423,92 +494,14 @@
             "保修_年": 1.0
           },
           "scores": {
-            "风量_m3": 28.5714,
-            "静压_Pa": 21.7391,
+            "风量_m3": 33.3333,
+            "静压_Pa": 25.0,
             "噪音_dB": 100.0,
             "能效等级": 100.0,
             "保修_年": 0.0,
             "价格_low": 8.1708
           },
-          "total_score": 42.2
-        },
-        {
-          "id": 10,
-          "brand": "华帝",
-          "model": "i11206",
-          "price_low": 2199.0,
-          "price_high": 2199.0,
-          "price_collected_at": "",
-          "needs_review": false,
-          "data_incomplete": false,
-          "dimensions": {
-            "噪音_dB": 52.0,
-            "保修_年": 3,
-            "能效等级": "一级",
-            "风量_m3": 21.0,
-            "静压_Pa": 450.0
-          },
-          "scores": {
-            "风量_m3": 21.4286,
-            "静压_Pa": 8.6957,
-            "噪音_dB": 71.4286,
-            "能效等级": 100.0,
-            "保修_年": 40.0,
-            "价格_low": 36.2832
-          },
-          "total_score": 41.0
-        },
-        {
-          "id": 428,
-          "brand": "海尔",
-          "model": "C20U1",
-          "price_low": 1500.0,
-          "price_high": 2000.0,
-          "price_collected_at": "",
-          "needs_review": false,
-          "data_incomplete": false,
-          "dimensions": {
-            "风量_m3": 20,
-            "静压_Pa": 450,
-            "能效等级": "一级",
-            "保修_年": 5,
-            "噪音_dB": 55.0
-          },
-          "scores": {
-            "风量_m3": 14.2857,
-            "静压_Pa": 8.6957,
-            "噪音_dB": 28.5714,
-            "能效等级": 100.0,
-            "保修_年": 80.0,
-            "价格_low": 50.8583
-          },
-          "total_score": 38.6
-        },
-        {
-          "id": 427,
-          "brand": "华帝",
-          "model": "i11210",
-          "price_low": 1919.0,
-          "price_high": 1919.0,
-          "price_collected_at": "",
-          "needs_review": false,
-          "data_incomplete": false,
-          "dimensions": {
-            "风量_m3": 22,
-            "静压_Pa": 500,
-            "能效等级": "一级",
-            "保修_年": 3,
-            "噪音_dB": 55.0
-          },
-          "scores": {
-            "风量_m3": 28.5714,
-            "静压_Pa": 13.0435,
-            "噪音_dB": 28.5714,
-            "能效等级": 100.0,
-            "保修_年": 40.0,
-            "价格_low": 41.4725
-          },
-          "total_score": 37.5
+          "total_score": 44.1
         },
         {
           "id": 424,
@@ -519,22 +512,141 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [
+            "风量_m3"
+          ],
+          "verify_status": "partial",
           "dimensions": {
-            "风量_m3": 18,
+            "风量_m3": 21.0,
             "静压_Pa": 380,
             "能效等级": "一级",
             "噪音_dB": 56,
             "保修_年": 6
           },
           "scores": {
-            "风量_m3": 0.0,
-            "静压_Pa": 2.6087,
+            "风量_m3": 26.6667,
+            "静压_Pa": 6.6667,
             "噪音_dB": 14.2857,
             "能效等级": 100.0,
             "保修_年": 100.0,
             "价格_low": 70.3213
           },
-          "total_score": 36.3
+          "total_score": 43.6
+        },
+        {
+          "id": 10,
+          "brand": "华帝",
+          "model": "i11206",
+          "price_low": 2199.0,
+          "price_high": 2199.0,
+          "price_collected_at": "",
+          "needs_review": false,
+          "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
+          "dimensions": {
+            "噪音_dB": 52.0,
+            "保修_年": 3,
+            "能效等级": "一级",
+            "风量_m3": 21.0,
+            "静压_Pa": 450.0
+          },
+          "scores": {
+            "风量_m3": 26.6667,
+            "静压_Pa": 12.5,
+            "噪音_dB": 71.4286,
+            "能效等级": 100.0,
+            "保修_年": 40.0,
+            "价格_low": 36.2832
+          },
+          "total_score": 43.1
+        },
+        {
+          "id": 9,
+          "brand": "海尔",
+          "model": "MA2C1",
+          "price_low": 1899.0,
+          "price_high": 1899.0,
+          "price_collected_at": "",
+          "needs_review": false,
+          "data_incomplete": false,
+          "verify_dims": [
+            "风量_m3",
+            "静压_Pa"
+          ],
+          "verify_status": "partial",
+          "dimensions": {
+            "噪音_dB": 55.0,
+            "保修_年": 5,
+            "能效等级": "一级",
+            "风量_m3": 22.0,
+            "静压_Pa": 420.0
+          },
+          "scores": {
+            "风量_m3": 33.3333,
+            "静压_Pa": 10.0,
+            "噪音_dB": 28.5714,
+            "能效等级": 100.0,
+            "保修_年": 80.0,
+            "价格_low": 41.8717
+          },
+          "total_score": 42.3
+        },
+        {
+          "id": 428,
+          "brand": "海尔",
+          "model": "C20U1",
+          "price_low": 1500.0,
+          "price_high": 2000.0,
+          "price_collected_at": "",
+          "needs_review": false,
+          "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
+          "dimensions": {
+            "风量_m3": 20,
+            "静压_Pa": 450,
+            "能效等级": "一级",
+            "保修_年": 5,
+            "噪音_dB": 55.0
+          },
+          "scores": {
+            "风量_m3": 20.0,
+            "静压_Pa": 12.5,
+            "噪音_dB": 28.5714,
+            "能效等级": 100.0,
+            "保修_年": 80.0,
+            "价格_low": 50.8583
+          },
+          "total_score": 40.9
+        },
+        {
+          "id": 427,
+          "brand": "华帝",
+          "model": "i11210",
+          "price_low": 1919.0,
+          "price_high": 1919.0,
+          "price_collected_at": "",
+          "needs_review": false,
+          "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
+          "dimensions": {
+            "风量_m3": 22,
+            "静压_Pa": 500,
+            "能效等级": "一级",
+            "保修_年": 3,
+            "噪音_dB": 55.0
+          },
+          "scores": {
+            "风量_m3": 33.3333,
+            "静压_Pa": 16.6667,
+            "噪音_dB": 28.5714,
+            "能效等级": 100.0,
+            "保修_年": 40.0,
+            "价格_low": 41.4725
+          },
+          "total_score": 39.5
         },
         {
           "id": 259,
@@ -545,6 +657,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "风量_m3": 18,
             "静压_Pa": 350,
@@ -553,14 +667,14 @@
             "保修_年": 3
           },
           "scores": {
-            "风量_m3": 0.0,
-            "静压_Pa": 0.0,
+            "风量_m3": 6.6667,
+            "静压_Pa": 4.1667,
             "噪音_dB": 14.2857,
             "能效等级": 100.0,
             "保修_年": 40.0,
             "价格_low": 100.0
           },
-          "total_score": 33.2
+          "total_score": 35.8
         },
         {
           "id": 258,
@@ -571,6 +685,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "风量_m3": 18.0,
             "静压_Pa": 450.0,
@@ -579,38 +695,14 @@
             "保修_年": 3
           },
           "scores": {
-            "风量_m3": 0.0,
-            "静压_Pa": 8.6957,
+            "风量_m3": 6.6667,
+            "静压_Pa": 12.5,
             "噪音_dB": 14.2857,
             "能效等级": 100.0,
             "保修_年": 40.0,
             "价格_low": 77.8309
           },
-          "total_score": 32.2
-        },
-        {
-          "id": 510,
-          "brand": "小米/米家",
-          "model": "净烟机P2(MJ06CY)",
-          "price_low": 2000.0,
-          "price_high": 2500.0,
-          "price_collected_at": "2026-08-02",
-          "needs_review": false,
-          "data_incomplete": true,
-          "dimensions": {
-            "静压_Pa": 1100.0,
-            "能效等级": "一级",
-            "保修_年": 5.0
-          },
-          "scores": {
-            "风量_m3": 0.0,
-            "静压_Pa": 65.2174,
-            "噪音_dB": 0.0,
-            "能效等级": 100.0,
-            "保修_年": 80.0,
-            "价格_low": 39.8973
-          },
-          "total_score": 69.9
+          "total_score": 34.7
         },
         {
           "id": 7,
@@ -620,11 +712,18 @@
           "price_high": 845.0,
           "price_collected_at": "",
           "needs_review": false,
-          "data_incomplete": true,
+          "data_incomplete": false,
+          "verify_dims": [
+            "风量_m3",
+            "静压_Pa"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "噪音_dB": 57.0,
             "保修_年": 6,
-            "能效等级": "一级"
+            "能效等级": "一级",
+            "风量_m3": 17.0,
+            "静压_Pa": 300.0
           },
           "scores": {
             "风量_m3": 0.0,
@@ -634,55 +733,36 @@
             "保修_年": 100.0,
             "价格_low": 74.8089
           },
-          "total_score": 63.7
+          "total_score": 34.0
         },
         {
-          "id": 14,
-          "brand": "方太",
-          "model": "EMC5A",
-          "price_low": 1887.0,
-          "price_high": 2399.0,
-          "price_collected_at": "",
+          "id": 510,
+          "brand": "小米/米家",
+          "model": "净烟机P2(MJ06CY)",
+          "price_low": 2000.0,
+          "price_high": 2500.0,
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "静压_Pa",
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
-            "噪音_dB": 55.0,
-            "保修_年": 5,
-            "能效等级": "一级"
+            "静压_Pa": 1100.0,
+            "能效等级": "一级",
+            "保修_年": 5.0
           },
           "scores": {
             "风量_m3": 0.0,
-            "静压_Pa": 0.0,
-            "噪音_dB": 28.5714,
+            "静压_Pa": 66.6667,
+            "噪音_dB": 0.0,
             "能效等级": 100.0,
             "保修_年": 80.0,
-            "价格_low": 42.1132
+            "价格_low": 39.8973
           },
-          "total_score": 60.1
-        },
-        {
-          "id": 9,
-          "brand": "海尔",
-          "model": "MA2C1",
-          "price_low": 1899.0,
-          "price_high": 1899.0,
-          "price_collected_at": "",
-          "needs_review": false,
-          "data_incomplete": true,
-          "dimensions": {
-            "噪音_dB": 55.0,
-            "保修_年": 5,
-            "能效等级": "一级"
-          },
-          "scores": {
-            "风量_m3": 0.0,
-            "静压_Pa": 0.0,
-            "噪音_dB": 28.5714,
-            "能效等级": 100.0,
-            "保修_年": 80.0,
-            "价格_low": 41.8717
-          },
-          "total_score": 60.0
+          "total_score": 70.5
         },
         {
           "id": 509,
@@ -690,22 +770,28 @@
           "model": "AK7 Pro",
           "price_low": 2599.0,
           "price_high": 3199.0,
-          "price_collected_at": "2026-08-02",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "风量_m3",
+            "静压_Pa",
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "风量_m3": 28.0,
             "静压_Pa": 1000.0
           },
           "scores": {
-            "风量_m3": 71.4286,
-            "静压_Pa": 56.5217,
+            "风量_m3": 73.3333,
+            "静压_Pa": 58.3333,
             "噪音_dB": 0.0,
             "能效等级": 0.0,
             "保修_年": 0.0,
             "价格_low": 29.9156
           },
-          "total_score": 56.6
+          "total_score": 58.0
         },
         {
           "id": 508,
@@ -713,22 +799,28 @@
           "model": "V1S-G",
           "price_low": 4299.0,
           "price_high": 4749.0,
-          "price_collected_at": "2026-08-02",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "风量_m3",
+            "静压_Pa",
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "风量_m3": 28.0,
             "静压_Pa": 1000.0
           },
           "scores": {
-            "风量_m3": 71.4286,
-            "静压_Pa": 56.5217,
+            "风量_m3": 73.3333,
+            "静压_Pa": 58.3333,
             "噪音_dB": 0.0,
             "能效等级": 0.0,
             "保修_年": 0.0,
             "价格_low": 10.741
           },
-          "total_score": 52.3
+          "total_score": 53.8
         },
         {
           "id": 505,
@@ -739,42 +831,48 @@
           "price_collected_at": "2026-08-01",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "风量_m3": 26.0,
             "静压_Pa": 1000.0
           },
           "scores": {
-            "风量_m3": 57.1429,
-            "静压_Pa": 56.5217,
+            "风量_m3": 60.0,
+            "静压_Pa": 58.3333,
             "噪音_dB": 0.0,
             "能效等级": 0.0,
             "保修_年": 0.0,
             "价格_low": 34.5722
           },
-          "total_score": 51.9
+          "total_score": 53.7
         },
         {
           "id": 504,
           "brand": "美的",
           "model": "AK5 Pro",
-          "price_low": 1897.03,
+          "price_low": 1898.5149999999999,
           "price_high": 2231.8,
-          "price_collected_at": "2026-08-01",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "风量_m3": 25.0,
             "静压_Pa": 1000.0
           },
           "scores": {
-            "风量_m3": 50.0,
-            "静压_Pa": 56.5217,
+            "风量_m3": 53.3333,
+            "静压_Pa": 58.3333,
             "噪音_dB": 0.0,
             "能效等级": 0.0,
             "保修_年": 0.0,
-            "价格_low": 41.9112
+            "价格_low": 41.8814
           },
-          "total_score": 50.7
+          "total_score": 52.7
         },
         {
           "id": 257,
@@ -785,6 +883,8 @@
           "price_collected_at": "",
           "needs_review": true,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "风量_m3": 22,
             "静压_Pa": 600,
@@ -793,14 +893,14 @@
             "保修_年": 1
           },
           "scores": {
-            "风量_m3": 28.5714,
-            "静压_Pa": 21.7391,
+            "风量_m3": 33.3333,
+            "静压_Pa": 25.0,
             "噪音_dB": 71.4286,
             "能效等级": 100.0,
             "保修_年": 0.0,
             "价格_low": 4.9856
           },
-          "total_score": 37.2
+          "total_score": 39.1
         },
         {
           "id": 16,
@@ -811,6 +911,8 @@
           "price_collected_at": "",
           "needs_review": true,
           "data_incomplete": true,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "噪音_dB": 52.0,
             "保修_年": 1,
@@ -905,6 +1007,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "火力_kW": 5.2,
             "热效率_pct": 72,
@@ -931,6 +1035,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "火力_kW": 5.2,
             "面板材质": "钢化玻璃",
@@ -957,6 +1063,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "火力_kW": 5.2,
             "热效率_pct": 70,
@@ -983,6 +1091,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "火力_kW": 5.2,
             "热效率_pct": 70,
@@ -1009,6 +1119,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "火力_kW": 5.2,
             "热效率_pct": 70,
@@ -1035,6 +1147,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "火力_kW": 5.2,
             "热效率_pct": 70,
@@ -1061,6 +1175,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "火力_kW": 5.0,
             "热效率_pct": 68,
@@ -1087,6 +1203,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "火力_kW": 5.0,
             "热效率_pct": 68,
@@ -1113,6 +1231,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "火力_kW": 5.0,
             "热效率_pct": 68,
@@ -1139,6 +1259,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "火力_kW": 5.2,
             "面板材质": "钢化玻璃",
@@ -1165,6 +1287,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "火力_kW": 4.5,
             "面板材质": "钢化玻璃",
@@ -1191,6 +1315,8 @@
           "price_collected_at": "2026-08-01",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "面板材质": "钢化玻璃",
             "熄火保护": true,
@@ -1217,6 +1343,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "火力_kW": 4.5,
             "面板材质": "钢化玻璃",
@@ -1243,6 +1371,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "面板材质": "钢化玻璃",
             "熄火保护": true,
@@ -1269,6 +1399,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "火力_kW": 4.8,
             "热效率_pct": 65,
@@ -1295,6 +1427,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "火力_kW": 4.8,
             "热效率_pct": 65,
@@ -1321,6 +1455,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "火力_kW": 4.5,
             "热效率_pct": 63,
@@ -1347,6 +1483,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "面板材质": "钢化玻璃",
             "熄火保护": true,
@@ -1373,6 +1511,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "面板材质": "钢化玻璃",
             "熄火保护": true,
@@ -1399,6 +1539,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "面板材质": "钢化玻璃",
             "熄火保护": true,
@@ -1425,6 +1567,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "火力_kW": 4.8,
             "热效率_pct": 65,
@@ -1451,6 +1595,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "面板材质": "钢化玻璃",
             "熄火保护": true,
@@ -1477,6 +1623,8 @@
           "price_collected_at": "2026-08-02",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "热效率_pct": 72.0
           },
@@ -1496,9 +1644,13 @@
           "model": "D5PRO",
           "price_low": 1400.0,
           "price_high": 1900.0,
-          "price_collected_at": "2026-08-02",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "火力_kW": 5.2
           },
@@ -1518,9 +1670,13 @@
           "model": "D5MAX",
           "price_low": 1700.0,
           "price_high": 2300.0,
-          "price_collected_at": "2026-08-02",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "火力_kW": 5.2,
             "热效率_pct": 70.0
@@ -1541,9 +1697,13 @@
           "model": "JZT-AK7",
           "price_low": 1500.0,
           "price_high": 2200.0,
-          "price_collected_at": "2026-08-02",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "热效率_pct": 72.0
           },
@@ -1563,9 +1723,13 @@
           "model": "QD529",
           "price_low": 1500.0,
           "price_high": 2100.0,
-          "price_collected_at": "2026-08-02",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "热效率_pct": 70.0
           },
@@ -1585,9 +1749,13 @@
           "model": "TF37B",
           "price_low": 2200.0,
           "price_high": 3000.0,
-          "price_collected_at": "2026-08-02",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "热效率_pct": 70.0
           },
@@ -1610,6 +1778,8 @@
           "price_collected_at": "",
           "needs_review": true,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "面板材质": "钢化玻璃",
             "熄火保护": true,
@@ -1636,6 +1806,8 @@
           "price_collected_at": "",
           "needs_review": true,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "面板材质": "钢化玻璃",
             "熄火保护": true,
@@ -1737,6 +1909,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "最高温度_C": 230.0,
             "容量_L": 55,
@@ -1764,6 +1938,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 55,
             "最高温度_C": 250,
@@ -1792,6 +1968,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "最高温度_C": 230.0,
             "容量_L": 55,
@@ -1819,6 +1997,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 45,
             "最高温度_C": 230,
@@ -1847,6 +2027,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "最高温度_C": 230.0,
             "容量_L": 50,
@@ -1874,6 +2056,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "最高温度_C": 230.0,
             "容量_L": 55,
@@ -1901,6 +2085,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "最高温度_C": 230.0,
             "容量_L": 55,
@@ -1928,6 +2114,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 45,
             "最高温度_C": 250,
@@ -1956,6 +2144,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 45,
             "最高温度_C": 230,
@@ -1984,6 +2174,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 45,
             "最高温度_C": 230,
@@ -2012,6 +2204,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 50,
             "最高温度_C": 230,
@@ -2040,6 +2234,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "最高温度_C": 230.0,
             "容量_L": 45,
@@ -2067,6 +2263,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 40,
             "最高温度_C": 230,
@@ -2094,6 +2292,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "最高温度_C": 230.0,
             "容量_L": 45,
@@ -2121,6 +2321,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 35,
             "最高温度_C": 230,
@@ -2149,6 +2351,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 37.5,
             "最高温度_C": 230.0,
@@ -2177,6 +2381,8 @@
           "price_collected_at": "2026-08-02",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 52.5,
             "最高温度_C": 250.0,
@@ -2205,6 +2411,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 30,
             "最高温度_C": 230,
@@ -2233,6 +2441,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "最高温度_C": 230.0,
             "容量_L": 50,
@@ -2260,6 +2470,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "最高温度_C": 230.0,
             "容量_L": 35,
@@ -2284,9 +2496,13 @@
           "model": "小贝果D3P",
           "price_low": 5000.0,
           "price_high": 5500.0,
-          "price_collected_at": "2026-08-02",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "容量_L": 77.0
           },
@@ -2307,9 +2523,13 @@
           "model": "知味感R6S二代",
           "price_low": 5000.0,
           "price_high": 6000.0,
-          "price_collected_at": "2026-08-02",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "容量_L": 60.0,
             "有微波": true
@@ -2334,6 +2554,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 30,
             "最高温度_C": 250,
@@ -2357,9 +2579,14 @@
           "model": "T2 Pro",
           "price_low": 4000.0,
           "price_high": 5100.0,
-          "price_collected_at": "2026-08-01",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "容量_L",
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "容量_L": 60.0,
             "有微波": false
@@ -2384,6 +2611,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 40,
             "最高温度_C": 230,
@@ -2410,6 +2639,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 40,
             "最高温度_C": 230,
@@ -2525,6 +2756,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_套": 14,
             "类型": "嵌入式",
@@ -2553,6 +2786,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_套": 18,
             "类型": "嵌入式",
@@ -2576,11 +2811,15 @@
           "id": 502,
           "brand": "美的",
           "model": "RX600S Max",
-          "price_low": 3699.0,
+          "price_low": 3849.5,
           "price_high": 4499.0,
-          "price_collected_at": "2026-08-01",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "容量_套": 15.0,
             "类型": "独嵌两用",
@@ -2595,9 +2834,9 @@
             "噪音_dB": 80.0,
             "水效等级": 100.0,
             "保修_年": 0.0,
-            "价格_low": 38.4454
+            "价格_low": 35.7257
           },
-          "total_score": 71.7
+          "total_score": 71.3
         },
         {
           "id": 418,
@@ -2608,6 +2847,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_套": 16,
             "类型": "嵌入式",
@@ -2636,6 +2877,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_套": 15,
             "类型": "嵌入式",
@@ -2664,6 +2907,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_套": 16,
             "类型": "嵌入式",
@@ -2692,6 +2937,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "水效等级": "一级",
             "类型": "嵌入式",
@@ -2720,6 +2967,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_套": 10,
             "类型": "嵌入式",
@@ -2748,6 +2997,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_套": 14,
             "类型": "嵌入式",
@@ -2776,6 +3027,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "水效等级": "一级",
             "类型": "嵌入式",
@@ -2804,6 +3057,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_套": 10,
             "类型": "嵌入式",
@@ -2832,6 +3087,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_套": 6,
             "类型": "嵌入式",
@@ -2860,6 +3117,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "水效等级": "一级",
             "类型": "嵌入式",
@@ -2888,6 +3147,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "水效等级": "一级",
             "类型": "台式",
@@ -2916,6 +3177,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "水效等级": "一级",
             "类型": "嵌入式",
@@ -2944,6 +3207,8 @@
           "price_collected_at": "2026-08-01",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_套": 15.0,
             "类型": "嵌入式",
@@ -2970,6 +3235,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_套": 6,
             "类型": "台式",
@@ -2998,6 +3265,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_套": 7,
             "类型": "水槽式",
@@ -3026,6 +3295,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_套": 7,
             "类型": "水槽式",
@@ -3054,6 +3325,8 @@
           "price_collected_at": "2026-08-02",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "类型": "嵌入式",
             "烘干方式": "热风烘干",
@@ -3082,6 +3355,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_套": 16,
             "类型": "嵌入式",
@@ -3110,6 +3385,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "水效等级": "一级",
             "类型": "嵌入式",
@@ -3138,6 +3415,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "水效等级": "一级",
             "类型": "嵌入式",
@@ -3166,6 +3445,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "水效等级": "一级",
             "类型": "嵌入式",
@@ -3194,6 +3475,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "水效等级": "一级",
             "类型": "嵌入式",
@@ -3222,6 +3505,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_套": 6,
             "类型": "台式",
@@ -3247,9 +3532,13 @@
           "model": "小西梅X7",
           "price_low": 5500.0,
           "price_high": 6100.0,
-          "price_collected_at": "2026-08-02",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "容量_套": 22.0
           },
@@ -3270,9 +3559,13 @@
           "model": "GX1000S Max",
           "price_low": 5600.0,
           "price_high": 7000.0,
-          "price_collected_at": "2026-08-02",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "容量_套": 18.0,
             "烘干方式": "120℃晶焰烘干"
@@ -3372,6 +3665,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "通量_G": 1200.0,
             "RO膜寿命_年": 6.5,
@@ -3400,6 +3695,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "通量_G": 1200,
             "RO膜寿命_年": 5,
@@ -3428,6 +3725,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "通量_G": 1000,
             "RO膜寿命_年": 6,
@@ -3456,6 +3755,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "通量_G": 1000,
             "RO膜寿命_年": 5,
@@ -3484,6 +3785,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "通量_G": 1000,
             "RO膜寿命_年": 5,
@@ -3512,6 +3815,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "过滤级数": 5,
             "保修_年": 3,
@@ -3540,6 +3845,8 @@
           "price_collected_at": "2026-08-01",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "过滤级数": 5,
             "保修_年": 3,
@@ -3568,6 +3875,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "过滤级数": 5,
             "保修_年": 3,
@@ -3596,6 +3905,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "通量_G": 1000,
             "RO膜寿命_年": 4,
@@ -3624,6 +3935,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "通量_G": 600,
             "RO膜寿命_年": 4,
@@ -3652,6 +3965,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "过滤级数": 5,
             "保修_年": 3,
@@ -3680,6 +3995,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "过滤级数": 5,
             "保修_年": 3,
@@ -3708,6 +4025,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "通量_G": 900.0,
             "RO膜寿命_年": 4.0,
@@ -3736,6 +4055,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "通量_G": 1200,
             "RO膜寿命_年": 3,
@@ -3764,6 +4085,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "过滤级数": 5,
             "保修_年": 3,
@@ -3792,6 +4115,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "通量_G": 800,
             "RO膜寿命_年": 3,
@@ -3820,6 +4145,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "过滤级数": 5,
             "保修_年": 3,
@@ -3848,6 +4175,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "通量_G": 800,
             "RO膜寿命_年": 4,
@@ -3876,6 +4205,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "通量_G": 800,
             "RO膜寿命_年": 4,
@@ -3904,6 +4235,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "通量_G": 1200,
             "RO膜寿命_年": 2,
@@ -3932,6 +4265,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "通量_G": 800,
             "RO膜寿命_年": 3,
@@ -3960,6 +4295,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "通量_G": 800.0,
             "RO膜寿命_年": 3.0,
@@ -3988,6 +4325,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "通量_G": 600,
             "RO膜寿命_年": 3,
@@ -4016,6 +4355,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "过滤级数": 5,
             "保修_年": 1,
@@ -4044,6 +4385,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "通量_G": 800.0,
             "RO膜寿命_年": 4.0,
@@ -4072,6 +4415,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "通量_G": 800,
             "RO膜寿命_年": 2,
@@ -4100,6 +4445,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "通量_G": 600,
             "RO膜寿命_年": 2,
@@ -4128,6 +4475,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "通量_G": 600,
             "RO膜寿命_年": 3,
@@ -4156,6 +4505,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "过滤级数": 5,
             "保修_年": 3,
@@ -4181,9 +4532,13 @@
           "model": "TH1200",
           "price_low": 1500.0,
           "price_high": 2500.0,
-          "price_collected_at": "2026-08-02",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "通量_G": 1200.0,
             "年均耗材_元": 150.0
@@ -4203,11 +4558,15 @@
           "id": 501,
           "brand": "安吉尔",
           "model": "玉龙Pro 1200G",
-          "price_low": 2018.24,
+          "price_low": 2009.12,
           "price_high": 2650.0,
-          "price_collected_at": "2026-08-01",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "通量_G": 1200.0,
             "RO膜寿命_年": 5.0,
@@ -4220,7 +4579,7 @@
             "年均耗材_元": 0.0,
             "过滤级数": 100.0,
             "保修_年": 0.0,
-            "价格_low": 34.2068
+            "价格_low": 34.4882
           },
           "total_score": 76.0
         },
@@ -4230,9 +4589,13 @@
           "model": "大白梨TSC1000",
           "price_low": 1800.0,
           "price_high": 2400.0,
-          "price_collected_at": "2026-08-02",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "通量_G": 1000.0,
             "RO膜寿命_年": 6.0
@@ -4337,11 +4700,15 @@
           "id": 491,
           "brand": "美的",
           "model": "508海贝白",
-          "price_low": 2885.7,
+          "price_low": 2742.85,
           "price_high": 3789.0,
-          "price_collected_at": "2026-08-01",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "容量_L": 508.0,
             "门型": "十字门",
@@ -4355,19 +4722,24 @@
             "双系统": 100.0,
             "嵌入深度_mm": 0.0,
             "保修_年": 0.0,
-            "价格_low": 81.565
+            "价格_low": 84.37
           },
-          "total_score": 83.8
+          "total_score": 84.3
         },
         {
           "id": 492,
           "brand": "海尔",
           "model": "山茶花510",
-          "price_low": 3880.13,
+          "price_low": 3693.3766666666666,
           "price_high": 5286.0,
-          "price_collected_at": "2026-08-01",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [
+            "容量_L",
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "容量_L": 510.0,
             "门型": "法式多门",
@@ -4381,9 +4753,9 @@
             "双系统": 0.0,
             "嵌入深度_mm": 87.156,
             "保修_年": 0.0,
-            "价格_low": 65.2056
+            "价格_low": 67.9309
           },
-          "total_score": 78.6
+          "total_score": 79.1
         },
         {
           "id": 87,
@@ -4394,6 +4766,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "制冷方式": "风冷",
             "保修_年": 10,
@@ -4422,6 +4796,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 501,
             "门型": "十字门",
@@ -4450,6 +4826,11 @@
           "price_collected_at": "2026-08-01",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [
+            "容量_L",
+            "嵌入深度_mm"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "制冷方式": "风冷",
             "保修_年": 1,
@@ -4478,6 +4859,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 600,
             "门型": "十字门",
@@ -4506,6 +4889,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "制冷方式": "风冷",
             "保修_年": 3,
@@ -4534,6 +4919,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 500,
             "门型": "法式多门",
@@ -4562,6 +4949,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "制冷方式": "风冷",
             "保修_年": 3,
@@ -4590,6 +4979,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 516,
             "门型": "十字门",
@@ -4618,6 +5009,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 501,
             "门型": "十字门",
@@ -4646,6 +5039,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "制冷方式": "风冷",
             "保修_年": 3,
@@ -4674,6 +5069,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 500,
             "门型": "对开门",
@@ -4702,6 +5099,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "制冷方式": "风冷",
             "保修_年": 3,
@@ -4730,6 +5129,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 455,
             "门型": "十字门",
@@ -4758,6 +5159,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "制冷方式": "风冷",
             "保修_年": 3,
@@ -4786,6 +5189,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 435,
             "门型": "法式多门",
@@ -4814,6 +5219,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 415,
             "门型": "十字门",
@@ -4842,6 +5249,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "制冷方式": "风冷",
             "保修_年": 1,
@@ -4870,6 +5279,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 380,
             "门型": "法式多门",
@@ -4898,6 +5309,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "制冷方式": "风冷",
             "保修_年": 1,
@@ -4926,6 +5339,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "制冷方式": "风冷",
             "保修_年": 3,
@@ -4951,9 +5366,13 @@
           "model": "机皇550",
           "price_low": 4800.0,
           "price_high": 5500.0,
-          "price_collected_at": "2026-08-02",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "容量_L": 526.0,
             "门型": "法式多门",
@@ -4976,9 +5395,13 @@
           "model": "方糖515",
           "price_low": 4200.0,
           "price_high": 5200.0,
-          "price_collected_at": "2026-08-02",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "容量_L": 515.0,
             "门型": "法式四门",
@@ -5066,6 +5489,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "消毒方式": "光热混动",
             "杀菌率_pct": 99.99,
@@ -5090,6 +5515,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 100,
             "消毒方式": "光热混动",
@@ -5114,6 +5541,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 100,
             "消毒方式": "光热混动",
@@ -5138,6 +5567,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "消毒方式": "三重消毒(高温+紫外+臭氧)",
             "杀菌率_pct": 99.99,
@@ -5162,6 +5593,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 112.5,
             "消毒方式": "光热混动，无臭氧味",
@@ -5186,6 +5619,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "消毒方式": "三重消毒(高温+紫外+臭氧)",
             "杀菌率_pct": 99.99,
@@ -5210,6 +5645,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 120,
             "消毒方式": "高温+紫外",
@@ -5234,6 +5671,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 110,
             "消毒方式": "高温+紫外",
@@ -5258,6 +5697,8 @@
           "price_collected_at": "2026-08-02",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 110.0,
             "消毒方式": "高温+紫外线",
@@ -5282,6 +5723,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 100,
             "消毒方式": "高温+紫外",
@@ -5306,6 +5749,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 100,
             "消毒方式": "高温+紫外",
@@ -5330,6 +5775,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 100,
             "消毒方式": "高温+紫外",
@@ -5354,6 +5801,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 90,
             "消毒方式": "高温+紫外",
@@ -5378,6 +5827,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 100.0,
             "消毒方式": "高温+紫外线",
@@ -5402,6 +5853,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 100.0,
             "消毒方式": "高温+紫外线",
@@ -5426,6 +5879,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 80,
             "消毒方式": "高温+紫外",
@@ -5450,6 +5905,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 80,
             "消毒方式": "高温+紫外",
@@ -5474,6 +5931,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 110,
             "消毒方式": "高温+紫外",
@@ -5498,6 +5957,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 100,
             "消毒方式": "高温+紫外",
@@ -5522,6 +5983,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 100,
             "消毒方式": "高温+紫外",
@@ -5546,6 +6009,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 100,
             "消毒方式": "高温+紫外",
@@ -5570,6 +6035,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "消毒方式": "高温+紫外",
             "杀菌率_pct": 99.9,
@@ -5594,6 +6061,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 90,
             "消毒方式": "高温+紫外",
@@ -5618,6 +6087,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 90,
             "消毒方式": "高温+紫外",
@@ -5642,6 +6113,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_L": 90,
             "消毒方式": "高温+紫外",
@@ -5663,9 +6136,13 @@
           "model": "EB031(ZQD110F)",
           "price_low": 1400.0,
           "price_high": 1800.0,
-          "price_collected_at": "2026-08-02",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "容量_L": 110.0,
             "消毒方式": "光波巴氏无臭氧"
@@ -5685,9 +6162,13 @@
           "model": "110HQ2pro",
           "price_low": 1500.0,
           "price_high": 1800.0,
-          "price_collected_at": "2026-08-02",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "容量_L": 110.0,
             "消毒方式": "光波2.0+母婴仓"
@@ -5707,9 +6188,13 @@
           "model": "J55E",
           "price_low": 1700.0,
           "price_high": 2200.0,
-          "price_collected_at": "2026-08-02",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "容量_L": 110.0,
             "消毒方式": "IR+UV+热风"
@@ -5804,6 +6289,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "风管机3匹_元": 5800,
             "压缩机": "三菱/自研",
@@ -5830,6 +6317,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "价格_全屋_万": 4,
             "压缩机": "自研压缩机",
@@ -5856,6 +6345,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "风管机3匹_元": 5800,
             "压缩机": "美芝",
@@ -5882,6 +6373,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "保修_年": 6,
             "噪音_dB": 22,
@@ -5908,6 +6401,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "价格_全屋_万": 5,
             "压缩机": "自研压缩机",
@@ -5934,6 +6429,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "保修_年": 6,
             "噪音_dB": 23,
@@ -5960,6 +6457,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "保修_年": 6,
             "噪音_dB": 25,
@@ -5986,6 +6485,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "保修_年": 3,
             "噪音_dB": 20,
@@ -6012,6 +6513,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "风管机3匹_元": 5500,
             "压缩机": "自研全直流",
@@ -6038,6 +6541,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "价格_全屋_万": 4.5,
             "压缩机": "自研全直流",
@@ -6064,6 +6569,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "保修_年": 6,
             "噪音_dB": 22,
@@ -6090,6 +6597,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "风管机3匹_元": 7000,
             "压缩机": "自研压缩机",
@@ -6116,6 +6625,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "保修_年": 3,
             "噪音_dB": 20,
@@ -6142,6 +6653,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "保修_年": 3,
             "噪音_dB": 25,
@@ -6168,6 +6681,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "价格_全屋_万": 3.5,
             "压缩机": "三菱/自研",
@@ -6194,6 +6709,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "价格_全屋_万": 3.5,
             "压缩机": "三菱/海立",
@@ -6220,6 +6737,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "价格_全屋_万": 3.5,
             "压缩机": "美芝",
@@ -6246,6 +6765,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "价格_全屋_万": 4.5,
             "压缩机": "美芝",
@@ -6272,6 +6793,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "价格_全屋_万": 5,
             "压缩机": "自研变频",
@@ -6298,6 +6821,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "价格_全屋_万": 5.5,
             "压缩机": "自研变频",
@@ -6324,6 +6849,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "价格_全屋_万": 3,
             "压缩机": "三洋双缸",
@@ -6347,9 +6874,11 @@
           "model": "中央空调Pro(一拖四)",
           "price_low": 16000.0,
           "price_high": 20000.0,
-          "price_collected_at": "2026-08-02",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "能效_APF": 5.5
           },
@@ -6372,6 +6901,8 @@
           "price_collected_at": "2026-08-02",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {},
           "scores": {
             "价格_全屋_万": 0.0,
@@ -6392,6 +6923,8 @@
           "price_collected_at": "2026-08-02",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {},
           "scores": {
             "价格_全屋_万": 0.0,
@@ -6487,6 +7020,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "风量_m3h": 350,
             "过滤等级": "H13 HEPA",
@@ -6513,6 +7048,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "风量_m3h": 500,
             "过滤等级": "H13 HEPA",
@@ -6539,6 +7076,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "风量_m3h": 150,
             "过滤等级": "H13 HEPA",
@@ -6565,6 +7104,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "过滤等级": "H13 HEPA",
             "安装方式": "管道式",
@@ -6591,6 +7132,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "风量_m3h": 90,
             "过滤等级": "H13 HEPA",
@@ -6617,6 +7160,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "风量_m3h": 350,
             "过滤等级": "H13 HEPA",
@@ -6643,6 +7188,8 @@
           "price_collected_at": "2026-08-02",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "风量_m3h": 325.0,
             "过滤等级": "HEPA H13",
@@ -6669,6 +7216,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "风量_m3h": 400,
             "过滤等级": "H13 HEPA",
@@ -6695,6 +7244,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "过滤等级": "H13 HEPA",
             "安装方式": "壁挂式",
@@ -6721,6 +7272,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "风量_m3h": 300,
             "过滤等级": "H13 HEPA",
@@ -6747,6 +7300,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "风量_m3h": 400,
             "过滤等级": "H13 HEPA",
@@ -6773,6 +7328,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "风量_m3h": 350.0,
             "过滤等级": "HEPA高效",
@@ -6799,6 +7356,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "过滤等级": "H13 HEPA",
             "安装方式": "管道式",
@@ -6825,6 +7384,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "风量_m3h": 200,
             "过滤等级": "H13 HEPA",
@@ -6851,6 +7412,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "风量_m3h": 300.0,
             "过滤等级": "H13级HEPA",
@@ -6877,6 +7440,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "风量_m3h": 300,
             "过滤等级": "H13 HEPA",
@@ -6903,6 +7468,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "过滤等级": "H13 HEPA",
             "安装方式": "壁挂式",
@@ -6929,6 +7496,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "风量_m3h": 150,
             "过滤等级": "H13 HEPA",
@@ -6955,6 +7524,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "过滤等级": "H13 HEPA",
             "安装方式": "壁挂式",
@@ -6981,6 +7552,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "风量_m3h": 250,
             "过滤等级": "H12",
@@ -7007,6 +7580,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "风量_m3h": 130.0,
             "过滤等级": "H13+静电除尘",
@@ -7033,6 +7608,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "过滤等级": "H13 HEPA",
             "安装方式": "管道式",
@@ -7059,6 +7636,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "过滤等级": "H13 HEPA",
             "安装方式": "管道式",
@@ -7085,6 +7664,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "风量_m3h": 425.0,
             "过滤等级": "H13级HEPA",
@@ -7111,6 +7692,8 @@
           "price_collected_at": "2026-08-02",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "风量_m3h": 330.0,
             "热交换率_pct": 78.0
@@ -7134,6 +7717,8 @@
           "price_collected_at": "2026-08-02",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "风量_m3h": 320.0
           },
@@ -7237,6 +7822,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "自清洁": true,
             "保修_年": 6,
@@ -7260,11 +7847,16 @@
           "id": 493,
           "brand": "华凌",
           "model": "N8HE1",
-          "price_low": 1741.65,
+          "price_low": 1694.4333333333334,
           "price_high": 2099.0,
-          "price_collected_at": "2026-08-01",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [
+            "能效_APF",
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "能效_APF": 5.27,
             "匹数": 1.5,
@@ -7278,9 +7870,9 @@
             "自清洁": 100.0,
             "保修_年": 0.0,
             "匹数": 0.0,
-            "价格_low": 90.4258
+            "价格_low": 92.1875
           },
-          "total_score": 73.0
+          "total_score": 73.4
         },
         {
           "id": 292,
@@ -7291,6 +7883,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "能效_APF": 5.0,
             "压缩机": "凌达",
@@ -7319,6 +7913,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "能效_APF": 5.0,
             "压缩机": "美芝",
@@ -7347,6 +7943,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "能效_APF": 5.0,
             "压缩机": "凌达",
@@ -7375,6 +7973,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "自清洁": true,
             "保修_年": 6,
@@ -7403,6 +8003,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "自清洁": true,
             "保修_年": 6,
@@ -7431,6 +8033,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "能效_APF": 5.0,
             "压缩机": "美芝",
@@ -7459,6 +8063,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "自清洁": true,
             "保修_年": 6,
@@ -7487,6 +8093,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "自清洁": true,
             "保修_年": 6,
@@ -7515,6 +8123,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "能效_APF": 4.7,
             "压缩机": "美芝",
@@ -7543,6 +8153,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "自清洁": true,
             "保修_年": 6,
@@ -7571,6 +8183,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "自清洁": true,
             "保修_年": 6,
@@ -7599,6 +8213,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "能效_APF": 4.6,
             "压缩机": "三菱/海立",
@@ -7627,6 +8243,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "能效_APF": 4.7,
             "压缩机": "凌达",
@@ -7655,6 +8273,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "能效_APF": 4.8,
             "压缩机": "美芝/海立",
@@ -7683,6 +8303,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "能效_APF": 4.7,
             "压缩机": "美芝/海立",
@@ -7711,6 +8333,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "能效_APF": 4.6,
             "压缩机": "海立",
@@ -7739,6 +8363,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "能效_APF": 4.550000000000001,
             "压缩机": "美芝/海立",
@@ -7767,6 +8393,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "能效_APF": 4.5,
             "压缩机": "美芝/海立",
@@ -7795,6 +8423,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "自清洁": true,
             "保修_年": 3,
@@ -7823,6 +8453,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "能效_APF": 4.4,
             "压缩机": "海立",
@@ -7851,6 +8483,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "自清洁": true,
             "保修_年": 6,
@@ -7879,6 +8513,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "自清洁": true,
             "保修_年": 3,
@@ -7904,9 +8540,13 @@
           "model": "神机二代Pro(N8HE1ⅡPro)",
           "price_low": 1600.0,
           "price_high": 2000.0,
-          "price_collected_at": "2026-08-02",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "能效_APF": 6.02,
             "匹数": 1.5,
@@ -7929,9 +8569,13 @@
           "model": "神机二代3匹柜机(N8HE1Ⅱ)",
           "price_low": 3800.0,
           "price_high": 4200.0,
-          "price_collected_at": "2026-08-02",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "匹数": 3.0
           },
@@ -7952,9 +8596,13 @@
           "model": "神机二代(N8HE1Ⅱ)",
           "price_low": 1500.0,
           "price_high": 1700.0,
-          "price_collected_at": "2026-08-02",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "匹数": 1.5
           },
@@ -8067,6 +8715,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "吸力_Pa": 18000,
             "拖地方式": "恒压活水滚筒",
@@ -8095,6 +8745,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "保修_年": 1,
             "拖地方式": "恒压活水滚筒",
@@ -8123,6 +8775,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "吸力_Pa": 12000,
             "拖地方式": "圆拖布旋转",
@@ -8151,6 +8805,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "保修_年": 1,
             "拖地方式": "恒压活水滚筒",
@@ -8179,6 +8835,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "吸力_Pa": 20000,
             "拖地方式": "恒压活水滚筒",
@@ -8207,6 +8865,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "吸力_Pa": 18000,
             "拖地方式": "恒压活水滚筒",
@@ -8235,6 +8895,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "保修_年": 1,
             "拖地方式": "恒压活水滚筒",
@@ -8263,6 +8925,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "保修_年": 1,
             "拖地方式": "恒压活水滚筒",
@@ -8291,6 +8955,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "保修_年": 1,
             "拖地方式": "圆拖布旋转",
@@ -8319,6 +8985,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "吸力_Pa": 8000,
             "拖地方式": "圆拖布旋转",
@@ -8347,6 +9015,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "吸力_Pa": 10000,
             "拖地方式": "圆拖布旋转",
@@ -8375,6 +9045,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "保修_年": 1,
             "拖地方式": "恒压活水滚筒",
@@ -8403,6 +9075,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "吸力_Pa": 15000,
             "保修_年": 1,
@@ -8431,6 +9105,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "保修_年": 1,
             "拖地方式": "恒压活水滚筒",
@@ -8459,6 +9135,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "吸力_Pa": 8000,
             "拖地方式": "履带式洗地",
@@ -8487,6 +9165,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "吸力_Pa": 8900.0,
             "拖地方式": "恒压活水滚筒",
@@ -8515,6 +9195,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "保修_年": 1,
             "拖地方式": "履带式洗地",
@@ -8543,6 +9225,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "保修_年": 1,
             "拖地方式": "圆拖布旋转",
@@ -8571,6 +9255,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "保修_年": 1,
             "拖地方式": "恒压活水滚筒",
@@ -8599,6 +9285,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "吸力_Pa": 8000,
             "拖地方式": "圆拖布旋转",
@@ -8627,6 +9315,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "吸力_Pa": 5000,
             "拖地方式": "圆拖布旋转",
@@ -8655,6 +9345,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "吸力_Pa": 6000,
             "拖地方式": "圆拖布旋转",
@@ -8683,6 +9375,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "保修_年": 1,
             "拖地方式": "恒压活水滚筒",
@@ -8711,6 +9405,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "吸力_Pa": 5000,
             "拖地方式": "圆拖布旋转",
@@ -8739,6 +9435,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "吸力_Pa": 4000,
             "拖地方式": "平板拖",
@@ -8767,6 +9465,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "吸力_Pa": 6000,
             "拖地方式": "履带式洗地",
@@ -8795,6 +9495,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "保修_年": 1,
             "拖地方式": "圆拖布旋转",
@@ -8823,6 +9525,8 @@
           "price_collected_at": "2026-08-02",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "吸力_Pa": 4500.0,
             "拖地方式": "圆拖布/平板",
@@ -8848,9 +9552,13 @@
           "model": "T80",
           "price_low": 3100.0,
           "price_high": 3655.0,
-          "price_collected_at": "2026-08-02",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "拖地方式": "滚筒活水洗地"
           },
@@ -8871,9 +9579,13 @@
           "model": "逍遥002",
           "price_low": 3500.0,
           "price_high": 5700.0,
-          "price_collected_at": "2026-08-02",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "拖地方式": "履带式拖布"
           },
@@ -8894,9 +9606,13 @@
           "model": "G30",
           "price_low": 5000.0,
           "price_high": 5500.0,
-          "price_collected_at": "2026-08-02",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {},
           "scores": {
             "吸力_Pa": 0.0,
@@ -8984,6 +9700,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "颗粒物CADR": 700,
             "甲醛CADR": 400,
@@ -9010,6 +9728,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "颗粒物CADR": 1000.0,
             "甲醛CADR": 800.0,
@@ -9036,6 +9756,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "颗粒物CADR": 700.0,
             "甲醛CADR": 450.0,
@@ -9062,6 +9784,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "颗粒物CADR": 750.0,
             "甲醛CADR": 550.0,
@@ -9088,6 +9812,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "颗粒物CADR": 450.0,
             "甲醛CADR": 300.0,
@@ -9114,6 +9840,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "颗粒物CADR": 800,
             "甲醛CADR": 600,
@@ -9140,6 +9868,8 @@
           "price_collected_at": "2026-08-02",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "颗粒物CADR": 600.0,
             "甲醛CADR": 450.0,
@@ -9166,6 +9896,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "颗粒物CADR": 600,
             "甲醛CADR": 350,
@@ -9192,6 +9924,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "颗粒物CADR": 600,
             "甲醛CADR": 400,
@@ -9218,6 +9952,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "颗粒物CADR": 550,
             "甲醛CADR": 350,
@@ -9244,6 +9980,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "颗粒物CADR": 500,
             "甲醛CADR": 300,
@@ -9270,6 +10008,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "颗粒物CADR": 450,
             "甲醛CADR": 250,
@@ -9296,6 +10036,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "颗粒物CADR": 500,
             "甲醛CADR": 300,
@@ -9322,6 +10064,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "颗粒物CADR": 400,
             "甲醛CADR": 250,
@@ -9348,6 +10092,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "颗粒物CADR": 300,
             "甲醛CADR": 200,
@@ -9374,6 +10120,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "颗粒物CADR": 420,
             "甲醛CADR": 200,
@@ -9400,6 +10148,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "保修_年": 1,
             "颗粒物CADR": 400.0,
@@ -9426,6 +10176,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "颗粒物CADR": 380.0,
             "甲醛CADR": 120.0,
@@ -9452,6 +10204,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "保修_年": 3,
             "颗粒物CADR": 700.0,
@@ -9478,6 +10232,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "保修_年": 1,
             "颗粒物CADR": 800.0,
@@ -9504,6 +10260,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "保修_年": 2,
             "颗粒物CADR": 500.0,
@@ -9530,6 +10288,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "颗粒物CADR": 450,
             "甲醛CADR": 300,
@@ -9556,6 +10316,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "保修_年": 2,
             "颗粒物CADR": 500.0,
@@ -9582,6 +10344,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "颗粒物CADR": 350,
             "甲醛CADR": 200,
@@ -9608,6 +10372,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "保修_年": 1,
             "颗粒物CADR": 400.0,
@@ -9631,9 +10397,13 @@
           "model": "T2 Pro",
           "price_low": 2500.0,
           "price_high": 2999.0,
-          "price_collected_at": "2026-08-02",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "颗粒物CADR": 1205.0,
             "甲醛CADR": 882.0
@@ -9654,9 +10424,13 @@
           "model": "全效空气净化器Ultra",
           "price_low": 2500.0,
           "price_high": 4799.0,
-          "price_collected_at": "2026-08-02",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {},
           "scores": {
             "颗粒物CADR": 0.0,
@@ -9674,9 +10448,13 @@
           "model": "M9 Pro",
           "price_low": 6500.0,
           "price_high": 7500.0,
-          "price_collected_at": "2026-08-02",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "颗粒物CADR": 1000.0
           },
@@ -9699,6 +10477,8 @@
           "price_collected_at": "2026-08-01",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "颗粒物CADR": 650.0,
             "甲醛CADR": 400.0
@@ -9719,9 +10499,13 @@
           "model": "Z90",
           "price_low": 5499.0,
           "price_high": 5599.0,
-          "price_collected_at": "2026-08-02",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {},
           "scores": {
             "颗粒物CADR": 0.0,
@@ -9742,6 +10526,8 @@
           "price_collected_at": "",
           "needs_review": true,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "保修_年": 1,
             "颗粒物CADR": 1600.0,
@@ -9855,6 +10641,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "加热方式": "即热式",
             "冲洗技术": "超漩虹吸",
@@ -9883,6 +10671,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "加热方式": "即热式",
             "座圈抗菌": true,
@@ -9911,6 +10701,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "加热方式": "即热式",
             "座圈抗菌": true,
@@ -9939,6 +10731,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "加热方式": "即热式",
             "座圈抗菌": true,
@@ -9967,6 +10761,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "加热方式": "即热式",
             "冲洗技术": "多模式冲洗",
@@ -9995,6 +10791,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "加热方式": "即热式",
             "座圈抗菌": true,
@@ -10023,6 +10821,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "加热方式": "即热式",
             "冲洗技术": "多模式冲洗",
@@ -10051,6 +10851,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "加热方式": "即热式",
             "座圈抗菌": true,
@@ -10079,6 +10881,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "加热方式": "即热式",
             "冲洗技术": "超漩虹吸",
@@ -10107,6 +10911,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "加热方式": "即热式",
             "冲洗技术": "多模式冲洗",
@@ -10135,6 +10941,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "加热方式": "即热式",
             "冲洗技术": "超漩虹吸",
@@ -10163,6 +10971,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "加热方式": "即热式",
             "冲洗技术": "超漩虹吸",
@@ -10191,6 +11001,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "加热方式": "即热式",
             "冲洗技术": "超漩虹吸",
@@ -10219,6 +11031,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "加热方式": "即热式",
             "座圈抗菌": true,
@@ -10247,6 +11061,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "加热方式": "即热式",
             "冲洗技术": "多模式冲洗",
@@ -10275,6 +11091,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "加热方式": "即热式",
             "冲洗技术": "超漩虹吸静音",
@@ -10303,6 +11121,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "加热方式": "即热式",
             "座圈抗菌": true,
@@ -10331,6 +11151,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "加热方式": "即热式",
             "座圈抗菌": true,
@@ -10359,6 +11181,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "加热方式": "即热式",
             "冲洗技术": "脉冲水流",
@@ -10387,6 +11211,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "加热方式": "即热式",
             "座圈抗菌": true,
@@ -10415,6 +11241,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "加热方式": "即热式",
             "座圈抗菌": true,
@@ -10443,6 +11271,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "加热方式": "即热式",
             "冲洗技术": "卫洗丽",
@@ -10471,6 +11301,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "加热方式": "即热式",
             "冲洗技术": "多模式冲洗",
@@ -10499,6 +11331,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "加热方式": "即热式",
             "冲洗技术": "超漩虹吸",
@@ -10524,9 +11358,13 @@
           "model": "S3Pro(DCQ661P-305)",
           "price_low": 1400.0,
           "price_high": 1800.0,
-          "price_collected_at": "2026-08-02",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "无水压限制": true
           },
@@ -10545,11 +11383,15 @@
           "id": 496,
           "brand": "九牧",
           "model": "X70",
-          "price_low": 6140.0,
+          "price_low": 5570.0,
           "price_high": 6800.0,
-          "price_collected_at": "2026-08-01",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "加热方式": "即热式",
             "冲洗技术": "翻转冲刷",
@@ -10562,9 +11404,9 @@
             "座圈抗菌": 0.0,
             "无水压限制": 0.0,
             "保修_年": 0.0,
-            "价格_low": 35.9445
+            "价格_low": 40.166
           },
-          "total_score": 82.5
+          "total_score": 83.4
         },
         {
           "id": 497,
@@ -10575,6 +11417,8 @@
           "price_collected_at": "2026-08-01",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "加热方式": "即热式",
             "翻盖方式": "自动感应"
@@ -10673,6 +11517,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "类型": "空气能",
             "升数_L": 200,
@@ -10699,6 +11545,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "类型": "燃气",
             "恒温技术": "水量伺服",
@@ -10725,6 +11573,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "恒温技术": "水量伺服",
             "升数_L": 14.0,
@@ -10751,6 +11601,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "类型": "燃气",
             "恒温技术": "双控伺服",
@@ -10777,6 +11629,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "类型": "燃气",
             "恒温技术": "双控伺服",
@@ -10803,6 +11657,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "类型": "燃气",
             "恒温技术": "双控伺服",
@@ -10829,6 +11685,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "类型": "燃气",
             "恒温技术": "双控伺服",
@@ -10855,6 +11713,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "类型": "燃气",
             "恒温技术": "双控伺服",
@@ -10881,6 +11741,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "恒温技术": "双控伺服",
             "升数_L": 18.0,
@@ -10907,6 +11769,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "恒温技术": "水量伺服",
             "升数_L": 14.0,
@@ -10933,6 +11797,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "类型": "燃气",
             "保修_年": 6,
@@ -10959,6 +11825,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "类型": "燃气",
             "恒温技术": "水量伺服",
@@ -10985,6 +11853,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "类型": "燃气",
             "恒温技术": "水量伺服",
@@ -11011,6 +11881,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "恒温技术": "水量伺服",
             "升数_L": 14.0,
@@ -11037,6 +11909,8 @@
           "price_collected_at": "2026-08-02",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "恒温技术": "燃气比例阀",
             "升数_L": 14.0,
@@ -11063,6 +11937,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "类型": "燃气",
             "恒温技术": "水量伺服",
@@ -11089,6 +11965,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "恒温技术": "双控伺服(恒温王)",
             "升数_L": 18.0,
@@ -11115,6 +11993,8 @@
           "price_collected_at": "2026-08-02",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "类型": "电储水",
             "保修_年": 3,
@@ -11141,6 +12021,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "类型": "燃气",
             "恒温技术": "燃气比例阀",
@@ -11167,6 +12049,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "类型": "燃气",
             "恒温技术": "燃气比例阀",
@@ -11193,6 +12077,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "类型": "燃气",
             "保修_年": 10,
@@ -11219,6 +12105,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "类型": "电储水",
             "升数_L": 60,
@@ -11245,6 +12133,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "类型": "燃气",
             "恒温技术": "水量伺服",
@@ -11271,6 +12161,8 @@
           "price_collected_at": "2026-08-02",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "类型": "电储水",
             "升数_L": 60,
@@ -11297,6 +12189,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "类型": "燃气",
             "保修_年": 3,
@@ -11323,6 +12217,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "类型": "燃气",
             "保修_年": 3,
@@ -11349,6 +12245,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "类型": "燃气",
             "恒温技术": "双控伺服",
@@ -11375,6 +12273,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "类型": "燃气",
             "保修_年": 6,
@@ -11401,6 +12301,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "类型": "电储水",
             "升数_L": 60,
@@ -11427,6 +12329,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "类型": "燃气",
             "恒温技术": "燃气比例阀",
@@ -11453,6 +12357,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "类型": "燃气",
             "保修_年": 3,
@@ -11474,11 +12380,15 @@
           "id": 549,
           "brand": "海尔",
           "model": "KL3PRO(JSQ31-16KL3PRO-FPXCU1)",
-          "price_low": 970.0,
+          "price_low": 1000.0,
           "price_high": 1440.0,
-          "price_collected_at": "2026-08-02",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "升数_L": 16.0,
             "恒温技术": "无级变频水伺服"
@@ -11489,9 +12399,9 @@
             "升数_L": 1.6043,
             "噪音_dB": 0.0,
             "保修_年": 0.0,
-            "价格_low": 73.3859
+            "价格_low": 72.1809
           },
-          "total_score": 38.3
+          "total_score": 38.0
         },
         {
           "id": 548,
@@ -11499,9 +12409,13 @@
           "model": "KL7PRO(JSQ31-16KL7PROFU1)",
           "price_low": 1800.0,
           "price_high": 2400.0,
-          "price_collected_at": "2026-08-02",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "升数_L": 16.0,
             "恒温技术": "无级变频水伺服"
@@ -11522,9 +12436,13 @@
           "model": "KL7S(JSQ31-16KL7SFPAGU1)",
           "price_low": 2800.0,
           "price_high": 3500.0,
-          "price_collected_at": "2026-08-02",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "升数_L": 16.0,
             "恒温技术": "双循环恒温"
@@ -11545,9 +12463,13 @@
           "model": "GD32(JSQ31-GD32)",
           "price_low": 1830.0,
           "price_high": 2400.0,
-          "price_collected_at": "2026-08-02",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "升数_L": 16.0
           },
@@ -11646,6 +12568,8 @@
           "price_collected_at": "2026-08-01",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_kg": 12.0,
             "洗净比": 1.36,
@@ -11666,11 +12590,15 @@
           "id": 495,
           "brand": "小天鹅",
           "model": "小乌梅5.0洗烘套装",
-          "price_low": 9738.53,
+          "price_low": 8869.265,
           "price_high": 12543.0,
-          "price_collected_at": "2026-08-01",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "容量_kg": 12.0,
             "洗净比": 1.36,
@@ -11682,9 +12610,9 @@
             "烘干方式": 85.0,
             "洗净比": 100.0,
             "保修_年": 0.0,
-            "价格_low": 21.4329
+            "价格_low": 26.0721
           },
-          "total_score": 81.6
+          "total_score": 82.5
         },
         {
           "id": 208,
@@ -11695,6 +12623,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "电机类型": "FPA直驱",
             "保修_年": 10,
@@ -11721,6 +12651,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_kg": 10,
             "电机类型": "FPA直驱",
@@ -11747,6 +12679,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_kg": 10.0,
             "电机类型": "FPA直驱变频",
@@ -11773,6 +12707,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_kg": 10,
             "电机类型": "DD直驱",
@@ -11799,6 +12735,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "电机类型": "DD直驱",
             "保修_年": 3,
@@ -11825,6 +12763,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "电机类型": "DD直驱",
             "保修_年": 3,
@@ -11851,6 +12791,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_kg": 10,
             "电机类型": "DD直驱",
@@ -11877,6 +12819,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_kg": 10,
             "电机类型": "DD直驱",
@@ -11903,6 +12847,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_kg": 10,
             "电机类型": "DD直驱",
@@ -11929,6 +12875,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_kg": 10,
             "电机类型": "BLDC变频",
@@ -11955,6 +12903,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_kg": 10.0,
             "电机类型": "BLDC变频",
@@ -11981,6 +12931,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_kg": 10,
             "电机类型": "BLDC变频",
@@ -12007,6 +12959,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_kg": 9.5,
             "电机类型": "BLDC变频",
@@ -12033,6 +12987,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "电机类型": "FPA直驱",
             "保修_年": 3,
@@ -12059,6 +13015,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_kg": 10,
             "电机类型": "FPA直驱",
@@ -12085,6 +13043,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_kg": 10,
             "电机类型": "DD直驱",
@@ -12111,6 +13071,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_kg": 10,
             "电机类型": "DD直驱",
@@ -12137,6 +13099,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_kg": 10,
             "电机类型": "BLDC变频",
@@ -12163,6 +13127,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_kg": 10,
             "电机类型": "DD直驱",
@@ -12189,6 +13155,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_kg": 10,
             "电机类型": "BLDC变频",
@@ -12215,6 +13183,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_kg": 10,
             "电机类型": "BLDC变频",
@@ -12241,6 +13211,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_kg": 10,
             "电机类型": "DD直驱",
@@ -12267,6 +13239,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_kg": 10.0,
             "电机类型": "FPA直驱变频",
@@ -12293,6 +13267,8 @@
           "price_collected_at": "2026-08-02",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "电机类型": "BLDC变频",
             "保修_年": 3,
@@ -12319,6 +13295,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "电机类型": "BLDC变频",
             "保修_年": 3,
@@ -12345,6 +13323,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_kg": 10.0,
             "电机类型": "DD直驱",
@@ -12371,6 +13351,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "电机类型": "BLDC变频",
             "保修_年": 1,
@@ -12397,6 +13379,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "容量_kg": 10,
             "电机类型": "BLDC变频",
@@ -12420,9 +13404,13 @@
           "model": "云溪4.0(XQG100-BLEG583HU1)",
           "price_low": 2800.0,
           "price_high": 3500.0,
-          "price_collected_at": "2026-08-02",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "容量_kg": 10.0,
             "洗净比": 1.21,
@@ -12444,9 +13432,13 @@
           "model": "小乌梅3.0(TG10VE40)",
           "price_low": 2200.0,
           "price_high": 4000.0,
-          "price_collected_at": "2026-08-02",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "容量_kg": 10.0,
             "洗净比": 1.21
@@ -12561,11 +13553,15 @@
           "id": 499,
           "brand": "海信",
           "model": "85E8Q",
-          "price_low": 9953.0,
+          "price_low": 9976.5,
           "price_high": 11499.0,
-          "price_collected_at": "2026-08-01",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "尺寸_寸": 85.0,
             "面板类型": "MiniLED",
@@ -12582,7 +13578,7 @@
             "色域_pct": 80.0,
             "音响": 95.0,
             "保修_年": 0.0,
-            "价格_low": 46.3079
+            "价格_low": 46.2024
           },
           "total_score": 79.0
         },
@@ -12590,11 +13586,15 @@
           "id": 498,
           "brand": "TCL",
           "model": "T7L Pro 75寸",
-          "price_low": 6403.54,
+          "price_low": 6001.18,
           "price_high": 7249.0,
-          "price_collected_at": "2026-08-01",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "尺寸_寸": 75.0,
             "面板类型": "QD-MiniLED",
@@ -12610,9 +13610,9 @@
             "色域_pct": 80.0,
             "音响": 0.0,
             "保修_年": 0.0,
-            "价格_low": 66.0529
+            "价格_low": 68.9584
           },
-          "total_score": 62.6
+          "total_score": 63.0
         },
         {
           "id": 322,
@@ -12623,6 +13623,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "尺寸_寸": 75,
             "面板类型": "MiniLED",
@@ -12653,6 +13655,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "保修_年": 1,
             "音响": "2.1声道",
@@ -12683,6 +13687,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "尺寸_寸": 85,
             "面板类型": "QD-MiniLED",
@@ -12713,6 +13719,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "尺寸_寸": 75,
             "面板类型": "QD-MiniLED",
@@ -12743,6 +13751,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "尺寸_寸": 75,
             "面板类型": "MiniLED",
@@ -12773,6 +13783,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "保修_年": 1,
             "音响": "2.1声道杜比",
@@ -12803,6 +13815,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "尺寸_寸": 77,
             "面板类型": "QD-OLED",
@@ -12833,6 +13847,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "保修_年": 1,
             "音响": "杜比全景声",
@@ -12863,6 +13879,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "尺寸_寸": 75,
             "面板类型": "ULED",
@@ -12893,6 +13911,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "尺寸_寸": 77,
             "面板类型": "OLED",
@@ -12923,6 +13943,8 @@
           "price_collected_at": "2026-08-02",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "保修_年": 1,
             "音响": "屏幕发声",
@@ -12953,6 +13975,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "面板类型": "QD-MiniLED",
             "分区数": 640.0,
@@ -12983,6 +14007,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "保修_年": 1,
             "音响": "2.0声道",
@@ -13013,6 +14039,8 @@
           "price_collected_at": "2026-08-02",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "面板类型": "OLED",
             "刷新率_Hz": 120.0,
@@ -13043,6 +14071,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "保修_年": 1,
             "音响": "2.1声道杜比",
@@ -13073,6 +14103,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "保修_年": 1,
             "音响": "2.1声道",
@@ -13103,6 +14135,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "保修_年": 1,
             "音响": "2.0声道",
@@ -13133,6 +14167,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "尺寸_寸": 85,
             "面板类型": "MiniLED",
@@ -13163,6 +14199,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "保修_年": 1,
             "音响": "2.1声道杜比",
@@ -13193,6 +14231,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "尺寸_寸": 85,
             "面板类型": "MiniLED",
@@ -13223,6 +14263,8 @@
           "price_collected_at": "2026-08-02",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "保修_年": 1,
             "音响": "杜比全景声",
@@ -13253,6 +14295,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "尺寸_寸": 85,
             "面板类型": "MiniLED",
@@ -13283,6 +14327,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "尺寸_寸": 75,
             "面板类型": "MiniLED",
@@ -13313,6 +14359,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "保修_年": 1,
             "音响": "2.0声道",
@@ -13343,6 +14391,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "尺寸_寸": 75,
             "面板类型": "MiniLED",
@@ -13373,6 +14423,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "尺寸_寸": 75,
             "面板类型": "MiniLED",
@@ -13403,6 +14455,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "尺寸_寸": 75,
             "面板类型": "MiniLED",
@@ -13433,6 +14487,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "保修_年": 1,
             "音响": "2.1声道",
@@ -13463,6 +14519,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "尺寸_寸": 75,
             "面板类型": "LCD",
@@ -13493,6 +14551,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "保修_年": 1,
             "音响": "2.0声道",
@@ -13520,9 +14580,14 @@
           "model": "E8Q Pro 75寸",
           "price_low": 8000.0,
           "price_high": 9000.0,
-          "price_collected_at": "2026-08-02",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "分区数",
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "尺寸_寸": 75.0,
             "面板类型": "MiniLED",
@@ -13546,9 +14611,14 @@
           "model": "Q10L 75寸",
           "price_low": 7000.0,
           "price_high": 8000.0,
-          "price_collected_at": "2026-08-02",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "分区数",
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "尺寸_寸": 75.0,
             "面板类型": "QD-MiniLED",
@@ -13570,11 +14640,15 @@
           "id": 500,
           "brand": "雷鸟",
           "model": "鹤6 Ultra 85寸",
-          "price_low": 6473.11,
+          "price_low": 5557.703333333333,
           "price_high": 7646.0,
-          "price_collected_at": "2026-08-01",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "尺寸_寸": 85.0,
             "面板类型": "MiniLED",
@@ -13588,9 +14662,9 @@
             "色域_pct": 0.0,
             "音响": 0.0,
             "保修_年": 0.0,
-            "价格_low": 65.5692
+            "价格_low": 72.3955
           },
-          "total_score": 58.7
+          "total_score": 59.9
         },
         {
           "id": 513,
@@ -13598,9 +14672,13 @@
           "model": "A5F Pro 55寸",
           "price_low": 3500.0,
           "price_high": 5000.0,
-          "price_collected_at": "2026-08-02",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "尺寸_寸": 55.0
           },
@@ -13695,6 +14773,8 @@
           "price_collected_at": "2026-08-02",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "风量_m3": 19.0,
             "热效率_pct": 4.75,
@@ -13721,6 +14801,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "风量_m3": 18.5,
             "热效率_pct": 4.6,
@@ -13747,6 +14829,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "风量_m3": 19.5,
             "热效率_pct": 4.85,
@@ -13773,6 +14857,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "风量_m3": 18.0,
             "热效率_pct": 4.6,
@@ -13799,6 +14885,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "风量_m3": 19.5,
             "热效率_pct": 4.75,
@@ -13825,6 +14913,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "类型": "蒸烤一体",
             "风量_m3": 20,
@@ -13851,6 +14941,8 @@
           "price_collected_at": "2026-08-02",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "类型": "蒸烤一体",
             "风量_m3": 19,
@@ -13877,6 +14969,8 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "类型": "蒸烤一体",
             "风量_m3": 20,
@@ -13903,6 +14997,8 @@
           "price_collected_at": "2026-08-02",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "类型": "消毒柜款",
             "风量_m3": 18,
@@ -13929,6 +15025,8 @@
           "price_collected_at": "2026-08-02",
           "needs_review": false,
           "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
           "dimensions": {
             "类型": "蒸烤一体",
             "风量_m3": 18,
@@ -13952,9 +15050,13 @@
           "model": "晴空FX90 PRO",
           "price_low": 7000.0,
           "price_high": 9000.0,
-          "price_collected_at": "2026-08-02",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "风量_m3": 26.0,
             "静压_Pa": 1100.0
@@ -13975,9 +15077,13 @@
           "model": "D6ZK",
           "price_low": 9700.0,
           "price_high": 12800.0,
-          "price_collected_at": "2026-08-02",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "风量_m3": 21.5,
             "静压_Pa": 1050.0
@@ -13998,9 +15104,13 @@
           "model": "ET50BC",
           "price_low": 10000.0,
           "price_high": 12000.0,
-          "price_collected_at": "2026-08-02",
+          "price_collected_at": "2026-08-07",
           "needs_review": false,
           "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
           "dimensions": {},
           "scores": {
             "类型": 0.0,

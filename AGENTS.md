@@ -31,6 +31,9 @@ home-appliance-guide/
     update_verified_prices.py  # 京东浏览器实测国补后价格写库
     apply_scoring_changes.py   # 评分变更：价格维度入分 + 主观维度降权
     fix_category17_scope.py    # 数据修复：cat-17 非集成灶产品隐藏 + 编造维度删除 + 占位型号标记（幂等）
+    verify_web.py           # 核验数据注入：web 多源调研结果（verification/*.json）→ data_points（幂等，支持 override 修正/补全）
+    backfill_datapoints.py  # 数据点回填：dimensions 有值但无数据点的维度补建原始源记录（幂等）
+    verification/           # web 多源核验结果（cat-1.json 已完成试点，其他品类待补）
     export_static_data.py  # 导出 data.json 供 GitHub Pages 使用
     scrapers/
       base.py           # 采集调度器：低频限速 + 失败退避 + 统一落库
@@ -102,7 +105,7 @@ python -m backend.scrapers.verify
 | 数据点 | 3419 组（web_research 为主，仅 34 组 jd_html/manufacturer_html） |
 | data.json | 403 KB（含 scores、price_collected_at、needs_review、data_incomplete） |
 
-置信度分布（verify 报告，实时聚合）：中 0.5~0.9 = 1704（84.9%）、低 0.3~0.5 = 219（10.9%）、极低 <0.3 = 84（4.2%）、高 ≥0.9 = 1、缺失 0。**注意：DB 中 3419 条数据点全部为 pending 状态（0 条 verified），置信度为单来源基础值 0.5/0.6；verify 报告数字为实时聚合，未写回。**
+置信度分布（verify 报告，实时聚合）：中 0.5~0.9 = 1704（84.9%）、低 0.3~0.5 = 219（10.9%）、极低 <0.3 = 84（4.2%）、高 ≥0.9 = 1、缺失 0。**核验管线已打通（2026-08-07）**：data_points 4526 条，83 组已多源 verified（cat-1 试点：12 款产品 19 个维度，含 4 处参数修正 + 3 款补全）；其余仍为单源 pending，待逐品类批次核验。前端按产品展示核验徽标（✓已核验 / 部分核验）。
 
 价格说明：`price_low` 为浏览器实测国补后/到手价（20 款已核验），`price_high` 为原价；价格参与综合评分（权重 50，对数归一化）。
 

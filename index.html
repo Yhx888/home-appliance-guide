@@ -206,6 +206,8 @@ table{font-size:15px}
 .dim-table-dynamic td a.jd-link .jd-brand{font-weight:700}
 .dim-table-dynamic td a.jd-link .jd-badge{display:inline-block;margin-left:6px;padding:1px 6px;font-size:11px;line-height:1.4;border-radius:3px;background:var(--accent);color:#fff;vertical-align:1px}
 .dim-table-dynamic td a.jd-link .jd-badge-warn{background:#a33325}
+.dim-table-dynamic td a.jd-link .jd-badge-ok{background:var(--success)}
+.dim-table-dynamic td a.jd-link .jd-badge-soft{background:#8a7a5c;opacity:.75}
 .price-time{font-size:11px;color:#999;margin-top:2px}
 /* 移动端小字号提升（置于基础规则之后，确保同具体性覆盖生效） */
 @media(max-width:640px){
@@ -2232,6 +2234,8 @@ function renderDimTable(panel, products, dims) {
       '&enc=utf-8" target="_blank" rel="nofollow"><span class="jd-brand">' + escapeHtml(p.brand) +
       '</span>' + (p.model ? '<span class="jd-model">' + escapeHtml(p.model) + '</span>' : '') +
       (isGeneric ? '<span class="jd-badge">代表款</span>' : '') +
+      (p.verify_status === 'verified' ? '<span class="jd-badge jd-badge-ok" title="核心参数已多源核验（京东/苏宁/官方等）">✓已核验</span>' : '') +
+      (p.verify_status === 'partial' ? '<span class="jd-badge jd-badge-soft" title="部分参数已多源核验">部分核验</span>' : '') +
       (p.data_incomplete ? '<span class="jd-badge jd-badge-warn">数据待补充</span>' : '') +
       (p.needs_review ? '<span class="jd-badge jd-badge-warn">待核查</span>' : '') + '</a></td>';
 

@@ -64,6 +64,8 @@ class ProductOut(BaseModel):
     total_score: float = 0
     needs_review: bool = False  # 人工核查标记（占位型号等）
     data_incomplete: bool = False  # 维度缺失权重 ≥30%，评分不可信
+    verify_dims: list[str] = []  # 已多源核验的维度
+    verify_status: str = ""  # verified（核心维度全核验）/ partial / 空
 
     class Config:
         from_attributes = True

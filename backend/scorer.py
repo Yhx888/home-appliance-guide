@@ -1,6 +1,7 @@
 """加权评分排序引擎 — 全局 min/max 归一化（价格维度对数归一化）"""
 import json
 import math
+from statistics import mean, stdev
 from sqlalchemy.orm import Session
 
 from backend.database import Dimension, Product
@@ -93,6 +94,43 @@ ENUM_SCORE_MAP: dict[str, dict[str, int]] = {
 
 # 价格维度 → 产品列映射（价格为单一事实源，不入 dimensions）
 PRICE_DIM_KEYS = {"价格_low": "price_low", "价格_high": "price_high"}
+
+
+def compute_verify_status(db) -> dict[tuple[int, str], str]:
+    """多源核验状态：{(product_id, dim_key): 'verified'|'disputed'|'pending'}。
+
+    判定（与 verify.py 同一逻辑）：≥2 个不同 source 且数值 CV<15% → verified；
+    CV>20% → disputed；否则 pending。单源一律 pending。
+    """
+    from backend.database import DataPoint, DataSource
+
+    rows = (
+        db.query(DataPoint.product_id, DataPoint.dimension_key, DataSource.id, DataPoint.numeric_value)
+        .join(DataSource, DataPoint.source_id == DataSource.id)
+        .all()
+    )
+    groups: dict[tuple[int, str], list[tuple[int, float]]] = {}
+    for pid, dk, sid, num in rows:
+        if num is None:
+            continue
+        groups.setdefault((pid, dk), []).append((sid, float(num)))
+
+    result: dict[tuple[int, str], str] = {}
+    for key, vals in groups.items():
+        sources = {s for s, _ in vals}
+        nums = [v for _, v in vals]
+        if len(sources) < 2:
+            result[key] = "pending"
+            continue
+        m = mean(nums)
+        cv = stdev(nums) / m if len(nums) > 1 and abs(m) > 1e-10 else 0.0
+        if cv < 0.15:
+            result[key] = "verified"
+        elif cv > 0.20:
+            result[key] = "disputed"
+        else:
+            result[key] = "pending"
+    return result
 
 
 class Scorer:

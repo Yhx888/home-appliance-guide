@@ -50,6 +50,17 @@
 
 ---
 
+## 数据核验状态（2026-08-07 新增）
+
+- data.json 每个产品带 `verify_dims`（已多源核验的维度 key 列表）与 `verify_status`：
+  - `verified`：品类核心维度（权重 top3）全部多源核验 → 前端显示绿色 "✓已核验" 徽标
+  - `partial`：部分维度多源核验 → 显示 "部分核验" 徽标
+  - 空：无任何多源核验
+- 多源判定逻辑与 verify.py 一致：≥2 个不同来源且数值 CV<15% → verified
+- 核验数据流程：`backend/verification/*.json`（web 调研结果）→ `backend/verify_web.py` 注入
+  → `python -m backend.scrapers.verify --apply` 多源判定写回 → 重导 data.json
+- API 模式同样返回 verify_dims/verify_status（routers 内缓存，数据变更后重启刷新）
+
 ## 筛选面板
 
 ### 型号搜索（2026-08-07 新增）
@@ -90,7 +101,7 @@
 - 品牌型号列为京东搜索链接
 - 表格容器 `.dim-table-wrap` 由 JS 动态创建（复用/创建，插在 filter-panel 后面），内部为 `.table-wrap > table.dim-table-dynamic`
 - 价格列取产品列 `price_low`（`formatPrice` 格式化，≥1 万显示"x.x万"）；有 `price_collected_at` 时显示"更新于 YYYY-MM-DD"小字
-- 型号列徽标："代表款"（纯中文 model）、"数据待补充"（data_incomplete）、"待核查"（needs_review）
+- 型号列徽标："代表款"（纯中文 model）、"✓已核验"（核心维度全多源核验，绿色）、"部分核验"（部分参数已多源核验）、"数据待补充"（data_incomplete）、"待核查"（needs_review）
 - 文本型维度（type=text）不参与表格展示
 
 ### 滚动吸顶
