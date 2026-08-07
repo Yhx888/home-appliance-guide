@@ -37,20 +37,6 @@ def get_fill_values(cat_slug: str, brand: str, price_low: float, model: str = ""
                 vals["保修_年"] = w
                 break
 
-        share_map = {"方太": 17, "老板": 17, "美的": 10, "华帝": 10, "海尔": 8, "西门子": 3}
-        for b, s in share_map.items():
-            if b in brand:
-                vals["线上份额_pct"] = s
-                break
-        vals.setdefault("线上份额_pct", 3.0)
-
-        satis_map = {"方太": 5.0, "老板": 5.0, "美的": 4.0, "华帝": 4.0, "海尔": 4.0, "西门子": 3.0}
-        for b, s in satis_map.items():
-            if b in brand:
-                vals["满意度评分"] = s
-                break
-        vals.setdefault("满意度评分", 3.5)
-
         vals["能效等级"] = "一级"
         return vals
 

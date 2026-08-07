@@ -52,6 +52,9 @@
 
 ## 筛选面板
 
+### 型号搜索（2026-08-07 新增）
+`filter-search` 输入框：品牌/型号关键词，回车/失焦即时筛选（静态模式本地过滤；API 模式走 `search` 参数）。
+
 ### 优先级标签
 17 品类各有预设标签，定义在 `PRIORITY_TAGS`（数组元素 `[标签文字, sort_key, sort_dir]`，默认选中"综合推荐"）。
 
@@ -69,13 +72,13 @@
   由产品列 `price_low` 承载，参与综合分与单维排序；`price_low` 为浏览器实测的国补后/到手价
 
 ### 默认排序
-- 综合推荐（默认）：需人工核查（`needs_review`）排最后 → 通用款（"代表款"徽标）次之 → 具体型号按 `total_score` 降序
+- 综合推荐（默认）：需人工核查（`needs_review`）排最后 → 数据不完整（`data_incomplete`，缺失权重占比 ≥30%）次之 → 通用款（"代表款"徽标，纯中文 model 视为代表款）→ 具体型号按 `total_score` 降序
 
 ### 品牌筛选
-标签样式，点击切换选中。收集后通过 `brands` 参数传给 API（"全部"标签 `data-brand="__all__"` 清空选中）。
+标签样式，点击切换选中并**立即刷新**（无需等"应用筛选"）。品牌标签始终基于品类**全量产品**生成（`state.allProducts`），不受当前筛选影响——修复了"筛选后品牌标签坍缩"问题。"全部"标签清空选中并刷新表格。
 
 ### 价格筛选
-`.price-range-row` 内两个数字输入框（`data-price="min"/"max"`），对应 `price_min` / `price_max`；=0 视为未过滤，与产品价格区间有交集即命中。
+`.price-range-row` 内两个数字输入框（`data-price="min"/"max"`），对应 `price_min` / `price_max`；=0 视为未过滤，与产品价格区间有交集即命中。失焦即生效（与品牌/搜索交互一致）。
 
 ---
 
@@ -87,6 +90,7 @@
 - 品牌型号列为京东搜索链接
 - 表格容器 `.dim-table-wrap` 由 JS 动态创建（复用/创建，插在 filter-panel 后面），内部为 `.table-wrap > table.dim-table-dynamic`
 - 价格列取产品列 `price_low`（`formatPrice` 格式化，≥1 万显示"x.x万"）；有 `price_collected_at` 时显示"更新于 YYYY-MM-DD"小字
+- 型号列徽标："代表款"（纯中文 model）、"数据待补充"（data_incomplete）、"待核查"（needs_review）
 - 文本型维度（type=text）不参与表格展示
 
 ### 滚动吸顶
@@ -101,14 +105,11 @@
 - 配合 `higher_better` 反转判断
 
 ### 星级评分
-`total_score` 映射为星级（阈值按全库分布校准，中间 3 档覆盖约 77%）：
+`total_score` 映射为星级，**按品类内 80/60/40/20 分位校准**（阈值由 renderDimTable 基于正常产品计算，排除 needs_review/data_incomplete）：
 ```
-≥80 → ★★★★★
-≥65 → ★★★★☆
-≥50 → ★★★☆☆
-≥35 → ★★☆☆☆
-<35 → ★☆☆☆☆
+≥p80 → ★★★★★   ≥p60 → ★★★★☆   ≥p40 → ★★★☆☆   ≥p20 → ★★☆☆☆   <p20 → ★☆☆☆☆
 ```
+正常产品数 <5 时兑底绝对阈值（≥80/65/50/35）。星标 `title` 显示综合推荐分（1 位小数），数据不完整产品标注"仅供参考"。
 
 ---
 
@@ -140,7 +141,7 @@
 | `renderDimTable(panel, products, dims)` | 渲染动态对比表格（内部嵌套 `getDimClass` 做分位颜色分级） |
 | `formatPrice(val)` | 价格格式化（≥1 万 → "x.x万"） |
 | `formatDimValue(val, type, unit)` | 维度值格式化（bool → ✅/❌） |
-| `getStars(score)` | 分数转星级 |
+| `getStars(score, thresholds)` | 分数转星级（品类内分位阈值；无阈值时兑底绝对阈值） |
 | `escapeHtml(str)` | HTML 转义（品牌/型号文本安全输出） |
 
 ---

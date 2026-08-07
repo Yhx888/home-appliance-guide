@@ -62,6 +62,8 @@ class ProductOut(BaseModel):
     rating: float = 0
     dim_scores: dict[str, ProductDim] = {}  # 标准化得分
     total_score: float = 0
+    needs_review: bool = False  # 人工核查标记（占位型号等）
+    data_incomplete: bool = False  # 维度缺失权重 ≥30%，评分不可信
 
     class Config:
         from_attributes = True

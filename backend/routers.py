@@ -1,6 +1,8 @@
 """API 路由"""
 import json
+import re
 from fastapi import APIRouter, Depends, Query, HTTPException
+from sqlalchemy import or_
 from sqlalchemy.orm import Session
 
 from backend.database import get_db, Category, Dimension, Product, DataPoint
@@ -8,6 +10,13 @@ from backend.schemas import CategoryOut, DimensionOut, ProductOut, ProductListOu
 from backend.scorer import Scorer
 
 router = APIRouter()
+
+# 通用款判定：model 为"通用款"或纯中文无型号字符（如"集成灶蒸烤一体"）→ 品牌代表款
+GENERIC_MODEL_RE = re.compile(r"^[\u4e00-\u9fa5]+$")
+
+
+def is_generic_product(brand: str, model: str) -> bool:
+    return "通用款" in (brand + model) or bool(model and GENERIC_MODEL_RE.match(model))
 
 
 @router.get("/categories", response_model=list[CategoryOut])
@@ -41,7 +50,7 @@ def list_categories(db: Session = Depends(get_db)):
             slug=cat.slug,
             icon=cat.icon or "",
             sort_order=cat.sort_order or 0,
-            product_count=db.query(Product).filter(Product.category_id == cat.id).count(),
+            product_count=db.query(Product).filter(Product.category_id == cat.id, Product.hidden == False).count(),
             dimensions=dim_out,
         ))
     return result
@@ -53,6 +62,7 @@ def list_products(
     brands: str = Query("", description="品牌筛选，逗号分隔"),
     price_min: float = Query(0),
     price_max: float = Query(0),
+    search: str = Query("", description="品牌/型号关键词搜索"),
     sort_key: str = Query("", description="排序维度 key"),
     sort_dir: str = Query("desc", pattern="^(asc|desc)$"),
     weights: str = Query("", description="权重 JSON"),
@@ -65,8 +75,10 @@ def list_products(
     if not category:
         raise HTTPException(status_code=404, detail="品类不存在")
 
-    # 获取该品类所有产品（用于全局归一化）
-    all_products = db.query(Product).filter(Product.category_id == category.id).all()
+    # 获取该品类所有产品（用于全局归一化；排除 hidden）
+    all_products = db.query(Product).filter(
+        Product.category_id == category.id, Product.hidden == False
+    ).all()
 
     # 获取维度定义
     dims = db.query(Dimension).filter(Dimension.category_id == category.id).all()
@@ -92,11 +104,14 @@ def list_products(
         weights_dict = parsed
 
     # 筛选（price_min/price_max = 0 视为未过滤，不排除价格未知产品）
-    query = db.query(Product).filter(Product.category_id == category.id)
+    query = db.query(Product).filter(Product.category_id == category.id, Product.hidden == False)
     if brands:
         brand_list = [b.strip() for b in brands.split(",") if b.strip()]
         if brand_list:
             query = query.filter(Product.brand.in_(brand_list))
+    if search:
+        like = f"%{search.strip()}%"
+        query = query.filter(or_(Product.brand.like(like), Product.model.like(like)))
     if price_min > 0:
         query = query.filter(Product.price_high >= price_min)
     if price_max > 0:
@@ -114,7 +129,7 @@ def list_products(
     review_ids = {
         row[0] for row in db.query(Product.id)
         .join(DataPoint, DataPoint.product_id == Product.id)
-        .filter(Product.category_id == category.id, DataPoint.status == "manual_review_needed")
+        .filter(Product.category_id == category.id, Product.hidden == False, DataPoint.status == "manual_review_needed")
         .distinct()
         .all()
     }
@@ -124,6 +139,7 @@ def list_products(
     for p in filtered:
         scores = scorer.calc_product_scores(p, dim_map, weights_dict, all_dim_values)
         total_score = Scorer.calc_total_score(scores)
+        data_incomplete = Scorer.missing_weight_ratio(scores) >= 0.3
         product_list.append(ProductOut(
             id=p.id,
             category_id=p.category_id,
@@ -135,6 +151,8 @@ def list_products(
             rating=p.rating or 0,
             dim_scores=scores,
             total_score=total_score,
+            needs_review=p.id in review_ids,
+            data_incomplete=data_incomplete,
         ))
 
     # 排序：单维度按归一化分（缺失维度恒有 normalized=0 条目，按 0 分参与排序），否则按综合分
@@ -144,11 +162,12 @@ def list_products(
         reverse = (sort_dir == "desc") != (dim_def is not None and not dim_def.higher_better)
         product_list.sort(key=lambda x: x.dim_scores.get(sort_key, ProductDim(normalized=0, weight=0)).normalized, reverse=reverse)
     else:
-        # 默认综合排序：需人工核查 → 通用款 → 具体型号按综合分降序
+        # 默认综合排序：需人工核查 → 数据不完整 → 通用款 → 具体型号按综合分降序
         product_list.sort(
             key=lambda x: (
                 1 if x.id in review_ids else 0,
-                1 if "通用款" in (x.brand + x.model) else 0,
+                1 if x.data_incomplete else 0,
+                1 if is_generic_product(x.brand, x.model) else 0,
                 -x.total_score,
             )
         )
@@ -176,8 +195,10 @@ def get_product(product_id: int, db: Session = Depends(get_db)):
     dims = db.query(Dimension).filter(Dimension.category_id == product.category_id).all()
     dim_map = {d.dim_key: d for d in dims}
 
-    # 获取同品类所有产品用于全局归一化
-    all_products = db.query(Product).filter(Product.category_id == product.category_id).all()
+    # 获取同品类所有产品用于全局归一化（排除 hidden）
+    all_products = db.query(Product).filter(
+        Product.category_id == product.category_id, Product.hidden == False
+    ).all()
     all_dim_values = Scorer.collect_all_dim_values(all_products, dim_map)
 
     scorer = Scorer(db)
@@ -195,6 +216,7 @@ def get_product(product_id: int, db: Session = Depends(get_db)):
         rating=product.rating or 0,
         dim_scores=scores,
         total_score=total_score,
+        data_incomplete=Scorer.missing_weight_ratio(scores) >= 0.3,
     )
 
 

@@ -56,6 +56,7 @@ class Product(Base):
     price_collected_at = Column(DateTime, nullable=True, comment="价格采集时间")
     dimensions = Column(JSON, default=dict, comment="维度值 JSON {dim_key: value}")
     rating = Column(Float, default=0, comment="综合评分")
+    hidden = Column(Boolean, default=False, comment="从展示/评分中隐藏（品类错配等）")
     created_at = Column(DateTime, server_default=func.now())
 
     category = relationship("Category", back_populates="products")
@@ -96,6 +97,9 @@ def migrate_schema(engine):
         cols = [row[1] for row in conn.execute(text("PRAGMA table_info(products)"))]
         if "price_collected_at" not in cols:
             conn.execute(text("ALTER TABLE products ADD COLUMN price_collected_at DATETIME"))
+            conn.commit()
+        if "hidden" not in cols:
+            conn.execute(text("ALTER TABLE products ADD COLUMN hidden BOOLEAN DEFAULT 0"))
             conn.commit()
 
 

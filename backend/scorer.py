@@ -1,5 +1,6 @@
-"""加权评分排序引擎 — 全局 min/max 归一化"""
+"""加权评分排序引擎 — 全局 min/max 归一化（价格维度对数归一化）"""
 import json
+import math
 from sqlalchemy.orm import Session
 
 from backend.database import Dimension, Product
@@ -100,8 +101,12 @@ class Scorer:
     def __init__(self, db: Session):
         self.db = db
 
-    def normalize_float(self, value, all_values: list, dim_def: Dimension) -> float:
-        """float 标准化：全局 min/max 归一到 0-100"""
+    def normalize_float(self, value, all_values: list, dim_def: Dimension, log_scale: bool = False) -> float:
+        """float 标准化：全局 min/max 归一到 0-100。
+
+        log_scale=True 时用对数归一化（价格等感知呈倍差的变量）：
+        分数差与"百分比差"成正比，避免高价区间被线性压缩。
+        """
         try:
             v = float(value)
         except (ValueError, TypeError):
@@ -110,21 +115,32 @@ class Scorer:
         nums = []
         for x in all_values:
             try:
-                nums.append(float(x))
+                n = float(x)
             except (ValueError, TypeError):
                 continue
+            if log_scale and n <= 0:
+                continue  # 对数域要求正值
+            nums.append(n)
 
         if not nums:
             return 50
 
-        min_v, max_v = min(nums), max(nums)
+        if log_scale:
+            if v <= 0:
+                return 0
+            min_v, max_v = math.log(min(nums)), math.log(max(nums))
+            lv = math.log(v)
+        else:
+            min_v, max_v = min(nums), max(nums)
+            lv = v
+
         if max_v == min_v:
             return 50
 
         if dim_def.higher_better:
-            return (v - min_v) / (max_v - min_v) * 100
+            return (lv - min_v) / (max_v - min_v) * 100
         else:
-            return (max_v - v) / (max_v - min_v) * 100
+            return (max_v - lv) / (max_v - min_v) * 100
 
     def normalize_enum(self, value, dim_def: Dimension) -> float:
         """enum 标准化：从硬编码映射表获取分数，找不到则按 enum_values 位置降序"""
@@ -158,7 +174,7 @@ class Scorer:
         if value is None:
             return 0
         if dim_def.type == "float":
-            return self.normalize_float(value, all_values, dim_def)
+            return self.normalize_float(value, all_values, dim_def, log_scale=dim_def.dim_key in PRICE_DIM_KEYS)
         elif dim_def.type == "enum":
             return self.normalize_enum(value, dim_def)
         elif dim_def.type == "bool":
@@ -194,11 +210,34 @@ class Scorer:
 
     @staticmethod
     def calc_total_score(dim_scores: dict[str, ProductDim]) -> float:
-        """综合得分 = Σ(normalized × weight) / Σ(weight)"""
-        total_weight = sum(s.weight for s in dim_scores.values())
+        """综合得分 = Σ(normalized × weight) / Σ(weight)
+
+        缺失维度（raw=None，含 price=0 视为无价格）不参与分母：
+        数据未录入不等于参数差，不应按 0 分拖累总分。
+        """
+        included = [s for s in dim_scores.values() if s.raw is not None]
+        total_weight = sum(s.weight for s in included)
         if total_weight == 0:
             return 0
-        return sum(s.normalized * s.weight for s in dim_scores.values()) / total_weight
+        return sum(s.normalized * s.weight for s in included) / total_weight
+
+    @staticmethod
+    def count_missing_dims(dim_scores: dict[str, ProductDim]) -> int:
+        """缺失维度数量（raw=None 的维度），供数据完整性标记使用"""
+        return sum(1 for s in dim_scores.values() if s.raw is None)
+
+    @staticmethod
+    def missing_weight_ratio(dim_scores: dict[str, ProductDim]) -> float:
+        """缺失维度权重占总权重的比例（0~1）。
+
+        比维度计数更准确：缺"保修"（权重 40）和缺"风量"（权重 90）
+        对评分可信度的影响完全不同。
+        """
+        total = sum(s.weight for s in dim_scores.values())
+        if total == 0:
+            return 1.0
+        missing = sum(s.weight for s in dim_scores.values() if s.raw is None)
+        return missing / total
 
     @staticmethod
     def collect_all_dim_values(products: list[Product], dims_map: dict) -> dict[str, list]:

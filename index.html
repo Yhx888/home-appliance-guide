@@ -117,6 +117,8 @@ table{font-size:15px}
 .filter-panel .filter-row{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:10px}
 .filter-panel .filter-row:last-child{margin-bottom:0}
 .filter-panel .filter-label{font-size:13px;font-weight:600;color:var(--text-light);min-width:64px;flex-shrink:0}
+.filter-panel .filter-search{flex:1;min-width:180px;padding:6px 12px;border:1px solid var(--border);border-radius:6px;font-size:13px;outline:none;background:var(--card)}
+.filter-panel .filter-search:focus{border-color:var(--primary)}
 .filter-panel .brand-tags{display:flex;flex-wrap:wrap;gap:6px;flex:1}
 .filter-panel .brand-tag{padding:4px 12px;font-size:12px;border:1px solid var(--border);border-radius:14px;cursor:pointer;background:var(--card);color:var(--text-light);transition:all .2s;user-select:none}
 .filter-panel .brand-tag:hover{border-color:var(--primary);color:var(--primary)}
@@ -203,6 +205,7 @@ table{font-size:15px}
 .dim-table-dynamic td a.jd-link:hover{text-decoration:underline}
 .dim-table-dynamic td a.jd-link .jd-brand{font-weight:700}
 .dim-table-dynamic td a.jd-link .jd-badge{display:inline-block;margin-left:6px;padding:1px 6px;font-size:11px;line-height:1.4;border-radius:3px;background:var(--accent);color:#fff;vertical-align:1px}
+.dim-table-dynamic td a.jd-link .jd-badge-warn{background:#a33325}
 .price-time{font-size:11px;color:#999;margin-top:2px}
 /* 移动端小字号提升（置于基础规则之后，确保同具体性覆盖生效） */
 @media(max-width:640px){
@@ -1588,11 +1591,13 @@ const state = {
   categories: [],
   currentDims: [],
   products: [],
+  allProducts: [],  // 品类全量产品（品牌标签的数据源，不受筛选影响）
   sortKey: 'total_score',
   sortDir: 'desc',
   selectedBrands: [],
   priceMin: 0,
   priceMax: 0,
+  searchQuery: '',
   cachedCategories: null
 };
 
@@ -1664,6 +1669,14 @@ async function fetchProducts(slug, params) {
 
       let products = cat.products.slice();
 
+      // 型号搜索（品牌/型号关键词）
+      if (params.search) {
+        const q = params.search.trim().toLowerCase();
+        products = products.filter(function(p) {
+          return (p.brand + ' ' + (p.model || '')).toLowerCase().indexOf(q) !== -1;
+        });
+      }
+
       // 品牌筛选（兼容数组或逗号分隔字符串）
       if (params.brands && params.brands.length) {
         const brands = Array.isArray(params.brands)
@@ -1707,7 +1720,17 @@ async function fetchProducts(slug, params) {
           return factor * dir * (va - vb);
         });
       } else {
-        products.sort(function(a, b) { return b.total_score - a.total_score; });
+        // 默认排序：需人工核查 → 数据不完整 → 通用款 → 综合分降序（与后端 export 顺序一致）
+        products.sort(function(a, b) {
+          var ar = (a.needs_review || a.data_incomplete) ? 1 : 0;
+          var br = (b.needs_review || b.data_incomplete) ? 1 : 0;
+          if (ar !== br) return ar - br;
+          // 纯中文 model（无字母/数字）= 品牌代表款，排在具体型号前
+          var ag = a.model && !/[A-Za-z0-9]/.test(a.model) ? 1 : 0;
+          var bg = b.model && !/[A-Za-z0-9]/.test(b.model) ? 1 : 0;
+          if (ag !== bg) return ag - bg;
+          return b.total_score - a.total_score;
+        });
       }
 
       return { total: products.length, products: products };
@@ -1724,6 +1747,7 @@ async function fetchProducts(slug, params) {
   if (params.priceMax > 0) qp.set('price_max', params.priceMax);
   if (params.sortKey) qp.set('sort_key', params.sortKey);
   if (params.sortDir) qp.set('sort_dir', params.sortDir);
+  if (params.search) qp.set('search', params.search);
   if (params.weights) qp.set('weights', JSON.stringify(params.weights));
   if (params.page) qp.set('page', params.page);
   if (params.pageSize) qp.set('page_size', params.pageSize);
@@ -1758,6 +1782,10 @@ async function initCategoryView(slug) {
   if (!cat || !cat.dimensions) return;
 
   state.currentDims = cat.dimensions;
+
+  // 缓存品类全量产品（品牌标签数据源；不传筛选参数）
+  var all = await fetchProducts(slug, { brands: [], priceMin: 0, priceMax: 0, search: '', pageSize: 200 });
+  state.allProducts = (all && all.products) ? all.products : [];
 
   // 找到包含 dim-table 的卡片
   const section = document.getElementById(slug);
@@ -1812,6 +1840,10 @@ function createFilterPanel(slug, cat) {
 
   panel.innerHTML =
     '<div class="filter-row">' +
+      '<label class="filter-label">搜索</label>' +
+      '<input type="search" class="filter-search" placeholder="品牌 / 型号关键词…">' +
+    '</div>' +
+    '<div class="filter-row">' +
       '<label class="filter-label">排序优先级</label>' +
       '<div class="priority-tags"></div>' +
     '</div>' +
@@ -1844,6 +1876,16 @@ function createFilterPanel(slug, cat) {
     resetFilters(slug);
   });
 
+  // 事件绑定 - 型号搜索（回车/失焦触发，即时生效）
+  var searchInput = panel.querySelector('.filter-search');
+  searchInput.addEventListener('change', function() {
+    state.searchQuery = this.value.trim();
+    applyFilters(slug);
+  });
+  searchInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') { this.blur(); }
+  });
+
   // 事件绑定 - 价格输入
   panel.querySelectorAll('.price-input').forEach(function(inp) {
     inp.addEventListener('change', function() {
@@ -1853,6 +1895,7 @@ function createFilterPanel(slug, cat) {
       } else {
         state.priceMax = isNaN(val) ? 0 : val;
       }
+      applyFilters(slug);  // 与品牌/搜索一致：即时生效
     });
   });
 
@@ -1892,13 +1935,14 @@ function populatePriorityTags(panel, slug) {
 // ============================================================
 // 改动1：填充 filter-panel 数据（排序优先级标签 + 品牌标签）
 // ============================================================
+// 从产品中收集品牌（基于品类全量产品，不受当前筛选影响）
 function populateFilterPanel(panel, cat) {
   // 生成排序优先级标签
   populatePriorityTags(panel, panel.dataset.category);
 
-  // 从产品中收集品牌（首次加载后再次调用时更新产品品牌）
-  if (state.products.length > 0) {
-    populateBrandTags(panel, state.products, state.selectedBrands);
+  // 从全量产品中收集品牌
+  if (state.allProducts.length > 0) {
+    populateBrandTags(panel, state.allProducts, state.selectedBrands);
   }
 }
 
@@ -1923,7 +1967,7 @@ function populateBrandTags(panel, products, selected) {
   brands.sort();
   if (brands.length === 0) return;
 
-  // "全部" 标签
+  // "全部" 标签：清空选中并立即刷新表格（保证 UI 状态与内容一致）
   var allTag = document.createElement('span');
   allTag.className = 'brand-tag' + (selected.length === 0 ? ' active' : '');
   allTag.textContent = '全部';
@@ -1932,6 +1976,7 @@ function populateBrandTags(panel, products, selected) {
     state.selectedBrands = [];
     container.querySelectorAll('.brand-tag').forEach(function(t) { t.classList.remove('active'); });
     this.classList.add('active');
+    applyFilters(panel.dataset.category);
   });
   container.appendChild(allTag);
 
@@ -1955,6 +2000,7 @@ function populateBrandTags(panel, products, selected) {
       if (state.selectedBrands.length === 0) {
         container.querySelectorAll('.brand-tag[data-brand="__all__"]').forEach(function(t) { t.classList.add('active'); });
       }
+      applyFilters(panel.dataset.category);  // 即时生效
     });
     container.appendChild(tag);
   });
@@ -1994,6 +2040,7 @@ async function applyFilters(slug) {
     brands: state.selectedBrands,
     priceMin: state.priceMin,
     priceMax: state.priceMax,
+    search: state.searchQuery,
     sortKey: weights ? '' : state.sortKey,
     sortDir: state.sortDir,
     weights: weights,
@@ -2019,8 +2066,8 @@ async function applyFilters(slug) {
     resultCount.textContent = '共 ' + data.total + ' 款产品';
   }
 
-  // 更新品牌标签（从返回数据中提取品牌）
-  populateBrandTags(panel, state.products, state.selectedBrands);
+  // 更新品牌标签（始终基于品类全量产品，保证可继续选择其他品牌）
+  populateBrandTags(panel, state.allProducts, state.selectedBrands);
 
   // 渲染动态表格
   renderDimTable(panel, state.products, state.currentDims);
@@ -2033,6 +2080,7 @@ function resetFilters(slug) {
   state.selectedBrands = [];
   state.priceMin = 0;
   state.priceMax = 0;
+  state.searchQuery = '';
   state.sortKey = 'total_score';
   state.sortDir = 'desc';
 
@@ -2041,7 +2089,7 @@ function resetFilters(slug) {
   var panel = section.querySelector('.filter-panel');
   if (!panel) return;
 
-  // 重置 UI：优先级标签恢复"综合推荐"，品牌恢复"全部"，清空价格
+  // 重置 UI：优先级标签恢复"综合推荐"，品牌恢复"全部"，清空价格与搜索
   panel.querySelectorAll('.priority-tag').forEach(function(t) {
     t.classList.remove('active');
     if (t.dataset.key === 'total_score') t.classList.add('active');
@@ -2052,6 +2100,8 @@ function resetFilters(slug) {
   if (allTag) allTag.classList.add('active');
 
   panel.querySelectorAll('.price-input').forEach(function(inp) { inp.value = ''; });
+  var searchInput = panel.querySelector('.filter-search');
+  if (searchInput) searchInput.value = '';
 
   applyFilters(slug);
 }
@@ -2148,6 +2198,19 @@ function renderDimTable(panel, products, dims) {
     return 'dim-yellow';
   }
 
+  // 星级品类内校准：按正常产品（非待核查/非数据待补充）总分 80/60/40/20 分位生成阈值，
+  // 避免全库统一阈值导致部分品类永远无高星（如空气净化器品类第一仅 44 分）
+  var scores = products
+    .filter(function(p) { return !p.needs_review && !p.data_incomplete; })
+    .map(function(p) { return p.total_score; })
+    .filter(function(s) { return s > 0; })
+    .sort(function(a, b) { return a - b; });
+  var starThresholds = null;
+  if (scores.length >= 5) {
+    function pctScore(q) { return scores[Math.min(scores.length - 1, Math.floor(scores.length * q))]; }
+    starThresholds = [pctScore(0.8), pctScore(0.6), pctScore(0.4), pctScore(0.2)];
+  }
+
   // 表头：品牌型号 | 价格 | 维度1..n | 推荐星级
   var thead = '<tr><th>品牌型号</th><th>价格</th>';
   displayDims.forEach(function(d) {
@@ -2162,12 +2225,15 @@ function renderDimTable(panel, products, dims) {
 
     // 品牌型号列：合并为一列，链接到京东搜索（空格编码为 +，与站内"去京东"链接一致）
     // 通用款（品牌代表产品）无具体型号：京东只搜品牌，并显示"代表款"徽标
-    var isGeneric = p.model && p.model.indexOf('通用款') >= 0;
+    // 纯中文 model（如"集成灶蒸烤一体"）同样视为代表款
+    var isGeneric = p.model && !/[A-Za-z0-9]/.test(p.model);
     var kw = encodeURIComponent(p.brand + (p.model && !isGeneric ? ' ' + p.model : '')).replace(/%20/g, '+');
     row += '<td><a class="jd-link" href="https://search.jd.com/Search?keyword=' + kw +
       '&enc=utf-8" target="_blank" rel="nofollow"><span class="jd-brand">' + escapeHtml(p.brand) +
       '</span>' + (p.model ? '<span class="jd-model">' + escapeHtml(p.model) + '</span>' : '') +
-      (isGeneric ? '<span class="jd-badge">代表款</span>' : '') + '</a></td>';
+      (isGeneric ? '<span class="jd-badge">代表款</span>' : '') +
+      (p.data_incomplete ? '<span class="jd-badge jd-badge-warn">数据待补充</span>' : '') +
+      (p.needs_review ? '<span class="jd-badge jd-badge-warn">待核查</span>' : '') + '</a></td>';
 
       row += '<td>' + (p.price_low > 0 ? '¥' + formatPrice(p.price_low) : '—')
         + (p.price_collected_at ? '<div class="price-time">更新于 ' + p.price_collected_at + '</div>' : '') + '</td>';
@@ -2188,7 +2254,17 @@ function renderDimTable(panel, products, dims) {
       row += '<td' + (cls ? ' class="' + cls + '"' : '') + '>' + formatDimValue(rawVal, d.type, d.unit) + '</td>';
     });
 
-    row += '<td class="score-cell">' + (p.total_score ? getStars(p.total_score) : '—') + '</td>';
+    // 星级列：待核查产品不显示星级（数据可能错误）；数据待补充显示星级但标注仅供参考
+    var starCell;
+    if (p.needs_review) {
+      starCell = '<td class="score-cell" title="待人工核查，暂无推荐星级">—</td>';
+    } else if (p.total_score) {
+      starCell = '<td class="score-cell" title="综合推荐分 ' + (Math.round(p.total_score * 10) / 10) + '/100' +
+        (p.data_incomplete ? '（数据待补充，仅供参考）' : '') + '">' + getStars(p.total_score, starThresholds) + '</td>';
+    } else {
+      starCell = '<td class="score-cell">—</td>';
+    }
+    row += starCell;
     row += '</tr>';
     tbody += row;
   });
@@ -2215,12 +2291,19 @@ function formatDimValue(val, type, unit) {
   return String(val);
 }
 
-// 改动2：综合得分 → 星级（>=80 五星，每 15 分降一星；阈值取中位分布，避免大量 1-2 星观感极端）
-function getStars(score) {
-  if (score >= 80) return '★★★★★';
-  if (score >= 65) return '★★★★☆';
-  if (score >= 50) return '★★★☆☆';
-  if (score >= 35) return '★★☆☆☆';
+// 星级：品类内分位阈值（传入 thresholds），产品数不足时兜底绝对阈值
+function getStars(score, thresholds) {
+  if (!thresholds) {
+    if (score >= 80) return '★★★★★';
+    if (score >= 65) return '★★★★☆';
+    if (score >= 50) return '★★★☆☆';
+    if (score >= 35) return '★★☆☆☆';
+    return '★☆☆☆☆';
+  }
+  if (score >= thresholds[0]) return '★★★★★';
+  if (score >= thresholds[1]) return '★★★★☆';
+  if (score >= thresholds[2]) return '★★★☆☆';
+  if (score >= thresholds[3]) return '★★☆☆☆';
   return '★☆☆☆☆';
 }
 
