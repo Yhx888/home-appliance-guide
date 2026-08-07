@@ -1,0 +1,39 @@
+[
+  {
+    "product_id": 56,
+    "url": "https://product.suning.com/0000000000/000000000160949949.html",
+    "platform": "web_verify",
+    "note": "苏宁标题 西门子SC73E810TI 嵌入式10套 热交换烘干（与DB一致）",
+    "dims": {"容量_套": 10.0}
+  },
+  {
+    "product_id": 419,
+    "url": "https://goods.taobao.com/t/xiwanji_14510/f313efec2c2f35b57d481d608c486697.html",
+    "platform": "web_verify",
+    "note": "淘宝 海尔15套洗碗机晶彩W5000系列（与DB EYBW152266WU1 15套一致）",
+    "dims": {"容量_套": 15.0}
+  },
+  {
+    "product_id": 57,
+    "url": "https://zhuanlan.zhihu.com/p/2022241874178482486",
+    "platform": "web_verify",
+    "note": "知乎 西门子SN25ZB24MC 晶蕾烘干5.0（与DB一致）",
+    "dims": {"烘干方式": "晶蕾"}
+  },
+  {
+    "product_id": 53,
+    "url": "https://product.pconline.com.cn/xiwanji/midea/2081367.html",
+    "platform": "web_verify",
+    "override": true,
+    "note": "太平洋产品库 美的V9 餐具容量13套 热风烘干（修正DB 8套）",
+    "dims": {"容量_套": 13.0}
+  },
+  {
+    "product_id": 272,
+    "url": "https://zhuanlan.zhihu.com/p/3522791253",
+    "platform": "web_verify",
+    "override": true,
+    "note": "知乎+淘宝百科 美的GX7尊享版 24套嵌入式（修正DB 16套）",
+    "dims": {"容量_套": 24.0}
+  }
+]

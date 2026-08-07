@@ -1,0 +1,27 @@
+[
+  {
+    "product_id": 336,
+    "url": "https://www.casdon.com.cn/Integrated_embedded%20oven",
+    "platform": "web_verify",
+    "override": true,
+    "note": "京东标题 凯度ZDPro二代 嵌入式双热风 60L（修正DB 45）",
+    "dims": {"容量_L": 60.0}
+  },
+  {
+    "product_id": 40,
+    "url": "https://m.smzdm.com/dynamic_detail/36926486",
+    "platform": "web_verify",
+    "override": true,
+    "no_datapoint": true,
+    "note": "知乎 美的GR6 嵌入式微蒸烤 50升大容量（DB 45，差10.5%域内，取外部权威值）",
+    "dims": {"容量_L": 50.0}
+  },
+  {
+    "product_id": 36,
+    "url": "https://consumer.panasonic.cn/product/cooking-appliances/microwave-ovens/micro-steaming-roast/nu-sc350w.html",
+    "platform": "web_verify",
+    "override": true,
+    "note": "松下官方 NU-SC350W 容量31L（DB 37.5 偏高，修正为官方值）",
+    "dims": {"容量_L": 31.0}
+  }
+]

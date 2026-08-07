@@ -1,0 +1,39 @@
+[
+  {
+    "product_id": 312,
+    "url": "https://www.tmtpost.com/6794239.html",
+    "platform": "web_verify",
+    "note": "钛媒体 TCL T7K 75寸 640分区 MiniLED（与DB一致）",
+    "dims": {"分区数": 640.0}
+  },
+  {
+    "product_id": 314,
+    "url": "https://item.jd.com/100158119155.html",
+    "platform": "web_verify",
+    "override": true,
+    "note": "京东 海信小墨E5Q Pro 75英寸 768分区（修正DB 512）",
+    "dims": {"分区数": 768.0}
+  },
+  {
+    "product_id": 316,
+    "url": "https://finance.sina.com.cn/tech/digi/2025-01-22/doc-inefvuvx6959112.shtml",
+    "platform": "web_verify",
+    "note": "新浪 小米电视S75 MiniLED 512背光分区 4K144Hz（与DB一致）",
+    "dims": {"分区数": 512.0, "刷新率_Hz": 144.0}
+  },
+  {
+    "product_id": 320,
+    "url": "https://zhuanlan.zhihu.com/p/702663257",
+    "platform": "web_verify",
+    "note": "知乎实测 LG 77C4 DCI-P3 97% 144Hz（与DB 98%/144Hz 域内一致）",
+    "dims": {"色域_pct": 97.0, "刷新率_Hz": 144.0}
+  },
+  {
+    "product_id": 488,
+    "url": "https://zhuanlan.zhihu.com/p/658935985",
+    "platform": "web_verify",
+    "override": true,
+    "note": "知乎 索尼X90L 75寸 96分区 93% DCI-P3（修正DB 200分区/95%）",
+    "dims": {"分区数": 96.0, "色域_pct": 93.0}
+  }
+]

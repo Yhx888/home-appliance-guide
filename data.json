@@ -504,36 +504,6 @@
           "total_score": 44.1
         },
         {
-          "id": 424,
-          "brand": "美的",
-          "model": "J20",
-          "price_low": 900.0,
-          "price_high": 1300.0,
-          "price_collected_at": "",
-          "needs_review": false,
-          "data_incomplete": false,
-          "verify_dims": [
-            "风量_m3"
-          ],
-          "verify_status": "partial",
-          "dimensions": {
-            "风量_m3": 21.0,
-            "静压_Pa": 380,
-            "能效等级": "一级",
-            "噪音_dB": 56,
-            "保修_年": 6
-          },
-          "scores": {
-            "风量_m3": 26.6667,
-            "静压_Pa": 6.6667,
-            "噪音_dB": 14.2857,
-            "能效等级": 100.0,
-            "保修_年": 100.0,
-            "价格_low": 70.3213
-          },
-          "total_score": 43.6
-        },
-        {
           "id": 10,
           "brand": "华帝",
           "model": "i11206",
@@ -591,6 +561,36 @@
             "价格_low": 41.8717
           },
           "total_score": 42.3
+        },
+        {
+          "id": 424,
+          "brand": "美的",
+          "model": "J20",
+          "price_low": 900.0,
+          "price_high": 1300.0,
+          "price_collected_at": "",
+          "needs_review": false,
+          "data_incomplete": false,
+          "verify_dims": [
+            "风量_m3"
+          ],
+          "verify_status": "partial",
+          "dimensions": {
+            "风量_m3": 19.5,
+            "静压_Pa": 380,
+            "能效等级": "一级",
+            "噪音_dB": 56,
+            "保修_年": 6
+          },
+          "scores": {
+            "风量_m3": 16.6667,
+            "静压_Pa": 6.6667,
+            "噪音_dB": 14.2857,
+            "能效等级": 100.0,
+            "保修_年": 100.0,
+            "价格_low": 70.3213
+          },
+          "total_score": 41.2
         },
         {
           "id": 428,
@@ -1007,8 +1007,11 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
-          "verify_dims": [],
-          "verify_status": "",
+          "verify_dims": [
+            "火力_kW",
+            "热效率_pct"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "火力_kW": 5.2,
             "热效率_pct": 72,
@@ -1063,8 +1066,10 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
-          "verify_dims": [],
-          "verify_status": "",
+          "verify_dims": [
+            "火力_kW"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "火力_kW": 5.2,
             "热效率_pct": 70,
@@ -1119,8 +1124,11 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
-          "verify_dims": [],
-          "verify_status": "",
+          "verify_dims": [
+            "火力_kW",
+            "热效率_pct"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "火力_kW": 5.2,
             "热效率_pct": 70,
@@ -1175,8 +1183,10 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
-          "verify_dims": [],
-          "verify_status": "",
+          "verify_dims": [
+            "火力_kW"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "火力_kW": 5.0,
             "热效率_pct": 68,
@@ -1315,8 +1325,10 @@
           "price_collected_at": "2026-08-01",
           "needs_review": false,
           "data_incomplete": false,
-          "verify_dims": [],
-          "verify_status": "",
+          "verify_dims": [
+            "热效率_pct"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "面板材质": "钢化玻璃",
             "熄火保护": true,
@@ -1639,6 +1651,33 @@
           "total_score": 87.7
         },
         {
+          "id": 518,
+          "brand": "美的",
+          "model": "QD529",
+          "price_low": 1500.0,
+          "price_high": 2100.0,
+          "price_collected_at": "2026-08-07",
+          "needs_review": false,
+          "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
+          "dimensions": {
+            "热效率_pct": 70.0,
+            "火力_kW": 5.2
+          },
+          "scores": {
+            "火力_kW": 100.0,
+            "热效率_pct": 77.7778,
+            "面板材质": 0.0,
+            "熄火保护": 0.0,
+            "保修_年": 0.0,
+            "价格_low": 28.4705
+          },
+          "total_score": 75.1
+        },
+        {
           "id": 516,
           "brand": "德普",
           "model": "D5PRO",
@@ -1718,32 +1757,6 @@
           "total_score": 72.5
         },
         {
-          "id": 518,
-          "brand": "美的",
-          "model": "QD529",
-          "price_low": 1500.0,
-          "price_high": 2100.0,
-          "price_collected_at": "2026-08-07",
-          "needs_review": false,
-          "data_incomplete": true,
-          "verify_dims": [
-            "价格_low"
-          ],
-          "verify_status": "partial",
-          "dimensions": {
-            "热效率_pct": 70.0
-          },
-          "scores": {
-            "火力_kW": 0.0,
-            "热效率_pct": 77.7778,
-            "面板材质": 0.0,
-            "熄火保护": 0.0,
-            "保修_年": 0.0,
-            "价格_low": 28.4705
-          },
-          "total_score": 58.8
-        },
-        {
           "id": 517,
           "brand": "方太",
           "model": "TF37B",
@@ -1757,17 +1770,18 @@
           ],
           "verify_status": "partial",
           "dimensions": {
-            "热效率_pct": 70.0
+            "热效率_pct": 70.0,
+            "火力_kW": 5.2
           },
           "scores": {
-            "火力_kW": 0.0,
+            "火力_kW": 100.0,
             "热效率_pct": 77.7778,
             "面板材质": 0.0,
             "熄火保护": 0.0,
             "保修_年": 0.0,
             "价格_low": 8.6329
           },
-          "total_score": 51.2
+          "total_score": 70.5
         },
         {
           "id": 27,
@@ -2077,6 +2091,36 @@
           "total_score": 55.1
         },
         {
+          "id": 336,
+          "brand": "凯度",
+          "model": "ZD Pro二代",
+          "price_low": 3500.0,
+          "price_high": 5000.0,
+          "price_collected_at": "",
+          "needs_review": false,
+          "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
+          "dimensions": {
+            "容量_L": 60.0,
+            "最高温度_C": 230,
+            "有微波": false,
+            "蒸功能评分": 80,
+            "烤功能评分": 85,
+            "保修_年": 3
+          },
+          "scores": {
+            "容量_L": 63.8298,
+            "最高温度_C": 0.0,
+            "有微波": 0.0,
+            "蒸功能评分": 66.6667,
+            "烤功能评分": 94.2529,
+            "保修_年": 50.0,
+            "价格_low": 68.7672
+          },
+          "total_score": 53.8
+        },
+        {
           "id": 41,
           "brand": "老板",
           "model": "盐系G2",
@@ -2136,36 +2180,6 @@
           "total_score": 49.1
         },
         {
-          "id": 336,
-          "brand": "凯度",
-          "model": "ZD Pro二代",
-          "price_low": 3500.0,
-          "price_high": 5000.0,
-          "price_collected_at": "",
-          "needs_review": false,
-          "data_incomplete": false,
-          "verify_dims": [],
-          "verify_status": "",
-          "dimensions": {
-            "容量_L": 45,
-            "最高温度_C": 230,
-            "有微波": false,
-            "蒸功能评分": 80,
-            "烤功能评分": 85,
-            "保修_年": 3
-          },
-          "scores": {
-            "容量_L": 31.9149,
-            "最高温度_C": 0.0,
-            "有微波": 0.0,
-            "蒸功能评分": 66.6667,
-            "烤功能评分": 94.2529,
-            "保修_年": 50.0,
-            "价格_low": 68.7672
-          },
-          "total_score": 47.5
-        },
-        {
           "id": 489,
           "brand": "凯度",
           "model": "GD Pro",
@@ -2196,6 +2210,35 @@
           "total_score": 47.5
         },
         {
+          "id": 40,
+          "brand": "美的",
+          "model": "GR6",
+          "price_low": 3799.0,
+          "price_high": 4899.0,
+          "price_collected_at": "",
+          "needs_review": false,
+          "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
+          "dimensions": {
+            "最高温度_C": 230.0,
+            "容量_L": 50.0,
+            "保修_年": 3,
+            "蒸功能评分": 75.0,
+            "烤功能评分": 80.0
+          },
+          "scores": {
+            "容量_L": 42.5532,
+            "最高温度_C": 0.0,
+            "有微波": 0.0,
+            "蒸功能评分": 33.3333,
+            "烤功能评分": 88.5057,
+            "保修_年": 50.0,
+            "价格_low": 64.1921
+          },
+          "total_score": 46.8
+        },
+        {
           "id": 338,
           "brand": "美的",
           "model": "BS50",
@@ -2224,35 +2267,6 @@
             "价格_low": 87.5461
           },
           "total_score": 45.1
-        },
-        {
-          "id": 40,
-          "brand": "美的",
-          "model": "GR6",
-          "price_low": 3799.0,
-          "price_high": 4899.0,
-          "price_collected_at": "",
-          "needs_review": false,
-          "data_incomplete": false,
-          "verify_dims": [],
-          "verify_status": "",
-          "dimensions": {
-            "最高温度_C": 230.0,
-            "容量_L": 45,
-            "保修_年": 3,
-            "蒸功能评分": 75.0,
-            "烤功能评分": 80.0
-          },
-          "scores": {
-            "容量_L": 31.9149,
-            "最高温度_C": 0.0,
-            "有微波": 0.0,
-            "蒸功能评分": 33.3333,
-            "烤功能评分": 88.5057,
-            "保修_年": 50.0,
-            "价格_low": 64.1921
-          },
-          "total_score": 44.5
         },
         {
           "id": 337,
@@ -2343,36 +2357,6 @@
           "total_score": 40.3
         },
         {
-          "id": 36,
-          "brand": "松下",
-          "model": "NU-SC350",
-          "price_low": 4000.0,
-          "price_high": 5000.0,
-          "price_collected_at": "",
-          "needs_review": false,
-          "data_incomplete": false,
-          "verify_dims": [],
-          "verify_status": "",
-          "dimensions": {
-            "容量_L": 37.5,
-            "最高温度_C": 230.0,
-            "有微波": true,
-            "保修_年": 1.0,
-            "蒸功能评分": 70.0,
-            "烤功能评分": 70.0
-          },
-          "scores": {
-            "容量_L": 15.9574,
-            "最高温度_C": 0.0,
-            "有微波": 100.0,
-            "蒸功能评分": 0.0,
-            "烤功能评分": 77.0115,
-            "保修_年": 0.0,
-            "价格_low": 61.3147
-          },
-          "total_score": 34.9
-        },
-        {
           "id": 35,
           "brand": "西门子",
           "model": "CS656",
@@ -2431,6 +2415,38 @@
             "价格_low": 77.3706
           },
           "total_score": 33.7
+        },
+        {
+          "id": 36,
+          "brand": "松下",
+          "model": "NU-SC350",
+          "price_low": 4000.0,
+          "price_high": 5000.0,
+          "price_collected_at": "",
+          "needs_review": false,
+          "data_incomplete": false,
+          "verify_dims": [
+            "容量_L"
+          ],
+          "verify_status": "partial",
+          "dimensions": {
+            "容量_L": 34.25,
+            "最高温度_C": 230.0,
+            "有微波": true,
+            "保修_年": 1.0,
+            "蒸功能评分": 70.0,
+            "烤功能评分": 70.0
+          },
+          "scores": {
+            "容量_L": 9.0426,
+            "最高温度_C": 0.0,
+            "有微波": 100.0,
+            "蒸功能评分": 0.0,
+            "烤功能评分": 77.0115,
+            "保修_年": 0.0,
+            "价格_low": 61.3147
+          },
+          "total_score": 33.5
         },
         {
           "id": 44,
@@ -2748,6 +2764,36 @@
       ],
       "products": [
         {
+          "id": 272,
+          "brand": "美的",
+          "model": "GX7小西梅",
+          "price_low": 5000.0,
+          "price_high": 6000.0,
+          "price_collected_at": "",
+          "needs_review": false,
+          "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
+          "dimensions": {
+            "容量_套": 24.0,
+            "类型": "嵌入式",
+            "烘干方式": "热风",
+            "噪音_dB": 44,
+            "水效等级": "一级",
+            "保修_年": 3
+          },
+          "scores": {
+            "容量_套": 100.0,
+            "类型": 90.0,
+            "烘干方式": 80.0,
+            "噪音_dB": 80.0,
+            "水效等级": 100.0,
+            "保修_年": 50.0,
+            "价格_low": 17.8925
+          },
+          "total_score": 76.9
+        },
+        {
           "id": 423,
           "brand": "老板",
           "model": "W80-B60D",
@@ -2767,7 +2813,7 @@
             "保修_年": 5
           },
           "scores": {
-            "容量_套": 50.0,
+            "容量_套": 44.4444,
             "类型": 90.0,
             "烘干方式": 80.0,
             "噪音_dB": 80.0,
@@ -2775,7 +2821,7 @@
             "保修_年": 100.0,
             "价格_low": 33.1102
           },
-          "total_score": 73.1
+          "total_score": 71.9
         },
         {
           "id": 273,
@@ -2797,7 +2843,7 @@
             "保修_年": 3
           },
           "scores": {
-            "容量_套": 75.0,
+            "容量_套": 66.6667,
             "类型": 90.0,
             "烘干方式": 80.0,
             "噪音_dB": 80.0,
@@ -2805,7 +2851,7 @@
             "保修_年": 50.0,
             "价格_low": 22.1267
           },
-          "total_score": 72.0
+          "total_score": 70.2
         },
         {
           "id": 502,
@@ -2828,7 +2874,7 @@
             "噪音_dB": 44.0
           },
           "scores": {
-            "容量_套": 56.25,
+            "容量_套": 50.0,
             "类型": 85.0,
             "烘干方式": 80.0,
             "噪音_dB": 80.0,
@@ -2836,7 +2882,7 @@
             "保修_年": 0.0,
             "价格_low": 35.7257
           },
-          "total_score": 71.3
+          "total_score": 69.8
         },
         {
           "id": 418,
@@ -2858,7 +2904,7 @@
             "保修_年": 3
           },
           "scores": {
-            "容量_套": 62.5,
+            "容量_套": 55.5556,
             "类型": 90.0,
             "烘干方式": 80.0,
             "噪音_dB": 80.0,
@@ -2866,7 +2912,7 @@
             "保修_年": 50.0,
             "价格_low": 33.8991
           },
-          "total_score": 70.8
+          "total_score": 69.3
         },
         {
           "id": 419,
@@ -2877,8 +2923,10 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
-          "verify_dims": [],
-          "verify_status": "",
+          "verify_dims": [
+            "容量_套"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "容量_套": 15,
             "类型": "嵌入式",
@@ -2888,7 +2936,7 @@
             "保修_年": 3
           },
           "scores": {
-            "容量_套": 56.25,
+            "容量_套": 50.0,
             "类型": 90.0,
             "烘干方式": 80.0,
             "噪音_dB": 80.0,
@@ -2896,37 +2944,7 @@
             "保修_年": 50.0,
             "价格_low": 33.1102
           },
-          "total_score": 69.3
-        },
-        {
-          "id": 272,
-          "brand": "美的",
-          "model": "GX7小西梅",
-          "price_low": 5000.0,
-          "price_high": 6000.0,
-          "price_collected_at": "",
-          "needs_review": false,
-          "data_incomplete": false,
-          "verify_dims": [],
-          "verify_status": "",
-          "dimensions": {
-            "容量_套": 16,
-            "类型": "嵌入式",
-            "烘干方式": "热风",
-            "噪音_dB": 44,
-            "水效等级": "一级",
-            "保修_年": 3
-          },
-          "scores": {
-            "容量_套": 62.5,
-            "类型": 90.0,
-            "烘干方式": 80.0,
-            "噪音_dB": 80.0,
-            "水效等级": 100.0,
-            "保修_年": 50.0,
-            "价格_low": 17.8925
-          },
-          "total_score": 68.7
+          "total_score": 68.0
         },
         {
           "id": 57,
@@ -2948,7 +2966,7 @@
             "保修_年": 1
           },
           "scores": {
-            "容量_套": 62.5,
+            "容量_套": 55.5556,
             "类型": 90.0,
             "烘干方式": 100.0,
             "噪音_dB": 80.0,
@@ -2956,7 +2974,37 @@
             "保修_年": 0.0,
             "价格_low": 17.8925
           },
-          "total_score": 67.2
+          "total_score": 65.7
+        },
+        {
+          "id": 53,
+          "brand": "美的",
+          "model": "V9",
+          "price_low": 2500.0,
+          "price_high": 4000.0,
+          "price_collected_at": "",
+          "needs_review": false,
+          "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
+          "dimensions": {
+            "水效等级": "一级",
+            "类型": "嵌入式",
+            "烘干方式": "热风",
+            "噪音_dB": 47,
+            "容量_套": 13.0,
+            "保修_年": 3
+          },
+          "scores": {
+            "容量_套": 38.8889,
+            "类型": 90.0,
+            "烘干方式": 80.0,
+            "噪音_dB": 50.0,
+            "水效等级": 100.0,
+            "保修_年": 50.0,
+            "价格_low": 65.1632
+          },
+          "total_score": 65.4
         },
         {
           "id": 420,
@@ -2978,7 +3026,7 @@
             "保修_年": 3
           },
           "scores": {
-            "容量_套": 25.0,
+            "容量_套": 22.2222,
             "类型": 90.0,
             "烘干方式": 80.0,
             "噪音_dB": 60.0,
@@ -2986,7 +3034,7 @@
             "保修_年": 50.0,
             "价格_low": 80.3809
           },
-          "total_score": 65.8
+          "total_score": 65.1
         },
         {
           "id": 274,
@@ -3008,7 +3056,7 @@
             "保修_年": 1
           },
           "scores": {
-            "容量_套": 50.0,
+            "容量_套": 44.4444,
             "类型": 90.0,
             "烘干方式": 85.0,
             "噪音_dB": 100.0,
@@ -3016,7 +3064,7 @@
             "保修_年": 0.0,
             "价格_low": 17.8925
           },
-          "total_score": 64.6
+          "total_score": 63.4
         },
         {
           "id": 54,
@@ -3038,7 +3086,7 @@
             "保修_年": 3
           },
           "scores": {
-            "容量_套": 62.5,
+            "容量_套": 55.5556,
             "类型": 90.0,
             "烘干方式": 80.0,
             "噪音_dB": 50.0,
@@ -3046,7 +3094,7 @@
             "保修_年": 50.0,
             "价格_low": 17.8925
           },
-          "total_score": 64.5
+          "total_score": 63.0
         },
         {
           "id": 278,
@@ -3068,7 +3116,7 @@
             "保修_年": 3
           },
           "scores": {
-            "容量_套": 25.0,
+            "容量_套": 22.2222,
             "类型": 90.0,
             "烘干方式": 80.0,
             "噪音_dB": 60.0,
@@ -3076,7 +3124,7 @@
             "保修_年": 50.0,
             "价格_low": 57.4345
           },
-          "total_score": 62.8
+          "total_score": 62.2
         },
         {
           "id": 277,
@@ -3107,36 +3155,6 @@
             "价格_low": 48.328
           },
           "total_score": 61.3
-        },
-        {
-          "id": 53,
-          "brand": "美的",
-          "model": "V9",
-          "price_low": 2500.0,
-          "price_high": 4000.0,
-          "price_collected_at": "",
-          "needs_review": false,
-          "data_incomplete": false,
-          "verify_dims": [],
-          "verify_status": "",
-          "dimensions": {
-            "水效等级": "一级",
-            "类型": "嵌入式",
-            "烘干方式": "热风",
-            "噪音_dB": 47,
-            "容量_套": 8,
-            "保修_年": 3
-          },
-          "scores": {
-            "容量_套": 12.5,
-            "类型": 90.0,
-            "烘干方式": 80.0,
-            "噪音_dB": 50.0,
-            "水效等级": 100.0,
-            "保修_年": 50.0,
-            "价格_low": 65.1632
-          },
-          "total_score": 59.7
         },
         {
           "id": 52,
@@ -3177,8 +3195,10 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
-          "verify_dims": [],
-          "verify_status": "",
+          "verify_dims": [
+            "容量_套"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "水效等级": "一级",
             "类型": "嵌入式",
@@ -3188,7 +3208,7 @@
             "保修_年": 1
           },
           "scores": {
-            "容量_套": 25.0,
+            "容量_套": 22.2222,
             "类型": 90.0,
             "烘干方式": 85.0,
             "噪音_dB": 80.0,
@@ -3196,7 +3216,7 @@
             "保修_年": 0.0,
             "价格_low": 29.7991
           },
-          "total_score": 57.9
+          "total_score": 57.3
         },
         {
           "id": 503,
@@ -3216,7 +3236,7 @@
             "保修_年": 1.0
           },
           "scores": {
-            "容量_套": 56.25,
+            "容量_套": 50.0,
             "类型": 90.0,
             "烘干方式": 75.0,
             "噪音_dB": 0.0,
@@ -3224,7 +3244,7 @@
             "保修_年": 0.0,
             "价格_low": 20.6764
           },
-          "total_score": 51.5
+          "total_score": 49.6
         },
         {
           "id": 421,
@@ -3276,7 +3296,7 @@
             "保修_年": 5
           },
           "scores": {
-            "容量_套": 6.25,
+            "容量_套": 5.5556,
             "类型": 70.0,
             "烘干方式": 60.0,
             "噪音_dB": 20.0,
@@ -3284,7 +3304,7 @@
             "保修_年": 100.0,
             "价格_low": 17.8925
           },
-          "total_score": 47.5
+          "total_score": 47.4
         },
         {
           "id": 422,
@@ -3306,7 +3326,7 @@
             "噪音_dB": 52
           },
           "scores": {
-            "容量_套": 6.25,
+            "容量_套": 5.5556,
             "类型": 70.0,
             "烘干方式": 60.0,
             "噪音_dB": 0.0,
@@ -3314,7 +3334,7 @@
             "保修_年": 100.0,
             "价格_low": 33.1102
           },
-          "total_score": 46.6
+          "total_score": 46.5
         },
         {
           "id": 51,
@@ -3336,7 +3356,7 @@
             "容量_套": 8
           },
           "scores": {
-            "容量_套": 12.5,
+            "容量_套": 11.1111,
             "类型": 90.0,
             "烘干方式": 50.0,
             "噪音_dB": 50.0,
@@ -3344,7 +3364,7 @@
             "保修_年": 0.0,
             "价格_low": 36.6083
           },
-          "total_score": 45.5
+          "total_score": 45.2
         },
         {
           "id": 276,
@@ -3366,7 +3386,7 @@
             "保修_年": 5
           },
           "scores": {
-            "容量_套": 62.5,
+            "容量_套": 55.5556,
             "类型": 90.0,
             "烘干方式": 80.0,
             "噪音_dB": 100.0,
@@ -3374,7 +3394,7 @@
             "保修_年": 100.0,
             "价格_low": 0.0
           },
-          "total_score": 74.4
+          "total_score": 72.9
         },
         {
           "id": 59,
@@ -3396,7 +3416,7 @@
             "保修_年": 5
           },
           "scores": {
-            "容量_套": 25.0,
+            "容量_套": 22.2222,
             "类型": 90.0,
             "烘干方式": 80.0,
             "噪音_dB": 60.0,
@@ -3404,7 +3424,7 @@
             "保修_年": 100.0,
             "价格_low": 52.7293
           },
-          "total_score": 67.3
+          "total_score": 66.7
         },
         {
           "id": 55,
@@ -3426,7 +3446,7 @@
             "保修_年": 3
           },
           "scores": {
-            "容量_套": 12.5,
+            "容量_套": 11.1111,
             "类型": 90.0,
             "烘干方式": 80.0,
             "噪音_dB": 60.0,
@@ -3434,7 +3454,7 @@
             "保修_年": 50.0,
             "价格_low": 80.3809
           },
-          "total_score": 63.0
+          "total_score": 62.7
         },
         {
           "id": 60,
@@ -3456,7 +3476,7 @@
             "保修_年": 1
           },
           "scores": {
-            "容量_套": 12.5,
+            "容量_套": 11.1111,
             "类型": 90.0,
             "烘干方式": 80.0,
             "噪音_dB": 40.0,
@@ -3464,7 +3484,7 @@
             "保修_年": 0.0,
             "价格_low": 80.3809
           },
-          "total_score": 55.1
+          "total_score": 54.8
         },
         {
           "id": 58,
@@ -3486,7 +3506,7 @@
             "保修_年": 5
           },
           "scores": {
-            "容量_套": 25.0,
+            "容量_套": 22.2222,
             "类型": 90.0,
             "烘干方式": 80.0,
             "噪音_dB": 0.0,
@@ -3494,7 +3514,7 @@
             "保修_年": 100.0,
             "价格_low": 17.8925
           },
-          "total_score": 54.4
+          "total_score": 53.8
         },
         {
           "id": 279,
@@ -3543,7 +3563,7 @@
             "容量_套": 22.0
           },
           "scores": {
-            "容量_套": 100.0,
+            "容量_套": 88.8889,
             "类型": 0.0,
             "烘干方式": 0.0,
             "噪音_dB": 0.0,
@@ -3551,7 +3571,7 @@
             "保修_年": 0.0,
             "价格_low": 11.3926
           },
-          "total_score": 67.2
+          "total_score": 60.2
         },
         {
           "id": 522,
@@ -3571,7 +3591,7 @@
             "烘干方式": "120℃晶焰烘干"
           },
           "scores": {
-            "容量_套": 75.0,
+            "容量_套": 66.6667,
             "类型": 0.0,
             "烘干方式": 50.0,
             "噪音_dB": 0.0,
@@ -3579,7 +3599,7 @@
             "保修_年": 0.0,
             "价格_low": 10.1638
           },
-          "total_score": 50.6
+          "total_score": 47.2
         }
       ]
     },
@@ -4766,26 +4786,28 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
-          "verify_dims": [],
-          "verify_status": "",
+          "verify_dims": [
+            "容量_L"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "制冷方式": "风冷",
             "保修_年": 10,
-            "门型": "法式多门",
+            "门型": "十字门",
             "容量_L": 520.0,
             "双系统": true,
             "嵌入深度_mm": 594.0
           },
           "scores": {
             "容量_L": 63.6364,
-            "门型": 90.0,
+            "门型": 85.0,
             "制冷方式": 100.0,
             "双系统": 100.0,
             "嵌入深度_mm": 87.156,
             "保修_年": 100.0,
             "价格_low": 0.0
           },
-          "total_score": 77.0
+          "total_score": 76.3
         },
         {
           "id": 360,
@@ -4889,8 +4911,10 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
-          "verify_dims": [],
-          "verify_status": "",
+          "verify_dims": [
+            "容量_L"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "制冷方式": "风冷",
             "保修_年": 3,
@@ -5129,8 +5153,10 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
-          "verify_dims": [],
-          "verify_status": "",
+          "verify_dims": [
+            "容量_L"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "容量_L": 455,
             "门型": "十字门",
@@ -5219,8 +5245,10 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
-          "verify_dims": [],
-          "verify_status": "",
+          "verify_dims": [
+            "容量_L"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "容量_L": 415,
             "门型": "十字门",
@@ -7822,8 +7850,10 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
-          "verify_dims": [],
-          "verify_status": "",
+          "verify_dims": [
+            "能效_APF"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "自清洁": true,
             "保修_年": 6,
@@ -7842,6 +7872,36 @@
             "价格_low": 81.5601
           },
           "total_score": 76.7
+        },
+        {
+          "id": 292,
+          "brand": "格力",
+          "model": "云佳1.5匹",
+          "price_low": 2500.0,
+          "price_high": 2999.0,
+          "price_collected_at": "",
+          "needs_review": false,
+          "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
+          "dimensions": {
+            "能效_APF": 5.27,
+            "压缩机": "凌达",
+            "噪音_dB": 18.0,
+            "自清洁": true,
+            "保修_年": 6,
+            "匹数": 1.5
+          },
+          "scores": {
+            "能效_APF": 53.7037,
+            "压缩机": 85.0,
+            "噪音_dB": 100.0,
+            "自清洁": 100.0,
+            "保修_年": 100.0,
+            "匹数": 0.0,
+            "价格_low": 67.257
+          },
+          "total_score": 75.3
         },
         {
           "id": 493,
@@ -7873,36 +7933,6 @@
             "价格_low": 92.1875
           },
           "total_score": 73.4
-        },
-        {
-          "id": 292,
-          "brand": "格力",
-          "model": "云佳1.5匹",
-          "price_low": 2500.0,
-          "price_high": 2999.0,
-          "price_collected_at": "",
-          "needs_review": false,
-          "data_incomplete": false,
-          "verify_dims": [],
-          "verify_status": "",
-          "dimensions": {
-            "能效_APF": 5.0,
-            "压缩机": "凌达",
-            "噪音_dB": 18.0,
-            "自清洁": true,
-            "保修_年": 6,
-            "匹数": 1.5
-          },
-          "scores": {
-            "能效_APF": 37.037,
-            "压缩机": 85.0,
-            "噪音_dB": 100.0,
-            "自清洁": 100.0,
-            "保修_年": 100.0,
-            "匹数": 0.0,
-            "价格_low": 67.257
-          },
-          "total_score": 71.7
         },
         {
           "id": 294,
@@ -8025,36 +8055,6 @@
           "total_score": 64.2
         },
         {
-          "id": 439,
-          "brand": "美的",
-          "model": "酷省电2匹",
-          "price_low": 3099.0,
-          "price_high": 3500.0,
-          "price_collected_at": "",
-          "needs_review": false,
-          "data_incomplete": false,
-          "verify_dims": [],
-          "verify_status": "",
-          "dimensions": {
-            "能效_APF": 5.0,
-            "压缩机": "美芝",
-            "噪音_dB": 22,
-            "自清洁": true,
-            "保修_年": 6,
-            "匹数": 2
-          },
-          "scores": {
-            "能效_APF": 37.037,
-            "压缩机": 80.0,
-            "噪音_dB": 50.0,
-            "自清洁": 100.0,
-            "保修_年": 100.0,
-            "匹数": 33.3333,
-            "价格_low": 53.4895
-          },
-          "total_score": 63.9
-        },
-        {
           "id": 134,
           "brand": "美的",
           "model": "酷省电3匹柜机",
@@ -8143,6 +8143,38 @@
             "价格_low": 95.8632
           },
           "total_score": 62.7
+        },
+        {
+          "id": 439,
+          "brand": "美的",
+          "model": "酷省电2匹",
+          "price_low": 3099.0,
+          "price_high": 3500.0,
+          "price_collected_at": "",
+          "needs_review": false,
+          "data_incomplete": false,
+          "verify_dims": [
+            "能效_APF"
+          ],
+          "verify_status": "partial",
+          "dimensions": {
+            "能效_APF": 4.87,
+            "压缩机": "美芝",
+            "噪音_dB": 22,
+            "自清洁": true,
+            "保修_年": 6,
+            "匹数": 2
+          },
+          "scores": {
+            "能效_APF": 29.0123,
+            "压缩机": 80.0,
+            "噪音_dB": 50.0,
+            "自清洁": 100.0,
+            "保修_年": 100.0,
+            "匹数": 33.3333,
+            "价格_low": 53.4895
+          },
+          "total_score": 62.2
         },
         {
           "id": 133,
@@ -8726,7 +8758,7 @@
             "保修_年": 1
           },
           "scores": {
-            "吸力_Pa": 87.5,
+            "吸力_Pa": 77.7778,
             "拖地方式": 95.0,
             "避障技术": 90.0,
             "基站功能": 95.0,
@@ -8734,7 +8766,7 @@
             "保修_年": 50.0,
             "价格_low": 0.0
           },
-          "total_score": 77.9
+          "total_score": 76.2
         },
         {
           "id": 143,
@@ -8756,7 +8788,7 @@
             "吸力_Pa": 12800.0
           },
           "scores": {
-            "吸力_Pa": 55.0,
+            "吸力_Pa": 48.8889,
             "拖地方式": 95.0,
             "避障技术": 90.0,
             "基站功能": 95.0,
@@ -8764,7 +8796,7 @@
             "保修_年": 50.0,
             "价格_low": 10.1242
           },
-          "total_score": 73.3
+          "total_score": 72.3
         },
         {
           "id": 384,
@@ -8786,7 +8818,7 @@
             "保修_年": 1
           },
           "scores": {
-            "吸力_Pa": 50.0,
+            "吸力_Pa": 44.4444,
             "拖地方式": 80.0,
             "避障技术": 90.0,
             "基站功能": 95.0,
@@ -8794,7 +8826,7 @@
             "保修_年": 50.0,
             "价格_low": 22.4906
           },
-          "total_score": 72.4
+          "total_score": 71.4
         },
         {
           "id": 147,
@@ -8816,7 +8848,7 @@
             "吸力_Pa": 12800.0
           },
           "scores": {
-            "吸力_Pa": 55.0,
+            "吸力_Pa": 48.8889,
             "拖地方式": 95.0,
             "避障技术": 90.0,
             "基站功能": 95.0,
@@ -8824,7 +8856,7 @@
             "保修_年": 50.0,
             "价格_low": 1.1112
           },
-          "total_score": 72.3
+          "total_score": 71.2
         },
         {
           "id": 299,
@@ -8846,7 +8878,7 @@
             "续航_min": 35.0
           },
           "scores": {
-            "吸力_Pa": 100.0,
+            "吸力_Pa": 88.8889,
             "拖地方式": 95.0,
             "避障技术": 90.0,
             "基站功能": 90.0,
@@ -8854,37 +8886,7 @@
             "保修_年": 50.0,
             "价格_low": 38.4479
           },
-          "total_score": 72.2
-        },
-        {
-          "id": 300,
-          "brand": "添可",
-          "model": "芙万Master Max(洗地机)",
-          "price_low": 2599.0,
-          "price_high": 3500.0,
-          "price_collected_at": "",
-          "needs_review": false,
-          "data_incomplete": false,
-          "verify_dims": [],
-          "verify_status": "",
-          "dimensions": {
-            "吸力_Pa": 18000,
-            "拖地方式": "恒压活水滚筒",
-            "保修_年": 1,
-            "避障技术": "激光+AI",
-            "基站功能": "全能基站",
-            "续航_min": 35.0
-          },
-          "scores": {
-            "吸力_Pa": 87.5,
-            "拖地方式": 95.0,
-            "避障技术": 75.0,
-            "基站功能": 90.0,
-            "续航_min": 0.0,
-            "保修_年": 50.0,
-            "价格_low": 46.4069
-          },
-          "total_score": 68.4
+          "total_score": 70.2
         },
         {
           "id": 149,
@@ -8906,7 +8908,7 @@
             "吸力_Pa": 8000.0
           },
           "scores": {
-            "吸力_Pa": 25.0,
+            "吸力_Pa": 22.2222,
             "拖地方式": 95.0,
             "避障技术": 90.0,
             "基站功能": 90.0,
@@ -8914,7 +8916,37 @@
             "保修_年": 50.0,
             "价格_low": 38.4479
           },
-          "total_score": 68.1
+          "total_score": 67.6
+        },
+        {
+          "id": 300,
+          "brand": "添可",
+          "model": "芙万Master Max(洗地机)",
+          "price_low": 2599.0,
+          "price_high": 3500.0,
+          "price_collected_at": "",
+          "needs_review": false,
+          "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
+          "dimensions": {
+            "吸力_Pa": 18000,
+            "拖地方式": "恒压活水滚筒",
+            "保修_年": 1,
+            "避障技术": "激光+AI",
+            "基站功能": "全能基站",
+            "续航_min": 35.0
+          },
+          "scores": {
+            "吸力_Pa": 77.7778,
+            "拖地方式": 95.0,
+            "避障技术": 75.0,
+            "基站功能": 90.0,
+            "续航_min": 0.0,
+            "保修_年": 50.0,
+            "价格_low": 46.4069
+          },
+          "total_score": 66.7
         },
         {
           "id": 142,
@@ -8936,7 +8968,7 @@
             "吸力_Pa": 8000.0
           },
           "scores": {
-            "吸力_Pa": 25.0,
+            "吸力_Pa": 22.2222,
             "拖地方式": 95.0,
             "避障技术": 90.0,
             "基站功能": 90.0,
@@ -8944,7 +8976,7 @@
             "保修_年": 50.0,
             "价格_low": 29.8974
           },
-          "total_score": 67.1
+          "total_score": 66.6
         },
         {
           "id": 152,
@@ -8966,7 +8998,7 @@
             "吸力_Pa": 8000.0
           },
           "scores": {
-            "吸力_Pa": 25.0,
+            "吸力_Pa": 22.2222,
             "拖地方式": 80.0,
             "避障技术": 90.0,
             "基站功能": 90.0,
@@ -8974,7 +9006,7 @@
             "保修_年": 50.0,
             "价格_low": 48.5611
           },
-          "total_score": 66.5
+          "total_score": 66.0
         },
         {
           "id": 446,
@@ -8996,7 +9028,7 @@
             "保修_年": 1
           },
           "scores": {
-            "吸力_Pa": 25.0,
+            "吸力_Pa": 22.2222,
             "拖地方式": 80.0,
             "避障技术": 90.0,
             "基站功能": 90.0,
@@ -9004,7 +9036,7 @@
             "保修_年": 50.0,
             "价格_low": 48.5611
           },
-          "total_score": 66.5
+          "total_score": 66.0
         },
         {
           "id": 382,
@@ -9026,7 +9058,7 @@
             "保修_年": 1
           },
           "scores": {
-            "吸力_Pa": 37.5,
+            "吸力_Pa": 33.3333,
             "拖地方式": 80.0,
             "避障技术": 90.0,
             "基站功能": 90.0,
@@ -9034,7 +9066,7 @@
             "保修_年": 50.0,
             "价格_low": 29.4554
           },
-          "total_score": 66.4
+          "total_score": 65.7
         },
         {
           "id": 141,
@@ -9056,7 +9088,7 @@
             "吸力_Pa": 8000.0
           },
           "scores": {
-            "吸力_Pa": 25.0,
+            "吸力_Pa": 22.2222,
             "拖地方式": 95.0,
             "避障技术": 75.0,
             "基站功能": 90.0,
@@ -9064,67 +9096,7 @@
             "保修_年": 50.0,
             "价格_low": 42.2749
           },
-          "total_score": 66.1
-        },
-        {
-          "id": 388,
-          "brand": "友望",
-          "model": "云朵2.0(洗地机)",
-          "price_low": 2500.0,
-          "price_high": 2500.0,
-          "price_collected_at": "",
-          "needs_review": false,
-          "data_incomplete": false,
-          "verify_dims": [],
-          "verify_status": "",
-          "dimensions": {
-            "吸力_Pa": 15000,
-            "保修_年": 1,
-            "拖地方式": "恒压活水滚筒",
-            "避障技术": "激光+AI",
-            "基站功能": "全能基站",
-            "续航_min": 35.0
-          },
-          "scores": {
-            "吸力_Pa": 68.75,
-            "拖地方式": 95.0,
-            "避障技术": 75.0,
-            "基站功能": 90.0,
-            "续航_min": 0.0,
-            "保修_年": 50.0,
-            "价格_low": 48.5611
-          },
-          "total_score": 65.4
-        },
-        {
-          "id": 150,
-          "brand": "添可",
-          "model": "芙万Master Max",
-          "price_low": 2599.0,
-          "price_high": 3500.0,
-          "price_collected_at": "",
-          "needs_review": false,
-          "data_incomplete": false,
-          "verify_dims": [],
-          "verify_status": "",
-          "dimensions": {
-            "保修_年": 1,
-            "拖地方式": "恒压活水滚筒",
-            "避障技术": "激光+AI",
-            "基站功能": "全能基站",
-            "续航_min": 35.0,
-            "吸力_Pa": 15000.0
-          },
-          "scores": {
-            "吸力_Pa": 68.75,
-            "拖地方式": 95.0,
-            "避障技术": 75.0,
-            "基站功能": 90.0,
-            "续航_min": 0.0,
-            "保修_年": 50.0,
-            "价格_low": 46.4069
-          },
-          "total_score": 65.1
+          "total_score": 65.6
         },
         {
           "id": 386,
@@ -9146,7 +9118,7 @@
             "保修_年": 1
           },
           "scores": {
-            "吸力_Pa": 25.0,
+            "吸力_Pa": 22.2222,
             "拖地方式": 85.0,
             "避障技术": 90.0,
             "基站功能": 90.0,
@@ -9154,7 +9126,37 @@
             "保修_年": 50.0,
             "价格_low": 25.3504
           },
-          "total_score": 64.7
+          "total_score": 64.2
+        },
+        {
+          "id": 388,
+          "brand": "友望",
+          "model": "云朵2.0(洗地机)",
+          "price_low": 2500.0,
+          "price_high": 2500.0,
+          "price_collected_at": "",
+          "needs_review": false,
+          "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
+          "dimensions": {
+            "吸力_Pa": 15000,
+            "保修_年": 1,
+            "拖地方式": "恒压活水滚筒",
+            "避障技术": "激光+AI",
+            "基站功能": "全能基站",
+            "续航_min": 35.0
+          },
+          "scores": {
+            "吸力_Pa": 61.1111,
+            "拖地方式": 95.0,
+            "避障技术": 75.0,
+            "基站功能": 90.0,
+            "续航_min": 0.0,
+            "保修_年": 50.0,
+            "价格_low": 48.5611
+          },
+          "total_score": 64.0
         },
         {
           "id": 136,
@@ -9176,7 +9178,7 @@
             "续航_min": 120.0
           },
           "scores": {
-            "吸力_Pa": 30.625,
+            "吸力_Pa": 27.2222,
             "拖地方式": 95.0,
             "避障技术": 90.0,
             "基站功能": 90.0,
@@ -9184,7 +9186,37 @@
             "保修_年": 50.0,
             "价格_low": 31.5216
           },
-          "total_score": 64.5
+          "total_score": 63.9
+        },
+        {
+          "id": 150,
+          "brand": "添可",
+          "model": "芙万Master Max",
+          "price_low": 2599.0,
+          "price_high": 3500.0,
+          "price_collected_at": "",
+          "needs_review": false,
+          "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
+          "dimensions": {
+            "保修_年": 1,
+            "拖地方式": "恒压活水滚筒",
+            "避障技术": "激光+AI",
+            "基站功能": "全能基站",
+            "续航_min": 35.0,
+            "吸力_Pa": 15000.0
+          },
+          "scores": {
+            "吸力_Pa": 61.1111,
+            "拖地方式": 95.0,
+            "避障技术": 75.0,
+            "基站功能": 90.0,
+            "续航_min": 0.0,
+            "保修_年": 50.0,
+            "价格_low": 46.4069
+          },
+          "total_score": 63.8
         },
         {
           "id": 146,
@@ -9206,7 +9238,7 @@
             "吸力_Pa": 8000.0
           },
           "scores": {
-            "吸力_Pa": 25.0,
+            "吸力_Pa": 22.2222,
             "拖地方式": 85.0,
             "避障技术": 85.0,
             "基站功能": 90.0,
@@ -9214,7 +9246,7 @@
             "保修_年": 50.0,
             "价格_low": 22.4906
           },
-          "total_score": 63.5
+          "total_score": 63.0
         },
         {
           "id": 145,
@@ -9236,7 +9268,7 @@
             "吸力_Pa": 8000.0
           },
           "scores": {
-            "吸力_Pa": 25.0,
+            "吸力_Pa": 22.2222,
             "拖地方式": 80.0,
             "避障技术": 90.0,
             "基站功能": 90.0,
@@ -9244,7 +9276,7 @@
             "保修_年": 50.0,
             "价格_low": 13.5571
           },
-          "total_score": 62.3
+          "total_score": 61.8
         },
         {
           "id": 151,
@@ -9266,7 +9298,7 @@
             "吸力_Pa": 15000.0
           },
           "scores": {
-            "吸力_Pa": 68.75,
+            "吸力_Pa": 61.1111,
             "拖地方式": 95.0,
             "避障技术": 75.0,
             "基站功能": 60.0,
@@ -9274,7 +9306,7 @@
             "保修_年": 50.0,
             "价格_low": 60.9385
           },
-          "total_score": 62.2
+          "total_score": 60.9
         },
         {
           "id": 445,
@@ -9296,7 +9328,7 @@
             "保修_年": 1
           },
           "scores": {
-            "吸力_Pa": 25.0,
+            "吸力_Pa": 22.2222,
             "拖地方式": 80.0,
             "避障技术": 75.0,
             "基站功能": 90.0,
@@ -9304,7 +9336,7 @@
             "保修_年": 50.0,
             "价格_low": 29.6918
           },
-          "total_score": 59.9
+          "total_score": 59.4
         },
         {
           "id": 387,
@@ -9326,7 +9358,7 @@
             "保修_年": 1
           },
           "scores": {
-            "吸力_Pa": 6.25,
+            "吸力_Pa": 5.5556,
             "拖地方式": 80.0,
             "避障技术": 65.0,
             "基站功能": 90.0,
@@ -9334,7 +9366,7 @@
             "保修_年": 50.0,
             "价格_low": 76.8959
           },
-          "total_score": 58.6
+          "total_score": 58.5
         },
         {
           "id": 385,
@@ -9356,7 +9388,7 @@
             "保修_年": 1
           },
           "scores": {
-            "吸力_Pa": 12.5,
+            "吸力_Pa": 11.1111,
             "拖地方式": 80.0,
             "避障技术": 75.0,
             "基站功能": 60.0,
@@ -9364,7 +9396,7 @@
             "保修_年": 50.0,
             "价格_low": 60.9385
           },
-          "total_score": 56.8
+          "total_score": 56.5
         },
         {
           "id": 144,
@@ -9386,7 +9418,7 @@
             "吸力_Pa": 5000.0
           },
           "scores": {
-            "吸力_Pa": 6.25,
+            "吸力_Pa": 5.5556,
             "拖地方式": 95.0,
             "避障技术": 75.0,
             "基站功能": 60.0,
@@ -9394,7 +9426,7 @@
             "保修_年": 50.0,
             "价格_low": 60.9385
           },
-          "total_score": 56.6
+          "total_score": 56.5
         },
         {
           "id": 447,
@@ -9416,7 +9448,7 @@
             "保修_年": 1
           },
           "scores": {
-            "吸力_Pa": 6.25,
+            "吸力_Pa": 5.5556,
             "拖地方式": 80.0,
             "避障技术": 65.0,
             "基站功能": 60.0,
@@ -9424,7 +9456,7 @@
             "保修_年": 50.0,
             "价格_low": 76.8959
           },
-          "total_score": 54.0
+          "total_score": 53.9
         },
         {
           "id": 444,
@@ -9476,7 +9508,7 @@
             "保修_年": 1
           },
           "scores": {
-            "吸力_Pa": 12.5,
+            "吸力_Pa": 11.1111,
             "拖地方式": 85.0,
             "避障技术": 65.0,
             "基站功能": 90.0,
@@ -9484,7 +9516,7 @@
             "保修_年": 50.0,
             "价格_low": 48.5611
           },
-          "total_score": 59.2
+          "total_score": 58.9
         },
         {
           "id": 148,
@@ -9506,7 +9538,7 @@
             "吸力_Pa": 5000.0
           },
           "scores": {
-            "吸力_Pa": 6.25,
+            "吸力_Pa": 5.5556,
             "拖地方式": 80.0,
             "避障技术": 65.0,
             "基站功能": 60.0,
@@ -9514,7 +9546,7 @@
             "保修_年": 50.0,
             "价格_low": 99.3865
           },
-          "total_score": 56.6
+          "total_score": 56.5
         },
         {
           "id": 140,
@@ -9536,7 +9568,7 @@
             "续航_min": 120.0
           },
           "scores": {
-            "吸力_Pa": 3.125,
+            "吸力_Pa": 2.7778,
             "拖地方式": 50.0,
             "避障技术": 75.0,
             "基站功能": 60.0,
@@ -9545,6 +9577,34 @@
             "价格_low": 76.8959
           },
           "total_score": 49.4
+        },
+        {
+          "id": 540,
+          "brand": "石头",
+          "model": "G30",
+          "price_low": 5000.0,
+          "price_high": 5500.0,
+          "price_collected_at": "2026-08-07",
+          "needs_review": false,
+          "data_incomplete": true,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
+          "dimensions": {
+            "吸力_Pa": 22000.0,
+            "避障技术": "3D结构光+AI"
+          },
+          "scores": {
+            "吸力_Pa": 100.0,
+            "拖地方式": 0.0,
+            "避障技术": 90.0,
+            "基站功能": 0.0,
+            "续航_min": 0.0,
+            "保修_年": 0.0,
+            "价格_low": 10.1131
+          },
+          "total_score": 73.4
         },
         {
           "id": 539,
@@ -9560,18 +9620,18 @@
           ],
           "verify_status": "partial",
           "dimensions": {
-            "拖地方式": "滚筒活水洗地"
+            "拖地方式": "恒压活水滚筒"
           },
           "scores": {
             "吸力_Pa": 0.0,
-            "拖地方式": 50.0,
+            "拖地方式": 95.0,
             "避障技术": 0.0,
             "基站功能": 0.0,
             "续航_min": 0.0,
             "保修_年": 0.0,
             "价格_low": 36.6291
           },
-          "total_score": 44.9
+          "total_score": 72.5
         },
         {
           "id": 541,
@@ -9587,43 +9647,18 @@
           ],
           "verify_status": "partial",
           "dimensions": {
-            "拖地方式": "履带式拖布"
+            "拖地方式": "履带式洗地"
           },
           "scores": {
             "吸力_Pa": 0.0,
-            "拖地方式": 50.0,
+            "拖地方式": 85.0,
             "避障技术": 0.0,
             "基站功能": 0.0,
             "续航_min": 0.0,
             "保修_年": 0.0,
             "价格_low": 29.8974
           },
-          "total_score": 42.3
-        },
-        {
-          "id": 540,
-          "brand": "石头",
-          "model": "G30",
-          "price_low": 5000.0,
-          "price_high": 5500.0,
-          "price_collected_at": "2026-08-07",
-          "needs_review": false,
-          "data_incomplete": true,
-          "verify_dims": [
-            "价格_low"
-          ],
-          "verify_status": "partial",
-          "dimensions": {},
-          "scores": {
-            "吸力_Pa": 0.0,
-            "拖地方式": 0.0,
-            "避障技术": 0.0,
-            "基站功能": 0.0,
-            "续航_min": 0.0,
-            "保修_年": 0.0,
-            "价格_low": 10.1131
-          },
-          "total_score": 10.1
+          "total_score": 63.8
         }
       ]
     },
@@ -9858,6 +9893,34 @@
             "价格_low": 37.3149
           },
           "total_score": 33.1
+        },
+        {
+          "id": 542,
+          "brand": "小米",
+          "model": "全效空气净化器Ultra",
+          "price_low": 2500.0,
+          "price_high": 4799.0,
+          "price_collected_at": "2026-08-07",
+          "needs_review": false,
+          "data_incomplete": false,
+          "verify_dims": [
+            "价格_low"
+          ],
+          "verify_status": "partial",
+          "dimensions": {
+            "颗粒物CADR": 750.0,
+            "甲醛CADR": 400.0,
+            "滤芯寿命_年": 2.5
+          },
+          "scores": {
+            "颗粒物CADR": 34.6154,
+            "甲醛CADR": 31.8182,
+            "噪音_dB": 0.0,
+            "滤芯寿命_年": 18.75,
+            "保修_年": 0.0,
+            "价格_low": 49.2745
+          },
+          "total_score": 33.0
         },
         {
           "id": 157,
@@ -10417,30 +10480,6 @@
             "价格_low": 49.2745
           },
           "total_score": 71.2
-        },
-        {
-          "id": 542,
-          "brand": "小米",
-          "model": "全效空气净化器Ultra",
-          "price_low": 2500.0,
-          "price_high": 4799.0,
-          "price_collected_at": "2026-08-07",
-          "needs_review": false,
-          "data_incomplete": true,
-          "verify_dims": [
-            "价格_low"
-          ],
-          "verify_status": "partial",
-          "dimensions": {},
-          "scores": {
-            "颗粒物CADR": 0.0,
-            "甲醛CADR": 0.0,
-            "噪音_dB": 0.0,
-            "滤芯寿命_年": 0.0,
-            "保修_年": 0.0,
-            "价格_low": 49.2745
-          },
-          "total_score": 49.3
         },
         {
           "id": 544,
@@ -13719,8 +13758,10 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
-          "verify_dims": [],
-          "verify_status": "",
+          "verify_dims": [
+            "分区数"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "尺寸_寸": 75,
             "面板类型": "QD-MiniLED",
@@ -13884,7 +13925,7 @@
           "dimensions": {
             "尺寸_寸": 75,
             "面板类型": "ULED",
-            "分区数": 512,
+            "分区数": 768.0,
             "刷新率_Hz": 288,
             "色域_pct": 95,
             "音响": "2.1声道杜比",
@@ -13893,46 +13934,14 @@
           "scores": {
             "尺寸_寸": 46.5116,
             "面板类型": 75.0,
-            "分区数": 10.1587,
+            "分区数": 15.2381,
             "刷新率_Hz": 80.0,
             "色域_pct": 20.0,
             "音响": 85.0,
             "保修_年": 50.0,
             "价格_low": 69.2591
           },
-          "total_score": 51.5
-        },
-        {
-          "id": 320,
-          "brand": "LG",
-          "model": "C4 77寸",
-          "price_low": 8000.0,
-          "price_high": 15000.0,
-          "price_collected_at": "",
-          "needs_review": false,
-          "data_incomplete": false,
-          "verify_dims": [],
-          "verify_status": "",
-          "dimensions": {
-            "尺寸_寸": 77,
-            "面板类型": "OLED",
-            "刷新率_Hz": 144,
-            "色域_pct": 98,
-            "音响": "杜比全景声",
-            "保修_年": 1,
-            "分区数": 0
-          },
-          "scores": {
-            "尺寸_寸": 51.1628,
-            "面板类型": 95.0,
-            "分区数": 0.0,
-            "刷新率_Hz": 11.4286,
-            "色域_pct": 80.0,
-            "音响": 50.0,
-            "保修_年": 50.0,
-            "价格_low": 56.0874
-          },
-          "total_score": 51.4
+          "total_score": 52.4
         },
         {
           "id": 228,
@@ -14029,6 +14038,41 @@
             "价格_low": 56.0874
           },
           "total_score": 50.4
+        },
+        {
+          "id": 320,
+          "brand": "LG",
+          "model": "C4 77寸",
+          "price_low": 8000.0,
+          "price_high": 15000.0,
+          "price_collected_at": "",
+          "needs_review": false,
+          "data_incomplete": false,
+          "verify_dims": [
+            "刷新率_Hz",
+            "色域_pct"
+          ],
+          "verify_status": "partial",
+          "dimensions": {
+            "尺寸_寸": 77,
+            "面板类型": "OLED",
+            "刷新率_Hz": 144,
+            "色域_pct": 97.66666666666667,
+            "音响": "杜比全景声",
+            "保修_年": 1,
+            "分区数": 0
+          },
+          "scores": {
+            "尺寸_寸": 51.1628,
+            "面板类型": 95.0,
+            "分区数": 0.0,
+            "刷新率_Hz": 11.4286,
+            "色域_pct": 73.3333,
+            "音响": 50.0,
+            "保修_年": 50.0,
+            "价格_low": 56.0874
+          },
+          "total_score": 50.3
         },
         {
           "id": 216,
@@ -14391,8 +14435,11 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
-          "verify_dims": [],
-          "verify_status": "",
+          "verify_dims": [
+            "分区数",
+            "刷新率_Hz"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "尺寸_寸": 75,
             "面板类型": "MiniLED",
@@ -14519,28 +14566,30 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
-          "verify_dims": [],
-          "verify_status": "",
+          "verify_dims": [
+            "色域_pct"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "尺寸_寸": 75,
             "面板类型": "LCD",
-            "分区数": 200,
+            "分区数": 96.0,
             "刷新率_Hz": 120,
-            "色域_pct": 95,
+            "色域_pct": 94.0,
             "音响": "屏幕发声",
             "保修_年": 1
           },
           "scores": {
             "尺寸_寸": 46.5116,
             "面板类型": 50.0,
-            "分区数": 3.9683,
+            "分区数": 1.9048,
             "刷新率_Hz": 0.0,
-            "色域_pct": 20.0,
+            "色域_pct": 0.0,
             "音响": 80.0,
             "保修_年": 50.0,
             "价格_low": 56.0874
           },
-          "total_score": 35.1
+          "total_score": 31.7
         },
         {
           "id": 223,

@@ -1,0 +1,53 @@
+[
+  {
+    "product_id": 260,
+    "url": "https://item.jd.com/10182033442190.html",
+    "platform": "web_verify",
+    "note": "京东标题 方太03-TEK20 5.2kW 70%热效率（与DB一致）",
+    "dims": {"火力_kW": 5.2, "热效率_pct": 70.0}
+  },
+  {
+    "product_id": 261,
+    "url": "https://product.suning.com/0070206249/12447786898.html",
+    "platform": "web_verify",
+    "note": "苏宁标题 57B9A-D2P 一级能效5.2kW（与DB一致）",
+    "dims": {"火力_kW": 5.2}
+  },
+  {
+    "product_id": 263,
+    "url": "https://zhuanlan.zhihu.com/p/390103222",
+    "platform": "web_verify",
+    "note": "知乎评测 米家Pro MJ03A 5.2kW 72%热效率一级能效（与DB一致）",
+    "dims": {"火力_kW": 5.2, "热效率_pct": 72.0}
+  },
+  {
+    "product_id": 430,
+    "url": "https://zhuanlan.zhihu.com/p/492382398",
+    "platform": "web_verify",
+    "note": "知乎 老板JZT-57B2D 5.0kW大火力（与DB一致）",
+    "dims": {"火力_kW": 5.0}
+  },
+  {
+    "product_id": 23,
+    "url": "https://www.sohu.com/a/1027690441_122645066",
+    "platform": "web_verify",
+    "note": "搜狐 苏泊尔DB28 63%热效率（与DB一致）",
+    "dims": {"热效率_pct": 63.0}
+  },
+  {
+    "product_id": 517,
+    "url": "https://product.suning.com/0000000000/12448684441.html",
+    "platform": "web_verify",
+    "override": true,
+    "note": "苏宁 方太TF37B 70%高热效5.2kW猛火（补火力缺失）",
+    "dims": {"火力_kW": 5.2}
+  },
+  {
+    "product_id": 518,
+    "url": "https://product.suning.com/0071641878/12451685813.html",
+    "platform": "web_verify",
+    "override": true,
+    "note": "苏宁 美的QD529 5.2KW 70%热效率（补火力缺失）",
+    "dims": {"火力_kW": 5.2}
+  }
+]

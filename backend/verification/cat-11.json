@@ -1,0 +1,28 @@
+[
+  {
+    "product_id": 540,
+    "url": "https://taiwan.roborock.com/pages/roborock-g30",
+    "platform": "web_verify",
+    "override": true,
+    "note": "石头官方 G30 22000Pa超大吸力 3D结构光+视觉避障（补全空维度）",
+    "dims": {"吸力_Pa": 22000.0, "避障技术": "3D结构光+AI"}
+  },
+  {
+    "product_id": 541,
+    "url": "https://detail.zol.com.cn/sweeping_robot/index2124786.shtml",
+    "platform": "web_verify",
+    "override": true,
+    "no_datapoint": true,
+    "note": "ZOL 云鲸逍遥002 活水履带洗地（修正拖地方式枚举：履带式拖布→履带式洗地）",
+    "dims": {"拖地方式": "履带式洗地"}
+  },
+  {
+    "product_id": 539,
+    "url": "https://detail.zol.com.cn/2143/2142455/param.shtml",
+    "platform": "web_verify",
+    "override": true,
+    "no_datapoint": true,
+    "note": "科沃斯T80 滚筒活水洗地（修正拖地方式枚举：滚筒活水洗地→恒压活水滚筒）",
+    "dims": {"拖地方式": "恒压活水滚筒"}
+  }
+]

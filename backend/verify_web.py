@@ -13,7 +13,8 @@
     "url": "https://item.jd.com/xxx.html",
     "platform": "web_verify",
     "dims": {"风量_m3": 30.0, "静压_Pa": 1450.0, "噪音_dB": 52.0, "保修_年": 5},
-    "override": false  # true=将外部值直接写入 products.dimensions（修正/补全缺失）
+    "override": false,     # true=将外部值直接写入 products.dimensions（修正/补全缺失）
+    "no_datapoint": false  # true=只写 DB 不插数据点（用于域内修正，避免 verify 均值写回拉偏）
   },
   ...
 ]
@@ -66,6 +67,10 @@ def main(path: str):
                 dims[dim_key] = value
                 overridden += 1
             product.dimensions = dims
+
+        if item.get("no_datapoint"):
+            # 只写 DB 不插数据点（域内修正：避免 verify 以均值写回拉偏权威值）
+            continue
 
         for dim_key, value in (item.get("dims") or {}).items():
             exists = (

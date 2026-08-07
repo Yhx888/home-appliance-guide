@@ -1,0 +1,31 @@
+[
+  {
+    "product_id": 83,
+    "url": "https://guangdiu.com/detail.php?id=28764143",
+    "platform": "web_verify",
+    "note": "逛丢 美的 小冰狗530 法式十字门 502L（与DB容量一致）",
+    "dims": {"容量_L": 502.0}
+  },
+  {
+    "product_id": 87,
+    "url": "https://item.jd.com/10211162516028.html",
+    "platform": "web_verify",
+    "override": true,
+    "note": "京东 卡萨帝揽光520 十字对开门520升超薄零嵌（修正门型：法式多门→十字门）",
+    "dims": {"容量_L": 520.0, "门型": "十字门"}
+  },
+  {
+    "product_id": 357,
+    "url": "https://product.suning.com/0000000000/12193154859.html",
+    "platform": "web_verify",
+    "note": "太平洋 TCL超薄零嵌T9 455L R455T9-UQ（与DB一致）",
+    "dims": {"容量_L": 455.0}
+  },
+  {
+    "product_id": 358,
+    "url": "https://www.lupc.net/post/2430.html",
+    "platform": "web_verify",
+    "note": "海信 真空休眠 BCD-415WTDGVBPIV 415L（与DB一致）",
+    "dims": {"容量_L": 415.0}
+  }
+]

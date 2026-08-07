@@ -1,0 +1,14 @@
+[
+  {
+    "product_id": 542,
+    "url": "https://news.qq.com/rain/a/20221014A05EJA00",
+    "platform": "web_verify",
+    "override": true,
+    "note": "腾讯/极果 米家全效空气净化器Ultra 颗粒物CADR 750 甲醛CADR 400 滤芯2-4年（补全空维度，滤芯取保守值2.5）",
+    "dims": {
+      "颗粒物CADR": 750.0,
+      "甲醛CADR": 400.0,
+      "滤芯寿命_年": 2.5
+    }
+  }
+]

@@ -1,0 +1,25 @@
+[
+  {
+    "product_id": 126,
+    "url": "https://zhuanlan.zhihu.com/p/3013075683",
+    "platform": "web_verify",
+    "note": "知乎 美的酷省电1.5匹 APF 5.35（与DB 5.3域内一致）",
+    "dims": {"能效_APF": 5.3}
+  },
+  {
+    "product_id": 292,
+    "url": "https://zhuanlan.zhihu.com/p/462934741",
+    "platform": "web_verify",
+    "override": true,
+    "no_datapoint": true,
+    "note": "格力云佳 KFR-35GW/NhGc1B APF 5.27（DB 5.0 域内偏低，取官方值）",
+    "dims": {"能效_APF": 5.27}
+  },
+  {
+    "product_id": 439,
+    "url": "https://zhuanlan.zhihu.com/p/3013075683",
+    "platform": "web_verify",
+    "note": "知乎 美的酷省电2匹 APF 4.74（与DB 5.0域内一致）",
+    "dims": {"能效_APF": 4.74}
+  }
+]
