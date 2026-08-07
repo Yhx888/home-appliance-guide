@@ -121,5 +121,6 @@ python -m backend.scrapers.verify
 
 - **本地**：`http://localhost:8000`（需启动后端）
 - **GitHub Pages**：`https://yhx888.github.io/home-appliance-guide/`（静态 data.json）
+- **发布规则**：任何代码/数据改动完成后，自动 `export_static_data.py` → commit → push，无需询问用户（见 WORKFLOW.md「最终验收步骤」）
 - Git 代理：`127.0.0.1:7897`
 - 禁止使用：`webfetch`
