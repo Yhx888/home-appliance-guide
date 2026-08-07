@@ -1,0 +1,20 @@
+[
+  {
+    "product_id": 232,
+    "url": "https://detail.zol.com.cn/1898/1897356/param.shtml",
+    "platform": "web_verify",
+    "override": true,
+    "no_datapoint": true,
+    "note": "ZOL 火星人X5 Pro 排风量18m³/min 最大静压1200Pa（修正DB 19.5/700，静压差71%严重错误）",
+    "dims": {"风量_m3": 18.0, "静压_Pa": 1200.0}
+  },
+  {
+    "product_id": 233,
+    "url": "https://zhuanlan.zhihu.com/p/571855690",
+    "platform": "web_verify",
+    "override": true,
+    "no_datapoint": true,
+    "note": "知乎 亿田S8 21.5m³/min澎湃风量；新浪 最大静压1000Pa（修正DB 19.5/700）",
+    "dims": {"风量_m3": 21.5, "静压_Pa": 1000.0}
+  }
+]

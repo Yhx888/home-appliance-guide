@@ -1,0 +1,18 @@
+[
+  {
+    "product_id": 97,
+    "url": "https://wiki.smzdm.com/p/doo57xr/",
+    "platform": "web_verify",
+    "override": true,
+    "note": "什么值得买 康宝XDZ100-D1 立式 100L大容量（型号名XDZ100，修正DB 90L）",
+    "dims": {"容量_L": 100.0}
+  },
+  {
+    "product_id": 95,
+    "url": "https://detail.zol.com.cn/316/315843/param.shtml",
+    "platform": "web_verify",
+    "override": true,
+    "note": "ZOL 美的MXV-ZLP90Q09 容量90L（修正DB 100L）",
+    "dims": {"容量_L": 90.0}
+  }
+]

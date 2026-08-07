@@ -4015,8 +4015,10 @@
           "price_collected_at": "",
           "needs_review": false,
           "data_incomplete": false,
-          "verify_dims": [],
-          "verify_status": "",
+          "verify_dims": [
+            "通量_G"
+          ],
+          "verify_status": "partial",
           "dimensions": {
             "过滤级数": 5,
             "保修_年": 3,
@@ -5535,6 +5537,32 @@
           "total_score": 75.2
         },
         {
+          "id": 97,
+          "brand": "康宝",
+          "model": "XDZ100-D1",
+          "price_low": 800.0,
+          "price_high": 1000.0,
+          "price_collected_at": "",
+          "needs_review": false,
+          "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
+          "dimensions": {
+            "消毒方式": "三重消毒(高温+紫外+臭氧)",
+            "杀菌率_pct": 99.99,
+            "保修_年": 3,
+            "容量_L": 100.0
+          },
+          "scores": {
+            "容量_L": 50.0,
+            "消毒方式": 100.0,
+            "杀菌率_pct": 100.0,
+            "保修_年": 0.0,
+            "价格_low": 83.0
+          },
+          "total_score": 73.9
+        },
+        {
           "id": 362,
           "brand": "方太",
           "model": "ZTD100J-13",
@@ -5637,32 +5665,6 @@
             "价格_low": 8.9704
           },
           "total_score": 67.9
-        },
-        {
-          "id": 97,
-          "brand": "康宝",
-          "model": "XDZ100-D1",
-          "price_low": 800.0,
-          "price_high": 1000.0,
-          "price_collected_at": "",
-          "needs_review": false,
-          "data_incomplete": false,
-          "verify_dims": [],
-          "verify_status": "",
-          "dimensions": {
-            "消毒方式": "三重消毒(高温+紫外+臭氧)",
-            "杀菌率_pct": 99.99,
-            "保修_年": 3,
-            "容量_L": 90.0
-          },
-          "scores": {
-            "容量_L": 25.0,
-            "消毒方式": 100.0,
-            "杀菌率_pct": 100.0,
-            "保修_年": 0.0,
-            "价格_low": 83.0
-          },
-          "total_score": 67.8
         },
         {
           "id": 471,
@@ -5847,32 +5849,6 @@
           "total_score": 40.1
         },
         {
-          "id": 95,
-          "brand": "美的",
-          "model": "MXV-ZLP90",
-          "price_low": 800.0,
-          "price_high": 1100.0,
-          "price_collected_at": "",
-          "needs_review": false,
-          "data_incomplete": false,
-          "verify_dims": [],
-          "verify_status": "",
-          "dimensions": {
-            "容量_L": 100.0,
-            "消毒方式": "高温+紫外线",
-            "杀菌率_pct": 99.9,
-            "保修_年": 3.0
-          },
-          "scores": {
-            "容量_L": 50.0,
-            "消毒方式": 50.0,
-            "杀菌率_pct": 0.0,
-            "保修_年": 0.0,
-            "价格_low": 83.0
-          },
-          "total_score": 38.4
-        },
-        {
           "id": 96,
           "brand": "海尔",
           "model": "ZTD100",
@@ -5949,6 +5925,32 @@
             "价格_low": 83.0
           },
           "total_score": 34.0
+        },
+        {
+          "id": 95,
+          "brand": "美的",
+          "model": "MXV-ZLP90",
+          "price_low": 800.0,
+          "price_high": 1100.0,
+          "price_collected_at": "",
+          "needs_review": false,
+          "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
+          "dimensions": {
+            "容量_L": 90.0,
+            "消毒方式": "高温+紫外线",
+            "杀菌率_pct": 99.9,
+            "保修_年": 3.0
+          },
+          "scores": {
+            "容量_L": 25.0,
+            "消毒方式": 50.0,
+            "杀菌率_pct": 0.0,
+            "保修_年": 0.0,
+            "价格_low": 83.0
+          },
+          "total_score": 32.3
         },
         {
           "id": 285,
@@ -7208,34 +7210,6 @@
           "total_score": 65.1
         },
         {
-          "id": 108,
-          "brand": "松下",
-          "model": "FV-RP05HP1",
-          "price_low": 1100.0,
-          "price_high": 2000.0,
-          "price_collected_at": "2026-08-02",
-          "needs_review": false,
-          "data_incomplete": false,
-          "verify_dims": [],
-          "verify_status": "",
-          "dimensions": {
-            "风量_m3h": 325.0,
-            "过滤等级": "HEPA H13",
-            "热交换率_pct": 75.0,
-            "噪音_dB": 31.5,
-            "安装方式": "壁挂/管道"
-          },
-          "scores": {
-            "风量_m3h": 57.3171,
-            "过滤等级": 50.0,
-            "热交换率_pct": 75.0,
-            "噪音_dB": 56.25,
-            "安装方式": 50.0,
-            "价格_low": 100.0
-          },
-          "total_score": 63.5
-        },
-        {
           "id": 379,
           "brand": "造梦者",
           "model": "新风Pro 400",
@@ -7346,6 +7320,34 @@
             "价格_low": 38.037
           },
           "total_score": 55.7
+        },
+        {
+          "id": 108,
+          "brand": "松下",
+          "model": "FV-RP05HP1",
+          "price_low": 1100.0,
+          "price_high": 2000.0,
+          "price_collected_at": "2026-08-02",
+          "needs_review": false,
+          "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
+          "dimensions": {
+            "风量_m3h": 150.0,
+            "过滤等级": "HEPA H13",
+            "热交换率_pct": 75.0,
+            "噪音_dB": 31.5,
+            "安装方式": "壁挂/管道"
+          },
+          "scores": {
+            "风量_m3h": 14.6341,
+            "过滤等级": 50.0,
+            "热交换率_pct": 75.0,
+            "噪音_dB": 56.25,
+            "安装方式": 50.0,
+            "价格_low": 100.0
+          },
+          "total_score": 54.1
         },
         {
           "id": 110,
@@ -14814,6 +14816,62 @@
       ],
       "products": [
         {
+          "id": 233,
+          "brand": "亿田",
+          "model": "S8",
+          "price_low": 12999.0,
+          "price_high": 17800.0,
+          "price_collected_at": "",
+          "needs_review": false,
+          "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
+          "dimensions": {
+            "风量_m3": 21.5,
+            "热效率_pct": null,
+            "保修_年": 3.0,
+            "类型": "蒸烤一体",
+            "静压_Pa": 1000.0
+          },
+          "scores": {
+            "类型": 100.0,
+            "风量_m3": 43.75,
+            "静压_Pa": 63.6364,
+            "热效率_pct": 0.0,
+            "保修_年": 50.0,
+            "价格_low": 31.0302
+          },
+          "total_score": 55.5
+        },
+        {
+          "id": 232,
+          "brand": "火星人",
+          "model": "X5 Pro",
+          "price_low": 19980.0,
+          "price_high": 19980.0,
+          "price_collected_at": "",
+          "needs_review": false,
+          "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
+          "dimensions": {
+            "风量_m3": 18.0,
+            "热效率_pct": null,
+            "保修_年": 3.0,
+            "类型": "蒸烤一体",
+            "静压_Pa": 1200.0
+          },
+          "scores": {
+            "类型": 100.0,
+            "风量_m3": 0.0,
+            "静压_Pa": 100.0,
+            "热效率_pct": 0.0,
+            "保修_年": 50.0,
+            "价格_low": 0.0
+          },
+          "total_score": 47.4
+        },
+        {
           "id": 235,
           "brand": "森歌",
           "model": "T3",
@@ -14826,7 +14884,7 @@
           "verify_status": "",
           "dimensions": {
             "风量_m3": 19.0,
-            "热效率_pct": 4.75,
+            "热效率_pct": null,
             "保修_年": 3.0,
             "类型": "蒸烤一体",
             "静压_Pa": 700.0
@@ -14834,12 +14892,12 @@
           "scores": {
             "类型": 100.0,
             "风量_m3": 12.5,
-            "静压_Pa": 11.1111,
-            "热效率_pct": 0.2483,
+            "静压_Pa": 9.0909,
+            "热效率_pct": 0.0,
             "保修_年": 50.0,
             "价格_low": 93.1199
           },
-          "total_score": 35.7
+          "total_score": 43.3
         },
         {
           "id": 234,
@@ -14854,7 +14912,7 @@
           "verify_status": "",
           "dimensions": {
             "风量_m3": 18.5,
-            "热效率_pct": 4.6,
+            "热效率_pct": null,
             "保修_年": 3.0,
             "类型": "蒸烤一体",
             "静压_Pa": 700.0
@@ -14862,40 +14920,12 @@
           "scores": {
             "类型": 100.0,
             "风量_m3": 6.25,
-            "静压_Pa": 11.1111,
+            "静压_Pa": 9.0909,
             "热效率_pct": 0.0,
             "保修_年": 50.0,
             "价格_low": 100.0
           },
-          "total_score": 35.2
-        },
-        {
-          "id": 233,
-          "brand": "亿田",
-          "model": "S8",
-          "price_low": 12999.0,
-          "price_high": 17800.0,
-          "price_collected_at": "",
-          "needs_review": false,
-          "data_incomplete": false,
-          "verify_dims": [],
-          "verify_status": "",
-          "dimensions": {
-            "风量_m3": 19.5,
-            "热效率_pct": 4.85,
-            "保修_年": 3.0,
-            "类型": "蒸烤一体",
-            "静压_Pa": 700.0
-          },
-          "scores": {
-            "类型": 100.0,
-            "风量_m3": 18.75,
-            "静压_Pa": 11.1111,
-            "热效率_pct": 0.4139,
-            "保修_年": 50.0,
-            "价格_low": 31.0302
-          },
-          "total_score": 28.3
+          "total_score": 42.7
         },
         {
           "id": 236,
@@ -14910,7 +14940,7 @@
           "verify_status": "",
           "dimensions": {
             "风量_m3": 18.0,
-            "热效率_pct": 4.6,
+            "热效率_pct": null,
             "保修_年": 3.0,
             "类型": "蒸烤一体",
             "静压_Pa": 700.0
@@ -14918,96 +14948,12 @@
           "scores": {
             "类型": 100.0,
             "风量_m3": 0.0,
-            "静压_Pa": 11.1111,
+            "静压_Pa": 9.0909,
             "热效率_pct": 0.0,
             "保修_年": 50.0,
             "价格_low": 49.9639
           },
-          "total_score": 26.7
-        },
-        {
-          "id": 232,
-          "brand": "火星人",
-          "model": "X5 Pro",
-          "price_low": 19980.0,
-          "price_high": 19980.0,
-          "price_collected_at": "",
-          "needs_review": false,
-          "data_incomplete": false,
-          "verify_dims": [],
-          "verify_status": "",
-          "dimensions": {
-            "风量_m3": 19.5,
-            "热效率_pct": 4.75,
-            "保修_年": 3.0,
-            "类型": "蒸烤一体",
-            "静压_Pa": 700.0
-          },
-          "scores": {
-            "类型": 100.0,
-            "风量_m3": 18.75,
-            "静压_Pa": 11.1111,
-            "热效率_pct": 0.2483,
-            "保修_年": 50.0,
-            "价格_low": 0.0
-          },
-          "total_score": 23.9
-        },
-        {
-          "id": 323,
-          "brand": "火星人",
-          "model": "集成灶蒸烤一体",
-          "price_low": 10000.0,
-          "price_high": 15000.0,
-          "price_collected_at": "",
-          "needs_review": false,
-          "data_incomplete": false,
-          "verify_dims": [],
-          "verify_status": "",
-          "dimensions": {
-            "类型": "蒸烤一体",
-            "风量_m3": 20,
-            "静压_Pa": 800,
-            "热效率_pct": 63,
-            "保修_年": 3
-          },
-          "scores": {
-            "类型": 100.0,
-            "风量_m3": 25.0,
-            "静压_Pa": 33.3333,
-            "热效率_pct": 96.6887,
-            "保修_年": 50.0,
-            "价格_low": 49.9639
-          },
-          "total_score": 55.1
-        },
-        {
-          "id": 326,
-          "brand": "森歌",
-          "model": "集成灶蒸烤一体",
-          "price_low": 5500.0,
-          "price_high": 18000.0,
-          "price_collected_at": "2026-08-02",
-          "needs_review": false,
-          "data_incomplete": false,
-          "verify_dims": [],
-          "verify_status": "",
-          "dimensions": {
-            "类型": "蒸烤一体",
-            "风量_m3": 19,
-            "静压_Pa": 700,
-            "热效率_pct": 63,
-            "保修_年": 3
-          },
-          "scores": {
-            "类型": 100.0,
-            "风量_m3": 12.5,
-            "静压_Pa": 11.1111,
-            "热效率_pct": 96.6887,
-            "保修_年": 50.0,
-            "价格_low": 93.1199
-          },
-          "total_score": 53.6
+          "total_score": 32.2
         },
         {
           "id": 324,
@@ -15030,40 +14976,68 @@
           "scores": {
             "类型": 100.0,
             "风量_m3": 25.0,
-            "静压_Pa": 22.2222,
+            "静压_Pa": 18.1818,
             "热效率_pct": 100.0,
             "保修_年": 50.0,
             "价格_low": 46.4488
           },
-          "total_score": 52.8
+          "total_score": 52.0
         },
         {
-          "id": 325,
-          "brand": "美大",
-          "model": "集成灶消毒柜款",
-          "price_low": 7000.0,
-          "price_high": 7500.0,
+          "id": 323,
+          "brand": "火星人",
+          "model": "集成灶蒸烤一体",
+          "price_low": 10000.0,
+          "price_high": 15000.0,
+          "price_collected_at": "",
+          "needs_review": false,
+          "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
+          "dimensions": {
+            "类型": "蒸烤一体",
+            "风量_m3": 20,
+            "静压_Pa": 800,
+            "热效率_pct": 63,
+            "保修_年": 3
+          },
+          "scores": {
+            "类型": 100.0,
+            "风量_m3": 25.0,
+            "静压_Pa": 27.2727,
+            "热效率_pct": 0.0,
+            "保修_年": 50.0,
+            "价格_low": 49.9639
+          },
+          "total_score": 35.8
+        },
+        {
+          "id": 326,
+          "brand": "森歌",
+          "model": "集成灶蒸烤一体",
+          "price_low": 5500.0,
+          "price_high": 18000.0,
           "price_collected_at": "2026-08-02",
           "needs_review": false,
           "data_incomplete": false,
           "verify_dims": [],
           "verify_status": "",
           "dimensions": {
-            "类型": "消毒柜款",
-            "风量_m3": 18,
+            "类型": "蒸烤一体",
+            "风量_m3": 19,
             "静压_Pa": 700,
             "热效率_pct": 63,
             "保修_年": 3
           },
           "scores": {
-            "类型": 70.0,
-            "风量_m3": 0.0,
-            "静压_Pa": 11.1111,
-            "热效率_pct": 96.6887,
+            "类型": 100.0,
+            "风量_m3": 12.5,
+            "静压_Pa": 9.0909,
+            "热效率_pct": 0.0,
             "保修_年": 50.0,
-            "价格_low": 75.7111
+            "价格_low": 93.1199
           },
-          "total_score": 44.9
+          "total_score": 35.3
         },
         {
           "id": 327,
@@ -15087,11 +15061,39 @@
             "类型": 100.0,
             "风量_m3": 0.0,
             "静压_Pa": 0.0,
-            "热效率_pct": 96.6887,
+            "热效率_pct": 0.0,
             "保修_年": 50.0,
             "价格_low": 66.0719
           },
-          "total_score": 44.5
+          "total_score": 26.6
+        },
+        {
+          "id": 325,
+          "brand": "美大",
+          "model": "集成灶消毒柜款",
+          "price_low": 7000.0,
+          "price_high": 7500.0,
+          "price_collected_at": "2026-08-02",
+          "needs_review": false,
+          "data_incomplete": false,
+          "verify_dims": [],
+          "verify_status": "",
+          "dimensions": {
+            "类型": "消毒柜款",
+            "风量_m3": 18,
+            "静压_Pa": 700,
+            "热效率_pct": 63,
+            "保修_年": 3
+          },
+          "scores": {
+            "类型": 70.0,
+            "风量_m3": 0.0,
+            "静压_Pa": 9.0909,
+            "热效率_pct": 0.0,
+            "保修_年": 50.0,
+            "价格_low": 75.7111
+          },
+          "total_score": 26.5
         },
         {
           "id": 555,
@@ -15113,12 +15115,12 @@
           "scores": {
             "类型": 0.0,
             "风量_m3": 100.0,
-            "静压_Pa": 100.0,
+            "静压_Pa": 81.8182,
             "热效率_pct": 0.0,
             "保修_年": 0.0,
             "价格_low": 75.7111
           },
-          "total_score": 94.1
+          "total_score": 87.4
         },
         {
           "id": 553,
@@ -15140,12 +15142,12 @@
           "scores": {
             "类型": 0.0,
             "风量_m3": 43.75,
-            "静压_Pa": 88.8889,
+            "静压_Pa": 72.7273,
             "热效率_pct": 0.0,
             "保修_年": 0.0,
             "价格_low": 52.1626
           },
-          "total_score": 62.3
+          "total_score": 56.4
         },
         {
           "id": 556,

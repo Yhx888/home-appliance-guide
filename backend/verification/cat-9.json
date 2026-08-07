@@ -1,0 +1,10 @@
+[
+  {
+    "product_id": 108,
+    "url": "https://product.yesky.com/product/1058/1058092/param.shtml",
+    "platform": "web_verify",
+    "override": true,
+    "note": "松下壁挂新风 FV-RP05HP1 标称风量150m³/h（RP05=150档；修正DB 325，与同型号113/290行150自相矛盾）",
+    "dims": {"风量_m3h": 150.0}
+  }
+]
